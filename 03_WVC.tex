@@ -1,0 +1,64 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\onslide<1>
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (0,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/roadkill_squirrel}};
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (8.0,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/roadkill_deer}};
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/roadkill_primate}};
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (8.0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/roadkill_eagle}};
+
+\end{tikzpicture}
+
+\onslide<2>
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+		\node [anchor=north west,inner sep=0] at (0,9.0) {\includegraphics[height=9.0cm]{/home/casey/Research/Graphics_Repo/victoria_collisions_gis}};
+
+\end{tikzpicture}
+
+\onslide<3>
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+		\node [anchor=north west,inner sep=0] at (0.0,9.0) {\includegraphics[height=9.0cm]{/home/casey/Research/Graphics_Repo/wordcloud_allvar}};
+
+		\node [anchor=north west,inner sep=0] at (8.0,8.0) {\includegraphics[height=1.8cm]{/home/casey/Research/Graphics_Repo/animal_movement}};
+		
+		\node [anchor=north west,inner sep=0] at (12.0,6.5) {\includegraphics[height=2.2cm]{/home/casey/Research/Graphics_Repo/human_behaviour}};
+		
+		\node [anchor=north west,inner sep=0] at (9.0,5.5) {\includegraphics[height=2.2cm]{/home/casey/Research/Graphics_Repo/road_structure}};
+		
+		\node [anchor=north west,inner sep=0] at (11.0,3.0) {\includegraphics[height=2.5cm]{/home/casey/Research/Graphics_Repo/landscape_structure}};
+
+
+\end{tikzpicture}
+
+\end{frame}
+
+\end{document}
