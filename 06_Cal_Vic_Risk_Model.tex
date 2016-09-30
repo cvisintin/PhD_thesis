@@ -26,14 +26,20 @@
 
 \begin{frame}
 
- \onslide<1>{
+\onslide<1>{
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
-	\node [anchor=north west,inner sep=0] at (0,6.0) {\includegraphics[height=6.0cm]{/home/casey/Research/Graphics_Repo/study_vic2}};
-	\node [anchor=north west,inner sep=0] at (7.3,8.5) {\includegraphics[height=6.0cm]{/home/casey/Research/Graphics_Repo/study_cal2}};
+	\node [anchor=center,inner sep=0] at (8.0,4.5) {\Large California};
 \end{tikzpicture}
 }
 
 \onslide<2>{
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+	\node [anchor=north west,inner sep=0] at (0,6.0) {\includegraphics[height=6.0cm]{/home/casey/Research/Graphics_Repo/study_vic2}};
+	\node [anchor=north west,inner sep=0] at (7.0,9.1) {\includegraphics[height=6.3cm]{/home/casey/Research/Graphics_Repo/study_cal2}};
+\end{tikzpicture}
+}
+
+\onslide<3>{
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
 	\node [anchor=north west,inner sep=0] at (.8,9.0) {\includegraphics[height=4.3cm]{/home/casey/Research/Graphics_Repo/vic_occ}};
 	\node [anchor=north west,align=left] at (1.5,8.7) {\tiny Eastern Grey Kangaroo};
@@ -50,10 +56,13 @@
 \end{tikzpicture}
 }
 
-\onslide<3>{
+\onslide<4>{
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
-	\node [anchor=north west,inner sep=0] at (7.7,8.6) {\includegraphics[height=6.5cm]{/home/casey/Research/Graphics_Repo/deer_collrisk_cal}};
-	\node [anchor=north west,inner sep=0] at (0.2,6.5) {\includegraphics[height=6.5cm]{/home/casey/Research/Graphics_Repo/egk_collrisk_vic}};
+	\node [anchor=north west,inner sep=0] at (6.0,10.0) {\includegraphics[height=8.0cm]{/home/casey/Research/Graphics_Repo/deer_collrisk_cal2}};
+	\node [anchor=north west,inner sep=0] at (0.2,7.0) {\includegraphics[height=7.5cm]{/home/casey/Research/Graphics_Repo/egk_collrisk_vic2}};
+	\definecolor{grayed}{gray}{0.85}
+	\node[anchor=north west,fill=grayed,rounded corners=2pt, text width=5.2cm] at (10.1,1.9){\scriptsize Preparing manuscript for submission to \textit{Journal of Applied Ecology} or \textit{Frontiers in Ecology and the Environment}};
+
 \end{tikzpicture}
 }
 

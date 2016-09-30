@@ -27,13 +27,21 @@
 \begin{frame}
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
-	\node [anchor=north west,inner sep=0] at (0.2,8.0) {\includegraphics[trim={1.8cm 1.5cm 1.6cm 1.5cm},clip,height=8cm]{/home/casey/Research/Graphics_Repo/vline_collisions.png}};
 
-	\node [anchor=north west,align=left] at (4.4,0.6) {\tiny Source: V/Line };
+	\only<1>{
+		\node [anchor=center,inner sep=0] at (8.0,4.5) {\Large Trains};
+	}
 
-	\node [anchor=north west,inner sep=0] at (9.4,7.8) {\includegraphics[height=3.5cm]{/home/casey/Research/Github/coll_model_trains/figs/coll_hour.png}};
+	\only<2>{
+		\node [anchor=north west,inner sep=0] at (0.2,8.0) {\includegraphics[trim={1.8cm 1.5cm 1.6cm 1.5cm},clip,height=8cm]{/home/casey/Research/Graphics_Repo/vline_collisions.png}};
+
+		\node [anchor=north west,align=left] at (4.4,0.6) {\tiny Source: V/Line };
+
+		\node [anchor=north west,inner sep=0] at (9.4,7.8) {\includegraphics[height=3.5cm]{/home/casey/Research/Github/coll_model_trains/figs/coll_hour.png}};
 	
-	\node [anchor=north west,inner sep=0] at (11.9,3.5) {\includegraphics[height=3.0cm]{/home/casey/Research/Github/coll_model_trains/figs/coll_month.png}};	
+		\node [anchor=north west,inner sep=0] at (11.9,3.5) {\includegraphics[height=3.0cm]{/home/casey/Research/Github/coll_model_trains/figs/coll_month.png}};
+	}
+	
 \end{tikzpicture}
 
 \end{frame}

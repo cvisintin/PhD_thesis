@@ -29,12 +29,16 @@
 
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
-	
+
 	\only<1>{
-		\node [anchor=north west,inner sep=0] at (1.5,9.0) {\includegraphics[height=9.0cm]{/home/casey/Research/Graphics_Repo/egk_collrisk_map}};
+		\node [anchor=center,inner sep=0] at (8.0,4.5) {\Large Validation};
 	}
 
 	\only<2>{
+		\node [anchor=north west,inner sep=0] at (1.5,9.0) {\includegraphics[height=9.0cm]{/home/casey/Research/Graphics_Repo/egk_collrisk_map}};
+	}
+
+	\only<3>{
 		\node [anchor=north west,inner sep=0] at (0.8,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/victoria_val_data_wv}};
 		\node [anchor=north west,inner sep=0] at (0.8,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/victoria_val_data_iag}};
 		\node [anchor=north west,inner sep=0] at (9.0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/victoria_val_data_western}};
@@ -54,7 +58,7 @@
 		\node [anchor=north west,align=left, fill=white] at (13.8,4.2) {\tiny Roads (n collisions) \\[-0.2cm] \tiny '0': 14691 \\[-0.2cm] \tiny '1+': 286};
 	}
 	
-	\only<3>{
+	\only<4>{
 		\draw [anchor=north west, thick] (0,4.5) -- (16,4.5);
 		\draw [anchor=north west, thick] (8.0,9.0) -- (8.0,0);
 	}

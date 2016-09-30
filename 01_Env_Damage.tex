@@ -24,8 +24,12 @@
 \begin{frame}
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
-	
+
 	\only<1>{
+		\node [anchor=center,inner sep=0] at (8.0,4.5) {\Large Risk};
+	}
+	
+	\only<2>{
 		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (10.66,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_dam}};
 
 		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (5.33,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_smoke}};
@@ -39,7 +43,17 @@
 	\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_deforest}};
 	}
 
-	\only<2>{
+	\only<3>{
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (8.0,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_horizon_oil_spill}};
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (0,4.5) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_chernobyl}};
+		
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (8.0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_influenza}};
+
+		\node [anchor=north west,inner sep=0,draw=black, line width=0.1cm] at (0,9.0) {\includegraphics[height=4.5cm]{/home/casey/Research/Graphics_Repo/risk_economic}};
+	}
+
+	\only<4>{
 		\node [anchor=north west,inner sep=0] at (0,10.0) {\includegraphics[width=16.0cm]{/home/casey/Research/Graphics_Repo/people}};
 	}
 	
