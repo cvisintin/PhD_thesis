@@ -1,0 +1,178 @@
+\documentclass[titlesmallcaps,copyrightpage,examinerscopy]{uomthesis}
+%----------------------------------------------------------
+% OPTIONS
+% Options you can use in the documentclass above:
+%
+% phd/mres/hons = set the degree text [default=phd]
+% copyrightpage = print a copyright page on the back 
+%                 of the title page [default=false]
+% examinerscopy = print "Examiner's Copy" of title page and 
+%                 change linespacing to 1.5 [default=false]
+% titlesmallcaps = Use smallcaps for the title [default=false]
+%---------------------------------------------------------- 
+
+% this shows what labels you are using for cross references
+% \usepackage{showkeys} 
+%---------------------------------------------------------- 
+% STRUCTURE
+% this document is a skeleton which pulls in the meat of the thesis
+% from other files. Comment out and add lines as appropriate.
+%---------------------------------------------------------- 
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+%%% PACKAGES
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{cleveref}
+
+%%% DEFINE NEW COMMANDS
+\newcommand{\B}{\textbf}
+\newcommand{\TL}{\textless}
+\newcommand{\PRZ}{\text{Pr}\bigl( >\mid Z \mid \bigr)}
+
+%\newenvironment{nscenter}
+% {\parskip=.75pt\par\nopagebreak\centering}
+% {\par\noindent\ignorespacesafterend}
+
+%remove title and space above bibliography
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\list{\@biblabel{\@arabic\c@enumiv}}
+           {\settowidth\labelwidth{\@biblabel{#1}}
+            \leftmargin\labelwidth
+            \setlength{\topsep}{0pt} 
+            \setlength{\partopsep}{0pt}
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}
+      \endlist}
+\makeatother   
+
+%define abstract environment for chapters
+\newenvironment{localsize}[1]
+{%
+  \clearpage
+  \let\orignewcommand\newcommand
+  \let\newcommand\renewcommand
+  \makeatletter
+  \input{bk#1.clo}%
+  \leftskip4em
+  \rightskip\leftskip
+  \par
+  \makeatother
+  \let\newcommand\orignewcommand
+}
+
+\let\oldtabular\tabularx
+\renewcommand{\tabularx}{\footnotesize\oldtabular}
+
+\newcolumntype{P}[1]{>{\linespread{.9}\small\raggedright\arraybackslash}p{#1}}
+
+\newcolumntype{Y}{>{\linespread{.9}\small\raggedright\arraybackslash}X}
+
+\begin{document}
+
+\frontmatter
+\title{Modelling and predicting collision risks between wildlife and moving vehicles across space and time}
+\author{Casey C. Visintin}
+\department{BioSciences}
+
+\titlepage
+
+\chapter{Abstract}
+This PhD thesis aims to identify and further investigate collision risks where wildlife and vehicles co-occur in space and time.  The research develops methods to quantify and analyse collision risk with a simple model framework, explore temporal effects, test across multiple species and geographic areas, integrate calibration techniques, and utilise existing and accessible data.  This framework will be set in the larger context of risk analysis and targeted at informing management decisions and communicating risk to the general public; this may include remotely-hosted, self-updating model and feedback mechanisms (vehicle navigation devices and smart-phone technologies).
+
+\chapter{Declaration}
+This is to certify that:
+%\renewcommand{\theenumi}{\roman{enumi}}%
+\begin{enumerate}
+ \item the thesis comprises only my original work towards the PhD except where indicated in the Preface,
+ \item due acknowledgement has been made in the text to all other material used,
+ \item the thesis is fewer than 100 000 words in length, exclusive of tables, maps, bibliographies and appendices.
+\end{enumerate}
+
+
+\chapter{Preface}
+This thesis utilises several datasets from various sources to train and test statistical models.  Wildlife Victoria Injury Database (WVD), Victorian Biodiversity Atlas (VBA), Global Biodiversity Information Facility (GBIF), VicRoads, V/Line, California Roadkill Observation System (CROS), and Insurance Australia Group Animal-strikes Database (IAG)\ldots
+
+\newpage
+\textbf{First authored publications}
+\begin{enumerate}
+\item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (2016) A simple framework for a complex problem?  Predicting wildlife-vehicle collisions. \textit{Ecology and Evolution}, 6, 6409–6421
+
+\item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (in review) Consistent patterns of vehicle collision risk for six mammal species. \textit{Journal of Environmental Management}
+
+\item Casey Visintin, Fraser Shilling, Rodney van der Ree, Michael A. McCarthy (submitted) Determining patterns of wildlife-vehicle collisions on two continents: deer in North America and kangaroos in Australia. \textit{Ecological Applications}
+
+\item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (submitted) Predicting wildlife-train collisions across space and time to inform railway operations. \textit{Journal of Applied Ecology}
+\end{enumerate}
+
+\chapter{Acknowledgements}
+
+My supervisors have been instrumental in both my academic and professional development and the synthesis of this thesis.  Michael McCarthy provided invaluable mathematical and modelling advice and Rodney van der Ree advised on many aspects of road ecology.  Both were consistently enthusiastic and optimistic, despite my occasional bouts with ``research fatigue" \ldots
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+
+\input{chapters/Chapter1}
+
+\input{chapters/Chapter2}
+
+\input{chapters/Chapter3}
+
+\input{chapters/Chapter4}
+
+\input{chapters/Chapter5}
+
+\input{chapters/Chapter6}
+
+\input{chapters/Chapter7}
+
+%\input{chapters/References}
+
+\chapter{References}
+\newpage
+\bibliography{/home/casey/Research/Know_Repo/Literature/Bib_Master}
+
+%---------------------------------------------------------- 
+% APPENDICES
+% include chapters as needed (will be numbered differently)
+%---------------------------------------------------------- 
+\appendix
+
+\input{chapters/Appendix}
+
+%---------------------------------------------------------- 
+% BACK
+% list of symbols / references / index etc
+%---------------------------------------------------------- 
+\backmatter
+
+\chapter{List of Symbols}
+
+
+The following list is neither exhaustive nor exclusive, but may be helpful.
+\begin{list}{}{%
+\setlength{\labelwidth}{24mm}
+\setlength{\leftmargin}{35mm}}
+\item[$a$, $b$, $c$, $d$\dotfill] annihilation operators
+\item[$a^\dagger$, $b^\dagger$, $c^\dagger$, $d^\dagger$\dotfill] creation
+operators
+\end{list}
+
+\end{document}
