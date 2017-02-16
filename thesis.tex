@@ -27,6 +27,8 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{cleveref}
+\usepackage[caption=false]{subfig}
+%\useackage{tikz}
 
 %%% DEFINE NEW COMMANDS
 \newcommand{\B}{\textbf}
@@ -76,11 +78,11 @@
 }
 
 \let\oldtabular\tabularx
-\renewcommand{\tabularx}{\footnotesize\oldtabular}
+\renewcommand{\tabularx}{\scriptsize\oldtabular}
 
-\newcolumntype{P}[1]{>{\linespread{.9}\small\raggedright\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\linespread{.9}\raggedright\arraybackslash}p{#1}}
 
-\newcolumntype{Y}{>{\linespread{.9}\small\raggedright\arraybackslash}X}
+\newcolumntype{Y}{>{\linespread{.9}\raggedright\arraybackslash}X}
 
 \begin{document}
 
