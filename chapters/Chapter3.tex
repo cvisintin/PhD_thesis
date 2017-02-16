@@ -17,210 +17,75 @@ Road authorities and environmental managers need simple and flexible tools to in
 \newpage
 \section{Introduction}
 
-Roads have considerable negative ecological impacts, prompting numerous scientific studies and mitigation projects over the past five decades (Forman and Alexander, 1998; Spellerberg, 1998; van der Ree et al., 2015). The mortality of wildlife from collisions with vehicles is a significant problem throughout most of the developed world, and will likely become so in the next few decades in the developing world (van der Ree et al., 2015). Wildlife-vehicle collisions (WVC) are estimated to kill billions of fauna annually on transportation networks (Seiler and Helldin, 2006), fostering an interdisciplinary management problem. To address this problem, studies seek to understand the frequency, magnitude and distribution of WVC.  Through this understanding, managers can identify and apply appropriate mitigation strategies.
+Roads have considerable negative ecological impacts, prompting numerous scientific studies and mitigation projects over the past five decades \citep{form98,spel98,rvdr15}. The mortality of wildlife from collisions with vehicles is a significant problem throughout most of the developed world, and will likely become so in the next few decades in the developing world \citep{rvdr15}. Wildlife-vehicle collisions (WVC) are estimated to kill billions of fauna annually on transportation networks \citep{seil06}, fostering an interdisciplinary management problem. To address this problem, studies seek to understand the frequency, magnitude and distribution of WVC.  Through this understanding, managers can identify and apply appropriate mitigation strategies.
 
-WVC are financially costly (Bissonette et al., 2008; Huijser et al., 2009; Rowden et al., 2008) and thus knowing where and how to mitigate is important.  If mitigation measures are not appropriately specified or located in the landscape, costs arise from wasted installation labour, materials and time and on-going collisions resulting from the omission.  Moreover, some forms of mitigation, such as fencing, also create "barrier-effects" - a direct impediment to the movement of many species which affects movement and gene flow.  Thus, strategic, informed use of mitigation is important for both conservation and road safety objectives.
+WVC are financially costly \citep{biss08,huij09,rowd08} and thus knowing where and how to mitigate is important.  If mitigation measures are not appropriately specified or located in the landscape, costs arise from wasted installation labour, materials and time and on-going collisions resulting from the omission.  Moreover, some forms of mitigation, such as fencing, also create "barrier-effects" - a direct impediment to the movement of many species which affects movement and gene flow.  Thus, strategic, informed use of mitigation is important for both conservation and road safety objectives.
 
-The literature contains many studies on WVC with several papers utilising statistical modelling methods.  Quantitative models are a useful way to support decision-making for managers by helping to clearly organise problems, test inputs, and make inferences (Anderson et al., 2015).  By determining the factors that contribute to collisions with quantitative analysis, managers can begin to understand relationships and optimise mitigation strategies.
+The literature contains many studies on WVC with several papers utilising statistical modelling methods.  Quantitative models are a useful way to support decision-making for managers by helping to clearly organise problems, test inputs, and make inferences \citep{ande15}.  By determining the factors that contribute to collisions with quantitative analysis, managers can begin to understand relationships and optimise mitigation strategies.
 
-We view three challenges in current WVC modelling and management practices.  First, methods that generalise to multiple species and across taxonomic groups are under-represented in scientific studies (see Farmer and Brooks, 2012).  This is likely due to the complexity in resource requirements for different taxa.  Another challenge is identifying relationships between predictors and collisions that are able to be mitigated.  Although management implications are highlighted in many papers, it is not always clear how the results of the analyses could be easily applied due to variable interactions and confounding effects in the model predictors (Gunson et al., 2011).  Some studies explicitly suggest mitigation that relates directly to environmental variables based on model results (see Grilo et al., 2009).  Although these recommendations are useful in the specific contexts of the studies, they may not generalise to varying spatial scales - specifically large areas.  Many analyses are specific to road sections and not easily transferable to other areas, limiting their usefulness as planning tools for environmental management authorities.
+We view three challenges in current WVC modelling and management practices.  First, methods that generalise to multiple species and across taxonomic groups are under-represented in scientific studies (see Farmer and Brooks, 2012).  This is likely due to the complexity in resource requirements for different taxa.  Another challenge is identifying relationships between predictors and collisions that are able to be mitigated.  Although management implications are highlighted in many papers, it is not always clear how the results of the analyses could be easily applied due to variable interactions and confounding effects in the model predictors \citep{guns11}.  Some studies explicitly suggest mitigation that relates directly to environmental variables based on model results (see \cite{gril09}).  Although these recommendations are useful in the specific contexts of the studies, they may not generalise to varying spatial scales - specifically large areas.  Many analyses are specific to road sections and not easily transferable to other areas, limiting their usefulness as planning tools for environmental management authorities.
 
 We argue that generality in methods is useful and it is important to create analytical tools that help managers identify risk to both individual species and taxonomic groups across large areas with predictors that are manageable or suggest areas for more specific examination.
 
-In this study we have two objectives; testing a conceptual risk model framework and analysing patterns of WVC for multiple species.  We first model wildlife vehicle collisions by expanding upon a formerly developed conceptual analytical framework by Visintin et al. (2016) that relates risk to exposure (species occurrence) and hazard (traffic volume and speed).  As this model framework is able to quantify risk over large spatial scales (covering a large region of south-east Australia), we apply it to six Australian terrestrial mammal species commonly involved in WVC to test its flexibility and potential to support management decision-making.  We analyse model outputs to determine both the existence and strength of common factors contributing to wildlife-vehicle collisions and identify/prioritise areas requiring mitigation.  As the need for and location of WVC mitigation is often derived using species characteristics and movements (e.g. Clevenger et al., 2002), we use the model framework to determine the importance of species occurrence in collision risks on road segments.  Ignoring variables that influence habitat preferences of species may lead to less robust inference by managers (Roger and Ramp, 2009).  Where occurrence is influential for multiple species, managers may decide to control animal presence on or near the roads and this may involve a mixture of mitigation strategies (see Beckmann et al., 2010).  Likewise, if traffic speed or volume is a significant driver of collisions for many species, managers may consider control mechanisms such as speed enforcement or alternative transportation planning.
+In this study we have two objectives; testing a conceptual risk model framework and analysing patterns of WVC for multiple species.  We first model wildlife vehicle collisions by expanding upon the conceptual analytical framework in \Cref{sec:egk} that relates risk to exposure (species occurrence) and hazard (traffic volume and speed).  As this model framework is able to quantify risk over large spatial scales (covering a large region of south-east Australia), we apply it to six Australian terrestrial mammal species commonly involved in WVC to test its flexibility and potential to support management decision-making.  We analyse model outputs to determine both the existence and strength of common factors contributing to wildlife-vehicle collisions and identify/prioritise areas requiring mitigation.  As the need for and location of WVC mitigation is often derived using species characteristics and movements (e.g. \cite{clev02}), we use the model framework to determine the importance of species occurrence in collision risks on road segments.  Ignoring variables that influence habitat preferences of species may lead to less robust inference by managers \citep{roge09}.  Where occurrence is influential for multiple species, managers may decide to control animal presence on or near the roads and this may involve a mixture of mitigation strategies (see \cite{beck10}).  Likewise, if traffic speed or volume is a significant driver of collisions for many species, managers may consider control mechanisms such as speed enforcement or alternative transportation planning.
 
 \section{Materials \& Methods}
 
 \subsection{Study Area}
 
-We used the 227,819 square kilometres state of Victoria in south-east Australia as a study area (Figure 1). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway. Seventy-nine municipal districts control the remaining sealed roads (approx. 125,000 kilometres). Our study combined all sealed roads within the state to analyse collision risk. To organise our spatial data and modelling, we overlaid a spatial grid of one square kilometre resolution (extents: -58000,5661000 x 764000,6224000, projection: GDA94 MGA zone 55, number of cells: 462,786) on the study area. Each grid cell was the modelling unit for species occurrence. All roads in the study area were bisected by the grid resulting in road segments that were approximately one kilometre or less in length. We used these 655,348 segments as our modelling units for the collision model.
+We used the 227,819 square kilometres state of Victoria in south-east Australia as a study area (\Cref{6sp_study_area}). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway. Seventy-nine municipal districts control the remaining sealed roads (approx. 125,000 kilometres). Our study combined all sealed roads within the state to analyse collision risk. To organise our spatial data and modelling, we overlaid a spatial grid of one square kilometre resolution (extents: -58000,5661000 x 764000,6224000, projection: GDA94 MGA zone 55, number of cells: 462,786) on the study area. Each grid cell was the modelling unit for species occurrence. All roads in the study area were bisected by the grid resulting in road segments that were approximately one kilometre or less in length. We used these 655,348 segments as our modelling units for the collision model.
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=.6]{6sp_study_area.png}
+  \caption[]{Study area (state of Victoria, in south-east Australia) showing location of wildlife vehicle collisions.}
+  \label{6sp_study_area}
+\end{figure*}
 
 \subsection{Study Species}
 
-We obtained records of WVC from the Wildlife Victoria database (see 'Collision Model' section below), and selected the species of mammal most frequently recorded as roadkill (Table 1). Only mammals with at least 80 reported collision events were selected for use in the study, resulting in six study species.  Eastern grey kangaroos (Macropus giganteus, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia and share many management issues regarding vehicle collisions (Croft, 2004; Coulson and Eldridge, 2010) with ungulates found in North America and Europe. They occur in groups and have home range sizes between 500 and 800 hectares (ref).  Black swamp wallabies (Wallabia bicolor, Desmarest) are medium-sized (13 to 17 kilograms), solitary mammals more often found at higher elevations and in areas of denser foliage (ref). Common wombats (Vombatus ursinus, Shaw) are medium-sized (22 to 39 kilograms), burrowing mammals and one of three wombat species in Australia (ref). Although wombats occasionally share burrows, they are typically solitary animals and occupy home range sizes of about 20 hectares. Common possums, brushtail (Trichosurus vulpecula, Kerr) and ringtail (Pseudocheirus peregrinus, Boddaert), are small arboreal mammals (one to four kilograms) that are often more abundant throughout, Victorian urban and suburban environments than other arboreal mammals.  Koalas (Phascolarctos cinereus, Goldfuss) are medium-sized (eight to 15 kilograms), arboreal mammals.  They are mainly sedentary due to the exclusive diet of Eucalyptus leaves which have low caloric content and nutritional value and are toxic to many other species.
+We obtained records of WVC from the Wildlife Victoria database (see 'Collision Model' section below), and selected the species of mammal most frequently recorded as roadkill (\Cref{6sp_species_data}). Only mammals with at least 80 reported collision events were selected for use in the study, resulting in six study species.  Eastern grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia and share many management issues regarding vehicle collisions \citep{crof04,coul10} with ungulates found in North America and Europe. They occur in groups and have home range sizes between 500 and 800 hectares (ref).  Black swamp wallabies (\textit{Wallabia bicolor}, Desmarest) are medium-sized (13 to 17 kilograms), solitary mammals more often found at higher elevations and in areas of denser foliage (ref). Common wombats (\textit{Vombatus ursinus}, Shaw) are medium-sized (22 to 39 kilograms), burrowing mammals and one of three wombat species in Australia (ref). Although wombats occasionally share burrows, they are typically solitary animals and occupy home range sizes of about 20 hectares. Common possums, brushtail (\textit{Trichosurus vulpecula}, Kerr) and ringtail (\textit{Pseudocheirus peregrinus}, Boddaert), are small arboreal mammals (one to four kilograms) that are often more abundant throughout, Victorian urban and suburban environments than other arboreal mammals.  Koalas (\textit{Phascolarctos cinereus}, Goldfuss) are medium-sized (eight to 15 kilograms), arboreal mammals.  They are mainly sedentary due to the exclusive diet of Eucalyptus leaves which have low caloric content and nutritional value and are toxic to many other species.
+
+\subsection{Conceptual Model Framework}
+
+We employed the quantitative risk model in \Cref{sec:egk} to examine how collision risk of each species relates to occurrence of the species and traffic volume and speed: 
+
+\begin{equation}
+cloglog(p_i) = \beta_0 + \beta_1*ln(O_i) + \beta_2*ln(V_i) + \beta_3*ln(S_i)
+\end{equation}
+
+\noindent where $p_i=\text{Pr}(Y_i=1)$ is the probability of a collision occurring, $O_i$ is species occurrence, $V_i$ is traffic volume, $S_i$ is traffic speed, in a given place $i$.
+
+Using the open-source software package `R' version 3.3.0 \citep{rdct16} to perform all statistical analyses, we developed species distribution models (SDM) to predict occurrence across the study area for each of the six species, and linear regression models to predict traffic volume and speed. Predicted traffic volume and speed values for all road segments were modelled by regressing annual average daily traffic (AADT) counts and posted speed limit data on anthropogenic variables using random forests; detailed methods are provided in \Cref{sec:egk}. 
+
+\begin{table}[htp]
+\caption{Top six species most frequently reported in wildlife-vehicle collisions in the Wildlife Victoria database (WVD) between 2010 and 2014, inclusive. Species observations from the Victorian Biodiversity Atlas are used for the species occurrence models and recorded collisions from the WVD for the collision risk models. The datasets used in the models are comprised of both presence (P) and randomly-generated background (B) observations.}
+\begin{tabularx}{\textwidth}{llll} \toprule
+Species Name                     &Species Code     &Species Observations     &Recorded Collisions \\ \midrule 
+Eastern Grey Kangaroo 	& EGK	& 10619 : 858P / 9761B 	& 3977 : 1344P / 2633B \\ 
+Common Brushtail Possum & BTP	& 11060 : 1299P / 9761B	& 794 : 257P / 537B \\ 
+Common Ringtail Possum 	& RTP	& 10762 : 1001P / 9761B	& 685 : 212P / 473B \\ 
+Black Swamp Wallaby 	& BSW	& 10739 : 978P / 9761B 	& 352 : 108P / 244B \\ 
+Common Wombat 			& WOM	& 10447 : 686P / 9761B 	& 461 : 156P / 305B \\ 
+Koala 					& KOA 	& 10622 : 861P / 9761B 	& 277 : 81P / 196B \\ 
+\bottomrule
+\end{tabularx}
+\label{6sp_species_data}
+\end{table}
 
 \subsection{Species Occurrence Models}
 
-We obtained observation records of the six study species from the Victorian Biodiversity Atlas (VBA) that satisfied the following criteria: survey date between 1 January 2000 and 31 December 2013 and spatial coordinate certainty of ≤500 metres (DELWP, 2015).  As our occurrence models are correlative, we grouped the records based on identical spatial coordinates regardless of observation dates; thus multiple observations were aggregated to single presence observations in space. For each of the six study species, we selected all spatially unique records of occurrence to represent presences across the study area. As we did not have access to recorded absence data, we generated 10,000 randomly sampled points across the study area as background data and combined them with presence data (Table 1).
+We obtained observation records of the six study species from the Victorian Biodiversity Atlas (VBA) that satisfied the following criteria: survey date between 1 January 2000 and 31 December 2013 and spatial coordinate certainty of $\leq$500 metres \citep{depi16}.  As our occurrence models are correlative, we grouped the records based on identical spatial coordinates regardless of observation dates; thus multiple observations were aggregated to single presence observations in space. For each of the six study species, we selected all spatially unique records of occurrence to represent presences across the study area. As we did not have access to recorded absence data, we generated 10,000 randomly sampled points across the study area as background data and combined them with presence data (\Cref{6sp_species_data}).
 
-For each species, we fit SDM to the data using tools and methods by Elith and Leathwick (2009). We chose Boosted Regression Trees (BRT) (Friedman, 2002) as the statistical method. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors (Elith et al., 2008). We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of .005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions).
+For each species, we fit SDM to the data using tools and methods by \cite{elit09}. We chose Boosted Regression Trees (BRT) \citep{frie02} as the statistical method. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors \citep{elit08}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of .005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions).
 
-We selected predictor variables which influenced the biology, behaviour, and characteristics of all species based on literature review, consultation with species experts, and ecological principles. We considered a range of variables that describe three strata that our six species occupy; the subsurface zone for burrowing animals, the ground plane for ranging species, and the canopy for tree-dwelling wildlife. The Pearson correlation coefficients were less than 0.70 for all pairs of explanatory variables with the exception of elevation and slope (0.71), which is expected to exhibit some collinearity, and tree density and precipitation of the driest month (0.72). For each model, we employed a selection mechanism - based on Elith et al. (2008) - to determine the most useful and parsimonious combination of predictors (Table 3) from a full set of 18 variables (Table 2).
-
-Using the model fits, we predicted relative likelihood of occurrence from the species distribution models to the 1-km spatial grids for six species (Figure 2) and examined the rasters for unrealistic predictions of distributions by plotting atlas records of occurrences on prediction grids and also cross-referencing with expert-derived species range maps. Spatial autocorrelation was also assessed for each species by calculating Moran’s I from model residuals and spatial coordinates and plotted against distance in one kilometre bins (Figure S2).
-
-\subsection{Collision Model}
-
-We obtained spatially unique collision record coordinates from the Wildlife Victoria database for each species spanning a four year period between 1 January, 2010 and 31 December, 2013, including records with a spatial accuracy <300 metres. Wildlife Victoria is a not-for profit organisation that maintains a professional database of state-wide reported wildlife injuries and includes spatial and temporal data for more than 80,000 records.  For this study, we extracted records with cause of injury reported as 'hit by vehicle'.
-
-For each target species, we selected the road segments that intersected with the reported location of each collision and re-coded them with ones (Table 1).  We randomly selected twice the number of 'collision' road segments in the study area, coded them with zeros to represent background data, and combined them with the 'collision' records.  We sampled the relative species occurrence predictions at mid-points of the road segments in the collision dataset by intersecting the road features with the spatial grid.  Traffic modelling in previous work had already predicted traffic speed and volumes for each road segment (Visintin et al., 2016).  This resulted in six modelling datasets (one for each species), each with a binary dependent variable of collision (1) or background (0) and three continuous predictors of species occurrence, traffic volume, and traffic speed.
-
-We regressed (complementary log-log link) collisions on the predictor variables and added a quadratic term for traffic volume to test for road avoidance effects as some species are repelled by roads when traffic volume increases beyond a threshold value (Seiler, 2005; Gagnon et al., 2007). Our final model is expressed as: 
-
-\begin{equation}
-cloglog(p_i) = \beta_0 + \beta_1*ln(O_i) + \beta_2*ln(V_i) + \beta_3*(ln(V_i))^2 + \beta_4*ln(S_i)
-\end{equation}
-
-\noindent where $p_i=Pr(Y_i=1)$ is the relative likelihood of a collision occurring, $O_i$ is species occurrence, $V_i$ is traffic volume, and $S_i$ is traffic speed in a given grid cell $i$.
-
-Using the model fits, we predicted relative collision risk to all roads segments for each of the six study species.  To validate the predictions of the model, we created independent datasets for each species using the same methods as the modelling data but for collisions recorded in the year 2014.  We calculated receiver operator characteristic (ROC) curve scores (Metz, 1978) to assess the ability of the models to correctly predict collision events.
-
-We joined the collision risk predictions for each species with all road segments resulting in a dataset of 655,348 road segments, each with a unique identifier and relative collision likelihood value for each of the six species.  We summed the total number of species with collision likelihoods equal to or greater than .75 for each segment, resulting in all road segments classified as zero through six.  These results were mapped to highlight road segments with high risks for multiple species (Figure 5).
-
-All of the modelling in our study was correlative, however, we explored the influence of seasonal phenomena by partitioning the collision data into four seasons (summer, autumn, winter, spring) and running the models for each subset. Note, due to the small sample bias through partitioning, we fit the data using penalised likelihood methods (Firth, 1993).  We plotted the marginal effects of the predictors on collisions to determine if there were any major deviations from expected patterns based on season (Figure S1).
-
-\section{Results}
-
-The species occurrence models produced ecologically-plausible predictions about the relative likelihood of species presence across Victoria. The deviance (unexplained variation in the data) reduced by the models varied between 26.2\% and 56.6\% and the ROC scores varied between 0.90 and 0.96 (Table 4). The best occurrence models were for the koala and common wombat, each reducing deviance on the null models by 56.6\% and 45.2\%, respectively. 
-
-Only four variables were not selected in every species model and the least selected variable was distance to major waterway (Table 3). The four most influential predictors were annual range of temperature, artificial light, precipitation in the driest month, and seasonal change in vegetation greenness (Figure 3). Relative likelihood of occurrence increased at higher values of artificial light for all species except koalas and wombats. At high values of precipitation in the driest month, occurrence of the two possums deviated considerably from the trends observed in all other species. 
-
-Spatial autocorrelation patterning was evident in the species occurrence model residuals between two and twenty kilometres and correlation values exceeded 0.4 at distances of two kilometres or less for all species except the ringtail possum (Figure S2). The highest overall spatial autocorrelation was in the wombat model residuals; however, both the wombat and koala models demonstrated high levels of spatial autocorrelation at small distances.
-
-All of the collision models fit the data as expected.  Reduction on the null deviance was between 21.3\% and 41.6\% for all models, with ROC scores of 0.83-0.91 when comparing observations with fitted values (Table 4). At least three predictor variables (total of four) were highly significant (p < .001) for each species in the collision models (Table 5).
-
-All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (Figure 4) and the signs of the coefficients were as expected. For all species, collision risk increased with predicted occurrence of the species, and with traffic speed. The smallest increases were for the two possum species; ringtail possums had very small increases in collision risk at high values of predicted occurrence and traffic speed.  Traffic speed was not a highly significant variable for all three arboreal mammal species (koala and two possums) (Table 4).
-
-The strongest effect of traffic speed was for the wombat model, which had a regression coefficient for speed of 3.036; meaning for each 1\% difference in traffic speed, there was an approximate 3.04\% change in collision probability. As shown in Figure 4, the probability of collision nearly doubles when changing from 70 kph to 90 kph with all other variables held constant. In contrast, the regression coefficient for occurrence was 0.62; meaning an approximate 0.62\% change in the probability of a collision event for each 1\% change in wombat occurrence. However, the predictors were not standardised and it should be noted that the influence of occurrence on collision probability was more certain than traffic volume or speed for all species (see standardised z-scores in Table 5).
-
-All of the models had highly significant coefficients for both linear and quadratic terms of traffic volume.  All of the species model fits demonstrated curvilinear responses to AADT with a consistent peak around 3000-4000 vehicles day−1 for all species except the two possums.  Collision risk peaked at higher values of AADT for the ringtail possum and did not increase or decrease as rapidly across all values of AADT for the brushtail possum.  Collision risk increased rapidly with traffic volumes up to approximately 2000 vehicles day-1 and then slowly increased or was relatively constant for all species except the brushtail and ringtail possums where collision risk increased more gradual with traffic volume (up to 10000 vehicles day−1, or more, in the case of brushtail possums).
-
-All of the collision models attained high ROC scores when predictions were compared to independent validation data (recorded in the year 2014).  The lowest score was 0.81 and the highest was 0.90 which fall within the range of the original ROC values from the models fit on the training data.
-
-\section{Discussion}
-
-Our study successfully applied a collision risk model framework to six different mammal species in south-east Australia and identified individual and cumulative species risk for all road segments. We acknowledge that our study is not the first to model collision risk for multiple taxa; others have studied mammals (Clevenger et al., 2002; Cserkesz et al., 2013; Jaarsma et al., 2006), reptiles (Gunson et al. 2012; Langen et al., 2012) and mixed taxonomic groups (Clevenger et al., 2002; Garrah et al., 2015; Langen et al., 2009; Litvaitis and Tash, 2008).  And like ours, all these studies used mixtures of specific environmental and anthropogenic variables in multivariate models. What our research provides is a useful analytical framework for managers that generalises well and allows ongoing scrutiny and tuning of the working parts (Visintin et al., 2016).  For example, if species occurrence is a strong predictor of collisions but the performance of the SDMs are not satisfactory, managers may choose to further improve the sub-models or re-consider how much emphasis is placed on installing mitigation measures on the roads.  Similarly, spatial autocorrelation, detectability, bias, and other factors affecting model calibration and robustness may be assessed accordingly. Moreover, our methodology can be applied to single road segments or across an entire linear network, and on a single species, taxonomic class or mixed group.
-
-The conceptual framework utilised predictors that connect to clear management objectives - species occurrence on road, traffic volume, and driver behaviour (i.e. traffic speed) - that are also consistent with theories of road ecology (see Forman et al., 2003). The models identified common trends in the relationships between the predictors and collision risk. Collision risk increased consistently with higher likelihoods of species occurrence suggesting the usefulness of separating out the exposure parameter via SDMs.  Roger and Ramp (2009) demonstrated the importance of habitat variables (a surrogate for species occurrence) for modelling collisions. The work was extended to use an SDM for wombats (Roger et al., 2012), indicating higher predicted likelihood of species occurrence resulted in higher likelihood of collision.
-
-Collision risks for two arboreal mammals (possums) increased more slowly with occurrence likelihood than for the other mammal species.  This makes ecological sense considering the species’ spend most of the time elevated (mostly in highly connected urban development via power lines and street trees) and would come into contact with moving vehicles less frequently than ground-dwelling species.  However, it is difficult to make direct comparisons between species due to uncertainties in the data.  Potential reporting biases (e.g. not reporting smaller species) and errors (e.g. possum was assumed hit by car due to discovery on or near road verge) may result in artificially increased or decreased sample sizes. Of the 6546 collision records between 2010 and 2013 from the Wildlife Victoria database used in this study, brushtail and ringtail possums are the second and third most reported species, respectively (Table 1).  Thus, the possums could be much more abundant than wombats or wallabies. This suggests a potential avenue for further research – determining how much of the difference in collision risk among species is attributable to differences in abundance, and how much is attributable to other traits of the species that might pre-dispose the species differently to a collision. Studies on reporting bias (Snow et al., 2015) and spatial error (Gunson et al., 2009) in WVC examine some of these issues in more detail.
-
-Collision likelihoods also increased with higher traffic speeds for all species.  With the exception of the brushtail and ringtail possums, the magnitudes of increase were significant, suggesting high vehicle speed is a hazard for wildlife.  Moreover, all of the non-arboreal species had highly significant traffic speed variables and respective coefficient values that were much higher than all other variables. Several other studies have reached similar conclusions on the effects of traffic speed on road mortality of wildlife (e.g. Farmer and Brooks, 2012; Gkritza et al., 2013; Lao et al., 2011; Ramp et al., 2006; Seiler, 2005; Seiler and Helldin, 2006; Sudharsan et al., 2009; van Langevelde et al., 2009).
-
-The consistent quadratic shape observed in the responses to traffic volume for all species (Figure 4) indicates a possible threshold effect.  Roads have been shown to affect animal presence on or near roads at varying levels of traffic (Jaeger et al., 2005; Rhodes et al., 2014).  Identifying traffic volumes that have high relative collision risks for multiple species may help reduce roadkill.  For example, high likelihood of collisions at particular traffic speed and volume levels may warrant further examination to determine potential mitigation such as redistribution and re-routing of vehicles and traffic-calming infrastructure.
-
-Our model framework is correlative and disregards temporal patterns of collision.  A qualitative comparison of the effects plots revealed similar trends for all species between seasons suggesting at most small seasonal differences in collision risk (Figure S1). Partitioning the temporal component at the hourly scale may be more useful as systematic patterns of collisions exist throughout the day (e.g. Litvaitis and Tash, 2008 or Rhodes et al., 2014); however, this was beyond the scope of this work.  A robust temporal analysis would require the expansion of all explanatory variables to a complementary temporal scale, significantly increasing the computational requirements.  Moreover, temporal differences in species movements  must be considered.
-
-The spatial autocorrelation in the occurrence models' residuals was high at small distances and similar for all species.  Any spatial correlation or patterning in the residuals violates statistical independence assumptions and several methods exist in the SDM literature to deal with this issue (Augustin et al., 1996; Dormann et al., 2007 and 2013).  Patterning and higher values of spatial autocorrelation are plausible in certain ecological data and for some species.  For example, correlations in model residuals based on the locations of koalas may be expected as they are selective in their choice of tree species, which are often found in homogeneous patches.  However, high values of spatial autocorrelation or patterning should be carefully reviewed and appropriately addressed when used in statistical models (Wintle and Bardos, 2006).  We included several covariates to represent both sampling bias and the spatial autocorrelation arising from such in our models.  Both distance to town and distance to road were selected by all species models (with the exception of brushtail possums) and explained between two and nine percent of the deviance.  Moreover, boosted regression trees are also equipped to partially address spatial autocorrelation by reducing bias and variance (Elith et al., 2008).
-
-We did not find significant spatial autocorrelation or patterning in the collision model residuals and, thus, we did not choose to address it as part of the scope of this project.  As mentioned previously, our model framework easily allows for this correction by the inclusion of auto-covariates in the model specification (e.g. Dwyer et al., 2016; Farmer and Brooks, 2012; Gomes et al., 2008), or by selecting alternative statistical modelling methods (Zhang et al., 2005).
-
-\subsection{Conclusions \& Implications for Management}
-
-Our study analyses reported vehicle collisions for six terrestrial mammal species in Australia to test the generality of a model framework and to help infer cause and effect. Species occurrence modelling is useful to determine wildlife exposure to risk (on a relative scale). Species occurrence, traffic volume and traffic speed, as single modelled predictors, allow managers to improve models as new data becomes available. Managers may also predict effects by varying predictor values that reside in their authoritative control such as speed limit; here, the model framework functions as a decision planning tool. For example, the relationship between vehicle speed and collision risk was similar for the six species in our study. Moreover, the model predictions may also be spatially aggregated to suggest areas on the road network that require mitigation or further study.  In the case of Victoria, high-speed freeways and highways north of Melbourne had high risks for multiple species. Our framework may also be extended to explore additional threats and predict risk to other taxonomic groups and vulnerable species (i.e., focus of conservation efforts) arising from the use of linear infrastructure.
-
-\begin{figure*}[ht]
-  \centering
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/EGK_SDM.png}}
-  \put(90,160){Eastern Grey Kangaroo}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/BTP_SDM.png}}
-  \put(90,160){Common Brushtail Possum}  
-  \end{picture}
-  \\
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/RTP_SDM.png}}
-  \put(90,160){Common Ringtail Possum}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/BSW_SDM.png}}
-  \put(90,160){Black Swamp Wallaby}  
-  \end{picture}
-  \\
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/WOM_SDM.png}}
-  \put(90,160){Common Wombat}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/KOA_SDM.png}}
-  \put(90,160){Koala}  
-  \end{picture}
-  \\
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[trim=2cm 6cm 2cm 6cm,clip,width=8cm]{/home/casey/Research/Graphics_Repo/ECH_SDM.png}}
-  \put(90,160){Echidna}  
-  \end{picture}
-  \caption[]{Predicted relative likelihood of occurrence across State of Victoria by species.}
-  \label{predictions}
-\end{figure*}
-
-\begin{figure*}[ht]
-  %\centering
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/GREEN.png}
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/TEMPANRNG.png}
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/ELEV.png}
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/PRECDM.png}
-  \caption[]{Effects of four most significant predictor variables on relative likelihood of occurrence per species.}
-  \label{term_occ}
-\end{figure*}
-
-\begin{figure*}[ht]
-  \centering
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/COLL_OCC.png}
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/COLL_TVOL.png}
-  \includegraphics[scale=.3]{/home/casey/Research/Graphics_Repo/COLL_TSPD.png}
-  \caption[]{Effects of predictor variables on relative likelihood of collision per species.}
-  \label{term_coll_7sp}
-\end{figure*}
-
-\begin{table}[ht]
-\caption[Predictors Selected per Species]{\raggedright{Final predictors selected for each species in species occurrence models and relative importance in model expressed as percentage contribution to reduction in deviance.  ``---'' indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}}
-{\scriptsize
-\begin{tabular}{llllllll} \toprule
-Predictor    &EGK       &BTP       &RTP       &BSW       &WOM       &KOA       &ECH\\
-\midrule 
-ELEV & 11.44 & 9.91 & 6.11 & 7.08 & 5.96 & 7.08 & 8.75 \\ 
-  GRASS & 7.37 & 8.41 & 6.73 & 7.63 & 7.03 & 7.02 & 8.49 \\ 
-  GREEN & \B{18.05} & 11.03 & 8.3 & 6.89 & 7.35 & 6.78 & \B{9.29} \\ 
-  HYDRODIST & --- & --- & --- & --- & --- & 2.08 & 4.24 \\ 
-  HYDROFLOW & --- & --- & --- & 3.52 & 3.7 & 2.42 & 3.65 \\ 
-  ISOTHERM & 5.83 & --- & 5.12 & --- & 2.46 & --- & --- \\ 
-  LIGHT & 6.14 & 6.95 & 6.96 & 5.95 & 7.11 & 5.29 & 7.58 \\ 
-  MNTEMPWQ & 4.51 & 6.78 & \B{8.6} & 5.69 & 5.38 & 5.66 & 4.92 \\ 
-  PRECDM & 7.21 & 11.13 & 7.38 & 6.13 & \B{13.54} & 5.48 & 4.98 \\ 
-  PRECSEAS & --- & 6.49 & 2.93 & 3.52 & 3.03 & \B{15.03} & 5.49 \\ 
-  ROADDIST & 4.6 & --- & 4.11 & 5.33 & 5.16 & 4.26 & 6.39 \\ 
-  SLOPE & 7.84 & 7.3 & 7.26 & 6.79 & 9.84 & 6.33 & 7.8 \\ 
-  SOILBULK & 7.94 & 10.72 & 6.96 & 7.41 & 6.34 & 6.73 & 6.77 \\ 
-  SOILEXCH & --- & 7 & 7.4 & 4.8 & 5.11 & 3.32 & 3.29 \\ 
-  SOILSAND & 5.53 & --- & 4.08 & 3.82 & 2.99 & 4.16 & 4.37 \\ 
-  TEMPANRANGE & 8.23 & \B{14.27} & 7.59 & \B{12.81} & 8.25 & 8.13 & 8.12 \\ 
-  TOWNDIST & --- & --- & 4.39 & 2.97 & 2.42 & 3.37 & --- \\ 
-  TREEDENS & 5.3 & --- & 6.07 & 9.67 & 4.32 & 6.85 & 5.86 \\
-\bottomrule
-\end{tabular}
-}
-\label{final_var}
-\end{table}
-
-\begin{table}[ht]
-\caption[Species Used in Study]{\raggedright{Top ten species involved in WVC in Victoria.  Species observations are used for the species occurrence models and recorded collisions for the collision risk models.  The datasets used in the models are comprised of both presences (P) and psuedo-absences (A). Note, the psuedo-absences are approximately triple the presences due to the elimination of null values post sampling of raster grids.}}
-{\scriptsize
-\begin{tabular}{llllr} \toprule
-Species Name                     &Species Code     &n Species Observations (2000-2014)     &n Recorded Collisions (2010-2014)\\ \midrule 
-Eastern Grey Kangaroo & EGK & 3527 : 733P/2794A & 12413 : 3160P/9253A \\ 
-Common Brushtail Possum & BTP & 3828 : 1056P/2772A & 1635 : 389P/1246A \\ 
-Common Ringtail Possum & RTP & 3569 : 787P/2782A & 1388 : 332P/1056A \\ 
-Black Swamp Wallaby & BSW & 3641 : 798P/2843A & 1225 : 291P/934A \\ 
-Common Wombat & WOM & 3717 : 755P/2962A & 978 : 253P/725A \\ 
-Koala & KOA & 3858 : 767P/3091A & 662 : 158P/504A \\ 
-Echidna & ECH & 3632 : 691P/2941A & 389 : 92P/297A \\ 
-\bottomrule
-\end{tabular}
-}
-\label{species}
-\end{table}
-
-\begin{table}[ht]
-\caption[Predictor Variables Used in Statistical Models]{\raggedright{Predictor variables used in species occurrence (SO) models and collision risk (CR) models.  Spatial coordinates for species presences and psuedo-absences were used to sample from predictor variable grids at one square kilometre resolution for occurrence models.  The centroids of road segment with reported collisions were used to sample from one square kilometre occurrence model predictions.  Note, reported means and ranges are for entire study area.}}
-{\scriptsize
-\begin{tabular}{llllr} \toprule
+\begin{table}[htp]
+\caption{Predictor variables used in species occurrence (SO) models and collision risk (CR) models. Spatial coordinates for species presences and psuedo-absences were used to sample from predictor variable grids at one square kilometre resolution for occurrence models. The centroids of road segment with reported collisions were used to sample from one square kilometre occurrence model predictions. Note, reported means and ranges are for entire study area.}
+\begin{tabularx}{\textwidth}{lYll} \toprule
 Variable       &Description                                               &Units          &Range : Mean\\
 \midrule 
-ELEV (SO)       &Elevation of Terrain Above Sea Level                     &$m$            &-0.39-1890.66 : 252.83\\
-GRASS (SO)      &Mean Annual Grass Growth					             &$kg/ha$        &0-15.74 : 5.45\\
+ELEV (SO)       &Elevation of Terrain Above Sea Level                     &$m$			  &-0.39-1890.66 : 252.83\\
+GRASS (SO)      &Mean Annual Grass Growth					              &$kg ha^{-1}$   &0-15.74 : 5.45\\
 GREEN (SO)      &Mean Seasonal Change in Vegetation Greenness             &--             &-.62-.68 : 0.21\\
 HYDRODIST (SO)  &Distance from Major Waterway                             &$km$           &0-95 : 10.09\\
 HYDROFLOW (SO)  &Hydrological Flow Accumulation                           &--             &1-32767 : 197.95\\
@@ -231,51 +96,174 @@ PRECDM (SO)     &Precipitation of Driest Month                            &$mm$ 
 PRECSEAS (SO)   &Precipitation Seasonality                                &$mm$           &0-43 : 23.99\\
 ROADDIST (SO)   &Distance from Roadway                                    &$km$           &0-36.55 : 2.02\\
 SLOPE (SO)      &Slope of Terrain                                         &\%             &0-41.61 : 2.69\\
-SOILBULK (SO)   &Mean Soil Bulk Density at 2.5cm Depth                    &$kg/m^3$       &0-1365 : 1129.13\\
-SOILEXCH (SO)   &Mean Soil Cation Exchange Capacity at 2.5cm Depth        &$cmolc/kg$     &10-102 : 24.84\\
+SOILBULK (SO)   &Mean Soil Bulk Density at 2.5cm Depth                    &$kg m^{-3}$       &0-1365 : 1129.13\\
+SOILEXCH (SO)   &Mean Soil Cation Exchange Capacity at 2.5cm Depth        &$cmolc kg^{-1}$     &10-102 : 24.84\\
 SOILSAND (SO)   &Mean Soil Texture Fraction Sand at 2.5cm Depth           &\%             &23-100 : 55.11\\
 TEMPANRANGE (SO)&Temperature Annual Range                                 &$^{\circ}C*10$ &0-289 : 245.10\\
 TOWNDIST (SO)   &Distance from Town Center                                &$km$           &0-46.10 : 5.76\\
-TREEDENS (SO)   &Tree Cover                                               &\%             &0-1 : 0.28\\
+TREEDENS (SO)   &Tree Cover                                               &decimal \%     &0-1 : 0.28\\
 &&&\\
-BSW (CR)        &Relative Probability of Wallaby Occ. per $km^2$          &--             &0.02-0.91 : 0.20\\
-BTP (CR)        &Relative Probability of Brushtail Possum Occ. per $km^2$ &--             &0.02-0.91 : 0.21\\
-ECH (CR)        &Relative Probability of Echidna Occ. per $km^2$          &--             &0.04-0.80 : 0.21\\
-EGK (CR)        &Relative Probability of Kangaroo Occ. per $km^2$         &--             &0.02-0.83 : 0.21\\
-KOA (CR)        &Relative Probability of Koala Occ. per $km^2$            &--             &0.01-0.97 : 0.17\\
-RTP (CR)        &Relative Probability of Ringtail Possum Occ. per $km^2$  &--             &0.01-0.93 : 0.18\\
-TSPD (CR)       &Predicted Vehicle Speed per Road Segment                 &$km/h$         &20.36-107.55 : 61.41\\
-TVOL (CR)       &Predicted Vehicle Volume per Road Segment                &$vehicles/day$ &0.29-47639.76 : 4309.27\\
-WOM (CR)        &Relative Probability of Wombat Occ. per $km^2$           &--             &0.01-0.90 : 0.19\\
+BSW (CR)        &Relative Probability of Wallaby Occ. per $km^2$          &--             &0.01-0.98 : 0.18\\
+BTP (CR)        &Relative Probability of Brushtail Possum Occ. per $km^2$ &--             &0.01-0.98 : 0.20\\
+EGK (CR)        &Relative Probability of Kangaroo Occ. per $km^2$         &--             &0.01-0.97 : 0.13\\
+KOA (CR)        &Relative Probability of Koala Occ. per $km^2$            &--             &0.01-0.98 : 0.12\\
+RTP (CR)        &Relative Probability of Ringtail Possum Occ. per $km^2$  &--             &0.01-0.98 : 0.16\\
+TSPD (CR)       &Predicted Vehicle Speed per Road Segment                 &$km h^{-1}$         &20.36-107.55 : 61.41\\
+TVOL (CR)       &Predicted Vehicle Volume per Road Segment                &$vehicles day^{-1}$ &0.29-47639.76 : 4309.27\\
+WOM (CR)        &Relative Probability of Wombat Occ. per $km^2$           &--             &0.01-0.96 : 0.12\\
 \bottomrule
-\end{tabular}
-}
-\label{variables_7sp}
+\end{tabularx}
+\label{6sp_variables}
 \end{table}
 
-\begin{table}[ht]
-\caption[Statistical Model Performance]{\raggedright{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species.  Note, due to the nature of gradient boosting, errors on both deviance and ROC scores are reported as $\pm$ values for SO models.}}
-{\scriptsize
-\begin{tabular}{lllllr} \toprule
-Species Name                     &\% Deviance (SO)   &ROC (SO)       &\% Deviance (CR)  &ROC (CR)\\
+We selected predictor variables which influenced the biology, behaviour, and characteristics of all species based on literature review, consultation with species experts, and ecological principles. We considered a range of variables that describe three strata that our six species occupy; the subsurface zone for burrowing animals, the ground plane for ranging species, and the canopy for tree-dwelling wildlife. The Pearson correlation coefficients were less than 0.70 for all pairs of explanatory variables with the exception of elevation and slope (0.71), which is expected to exhibit some collinearity, and tree density and precipitation of the driest month (0.72). For each model, we employed a selection mechanism - based on \cite{elit08} - to determine the most useful and parsimonious combination of predictors (\Cref{6sp_final_var}) from a full set of 18 variables (\Cref{6sp_variables}).
+
+\begin{table}[htp]
+\caption{Final predictors selected for each species in species occurrence models and relative importance in model expressed as percentage contribution to reduction in unexplained variation in the data. “---” indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}
+\begin{tabularx}{\textwidth}{llllllll} \toprule
+Predictor & EGK & BTP & RTP & BSW & WOM & KOA \\ 
+\midrule
+ELEV & 10.34 & 7.71 & 5.66 & 7.1 & 6.59 & 7.11 \\ 
+GRASS & 8.78 & 6.4 & 5.83 & 7.19 & 6.81 & 9.13 \\ 
+GREEN & 8.3 & 8.78 & 7.89 & 8.86 & 7.47 & 9.09 \\ 
+HYDRODIST & --- & 2.98 & --- & 2.34 & --- & --- \\ 
+HYDROFLOW & --- & 3.46 & 2.79 & 2.74 & 3.25 & 3.13 \\ 
+ISOTHERM & 2.42 & 2.27 & 2.47 & --- & 2.7 & --- \\ 
+LIGHT & \B{12.93} & 9.23 & \B{11.12} & 7.37 & 7.3 & 6.25 \\ 
+MNTEMPWQ & 3.96 & 5.17 & 5.87 & 3.69 & 4.3 & 5.5 \\ 
+PRECDM & 7.74 & 7.06 & 6.68 & 5.25 & \B{13.04} & 5.76 \\ 
+PRECSEAS & 3.22 & 4.91 & 4.64 & 4.36 & 4.39 & 7.13 \\ 
+ROADDIST & 5.9 & 6.78 & 7.43 & 9.32 & 6.96 & 7.76 \\ 
+SLOPE & 9.05 & 6.18 & 6.17 & 6.83 & 6.86 & 5.77 \\ 
+SOILBULK & 8.8 & 6.23 & 5.29 & 4.57 & 6.12 & 5.82 \\ 
+SOILEXCH & --- & 3.38 & 3.48 & 3.75 & 3.79 & --- \\ 
+SOILSAND & 6.03 & 3.1 & 3.78 & 3.56 & 3.25 & 4.11 \\ 
+TEMPANRANGE & 5.79 & \B{10.19} & 10.36 & 9.57 & 7.91 & \B{10.84} \\ 
+TOWNDIST & --- & --- & 2.97 & 3.37 & 4.16 & 3.66 \\ 
+TREEDENS & 6.74 & 6.18 & 7.57 & \B{10.12} & 5.09 & 8.92 \\ 
+\bottomrule
+\end{tabularx}
+\label{6sp_final_var}
+\end{table}
+
+Using the model fits, we predicted relative likelihood of occurrence from the species distribution models to the 1-km spatial grids for six species (\Cref{6sp_occ_preds}) and examined the rasters for unrealistic predictions of distributions by plotting atlas records of occurrences on prediction grids and also cross-referencing with expert-derived species range maps. Spatial autocorrelation was also assessed for each species by calculating Moran’s I from model residuals and spatial coordinates and plotted against distance in one kilometre bins (\Cref{6sp_sac}).
+
+\begin{figure*}[htp]
+  \centering
+  \scriptsize
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_EGK_preds_brt.png}}
+  \put(90,180){Eastern Grey Kangaroo}  
+  \end{picture}
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_BTP_preds_brt.png}}
+  \put(90,180){Common Brushtail Possum}  
+  \end{picture}
+  \\[1cm]
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_RTP_preds_brt.png}}
+  \put(90,180){Common Ringtail Possum}  
+  \end{picture}
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_BSW_preds_brt.png}}
+  \put(90,180){Black Swamp Wallaby}  
+  \end{picture}
+  \\[1cm]
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_WOM_preds_brt.png}}
+  \put(90,180){Common Wombat}  
+  \end{picture}
+  \begin{picture}(230,130)
+  \put(0,50){\includegraphics[width=7.5cm]{6sp_KOA_preds_brt.png}}
+  \put(90,180){Koala}  
+  \end{picture}
+  %\vspace*{-1.5cm}
+  \caption[]{Predicted relative likelihood of occurrence of each species across the State of Victoria. Darker shading indicates higher relative likelihood of occurrence.}
+  \label{6sp_occ_preds}
+\end{figure*}
+
+\subsection{Collision Model}
+
+We obtained spatially unique collision record coordinates from the Wildlife Victoria database for each species spanning a four year period between 1 January, 2010 and 31 December, 2013, including records with a spatial accuracy $<$300 metres. Wildlife Victoria is a not-for profit organisation that maintains a professional database of state-wide reported wildlife injuries and includes spatial and temporal data for more than 80,000 records.  For this study, we extracted records with cause of injury reported as 'hit by vehicle'.
+
+For each target species, we selected the road segments that intersected with the reported location of each collision and re-coded them with ones (\Cref{6sp_species_data}).  We randomly selected twice the number of 'collision' road segments in the study area, coded them with zeros to represent background data, and combined them with the 'collision' records.  We sampled the relative species occurrence predictions at mid-points of the road segments in the collision dataset by intersecting the road features with the spatial grid.  Traffic modelling in \Cref{sec:egk} had already predicted traffic speed and volumes for each road segment.  This resulted in six modelling datasets (one for each species), each with a binary dependent variable of collision (1) or background (0) and three continuous predictors of species occurrence, traffic volume, and traffic speed.
+
+We regressed (complementary log-log link) collisions on the predictor variables and added a quadratic term for traffic volume to test for road avoidance effects as some species are repelled by roads when traffic volume increases beyond a threshold value \citep{seil05,gagn07}. Our final model is expressed as: 
+
+\begin{equation}
+cloglog(p_i) = \beta_0 + \beta_1*ln(O_i) + \beta_2*ln(V_i) + \beta_3*(ln(V_i))^2 + \beta_4*ln(S_i)
+\end{equation}
+
+\noindent where $p_i=\text{Pr}(Y_i=1)$ is the relative likelihood of a collision occurring, $O_i$ is species occurrence, $V_i$ is traffic volume, and $S_i$ is traffic speed in a given grid cell $i$.
+
+Using the model fits, we predicted relative collision risk to all roads segments for each of the six study species.  To validate the predictions of the model, we created independent datasets for each species using the same methods as the modelling data but for collisions recorded in the year 2014.  We calculated receiver operator characteristic (ROC) curve scores \citep{metz78} to assess the ability of the models to correctly predict collision events.
+
+We joined the collision risk predictions for each species with all road segments resulting in a dataset of 655,348 road segments, each with a unique identifier and relative collision likelihood value for each of the six species.  We summed the total number of species with collision likelihoods equal to or greater than .75 for each segment, resulting in all road segments classified as zero through six.  These results were mapped to highlight road segments with high risks for multiple species (\Cref{6sp_collrisk}).
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[trim={2cm 0 0 0},clip,scale=.6]{6sp_coll_risk.png}
+  \caption[]{Road segments with predictions of high collision likelihood ($>$0.75) for at least one of the six species. Lighter, thinner lines represent a few species with high collision likelihood (minimum one) and darker, thicker lines represent more species (maximum six).  The entire road network is shown as faint gray lines for context.}
+  \label{6sp_collrisk}
+\end{figure*}
+
+All of the modelling in our study was correlative, however, we explored the influence of seasonal phenomena by partitioning the collision data into four seasons (summer, autumn, winter, spring) and running the models for each subset. Note, due to the small sample bias through partitioning, we fit the data using penalised likelihood methods \citep{firt93}.  We plotted the marginal effects of the predictors on collisions to determine if there were any major deviations from expected patterns based on season (\Cref{6sp_seas_effects}).
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{6sp_occ_seasons.png}\\
+  \includegraphics[scale=1]{6sp_tvol_seasons.png}
+  \includegraphics[scale=1]{6sp_tspd_seasons.png}
+  \caption[]{Marginal effects of predictor variables on relative likelihood of collision per species.}
+  \label{6sp_seas_effects}
+\end{figure*}
+
+\section{Results}
+
+The species occurrence models produced ecologically-plausible predictions about the relative likelihood of species presence across Victoria. The deviance (unexplained variation in the data) reduced by the models varied between 26.2\% and 56.6\% and the ROC scores varied between 0.90 and 0.96 (\Cref{6sp_models}). The best occurrence models were for the koala and common wombat, each reducing deviance on the null models by 56.6\% and 45.2\%, respectively. 
+
+\begin{table}[htp]
+\caption{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species. Note, due to the nature of gradient boosting, errors on both deviance and ROC scores are reported as $\pm$ values for SO models.}
+\begin{tabularx}{\textwidth}{lllll} \toprule
+Species Name			&\% Deviance (SO)	&ROC (SO)			&\% Deviance (CR)	&ROC (CR)\\
 \midrule 
-Eastern Grey Kangaroo & 24.06$\pm$1.32 & 0.83$\pm$0.01 & 16.62 & 0.78 \\ 
-Common Brushtail Possum & 18.38$\pm$1.06 & 0.78$\pm$0.01 & 21.04 & 0.82 \\ 
-Common Ringtail Possum & 15.19$\pm$1.01 & 0.76$\pm$0.01 & 31.64 & 0.86 \\ 
-Black Swamp Wallaby & 12.14$\pm$1.61 & 0.74$\pm$0.01 & 14.91 & 0.78 \\ 
-Common Wombat & 36.59$\pm$1.81 & 0.89$\pm$0.01 & 32.33 & 0.88 \\ 
-Koala & 41.01$\pm$2.51 & 0.90$\pm$0.01 & 26.95 & 0.85 \\ 
-Echidna & 18.90$\pm$1.57 & 0.78$\pm$0.01 & 14.34 & 0.76 \\
+Eastern Grey Kangaroo	& 36.0$\pm$1.1 		& 0.90$\pm$0.005	& 24.0 				& 0.83 \\ 
+Common Brushtail Possum & 26.2$\pm$0.6 		& 0.91$\pm$0.005 	& 29.6 				& 0.84 \\ 
+Common Ringtail Possum 	& 41.2$\pm$1.2 		& 0.92$\pm$0.003 	& 41.6 				& 0.90 \\ 
+Black Swamp Wallaby 	& 37.7$\pm$1.0 		& 0.90$\pm$0.004 	& 24.9 				& 0.83 \\ 
+Common Wombat 			& 45.2$\pm$1.5 		& 0.94$\pm$0.004 	& 41.4 				& 0.91 \\ 
+Koala 					& 56.6$\pm$1.1 		& 0.96$\pm$0.002 	& 21.3 				& 0.84 \\ 
 \bottomrule
-\end{tabular}
-}
-\label{models_7sp}
+\end{tabularx}
+\label{6sp_models}
 \end{table}
 
-\begin{table}[ht]
-\caption[Collision Models Summaries]{\raggedright{Summary of collision models fits.  Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.}}
-\scriptsize{
-\begin{tabular}{lllllll} \toprule
+Only four variables were not selected in every species model and the least selected variable was distance to major waterway (\Cref{6sp_final_var}). The four most influential predictors were annual range of temperature, artificial light, precipitation in the driest month, and seasonal change in vegetation greenness (\Cref{6sp_term_occ}). Relative likelihood of occurrence increased at higher values of artificial light for all species except koalas and wombats. At high values of precipitation in the driest month, occurrence of the two possums deviated considerably from the trends observed in all other species. 
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{6sp_green.png}
+  \includegraphics[scale=1]{6sp_tempanrange.png}
+  \includegraphics[scale=1]{6sp_light.png}
+  \includegraphics[scale=1]{6sp_precdm.png}
+  \caption[]{Effects of four most significant predictor variables on relative likelihood of occurrence per species.}
+  \label{6sp_term_occ}
+\end{figure*}
+
+Spatial autocorrelation patterning was evident in the species occurrence model residuals between two and twenty kilometres and correlation values exceeded 0.4 at distances of two kilometres or less for all species except the ringtail possum (\Cref{6sp_sac}). The highest overall spatial autocorrelation was in the wombat model residuals; however, both the wombat and koala models demonstrated high levels of spatial autocorrelation at small distances.
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=.4]{6sp_sac.png}
+  \caption[]{Spatial autocorrelation in occupancy models residuals for each species grouped by distance between observations. Trend lines use numbers to indicate species (see legend).}
+  \label{6sp_sac}
+\end{figure*}
+
+All of the collision models fit the data as expected.  Reduction on the null deviance was between 21.3\% and 41.6\% for all models, with ROC scores of 0.83-0.91 when comparing observations with fitted values (\Cref{6sp_models}). At least three predictor variables (total of four) were highly significant (p$<$.001) for each species in the collision models (\Cref{6sp_sum_coll}).
+
+\begin{table}[htp]
+\caption{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables (p$<$.001) are marked with asterisks.}
+\begin{tabularx}{\textwidth}{lllllll} \toprule
 Species & Variable & Coefficient & Std. Error & $Z\text{-value}$ & $\PRZ$ & ANOVA \\ 
 \midrule
 Eastern Grey Kangaroo & Intercept & -1.31 & 0.02752 & -47.6 & 0 & -- \\ 
@@ -320,7 +308,46 @@ Echidna & Intercept & -1.38 & 0.1567 & -8.806 & 4.5e-17 & -- \\
    & TVOL$^2$ & -0.1365 & 0.08696 & -1.57 & 0.12 & 4.271 \\ 
    & TSPD & 1.959 & 0.606 & 3.233 & 0.0013 & 18.75 \\  
 \bottomrule
-\end{tabular}
-}
-\label{sum_coll_7sp}
+\end{tabularx}
+\label{6sp_sum_coll}
 \end{table}
+
+All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (\Cref{6sp_effects}) and the signs of the coefficients were as expected. For all species, collision risk increased with predicted occurrence of the species, and with traffic speed. The smallest increases were for the two possum species; ringtail possums had very small increases in collision risk at high values of predicted occurrence and traffic speed.  Traffic speed was not a highly significant variable for all three arboreal mammal species (koala and two possums) (\Cref{6sp_models}).
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{6sp_occ.png}\\
+  \includegraphics[scale=1]{6sp_tvol.png}
+  \includegraphics[scale=1]{6sp_tspd.png}
+  \caption[]{Marginal effects of predictor variables on relative likelihood of collision per species.}
+  \label{6sp_effects}
+\end{figure*}
+
+The strongest effect of traffic speed was for the wombat model, which had a regression coefficient for speed of 3.036; meaning for each 1\% difference in traffic speed, there was an approximate 3.04\% change in collision probability. As shown in \Cref{6sp_effects}, the probability of collision nearly doubles when changing from 70 kph to 90 kph with all other variables held constant. In contrast, the regression coefficient for occurrence was 0.62; meaning an approximate 0.62\% change in the probability of a collision event for each 1\% change in wombat occurrence. However, the predictors were not standardised and it should be noted that the influence of occurrence on collision probability was more certain than traffic volume or speed for all species (see standardised z-scores in \Cref{6sp_sum_coll}).
+
+All of the models had highly significant coefficients for both linear and quadratic terms of traffic volume.  All of the species model fits demonstrated curvilinear responses to AADT with a consistent peak around 3000-4000 vehicles day−1 for all species except the two possums.  Collision risk peaked at higher values of AADT for the ringtail possum and did not increase or decrease as rapidly across all values of AADT for the brushtail possum.  Collision risk increased rapidly with traffic volumes up to approximately 2000 vehicles day-1 and then slowly increased or was relatively constant for all species except the brushtail and ringtail possums where collision risk increased more gradual with traffic volume (up to 10000 vehicles day−1, or more, in the case of brushtail possums).
+
+All of the collision models attained high ROC scores when predictions were compared to independent validation data (recorded in the year 2014).  The lowest score was 0.81 and the highest was 0.90 which fall within the range of the original ROC values from the models fit on the training data.
+
+\section{Discussion}
+
+Our study successfully applied a collision risk model framework to six different mammal species in south-east Australia and identified individual and cumulative species risk for all road segments. We acknowledge that our study is not the first to model collision risk for multiple taxa; others have studied mammals \citep{clev02,cser13,jaar06}, reptiles \citep{guns12,lang12} and mixed taxonomic groups \citep{clev02,garr15,lang09,litv08}.  And like ours, all these studies used mixtures of specific environmental and anthropogenic variables in multivariate models. What our research provides is a useful analytical framework for managers that generalises well and allows ongoing scrutiny and tuning of the working parts.  For example, if species occurrence is a strong predictor of collisions but the performance of the SDMs are not satisfactory, managers may choose to further improve the sub-models or re-consider how much emphasis is placed on installing mitigation measures on the roads.  Similarly, spatial autocorrelation, detectability, bias, and other factors affecting model calibration and robustness may be assessed accordingly. Moreover, our methodology can be applied to single road segments or across an entire linear network, and on a single species, taxonomic class or mixed group.
+
+The conceptual framework utilised predictors that connect to clear management objectives - species occurrence on road, traffic volume, and driver behaviour (i.e. traffic speed) - that are also consistent with theories of road ecology (see \cite{form03}). The models identified common trends in the relationships between the predictors and collision risk. Collision risk increased consistently with higher likelihoods of species occurrence suggesting the usefulness of separating out the exposure parameter via SDMs. \cite{roge09} demonstrated the importance of habitat variables (a surrogate for species occurrence) for modelling collisions. The work was extended to use an SDM for wombats \citep{roge12}, indicating higher predicted likelihood of species occurrence resulted in higher likelihood of collision.
+
+Collision risks for two arboreal mammals (possums) increased more slowly with occurrence likelihood than for the other mammal species.  This makes ecological sense considering the species’ spend most of the time elevated (mostly in highly connected urban development via power lines and street trees) and would come into contact with moving vehicles less frequently than ground-dwelling species.  However, it is difficult to make direct comparisons between species due to uncertainties in the data.  Potential reporting biases (e.g. not reporting smaller species) and errors (e.g. possum was assumed hit by car due to discovery on or near road verge) may result in artificially increased or decreased sample sizes. Of the 6546 collision records between 2010 and 2013 from the Wildlife Victoria database used in this study, brushtail and ringtail possums are the second and third most reported species, respectively (\Cref{6sp_species_data}).  Thus, the possums could be much more abundant than wombats or wallabies. This suggests a potential avenue for further research – determining how much of the difference in collision risk among species is attributable to differences in abundance, and how much is attributable to other traits of the species that might pre-dispose the species differently to a collision. Studies on reporting bias \citep{snow15} and spatial error \citep{guns09} in WVC examine some of these issues in more detail.
+
+Collision likelihoods also increased with higher traffic speeds for all species.  With the exception of the brushtail and ringtail possums, the magnitudes of increase were significant, suggesting high vehicle speed is a hazard for wildlife.  Moreover, all of the non-arboreal species had highly significant traffic speed variables and respective coefficient values that were much higher than all other variables. Several other studies have reached similar conclusions on the effects of traffic speed on road mortality of wildlife (e.g. \cite{farm12};\cite{gkri13};\cite{lao11};\cite{ramp06};\cite{seil05};\cite{seil06};\cite{sudh09};\cite{vanl09}).
+
+The consistent quadratic shape observed in the responses to traffic volume for all species (\Cref{6sp_effects}) indicates a possible threshold effect.  Roads have been shown to affect animal presence on or near roads at varying levels of traffic \citep{jaeg05,rhod14}.  Identifying traffic volumes that have high relative collision risks for multiple species may help reduce roadkill.  For example, high likelihood of collisions at particular traffic speed and volume levels may warrant further examination to determine potential mitigation such as redistribution and re-routing of vehicles and traffic-calming infrastructure.
+
+Our model framework is correlative and disregards temporal patterns of collision.  A qualitative comparison of the effects plots revealed similar trends for all species between seasons suggesting at most small seasonal differences in collision risk (\Cref{6sp_seas_effects}). Partitioning the temporal component at the hourly scale may be more useful as systematic patterns of collisions exist throughout the day (e.g. \cite{litv08} or \cite{rhod14}); however, this was beyond the scope of this work.  A robust temporal analysis would require the expansion of all explanatory variables to a complementary temporal scale, significantly increasing the computational requirements.  Moreover, temporal differences in species movements  must be considered.
+
+The spatial autocorrelation in the occurrence models' residuals was high at small distances and similar for all species.  Any spatial correlation or patterning in the residuals violates statistical independence assumptions and several methods exist in the SDM literature to deal with this issue \citep{augu96,dorm07,dorm13}.  Patterning and higher values of spatial autocorrelation are plausible in certain ecological data and for some species.  For example, correlations in model residuals based on the locations of koalas may be expected as they are selective in their choice of tree species, which are often found in homogeneous patches.  However, high values of spatial autocorrelation or patterning should be carefully reviewed and appropriately addressed when used in statistical models \citep{wint06}.  We included several covariates to represent both sampling bias and the spatial autocorrelation arising from such in our models.  Both distance to town and distance to road were selected by all species models (with the exception of brushtail possums) and explained between two and nine percent of the deviance.  Moreover, boosted regression trees are also equipped to partially address spatial autocorrelation by reducing bias and variance \citep{elit08}.
+
+We did not find significant spatial autocorrelation or patterning in the collision model residuals and, thus, we did not choose to address it as part of the scope of this project.  As mentioned previously, our model framework easily allows for this correction by the inclusion of auto-covariates in the model specification (e.g. \cite{dwye16};\cite{farm12};\cite{gome08}), or by selecting alternative statistical modelling methods \citep{zhan05}.
+
+\subsection{Conclusions \& Implications for Management}
+
+Our study analyses reported vehicle collisions for six terrestrial mammal species in Australia to test the generality of a model framework and to help infer cause and effect. Species occurrence modelling is useful to determine wildlife exposure to risk (on a relative scale). Species occurrence, traffic volume and traffic speed, as single modelled predictors, allow managers to improve models as new data becomes available. Managers may also predict effects by varying predictor values that reside in their authoritative control such as speed limit; here, the model framework functions as a decision planning tool. For example, the relationship between vehicle speed and collision risk was similar for the six species in our study. Moreover, the model predictions may also be spatially aggregated to suggest areas on the road network that require mitigation or further study.  In the case of Victoria, high-speed freeways and highways north of Melbourne had high risks for multiple species. Our framework may also be extended to explore additional threats and predict risk to other taxonomic groups and vulnerable species (i.e., focus of conservation efforts) arising from the use of linear infrastructure.
+
