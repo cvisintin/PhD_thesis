@@ -11,11 +11,11 @@ The ability for a predictive model to generate reasonable and useful information
 \newpage
 \section{Introduction}
 
-Despite providing social amenity around the world, the development and use of roads has unfortunate ecological consequences (Forman, 2003). Perhaps one of the most directly visible and confronting issues are vehicle strikes to animals, especially large terrestrial vertebrates. These collision events are costly and often result in property damage, injury, and death. In North America, millions of animals are estimated to be killed by vehicle strikes each day (Forman and Alexander, 1998) and annual economic costs due to collisions exceed eight billion dollars (Huijser et al., 2007). However, these adverse effects are not unique to North America and may occur at all locations where roads exist or are planned for construction.  Globally, wildlife-vehicle collisions (WVC) on transportation networks have been estimated to kill billions of fauna each year (Seiler and Helldin, 2006). Due to such large impacts, analysis of WVC has received the attention of governments, scientists, private-sector companies and citizens throughout many nations and prompted interdisciplinary cooperatives (see van der Ree et al., 2015).
+Despite providing social amenity around the world, the development and use of roads has unfortunate ecological consequences \citep{form03}. Perhaps one of the most directly visible and confronting issues are vehicle strikes to animals, especially large terrestrial vertebrates. These collision events are costly and often result in property damage, injury, and death. In North America, millions of animals are estimated to be killed by vehicle strikes each day \citep{form98} and annual economic costs due to collisions exceed eight billion dollars \citep{huij07}. However, these adverse effects are not unique to North America and may occur at all locations where roads exist or are planned for construction.  Globally, wildlife-vehicle collisions (WVC) on transportation networks have been estimated to kill billions of fauna each year \citep{seil06}. Due to such large impacts, analysis of WVC has received the attention of governments, scientists, private-sector companies and citizens throughout many nations and prompted interdisciplinary cooperatives (see \cite{rvdr15}.
 
-A large amount of research seeks to determine the frequencies and magnitudes of wildlife-vehicle collisions. This often involves examining several environmental (e.g. landscape, climate, road characteristics), anthropogenic (e.g. human behaviour, vehicle movements) and biotic (e.g. animal traits) factors at different spatial and temporal scales (Litvaitis and Tash, 2008). More recently, computer modelling has been employed to predict where and when collisions are most likely (Gunson et al., 2011). These predictions aim to help environmental managers and road authorities mitigate problematic areas and better construct new roads. Effective decisions made from predictions rely on robust, calibrated models as incorrect inferences may result in costly outcomes such as ineffective mitigation (see Huijser et al., 2009) or continuing effects of unmitigated collisions (see Bissonette et al., 2008). Data deficiencies generate uncertainty in models and result from data collected with specific procedures or spatial/temporal trends (e.g. bias), measurement error or inappropriate sample size (Bean et al., 2012).  Although other factors, such as model misspecification, may also result in biased and uncertain predictions, we argue that data used to train WVC predictive models are of paramount importance.
+A large amount of research seeks to determine the frequencies and magnitudes of wildlife-vehicle collisions. This often involves examining several environmental (e.g. landscape, climate, road characteristics), anthropogenic (e.g. human behaviour, vehicle movements) and biotic (e.g. animal traits) factors at different spatial and temporal scales \citep{litv08}. More recently, computer modelling has been employed to predict where and when collisions are most likely \citep{guns11}. These predictions aim to help environmental managers and road authorities mitigate problematic areas and better construct new roads. Effective decisions made from predictions rely on robust, calibrated models as incorrect inferences may result in costly outcomes such as ineffective mitigation (see \cite{huij09}) or continuing effects of unmitigated collisions (see \cite{biss08b}). Data deficiencies generate uncertainty in models and result from data collected with specific procedures or spatial/temporal trends (e.g. bias), measurement error or inappropriate sample size \citep{bean12}.  Although other factors, such as model misspecification, may also result in biased and uncertain predictions, we argue that data used to train WVC predictive models are of paramount importance.
 
-Many studies that use predictive modelling to determine where and when WVC will occur are limited to single sources of data - either field collected based on predetermined project requirements (e.g. Langen et al., 2009; Roger and Ramp, 2009) or pre-existing from independent survey or routine collection (e.g. Hothorn et al., 2012; Malo et al., 2004). Further, few studies utilise independently-obtained data to validate model performance; often this is due to limitations in availability. In response to the importance of consistent data collection, technology has been proposed to augment field activities. For example, mobile phones have been proposed to assist with data collection of wildlife-vehicle collisions (Aanensen, 2009; Olson et al., 2014). Tablets or personal digital assistants (PDA) have also been proposed to assist road authorities to record collisions (Ament et al., 2007). Cataloguing and reporting systems are also used to store data on WVC, however, few are publicly accessible or incorporate data from other institutions or previous surveying events. Perhaps one of the largest systems in current use is the California Roadkill Observation System (CROS), maintained by the Road Ecology Center at the University of California, Davis (Shilling et al., 2015). This system offers many features that include public-accessibility, an intuitive user interface, and collection of important metadata such as reliability and precision of reporting, but has yet to achieve significant uptake by agencies outside the academic and citizen-science networks it supports.
+Many studies that use predictive modelling to determine where and when WVC will occur are limited to single sources of data - either field collected based on predetermined project requirements (e.g. \cite{lang09}; \cite{roge09}) or pre-existing from independent survey or routine collection (e.g. \cite{hoth12}; \cite{malo04}). Further, few studies utilise independently-obtained data to validate model performance; often this is due to limitations in availability. In response to the importance of consistent data collection, technology has been proposed to augment field activities. For example, mobile phones have been proposed to assist with data collection of wildlife-vehicle collisions \citep{aane09,olso14}. Tablets or personal digital assistants (PDA) have also been proposed to assist road authorities to record collisions \citep{amen07}. Cataloguing and reporting systems are also used to store data on WVC, however, few are publicly accessible or incorporate data from other institutions or previous surveying events. Perhaps one of the largest systems in current use is the California Roadkill Observation System (CROS), maintained by the Road Ecology Center at the University of California, Davis \citep{shil15b}. This system offers many features that include public-accessibility, an intuitive user interface, and collection of important metadata such as reliability and precision of reporting, but has yet to achieve significant uptake by agencies outside the academic and citizen-science networks it supports.
 
 We assert that modelling and prediction of WVC will benefit from extensive, open-access data repositories that catalogue collision records from citizen-science surveys, non-government organisations, private-sector entities (e.g. insurance companies), academic institutions and government agencies (e.g. road authorities and environmental managers). These mechanisms exist in other areas of research. Contemporary species distribution modelling draws from worldwide atlases of species occurrence; the Global Biodiversity Information Facility (www.gbif.org) contains more than 700 million records from over 800 data publishers and the Atlas of Living Australia (http://www.ala.org.au) provides over 50 million records from a wide range of data providers.
 
@@ -23,37 +23,148 @@ In our study, we analyse the predictions of a wildlife-vehicle collision risk mo
 
 \section{Materials \& Methods}
 
-Our study analyses wildlife-vehicle collision risk over approximately 150,000 kilometres of sealed roadway in the state of Victoria in south-east Australia (Figure 1). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway and seventy-nine municipal districts control the remaining roads. We split the sealed road network into 644,715 road segments; each with predicted values of kangaroo occurrence, traffic speed and traffic volume (see Visintin et al., 2016).
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=.5]{06_val_study.png}
+  \caption[]{Study area (state of Victoria, south-east Australia) showing relative collision risk predictions on all sealed road segments. The inset shows the geographic location of Victoria in Australia. Darker, heavier lines indicate higher relative likelihoods of collision. Major towns ($>$25,000 residents) are shown as stars and labelled.}
+  \label{val_study_area}
+\end{figure*}
 
-As Eastern grey kangaroos (Macropus giganteus, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia (Coulson and Eldridge, 2010), and the most commonly reported species struck by motor vehicles in Victoria (Rowden et al., 2008), several organisations record carcass collection and collision locations. We obtained four datasets of spatially-explicit collisions with kangaroos in the state of Victoria in south-east Australia (Table 1) for our study. Each of the road segment-based datasets were used to augment an original dataset (Wildlife Victoria) for modelling purposes and also validate predictions resulting from these models. To develop each modelling dataset for our study, we selected road segments that intersected with reported species’ collision records and coded them with ones. For datasets that were combined, multiple collisions on road segments were reduced to one. We coded all other road segments with zeros, to represent background data, and combined them with the collision record segments.  Thus, each modelling dataset was comprised of 644,715 road segments having either a collision (coded as 1) or no collision (coded as 0). Eight permutations were developed by combining independent data with original data:
-	1) original (o)
-	2) original + Bendigo (ob)
-	3) original + Western (ow)
-	4) original + Crashstats (oc)
-	5) original + Bendigo + Western (obw)
-	6) original + Western + Crashstats (owc)
-	7) original + Crashstats + Bendigo (ocb)
-	8) original + Bendigo + Western + Crashstats (obwc).
+Our study analyses wildlife-vehicle collision risk over approximately 150,000 kilometres of sealed roadway in the state of Victoria in south-east Australia (\Cref{val_study_area}). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway and seventy-nine municipal districts control the remaining roads. We split the sealed road network into 644,715 road segments; each with predicted values of kangaroo occurrence, traffic speed and traffic volume (see \Cref{sec:egk}).
 
-To test the effects of combining independent datasets, we fit a collision model (Visintin et al., 2016) to all permutations of data.  This quantitative model regressed reported collisions on species occurrence, traffic volume and traffic speed and generated collision risk predictions using the model fit:
-cloglog(pi) = β0 + β1 log(Oi) + β2 log(Vi) + β3 (log(Vi))2 + β4 log(Si)		(1)
-where (pi = Pr(Yi=1)) is the relative likelihood of a collision occurring, Oi is species occurrence, Vi is traffic volume, Si is traffic speed, on a road segment i.
+\begin{table}[htp]
+\caption{Datasets used to fit models and validate predictions.}
+\begin{tabularx}{\textwidth}{YYYYYYY} \toprule
+Source						&Type							&Records	&Reporting Method	&Spatial Unit	&Spatial Coverage	&Temporal Coverage \\ \midrule
+City of Bendigo				&Public municipality			&395		&Public reported carcasses			&Road segment		&City	&8 years : 2007-2014 \\
+VicRoads Western District	&State government organisation	&815		&Independent contractor recorded  carcasses			&Road segment		&District	&2 years : 2014-2015 \\
+Crashstats					&State government organisation	&487		&Police reported wildlife strikes			&Road segment		&Whole of State	&7 years : 2010-2016 \\
+Insurance Australia Group	&Private corporation			&1344		&Public reported claims of wildlife strikes			&Town		&Whole of State	&3 years : 2011-2013 \\
+Wildlife Victoria			&Non-government organisation	&4245		&Public reported observations of wildlife strikes			&Road segment		&Whole of State	&6 years : 2010-2015 \\
+\bottomrule
+\end{tabularx}
+\label{val_data}
+\end{table}
 
-To test model sensitivity to different combinations of data, we validated the predictions from our models using each road segment-based independent dataset. For each combination of training data, we fit a model, made predictions, and validated the predictions with an independent dataset not used to train the model. To assess model calibration, we regressed the observed collisions in each independent dataset on values predicted from models using the independent data (see Miller et al., 1991). A perfectly calibrated model would report an intercept coefficient of zero and a slope coefficient of one. To measure the ability of each model to discriminate between false positive and false negative values, we also calculated receiver operator characteristic scores (see Metz, 1978). A score of one indicates perfect discrimination while 0.5 indicates no better than random selection; 0.75 or above is often considered acceptable performance.
+As Eastern grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia \citep{coul10}, and the most commonly reported species struck by motor vehicles in Victoria \citep{rowd08}, several organisations record carcass collection and collision locations. We obtained four datasets of spatially-explicit collisions with kangaroos in the state of Victoria in south-east Australia (\Cref{val_data}) for our study. Each of the road segment-based datasets were used to augment an original dataset (Wildlife Victoria) for modelling purposes and also validate predictions resulting from these models. To develop each modelling dataset for our study, we selected road segments that intersected with reported species’ collision records and coded them with ones. For datasets that were combined, multiple collisions on road segments were reduced to one. We coded all other road segments with zeros, to represent background data, and combined them with the collision record segments.  Thus, each modelling dataset was comprised of 644,715 road segments having either a collision (coded as 1) or no collision (coded as 0). Eight permutations were developed by combining independent data with original data:
+
+\begin{enumerate}
+	\item original (o)
+	\item original + Bendigo (ob)
+	\item original + Western (ow)
+	\item original + Crashstats (oc)
+	\item original + Bendigo + Western (obw)
+	\item original + Western + Crashstats (owc)
+	\item original + Crashstats + Bendigo (ocb)
+	\item original + Bendigo + Western + Crashstats (obwc)
+\end{enumerate}
+
+To test the effects of combining independent datasets, we fit a collision model (\Cref{sec:egk}) to all permutations of data.  This quantitative model regressed reported collisions on species occurrence, traffic volume and traffic speed and generated collision risk predictions using the model fit:
+
+\begin{equation} \label{eq:61}
+cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \beta_3*\text{log}(S_i)
+\end{equation}
+
+\noindent where $p_i=\text{Pr}(Y_i=1)$ is the relative likelihood of a collision occurring on a road segment $i$, $O_i$ is species occurrence, $V_i$ is traffic volume, $S_i$ is traffic speed.
+
+To test model sensitivity to different combinations of data, we validated the predictions from our models using each road segment-based independent dataset. For each combination of training data, we fit a model, made predictions, and validated the predictions with an independent dataset not used to train the model. To assess model calibration, we regressed the observed collisions in each independent dataset on values predicted from models using the independent data (see Miller et al., 1991). A perfectly calibrated model would report an intercept coefficient of zero and a slope coefficient of one. To measure the ability of each model to discriminate between false positive and false negative values, we also calculated receiver operator characteristic scores (see \cite{metz78}. A score of one indicates perfect discrimination while 0.5 indicates no better than random selection; 0.75 or above is often considered acceptable performance.
 
 We also used aggregated collision data at the town level (Insurance Australia Group) to test model performance. Collisions within each town boundary in Victoria (2917 total) were tabulated. From the predictions made to all road segments obtained for different combinations of data, we calculated the mean within each town boundary. Using each town as a datapoint, we regressed the mean collision risk prediction (log-transformed) on the total collisions reported. Due to the response data being positive integers, we used the Poisson link:
-log(Cj) = β0 + β1 log(Pj)					(2)
-where Cj is the count of reported collisions, Pi is the mean predicted collision risk, in a town j. As with the road segment-based data analysis, calibration was assessed using the intercept and slope of the model fits. We also calculated the reduction in deviance (unexplained variation in the data) for each model.
+
+\begin{equation} \label{eq:62}
+\text{log}(C_j) = \beta_0 + \beta_1\text{log}(P_j)
+\end{equation}
+
+\noindent where $C_j$ is the count of reported collisions and $P_j$ is the mean predicted collision risk, in a town $j$. As with the road segment-based data analysis, calibration was assessed using the intercept and slope of the model fits. We also calculated the reduction in deviance (unexplained variation in the data) for each model.
 
 \section{Results}
 
-Mean predicted rates of collisions across the Victorian road network increased as the combinations of independent datasets increased (Figure 2). Models that used the original collision data combined with all three additional independent datasets (City of Bendigo, Western District, and Crashstats) had the highest mean predictions. The increase in predicted collisions also coincided with the ratio of collisions to background in each training dataset. For example, higher mean predicted rate of collisions were for datasets with 5829 road segments with recorded collisions versus 5055 with recorded collisions.
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=.7]{06_occ.png}
+  \includegraphics[scale=.7]{06_tvol.png}
+  \includegraphics[scale=.7]{06_tspd.png}
+  \caption[]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Grey shading indicates 95\% confidence intervals around the trend lines.}
+  \label{val_effects}
+\end{figure*}
 
-The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and held-out validation data (Table 2). Variation in the receiver operator characteristic (ROC) scores was less than 4\% between different combinations of data used to fit models.
+Mean predicted rates of collisions across the Victorian road network increased as the combinations of independent datasets increased (\Cref{val_effects}). Models that used the original collision data combined with all three additional independent datasets (City of Bendigo, Western District, and Crashstats) had the highest mean predictions. The increase in predicted collisions also coincided with the ratio of collisions to background in each training dataset. For example, higher mean predicted rate of collisions were for datasets with 5829 road segments with recorded collisions versus 5055 with recorded collisions.
 
-No significant trend was observed in validating model predictions with different combinations of data (Figure 3). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score (close to one). There was a slight improvement in mean calibration score (grouped by validation dataset) as more datasets were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (Figure 4).
+\begin{table}[htp]
+\caption{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
+\begin{tabularx}{\textwidth}{YYYYYYYY} \toprule
+	& Wildlife Victoria
+(original) & original + Bendigo & original + Western & original + Crashstats & original + Bendigo + Western & original + Western + Crashstats & original + Crashstats + Bendigo \\ 
+  \midrule
+Bendigo & 0.87 & - & 0.85 & 0.87 & - & 0.85 & - \\ 
+Western & 0.76 & 0.75 & - & 0.78 & - & - & 0.77 \\ 
+Crashstats & 0.8 & 0.8 & 0.83 & - & 0.82 & - & - \\
+\bottomrule
+\end{tabularx}
+\label{val_glm_roc}
+\end{table}
 
-Using the aggregated independent data (iag) to validate models resulted in a slight increase in model calibration as more combinations of training data were used (Figure 5).  The lowest calibration coefficient (0.943) occurred using only the original (o) data to fit the model and the highest (0.945) occurred using a combination of the original and all independent (obwc) data. Higher reductions of unexplained variation in the data also occurred with more combinations of training data (Figure 6). Deviance explained by the model fit on the original (o) data was 33.2\%. The model fit on a combination of the original and all independent (obwc) data explained 33.3\% of the deviance.
+The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and held-out validation data (\Cref{val_glm_roc}). Variation in the receiver operator characteristic (ROC) scores was less than 4\% between different combinations of data used to fit models.
+
+\begin{table}[htp]
+\caption{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.001) are marked with asterisks.}
+\begin{tabularx}{\textwidth}{lllllll} \toprule
+Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
+  \midrule
+City of Bendigo & Intercept & -48.76 & 7.766 & -6.279 & 3.4e-10 & 6.27 \\ 
+   & EGK & -0.1927 & 0.1483 & -1.299 & 0.19 &  \\ 
+   & TVOL & 8.426 & 1.849 & 4.558 & 5.2e-06 &  \\ 
+   & TVOL$^2$ & -0.535 & 0.1133 & -4.722 & 2.3e-06 &  \\ 
+   & TSPD & 3.046 & 0.4256 & 7.156 & 8.3e-13 &  \\ 
+   &  &  &  &  &  &  \\ 
+  Western District & Intercept & -10.19 & 3.473 & -2.933 & 0.0034 & 5.15 \\ 
+   & EGK & 0.01633 & 0.04569 & 0.3575 & 0.72 &  \\ 
+   & TVOL & 0.3718 & 0.7969 & 0.4665 & 0.64 &  \\ 
+   & TVOL$^2$ & -0.06954 & 0.05288 & -1.315 & 0.19 &  \\ 
+   & TSPD & 2.033 & 0.4533 & 4.485 & 7.3e-06 &  \\ 
+   &  &  &  &  &  &  \\ 
+  Crashstats & Intercept & -51.74 & 2.894 & -17.88 & 2e-16 & 11.75 \\ 
+   & EGK & 0.5473 & 0.04247 & 12.89 & 2e-16 &  \\ 
+   & TVOL & 4.894 & 0.6863 & 7.131 & 1e-12 &  \\ 
+   & TVOL$^2$ & -0.3184 & 0.04426 & -7.194 & 6.3e-13 &  \\ 
+   & TSPD & 6.52 & 0.2669 & 24.43 & 2e-16 &  \\ 
+   &  &  &  &  &  &  \\ 
+\bottomrule
+\end{tabularx}
+\label{val_glm_perf}
+\end{table}
+
+No significant trend was observed in validating model predictions with different combinations of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score (close to one). There was a slight improvement in mean calibration score (grouped by validation dataset) as more datasets were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (\Cref{val_calib2}).
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{06_calib.png}
+  \caption[]{Model performance for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \label{val_calib}
+\end{figure*}
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{06_calib2.png}
+  \caption[]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. The dotted line demonstrates a model with perfect calibration.}
+  \label{val_calib2}
+\end{figure*}
+
+Using the aggregated independent data (iag) to validate models resulted in a slight increase in model calibration as more combinations of training data were used (\Cref{val_calib_iag}).  The lowest calibration coefficient (0.943) occurred using only the original (o) data to fit the model and the highest (0.945) occurred using a combination of the original and all independent (obwc) data. Higher reductions of unexplained variation in the data also occurred with more combinations of training data (\Cref{val_calib_dev}). Deviance explained by the model fit on the original (o) data was 33.2\%. The model fit on a combination of the original and all independent (obwc) data explained 33.3\% of the deviance.
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{06_calib_iag.png}
+  \caption[]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \label{val_calib_iag}
+\end{figure*}
+
+\begin{figure*}[htp]
+  \centering
+  \includegraphics[scale=1]{06_dev_iag.png}
+  \caption[]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \label{val_calib_dev}
+\end{figure*}
 
 \section{Discussion}
 

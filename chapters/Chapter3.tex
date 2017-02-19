@@ -50,8 +50,8 @@ We obtained records of WVC from the Wildlife Victoria database (see 'Collision M
 
 We employed the quantitative risk model in \Cref{sec:egk} to examine how collision risk of each species relates to occurrence of the species and traffic volume and speed: 
 
-\begin{equation}
-cloglog(p_i) = \beta_0 + \beta_1*ln(O_i) + \beta_2*ln(V_i) + \beta_3*ln(S_i)
+\begin{equation} \label{eq:31}
+cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*l\text{log}(V_i) + \beta_3*\text{log}(S_i)
 \end{equation}
 
 \noindent where $p_i=\text{Pr}(Y_i=1)$ is the probability of a collision occurring, $O_i$ is species occurrence, $V_i$ is traffic volume, $S_i$ is traffic speed, in a given place $i$.

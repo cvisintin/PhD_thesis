@@ -30,14 +30,18 @@ We tested the general applicability of the conceptual model framework in \Cref{s
 \subsection{Overview of Workflow}
 
 Our analysis is comprised of the following overall workflow for each of the two study areas:
-1)  Define the study area and divide it into a regular spatial grid.
-2)  Split all roads in the study area into segments using the spatial grid.
-3)  Develop traffic models and predict relative traffic volume and speed for all road segments in the study area.
-4)  Develop a species distribution model and predict relative occurrence for each road segment based on the grid cell in which it occurs.
-5)  Classify road segments based on occurrence of collision ('1' for one or more collisions; '0' otherwise) for the training data.
-6)  Develop a regression model of the collisions (training data) with species occurrence, traffic volume and traffic speed as explanatory variables.
-7)  Use the regression model to predict relative rate of collisions for each road segment.
-8)  Compare the predicted rate of collision to a new set of collision data (validation data) to evaluate the regression model.
+
+\begin{enumerate}
+	\item Define the study area and divide it into a regular spatial grid.
+	\item Split all roads in the study area into segments using the spatial grid.
+	\item Develop traffic models and predict relative traffic volume and speed for all road segments in the study area.
+	\item Develop a species distribution model and predict relative occurrence for each road segment based on the grid cell in which it occurs.
+	\item Classify road segments based on occurrence of collision ('1' for one or more collisions; '0' otherwise) for the training data.
+	\item Develop a regression model of the collisions (training data) with species occurrence, traffic volume and traffic speed as explanatory variables.
+	\item Use the regression model to predict relative rate of collisions for each road segment.
+	\item Compare the predicted rate of collision to a new set of collision data (validation data) to evaluate the regression model.
+\end{enumerate}	
+
 Each of these steps is explained in more detail in the following sections.
 
 \subsection{Study Areas}
@@ -68,8 +72,8 @@ We used police records of road accidents to evaluate our model fits.  For each s
 
 We used a quantitative risk model introduced in \Cref{sec:egk} to fit and compare the relationship of species presence and road threat to collision likelihood and the open-source software package ’R’ version 3.3.0 \citep{rdct16} to perform all statistical analyses. We regressed collisions on the predictor variables with an added quadratic term for traffic volume. Our model is expressed as:
 
-\begin{equation}
-cloglog(p_i) = \beta_0 + \beta_1*ln(O_i) + \beta_2*ln(V_i) + \beta_3*ln(S_i)
+\begin{equation} \label{eq:41}
+cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \beta_3*\text{log}(S_i)
 \end{equation}
 
 \noindent where $p_i=\text{Pr}(Y_i=1)$ is the relative likelihood of a collision occurring on a road segment $i$, $O_i$ is species occurrence, $V_i$ is traffic volume, $S_i$ is traffic speed. We chose the complementary log-log link on the linear predictor due to the mathematical theory underpinning our model - risk being measured by the rate of collisions (see \Cref{sec:egk}).
