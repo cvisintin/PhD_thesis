@@ -26,14 +26,14 @@ In our study, we analyse the predictions of a wildlife-vehicle collision risk mo
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=.5]{06_val_study.png}
-  \caption[]{Study area (state of Victoria, south-east Australia) showing relative collision risk predictions on all sealed road segments. The inset shows the geographic location of Victoria in Australia. Darker, heavier lines indicate higher relative likelihoods of collision. Major towns ($>$25,000 residents) are shown as stars and labelled.}
+  \caption[Wildlife-vehicle collision predictions in Victoria]{Study area (state of Victoria, south-east Australia) showing relative collision risk predictions on all sealed road segments. The inset shows the geographic location of Victoria in Australia. Darker, heavier lines indicate higher relative likelihoods of collision. Major towns ($>$25,000 residents) are shown as stars and labelled.}
   \label{val_study_area}
 \end{figure*}
 
 Our study analyses wildlife-vehicle collision risk over approximately 150,000 kilometres of sealed roadway in the state of Victoria in south-east Australia (\Cref{val_study_area}). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway and seventy-nine municipal districts control the remaining roads. We split the sealed road network into 644,715 road segments; each with predicted values of kangaroo occurrence, traffic speed and traffic volume (see \Cref{sec:egk}).
 
 \begin{table}[htp]
-\caption{Datasets used to fit models and validate predictions.}
+\caption[Datasets used to fit collision models and validate predictions]{Datasets used to fit models and validate predictions.}
 \begin{tabularx}{\textwidth}{YYYYYYY} \toprule
 Source						&Type							&Records	&Reporting Method	&Spatial Unit	&Spatial Coverage	&Temporal Coverage \\ \midrule
 City of Bendigo				&Public municipality			&395		&Public reported carcasses			&Road segment		&City	&8 years : 2007-2014 \\
@@ -84,14 +84,14 @@ We also used aggregated collision data at the town level (Insurance Australia Gr
   \includegraphics[scale=.7]{06_occ.png}
   \includegraphics[scale=.7]{06_tvol.png}
   \includegraphics[scale=.7]{06_tspd.png}
-  \caption[]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Grey shading indicates 95\% confidence intervals around the trend lines.}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Grey shading indicates 95\% confidence intervals around the trend lines.}
   \label{val_effects}
 \end{figure*}
 
 Mean predicted rates of collisions across the Victorian road network increased as the combinations of independent datasets increased (\Cref{val_effects}). Models that used the original collision data combined with all three additional independent datasets (City of Bendigo, Western District, and Crashstats) had the highest mean predictions. The increase in predicted collisions also coincided with the ratio of collisions to background in each training dataset. For example, higher mean predicted rate of collisions were for datasets with 5829 road segments with recorded collisions versus 5055 with recorded collisions.
 
 \begin{table}[htp]
-\caption{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
+\caption[Discrimination ability of models using all combinations of independent data]{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
 \begin{tabularx}{\textwidth}{YYYYYYYY} \toprule
 	& Wildlife Victoria
 (original) & original + Bendigo & original + Western & original + Crashstats & original + Bendigo + Western & original + Western + Crashstats & original + Crashstats + Bendigo \\ 
@@ -107,7 +107,7 @@ Crashstats & 0.8 & 0.8 & 0.83 & - & 0.82 & - & - \\
 The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and held-out validation data (\Cref{val_glm_roc}). Variation in the receiver operator characteristic (ROC) scores was less than 4\% between different combinations of data used to fit models.
 
 \begin{table}[htp]
-\caption{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.001) are marked with asterisks.}
+\caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.001) are marked with asterisks.}
 \begin{tabularx}{\textwidth}{lllllll} \toprule
 Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
   \midrule
@@ -139,14 +139,14 @@ No significant trend was observed in validating model predictions with different
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_calib.png}
-  \caption[]{Model performance for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib}
 \end{figure*}
 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_calib2.png}
-  \caption[]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. The dotted line demonstrates a model with perfect calibration.}
+  \caption[Comparisons of observations versus model predictions for all combinations of original and independent data]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. The dotted line demonstrates a model with perfect calibration.}
   \label{val_calib2}
 \end{figure*}
 
@@ -155,14 +155,14 @@ Using the aggregated independent data (iag) to validate models resulted in a sli
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_calib_iag.png}
-  \caption[]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_dev_iag.png}
-  \caption[]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). The percent of variation in the training data explained by the model (deviance) are shown as dots.}
   \label{val_calib_dev}
 \end{figure*}
 

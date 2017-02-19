@@ -92,7 +92,7 @@ We apply our framework to study vehicle collisions with kangaroos in Australia u
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{egk_fig01.png}
-  \caption[]{Diagram of modelling framework. Three sub-models are used to generate covariates used in the collision model per the ``risk equals exposure multiplied by hazard" analytical framework.}
+  \caption[Diagram of modelling framework]{Diagram of modelling framework. Three sub-models are used to generate covariates used in the collision model per the ``risk equals exposure multiplied by hazard" analytical framework.}
   \label{egk_framework}
 \end{figure*}
  
@@ -109,14 +109,14 @@ We downloaded survey records of grey kangaroos from the Victorian Biodiversity A
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{egk_fig02.png}
-  \caption[]{Predicted relative likelihood of grey kangaroo presence in study area. Darker shades indicate higher relative probabilities of occurrence (mean: 0.057; range: 0.002-0.986).}
+  \caption[Predicted relative likelihood of grey kangaroo occurrence in Victoria]{Predicted relative likelihood of grey kangaroo presence in study area. Darker shades indicate higher relative probabilities of occurrence (mean: 0.057; range: 0.002-0.986).}
   \label{egk_occmap}
 \end{figure*}
 
 To estimate occurrence of grey kangaroos, we used Boosted Regression Trees (BRT) \citep{frie02}. BRT modelling offers advantages of handling different types of predictor variables, accommodating missing data and outliers, fitting complex non-linear relationships, and incorporating interaction effects between predictors \citep{elit08}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to include potential interactions) and a learning rate of .005 (contribution of each tree to the model). Classification methods have an established use in studies of species distributions \citep{walk90,skid96}, however, our framework is not limited to any particular modelling method. We selected seven predictors (\Cref{egk_variables}) based on the biology and behaviour of grey kangaroos. All of the species occurrence sub-model predictor variables were below a pairwise correlation threshold of 0.75 to reduce potential effects of multicollinearity. We predicted relative likelihood of grey kangaroo occurrence from the model fit at a one square kilometre resolution across Victoria (\Cref{egk_occmap}).
 
 \begin{table}[htp]
-\caption{Variables used in statistical models.}
+\caption[Variables used in statistical models]{Variables used in statistical models.}
 \begin{tabularx}{\textwidth}{llY} \toprule
 Model &Variable    &Definition\\ \midrule 
 \multirow{8}{*}{\rotatebox[origin=c]{90}{Species Occurrence}}   &KANG        &presences and psuedo-absences of Eastern Grey Kangaroos\\
@@ -155,7 +155,7 @@ Model &Variable    &Definition\\ \midrule
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{egk_fig03.png}
-  \caption[]{Predicted relative traffic volume in number of vehicles day-1 per road segment in study area. Darker shades indicate higher predicted traffic volumes (mean: 4481; range: 274-60850).}
+  \caption[Predicted relative traffic volume in Victoria]{Predicted relative traffic volume in number of vehicles day-1 per road segment in study area. Darker shades indicate higher predicted traffic volumes (mean: 4481; range: 274-60850).}
   \label{egk_tvolmap}
 \end{figure*}
 
@@ -164,7 +164,7 @@ Average Annual Daily Traffic (AADT) represents the sum of traffic travelling in 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{egk_fig04.png}
-  \caption[]{Predicted relative traffic speed in kilometres hour-1 per road segment in study area. Darker shades indicate higher predicted traffic speeds (mean: 62; range: 42-106).}
+  \caption[Predicted relative traffic speed in Victoria]{Predicted relative traffic speed in kilometres hour-1 per road segment in study area. Darker shades indicate higher predicted traffic speeds (mean: 62; range: 42-106).}
   \label{egk_tspdmap}
 \end{figure*}
 
@@ -179,7 +179,7 @@ Our collision model fitted predicted values from the sub-models to collision or 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{egk_fig05.png}
-  \caption[]{Map of collision risk per road segment. Darker shades indicate higher relative risk of collisions with kangaroos (mean: 0.24; range: 0.01-0.99).}
+  \caption[Map of collision risk per road segment in Victoria]{Map of collision risk per road segment. Darker shades indicate higher relative risk of collisions with kangaroos (mean: 0.24; range: 0.01-0.99).}
   \label{egk_collmap}
 \end{figure*}
 
@@ -190,7 +190,7 @@ To determine the effectiveness of partitioning the variables into logical sub-mo
 The species occurrence model predicted the relative likelihood of kangaroo presence to vary (.002 to .986) across the study area using 5400 regression trees. The deviance explained by the model was approximately 30.4\% (null deviance = 0.572, estimated cross-validation (CV) deviance = 0.398 +/-0.008, CV AUC = 0.878 +/-0.006; see \Cref{egk_models}). The three most influential variables were artificial light (19.6\% contribution to model), elevation (18.4\%), and precipitation of the driest month (14.8\%). Partial dependence plots demonstrated plausible relationships between the predictors and grey kangaroo presence (see Figure S1 in Supporting Information). We extended our model predictions to continental Australia (including areas well beyond Victoria) which aligned well with known grey kangaroo range (see Figure S2). Approximately fifty percent of the grey kangaroo collision records were within areas where the predicted probability of grey kangaroo occurrence was above 0.2. Collision records in areas of lower predicted occurrence areas may be due to misclassification errors (i.e. mis-identification of the species of kangaroo), reporting bias/spatial error in the collision data, or sampling bias in the data used to train the kangaroo occurrence model.
 
 \begin{table}[htp]
-\caption{Statistical models used in framework.}
+\caption[Statistical models used in conceptual framework]{Statistical models used in conceptual framework.}
 \begin{tabularx}{\textwidth}{lYll} \toprule
 Model Type		    &Model &Reduction in Error	&ROC\\ \midrule 
 Species Occurrence  &\scriptsize{$\Pr(\text{KANG}=1) \approx \mathrm{logit}^{-1}(\beta_0 + \beta_1\text{ELEV} + \beta_2\text{GREEN} + \beta_3\text{LIGHT} + \beta_4\text{MNTEMPWQ} + \beta_5\text{PRECDM} + \beta_6\text{SLOPE} + \beta_7\text{TREEDENS})$}        &30.4\%		&0.88\\
@@ -210,7 +210,7 @@ Alternative Collision  &\scriptsize{$\mathrm{cloglog}(\Pr(\text{COLL}=1)) \appro
 The traffic model volume explained 54.4\% of the variation in the AADT data and the traffic speed model explained 58.7\% of the variation in the posted speed limit data (\Cref{egk_models}).  Each model used the default value of 500 trees to fit the data.  All predictor variables used in the traffic models demonstrated plausible relationships to both AADT and speed (see Figure S3); traffic volume decreased with distance to activity centres and major thoroughfares and increased with affluence. Signs of the coefficients, indicating direction of relationships between the dependent variable and predictors, were as expected (\Cref{egk_sum_coll}). The most influential variable for traffic volume was road class (33.8\% relative contribution to reduction of variance), followed by distance to urban development (19.7\%) and distance to freeways and highways (16.4\%). Both traffic speed variables were significant.
 
 \begin{table}[htp]
-\caption{Summary of collision model fit. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Anova contribution of variables are expressed as decimal percent reduction in deviance.}
+\caption[Summary of collision and alternative collision models]{Summary of collision model fit. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Anova contribution of variables are expressed as decimal percent reduction in deviance.}
 \begin{tabularx}{\textwidth}{lllllll} \toprule
 Model Type &Variable         &Coefficient &Std. Error			&Wald-{\large$\chi$}$^2$ &{\normalsize$P$} &ANOVA\\ \midrule 
 Collision  				&\emph{Intercept}	& -12.82			& 0.6635   	& -19.33	&\TL 2e-16*	& -- \\
@@ -243,7 +243,7 @@ The collision model explained 23.7\% of the deviance (\Cref{egk_models}). Using 
   \includegraphics[scale=.7]{egk_fig06a.png}
   \includegraphics[scale=.7]{egk_fig06b.png}
   \includegraphics[scale=.7]{egk_fig06c.png}
-  \caption[]{Effects of predictor variables on relative likelihood of collision. EGK is the relative likelihood of kangaroo occurrence. TVOL is the predicted daily traffic volume in vehicles day$^{-1}$. TSPD is the predicted traffic speeds in kilometres hour$^{-1}$.}
+  \caption[Effects of predictor variables on relative likelihood of collision]{Effects of predictor variables on relative likelihood of collision. EGK is the relative likelihood of kangaroo occurrence. TVOL is the predicted daily traffic volume in vehicles day$^{-1}$. TSPD is the predicted traffic speeds in kilometres hour$^{-1}$.}
   \label{egk_effects}
 \end{figure*}
 

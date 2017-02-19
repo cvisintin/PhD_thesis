@@ -38,7 +38,7 @@ We used the 227,819 square kilometres state of Victoria in south-east Australia 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=.5]{6sp_study_area.png}
-  \caption[]{Study area (state of Victoria, in south-east Australia) showing location of wildlife vehicle collisions.}
+  \caption[Wildlife-vehicle collisions in Victoria]{Study area (state of Victoria, in south-east Australia) showing location of wildlife vehicle collisions.}
   \label{6sp_study_area}
 \end{figure*}
 
@@ -59,7 +59,7 @@ cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*l\text{log}(V_i) + \b
 Using the open-source software package `R' version 3.3.0 \citep{rdct16} to perform all statistical analyses, we developed species distribution models (SDM) to predict occurrence across the study area for each of the six species, and linear regression models to predict traffic volume and speed. Predicted traffic volume and speed values for all road segments were modelled by regressing annual average daily traffic (AADT) counts and posted speed limit data on anthropogenic variables using random forests; detailed methods are provided in \Cref{sec:egk}. 
 
 \begin{table}[htp]
-\caption{Top six species most frequently reported in wildlife-vehicle collisions in the Wildlife Victoria database (WVD) between 2010 and 2014, inclusive. Species observations from the Victorian Biodiversity Atlas are used for the species occurrence models and recorded collisions from the WVD for the collision risk models. The datasets used in the models are comprised of both presence (P) and randomly-generated background (B) observations.}
+\caption[Six mammal species most frequently reported in wildlife-vehicle collisions]{Top six species most frequently reported in wildlife-vehicle collisions in the Wildlife Victoria database (WVD) between 2010 and 2014, inclusive. Species observations from the Victorian Biodiversity Atlas are used for the species occurrence models and recorded collisions from the WVD for the collision risk models. The datasets used in the models are comprised of both presence (P) and randomly-generated background (B) observations.}
 \begin{tabularx}{\textwidth}{llll} \toprule
 Species Name                     &Species Code     &Species Observations     &Recorded Collisions \\ \midrule 
 Eastern Grey Kangaroo 	& EGK	& 10619 : 858P / 9761B 	& 3977 : 1344P / 2633B \\ 
@@ -80,7 +80,7 @@ We obtained observation records of the six study species from the Victorian Biod
 For each species, we fit SDM to the data using tools and methods by \cite{elit09}. We chose Boosted Regression Trees (BRT) \citep{frie02} as the statistical method. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors \citep{elit08}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of .005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions).
 
 \begin{table}[htp]
-\caption{Predictor variables used in species occurrence (SO) models and collision risk (CR) models. Spatial coordinates for species presences and psuedo-absences were used to sample from predictor variable grids at one square kilometre resolution for occurrence models. The centroids of road segment with reported collisions were used to sample from one square kilometre occurrence model predictions. Note, reported means and ranges are for entire study area.}
+\caption[Predictor variables used in species occurrence models and collision risk models]{Predictor variables used in species occurrence (SO) models and collision risk (CR) models. Spatial coordinates for species presences and psuedo-absences were used to sample from predictor variable grids at one square kilometre resolution for occurrence models. The centroids of road segment with reported collisions were used to sample from one square kilometre occurrence model predictions. Note, reported means and ranges are for entire study area.}
 \begin{tabularx}{\textwidth}{lYll} \toprule
 Variable       &Description                                               &Units          &Range : Mean\\
 \midrule 
@@ -119,7 +119,7 @@ WOM (CR)        &Relative Probability of Wombat Occ. per $km^2$           &--   
 We selected predictor variables which influenced the biology, behaviour, and characteristics of all species based on literature review, consultation with species experts, and ecological principles. We considered a range of variables that describe three strata that our six species occupy; the subsurface zone for burrowing animals, the ground plane for ranging species, and the canopy for tree-dwelling wildlife. The Pearson correlation coefficients were less than 0.70 for all pairs of explanatory variables with the exception of elevation and slope (0.71), which is expected to exhibit some collinearity, and tree density and precipitation of the driest month (0.72). For each model, we employed a selection mechanism - based on \cite{elit08} - to determine the most useful and parsimonious combination of predictors (\Cref{6sp_final_var}) from a full set of 18 variables (\Cref{6sp_variables}).
 
 \begin{table}[htp]
-\caption{Final predictors selected for each species in species occurrence models and relative importance in model expressed as percentage contribution to reduction in unexplained variation in the data. “---” indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}
+\caption[Predictors selected for six mammal species occurrence models]{Final predictors selected for each species in species occurrence models and relative importance in model expressed as percentage contribution to reduction in unexplained variation in the data. “---” indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}
 \begin{tabularx}{\textwidth}{llllllll} \toprule
 Predictor & EGK & BTP & RTP & BSW & WOM & KOA \\ 
 \midrule
@@ -178,7 +178,7 @@ Using the model fits, we predicted relative likelihood of occurrence from the sp
   \put(90,180){Koala}  
   \end{picture}
   %\vspace*{-1.5cm}
-  \caption[]{Predicted relative likelihood of occurrence of each species across the State of Victoria. Darker shading indicates higher relative likelihood of occurrence.}
+  \caption[Predicted relative likelihood of six mammal species occurrence in Victoria]{Predicted relative likelihood of occurrence of each species across the State of Victoria. Darker shading indicates higher relative likelihood of occurrence.}
   \label{6sp_occ_preds}
 \end{figure*}
 
@@ -203,7 +203,7 @@ We joined the collision risk predictions for each species with all road segments
 \begin{figure*}[htp]
   \centering
   \includegraphics[trim={2cm 0 0 0},clip,scale=.6]{6sp_coll_risk.png}
-  \caption[]{Road segments with predictions of high collision likelihood ($>$0.75) for at least one of the six species. Lighter, thinner lines represent a few species with high collision likelihood (minimum one) and darker, thicker lines represent more species (maximum six).  The entire road network is shown as faint gray lines for context.}
+  \caption[Road segments with predictions of high collision likelihood for six mammal species]{Road segments with predictions of high collision likelihood ($>$0.75) for at least one of the six species. Lighter, thinner lines represent a few species with high collision likelihood (minimum one) and darker, thicker lines represent more species (maximum six).  The entire road network is shown as faint gray lines for context.}
   \label{6sp_collrisk}
 \end{figure*}
 
@@ -214,7 +214,7 @@ All of the modelling in our study was correlative, however, we explored the infl
   \includegraphics[scale=1]{6sp_occ_seasons.png}\\
   \includegraphics[scale=1]{6sp_tvol_seasons.png}
   \includegraphics[scale=1]{6sp_tspd_seasons.png}
-  \caption[]{Marginal effects of predictor variables on relative likelihood of collision per species.}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of predictor variables on relative likelihood of collision per species.}
   \label{6sp_seas_effects}
 \end{figure*}
 
@@ -223,7 +223,7 @@ All of the modelling in our study was correlative, however, we explored the infl
 The species occurrence models produced ecologically-plausible predictions about the relative likelihood of species presence across Victoria. The deviance (unexplained variation in the data) reduced by the models varied between 26.2\% and 56.6\% and the ROC scores varied between 0.90 and 0.96 (\Cref{6sp_models}). The best occurrence models were for the koala and common wombat, each reducing deviance on the null models by 56.6\% and 45.2\%, respectively. 
 
 \begin{table}[htp]
-\caption{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species. Note, due to the nature of gradient boosting, errors on both deviance and ROC scores are reported as $\pm$ values for SO models.}
+\caption[Statistical model performance for six mammal species]{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species. Note, due to the nature of gradient boosting, errors on both deviance and ROC scores are reported as $\pm$ values for SO models.}
 \begin{tabularx}{\textwidth}{lllll} \toprule
 Species Name			&\% Deviance (SO)	&ROC (SO)			&\% Deviance (CR)	&ROC (CR)\\
 \midrule 
@@ -246,7 +246,7 @@ Only four variables were not selected in every species model and the least selec
   \includegraphics[scale=1]{6sp_tempanrange.png}
   \includegraphics[scale=1]{6sp_light.png}
   \includegraphics[scale=1]{6sp_precdm.png}
-  \caption[]{Effects of four most significant predictor variables on relative likelihood of occurrence per species.}
+  \caption[Most significant predictor variables on relative likelihood of occurrence for six mammal species]{Effects of four most significant predictor variables on relative likelihood of occurrence per species.}
   \label{6sp_term_occ}
 \end{figure*}
 
@@ -255,14 +255,14 @@ Spatial autocorrelation patterning was evident in the species occurrence model r
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=.4]{6sp_sac.png}
-  \caption[]{Spatial autocorrelation in occupancy models residuals for each species grouped by distance between observations. Trend lines use numbers to indicate species (see legend).}
+  \caption[Spatial autocorrelation in occupancy models residuals for six mammal species]{Spatial autocorrelation in occupancy models residuals for each species grouped by distance between observations. Trend lines use numbers to indicate species (see legend).}
   \label{6sp_sac}
 \end{figure*}
 
 All of the collision models fit the data as expected.  Reduction on the null deviance was between 21.3\% and 41.6\% for all models, with ROC scores of 0.83-0.91 when comparing observations with fitted values (\Cref{6sp_models}). At least three predictor variables (total of four) were highly significant (p$<$.001) for each species in the collision models (\Cref{6sp_sum_coll}).
 
 \begin{table}[htp]
-\caption{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables (p$<$.001) are marked with asterisks.}
+\caption[Summary of collision models for six mammal species]{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables (p$<$.001) are marked with asterisks.}
 \begin{tabularx}{\textwidth}{lllllll} \toprule
 Species & Variable & Coefficient & Std. Error & $Z\text{-value}$ & $\PRZ$ & ANOVA \\ 
 \midrule
@@ -319,7 +319,7 @@ All of the predictor variables demonstrated plausible relationships to collision
   \includegraphics[scale=1]{6sp_occ.png}\\
   \includegraphics[scale=1]{6sp_tvol.png}
   \includegraphics[scale=1]{6sp_tspd.png}
-  \caption[]{Marginal effects of predictor variables on relative likelihood of collision per species.}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species]{Marginal effects of predictor variables on relative likelihood of collision per species.}
   \label{6sp_effects}
 \end{figure*}
 
