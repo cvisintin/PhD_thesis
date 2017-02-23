@@ -1,4 +1,4 @@
-\chapter{Validating collision model predictions with citizen-science, private-sector and government collected datasets: a case for a unified data system and implications for management.}\label{sec:val}
+\chapter{Validating collision model predictions with citizen-science, private-sector and government collected datasets: a case for a unified data system}\label{sec:val}
 \newpage
 
 \begin{localsize}{10}
@@ -134,7 +134,9 @@ City of Bendigo & Intercept & -48.76 & 7.766 & -6.279 & 3.4e-10 & 6.27 \\
 \label{val_glm_perf}
 \end{table}
 
-No significant trend was observed in validating model predictions with different combinations of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score (close to one). There was a slight improvement in mean calibration score (grouped by validation dataset) as more datasets were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (\Cref{val_calib2}).
+bendigo and western models did not fit as well when using predicted values for entire state.
+
+
 
 \begin{figure*}[htp]
   \centering
@@ -142,6 +144,8 @@ No significant trend was observed in validating model predictions with different
   \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib}
 \end{figure*}
+
+No significant trend was observed in validating model predictions with different combinations of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score (close to one). There was a slight improvement in mean calibration score (grouped by validation dataset) as more datasets were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (\Cref{val_calib2}).
 
 \begin{figure*}[htp]
   \centering
@@ -170,6 +174,8 @@ Using the aggregated independent data (iag) to validate models resulted in a sli
 
 Increasing the amount of collision data used for modelling improved model performance and predictive strength when using consistent independent validation data. This result suggests that a unified data system will enable more robust analyses of wildlife-vehicle collisions. discuss expected versus actual results
 
+important to match scale of predictors to training data; bendigo and western models did not fit as well when using predicted values for entire state. western data was only collected on major roads (Freeways, Highways, Major Arterials)
+
 usefulness of citizen-science data? (Dwyer et al., 2016)
 
 survey effort of datasets? cite papers about detection rates, etc...
@@ -183,3 +189,5 @@ varying levels of quality control on data? cite papers about reporting rates (Sn
 temporal aspect of data? cite papers (da Rosa and Bager, 2012) and work in progress (trains); discuss limitation of reporting time accuracy
 
 Currently, there is no unified data storage system for collision records in use. qualities that storage system should have? cite existing systems
+
+Inspect variation in predictor data for each validation dataset.
