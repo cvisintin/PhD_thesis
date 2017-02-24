@@ -69,7 +69,7 @@ cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \be
 
 To test model sensitivity to different combinations of data, we validated the predictions from our models using held-out datasets. For each combination of training data, we fit a model, made predictions, and validated the predictions with an independent dataset not used to train the model. To assess model calibration, we regressed the observed collisions in each independent dataset on values predicted from models using the independent data (see \cite{mill91}). A perfectly calibrated model would report an intercept coefficient of zero and a slope coefficient of one. To measure the ability of each model to discriminate between false positive and false negative values, we also calculated receiver operator characteristic scores (see \cite{metz78}. A score of one indicates perfect discrimination while 0.5 indicates no better than random selection; 0.75 or above is often considered acceptable performance.
 
-We also used aggregated collision data at the town level (Insurance Australia Group) to test model performance. Collisions within each town boundary in Victoria (2917 total) were tabulated. From the predictions made to all road segments obtained for different combinations of data, we calculated the mean within each town boundary. Using each town as a datapoint, we regressed the mean collision risk prediction (log-transformed) on the total collisions reported. Due to the response data being positive integers, we used the Poisson link:
+We also used aggregated collision data at the town level (Insurance Australia Group, ``iag" hereafter) to test model performance. Collisions within each town boundary in Victoria (2917 total) were tabulated. From the predictions made to all road segments obtained for different combinations of data, we calculated the mean within each town boundary. Using each town as a datapoint, we regressed the mean collision risk prediction (log-transformed) on the total collisions reported. Due to the response data being positive integers, we used the Poisson link:
 
 \begin{equation} \label{eq:62}
 \text{log}(C_j) = \beta_0 + \beta_1\text{log}(P_j)
@@ -77,20 +77,52 @@ We also used aggregated collision data at the town level (Insurance Australia Gr
 
 \noindent where $C_j$ is the count of reported collisions and $P_j$ is the mean predicted collision risk, in a town $j$. As with the road segment-based data analysis, calibration was assessed using the intercept and slope of the model fits. We also calculated the reduction in deviance (unexplained variation in the data) for each model.
 
-To further investigate how each independent dataset contributed to the models utilising combined data, we fit the model described in \Cref{eq:61} to each road segment-based independent dataset (Bendigo, Western, and Crashstats). For each dataset, we restricted road segments to a domain that corresponded to the respective survey or reporting area. The City of Bendigo data was restricted to road segments that fell within the city boundary as carcass reports outside of the jurisdiction were not catalogued. Similarly, only road segments that were surveyed in the Western District were included for analysis. Crashstats covers the entire state and so all 644,715 road segments were used. 
+To further investigate how each independent dataset contributed to the models utilising combined data, we fit the model described in \Cref{eq:61} to each road segment-based independent dataset (Bendigo, Western, and Crashstats). We added an offset term of road length multiplied by the data period in years to standardise the model outputs for comparison. For each dataset, we restricted road segments to a domain that corresponded to the respective survey or reporting area. The Bendigo data was restricted to road segments that fell within the city boundary as carcass reports outside of the jurisdiction were not catalogued. Similarly, only road segments that were surveyed in the Western District were included for analysis. Crashstats covers the entire state and so all 644,715 road segments were used. 
 
 \section{Results}
+
+\begin{table}[htp]
+\caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.0001) are marked with asterisks.}
+\begin{tabularx}{\textwidth}{lllllll} \toprule
+Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
+  \midrule
+Wildlife Victoria & Intercept & -42.30 & 1.07 & -39.66 & $<$.0001* & 11.83 \\ 
+   & EGK & 0.70 & 0.01 & 47.77 & $<$.0001* &  \\ 
+   & TVOL & 5.55 & 0.24 & 22.68 & $<$.0001* &  \\ 
+   & TVOL2 & -0.33 & 0.02 & -21.76 & $<$.0001* &  \\ 
+   & TSPD & 3.93 & 0.07 & 54.49 & $<$.0001* &  \\ 
+  City of Bendigo & Intercept & -53.81 & 4.87 & -11.05 & $<$.0001* & 5.16 \\ 
+   & EGK & 0.49 & 0.09 & 5.28 & $<$.0001* &  \\ 
+   & TVOL & 11.71 & 1.20 & 9.74 & $<$.0001* &  \\ 
+   & TVOL2 & -0.74 & 0.08 & -9.60 & $<$.0001* &  \\ 
+   & TSPD & 1.19 & 0.39 & 3.08 & 0.0021 &  \\ 
+  Western District & Intercept & -10.19 & 3.47 & -2.93 & 0.0034 & 5.15 \\ 
+   & EGK & 0.02 & 0.05 & 0.36 & 0.7207 &  \\ 
+   & TVOL & 0.37 & 0.80 & 0.47 & 0.6408 &  \\ 
+   & TVOL2 & -0.07 & 0.05 & -1.32 & 0.1885 &  \\ 
+   & TSPD & 2.03 & 0.45 & 4.48 & $<$.0001* &  \\ 
+  Crashstats & Intercept & -51.74 & 2.89 & -17.88 & $<$.0001* & 11.75 \\ 
+   & EGK & 0.55 & 0.04 & 12.89 & $<$.0001* &  \\ 
+   & TVOL & 4.89 & 0.69 & 7.13 & $<$.0001* &  \\ 
+   & TVOL2 & -0.32 & 0.04 & -7.19 & $<$.0001* &  \\ 
+   & TSPD & 6.52 & 0.27 & 24.43 & $<$.0001* &  \\ 
+\bottomrule
+\end{tabularx}
+\label{val_glm_perf}
+\end{table}
+
+All three models fitted to independent road segment-based datasets (Bendigo, Western, and Crashstats) had mixed results when compared to the model fitted to the original dataset (\Cref{val_glm_perf}). Both of the models using statewide data (Wildlife Victoria and Crashstats) performed better than the two using localised data (Bendigo and Western). The worst performing model was fit to data from the Western - only traffic speed was a significant predictor. In contrast, the only non-significant predictor was traffic speed in the model fit to data from Bendigo. All other predictors in every model were significant. The reduction of unexplained variation in the data were remarkably similar for the two statewide data models ($\approx$11.8\%) and the localised data models ($\approx$5.2\%).
 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=.7]{06_occ.png}
   \includegraphics[scale=.7]{06_tvol.png}
   \includegraphics[scale=.7]{06_tspd.png}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Grey shading indicates 95\% confidence intervals around the trend lines.}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Note likelihoods of collision have been rescaled for comparison as all datasets have different amounts of data points and thus variations in predicted value ranges.}
   \label{val_effects}
 \end{figure*}
 
-Mean predicted rates of collisions across the Victorian road network increased as the combinations of independent datasets increased (\Cref{val_effects}). Models that used the original collision data combined with all three additional independent datasets (City of Bendigo, Western District, and Crashstats) had the highest mean predictions. The increase in predicted collisions also coincided with the ratio of collisions to background in each training dataset. For example, higher mean predicted rate of collisions were for datasets with 5829 road segments with recorded collisions versus 5055 with recorded collisions.
+Most of the marginal effects of the predictors on collision risk had similar shapes for all of the model fits. Collision risk rose with increasing species occurrence for all models, however, the Western data model reached nearly 75\% of the maximum collision likelihood at low values of species occurrence ($\approx$0.2). Collision risk had a quadratic relationship to traffic volume, and peaked between 2,000 and 7,000 vehicles day$^{-1}$ for all models except the Western data model. The Western data model showed a monotonically decreasing collision risk with rising traffic volume beginning at a value of $\approx$0.95 at zero vehicles day$^{-1}$. All of the models demonstrated rising collision risk with increasing traffic speed. The Bendigo data model was nearly linear between 40 and 110 km hr$^{-1}$ whilst the Crashstats data model rose slowly with the maximum increase of risk per unit speed occurring above 95 km hr$^{-1}$.
 
 \begin{table}[htp]
 \caption[Discrimination ability of models using all combinations of independent data]{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
@@ -106,39 +138,7 @@ Crashstats & 0.8 & 0.8 & 0.83 & - & 0.82 & - & - \\
 \label{val_glm_roc}
 \end{table}
 
-The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and held-out validation data (\Cref{val_glm_roc}). Variation in the receiver operator characteristic (ROC) scores was less than 4\% between different combinations of data used to fit models.
-
-\begin{table}[htp]
-\caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.001) are marked with asterisks.}
-\begin{tabularx}{\textwidth}{lllllll} \toprule
-Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
-  \midrule
-City of Bendigo & Intercept & -48.76 & 7.766 & -6.279 & 3.4e-10 & 6.27 \\ 
-   & EGK & -0.1927 & 0.1483 & -1.299 & 0.19 &  \\ 
-   & TVOL & 8.426 & 1.849 & 4.558 & 5.2e-06 &  \\ 
-   & TVOL$^2$ & -0.535 & 0.1133 & -4.722 & 2.3e-06 &  \\ 
-   & TSPD & 3.046 & 0.4256 & 7.156 & 8.3e-13 &  \\ 
-   &  &  &  &  &  &  \\ 
-  Western District & Intercept & -10.19 & 3.473 & -2.933 & 0.0034 & 5.15 \\ 
-   & EGK & 0.01633 & 0.04569 & 0.3575 & 0.72 &  \\ 
-   & TVOL & 0.3718 & 0.7969 & 0.4665 & 0.64 &  \\ 
-   & TVOL$^2$ & -0.06954 & 0.05288 & -1.315 & 0.19 &  \\ 
-   & TSPD & 2.033 & 0.4533 & 4.485 & 7.3e-06 &  \\ 
-   &  &  &  &  &  &  \\ 
-  Crashstats & Intercept & -51.74 & 2.894 & -17.88 & 2e-16 & 11.75 \\ 
-   & EGK & 0.5473 & 0.04247 & 12.89 & 2e-16 &  \\ 
-   & TVOL & 4.894 & 0.6863 & 7.131 & 1e-12 &  \\ 
-   & TVOL$^2$ & -0.3184 & 0.04426 & -7.194 & 6.3e-13 &  \\ 
-   & TSPD & 6.52 & 0.2669 & 24.43 & 2e-16 &  \\ 
-   &  &  &  &  &  &  \\ 
-\bottomrule
-\end{tabularx}
-\label{val_glm_perf}
-\end{table}
-
-bendigo and western models did not fit as well when using predicted values for entire state.
-
-
+The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and held-out validation data (\Cref{val_glm_roc}); no improvement trend occurred as data were added to models. Among the different validation datasets, variation in the receiver operator characteristic (ROC) scores were less than 4\% between different combinations of data used to fit models. All of the models discriminated best when validated with the Bendigo dataset (ROC scores of 0.85-0.87) and worst with the Western dataset (ROC scores of 0.75-0.78).
 
 \begin{figure*}[htp]
   \centering
@@ -147,7 +147,7 @@ bendigo and western models did not fit as well when using predicted values for e
   \label{val_calib}
 \end{figure*}
 
-No significant trend was observed in validating model predictions with different combinations of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score (close to one). There was a slight improvement in mean calibration score (grouped by validation dataset) as more datasets were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (\Cref{val_calib2}).
+No significant trend was observed in validating model predictions with different combinations of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria (o) data and validated with data from Crashstats (c) had the highest calibration score which was close to one. There was a slight improvement in mean calibration score across each grouping (i.e. no added data, one added dataset, etc.) as more data were combined and used to fit the models. There was no significant change in observed-versus-predicted values whilst increasing the combinations of datasets (\Cref{val_calib2}).
 
 \begin{figure*}[htp]
   \centering
@@ -156,25 +156,25 @@ No significant trend was observed in validating model predictions with different
   \label{val_calib2}
 \end{figure*}
 
-Using the aggregated independent data (iag) to validate models resulted in a slight increase in model calibration as more combinations of training data were used (\Cref{val_calib_iag}).  The lowest calibration coefficient (0.943) occurred using only the original (o) data to fit the model and the highest (0.945) occurred using a combination of the original and all independent (obwc) data. Higher reductions of unexplained variation in the data also occurred with more combinations of training data (\Cref{val_calib_dev}). Deviance explained by the model fit on the original (o) data was 33.2\%. The model fit on a combination of the original and all independent (obwc) data explained 33.3\% of the deviance.
+Using the aggregated independent data (iag) to validate models resulted in a slight increase in model calibration as more combinations of training data were used (\Cref{val_calib_iag}).  The lowest calibration coefficient (0.943) occurred using only the original (o) data to fit the model and the highest (0.945) occurred using a combination of the original and all independent (obwc) data. Higher reductions of unexplained variation in the data also occurred with more combinations of training data (\Cref{val_calib_dev}). Deviance explained by the model fit on the original (o) data was 33.2\% whilst the model fit on a combination of the original and all independent (obwc) data explained 33.3\% of the deviance.
 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_calib_iag.png}
-  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
 \begin{figure*}[htp]
   \centering
   \includegraphics[scale=1]{06_dev_iag.png}
-  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data were used for all validation (post-hyphen). The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o' - Original (Wildlife Victoria); 'b' - Bendigo; 'w' - Western; 'c' - Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
   \label{val_calib_dev}
 \end{figure*}
 
 \section{Discussion}
 
-Increasing the amount of collision data used for modelling improved model performance and predictive strength when using consistent independent validation data. This result suggests that a unified data system will enable more robust analyses of wildlife-vehicle collisions. discuss expected versus actual results
+In this study, increasing the amount of collision data used for modelling improved model performance and predictive strength, albeit marginally. This result suggests that a unified data system may enable more robust analyses of wildlife-vehicle collisions, however, there are several important factors to   
 
 important to match scale of predictors to training data; bendigo and western models did not fit as well when using predicted values for entire state. western data was only collected on major roads (Freeways, Highways, Major Arterials)
 
