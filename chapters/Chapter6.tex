@@ -174,11 +174,14 @@ Using the aggregated independent data (iag) to validate models resulted in a sli
 
 \section{Discussion}
 
-In this study, increasing the amount of collision data used for modelling improved model performance and predictive strength, albeit marginally. This result suggests that a unified data system may enable more robust analyses of wildlife-vehicle collisions, however, there are several important factors to   
+In this study, increasing the amount of collision data used for modelling improved model performance and predictive strength, albeit marginally. This result suggests that a unified data system may enable more robust analyses of wildlife-vehicle collisions, however, there are several important factors to consider. Perhaps the most important is the quality of the data that is being added to the models.
 
-important to match scale of predictors to training data; bendigo and western models did not fit as well when using predicted values for entire state. western data was only collected on major roads (Freeways, Highways, Major Arterials)
+Citizen-science collected data has the potential to contribute large amounts of observational data on wildlife-vehicle collisions \citep{cose14,dwye16,paul14}, however, controlling the quality of the data is critical to ensure sound statistical analysis. To augment the collision or carcass observation data, some systems store metadata on reliability and accuracy. This metadata is often reported by the user and requires additional review by a system administrator to determine its merit but is a good foundation for determining the effects of the data on model outputs. In the Victorian data, we did not have access to such metadata and assumed all datasets had the same reliability and accuracy. Yet, we are confident there is some variation between datasets as some data, such as insurance or police reports, may be more reliable than observations reported by citizens.
 
-usefulness of citizen-science data? (Dwyer et al., 2016)
+Survey effort involved in the collection of collision data is another important item to capture in the metadata as this will have modelling implications and an effect on predictions of road risk. Despite its importance, this information is seldom reported \citep{} and varies considerably amongst and within jurisdictions \citep{huij07a}. 
+
+important to match scale of predictors to training data; bendigo and western models did not fit as well when using predicted values for entire state. western data was only collected on major roads (Freeways, Highways, Major Arterials). Inspect variation in predictor data for each validation dataset.
+
 
 survey effort of datasets? cite papers about detection rates, etc...
 
@@ -190,6 +193,5 @@ varying levels of quality control on data? cite papers about reporting rates (Sn
 
 temporal aspect of data? cite papers (da Rosa and Bager, 2012) and work in progress (trains); discuss limitation of reporting time accuracy
 
-Currently, there is no unified data storage system for collision records in use. qualities that storage system should have? cite existing systems
+Currently, there is no unified data storage system that is accessible to and used by multiple agencies and individuals to catalogue wildlife-vehicle collisions. Although this study is limited to Victoria in south-east Australia, the results and general discussion suggest qualities that a centralised storage system should have and we anticipate the development and implementation of a global database in the near future.
 
-Inspect variation in predictor data for each validation dataset.
