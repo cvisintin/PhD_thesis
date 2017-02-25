@@ -28,9 +28,11 @@
 \usepackage{array}
 \usepackage{cleveref}
 \usepackage[caption=false]{subfig}
+%\usepackage{floatrow}
 %\useackage{tikz}
 %\usepackage[toc,page]{appendix}
 \usepackage{pdfpages}
+
 
 %%% DEFINE NEW COMMANDS
 \newcommand{\B}{\textbf}
@@ -95,7 +97,6 @@
 \let\orig@chapter\chapter
 \g@addto@macro\appendix{\let\chapter\appendix@chapter}
 \makeatother
-
 
 \begin{document}
 
@@ -186,7 +187,7 @@ My supervisors have been instrumental in both my academic and professional devel
 
 \input{chapters/AppendixC}
 
-\input{chapters/AppendixD}
+%\input{chapters/AppendixD}
 
 
 %---------------------------------------------------------- 

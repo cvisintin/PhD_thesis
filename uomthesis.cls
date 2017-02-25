@@ -66,7 +66,7 @@
 
 % this stops one figure taking up a whole page and lets more text onto
 % the one page when a figure exists
-\renewcommand\floatpagefraction{0.8} %   Default = 0.5
+\renewcommand\floatpagefraction{0.5} %   Default = 0.5
 
 % macros for defining the department, various dates and the title and
 % author of the thesis.
@@ -165,25 +165,46 @@ has not been submitted in whole or part for a degree in any university.
 }
 
 % improved version of caption handling
-\usepackage{ccaption}
-\captionnamefont{\scshape}
-\captionstyle{}
-\makeatletter
-\renewcommand{\fnum@figure}[1]{\quad\small\textsc{\figurename~\thefigure}:}
-\renewcommand{\fnum@table}[1]{\quad\small\textsc{\tablename~\thetable}:}
-\renewcommand{\@makecaption}[2]{%
-\vskip\abovecaptionskip
-\sbox\@tempboxa{#1: #2}%
-\ifdim \wd\@tempboxa >\hsize
-  \def\baselinestretch{1}\@normalsize
-  #1: #2\par
-  \def\baselinestretch{1.5}\@normalsize
-\else
-  \global \@minipagefalse
-  \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-\fi
-\vskip\belowcaptionskip}
-\makeatother
+%\usepackage{ccaption}
+%\captionnamefont{\scshape}
+%\captionstyle{}
+%\makeatletter
+%\renewcommand{\fnum@figure}[1]{\quad\small\textsc{\figurename~\thefigure}:}
+%\renewcommand{\fnum@table}[1]{\quad\small\textsc{\tablename~\thetable}:}
+%\renewcommand{\@makecaption}[2]{%
+%\vskip\abovecaptionskip
+%\sbox\@tempboxa{#1: #2}%
+%\ifdim \wd\@tempboxa >\hsize
+%  \def\baselinestretch{1}\@normalsize
+%  #1: #2\par
+%  \def\baselinestretch{1.5}\@normalsize
+%\else
+%  \global \@minipagefalse
+%  \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%\fi
+%\vskip\belowcaptionskip}
+%\makeatother
+
+% caption handling
+\usepackage{setspace}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
+\captionsetup[table]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
+%\makeatletter
+%\long\def\@makecaption#1#2{%
+%\vskip\abovecaptionskip
+%\sbox\@tempboxa{#1: #2}%
+%\ifdim \wd\@tempboxa >\hsize
+%  \def\baselinestretch{1}\@normalsize
+%  #1: #2\par
+%  \def\baselinestretch{1.5}\@normalsize
+%\else
+%  \global \@minipagefalse
+%  \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%\fi
+%\vskip\belowcaptionskip}
+%\makeatother
+
 
 % set the pagestyle to look good
 \pagestyle{fancy}
