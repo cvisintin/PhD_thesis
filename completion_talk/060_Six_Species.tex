@@ -1,0 +1,36 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+	\node [anchor=west, align=left, text width=12cm] at (2.0,7.8) {\Large Predicting road collision risk for six native Australian \\ mammals in Victoria};
+	
+	\node [anchor=west, align=left] at (11.7,5.8) {\textbf{Chapter} \Huge{2}};
+	
+	\node [anchor=north west,inner sep=0, opacity=0.7] at (0,4.8) {\includegraphics[height=5.2cm]{graphics/seal_road_melb2.jpg}};
+
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

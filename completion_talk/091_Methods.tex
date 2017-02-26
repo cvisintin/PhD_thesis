@@ -1,0 +1,52 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1>{
+		\node [anchor=north west,inner sep=0] at (0.8,9.0) {\includegraphics[height=4.5cm]{graphics/victoria_val_data_wv}};
+		\node [anchor=north west,inner sep=0] at (0.8,4.5) {\includegraphics[height=4.5cm]{graphics/victoria_val_data_iag}};
+		\node [anchor=north west,inner sep=0] at (9.0,9.0) {\includegraphics[height=4.5cm]{graphics/victoria_val_data_western}};
+		\node [anchor=north west,inner sep=0] at (9.0,4.5) {\includegraphics[height=4.5cm]{graphics/victoria_val_data_bendigo}};
+
+		\draw [anchor=north west, thick] (0,4.5) -- (16,4.5);
+		\draw [anchor=north west, thick] (8.0,9.0) -- (8.0,0);
+
+		\node [anchor=north west,align=left, fill=white] at (5.2,5.0) {\tiny Source: Widlife Victoria};
+		\node [anchor=north west,align=left, fill=white] at (13.8,5.0) {\tiny Source: VicRoads};
+		\node [anchor=north west,align=left, fill=white] at (4.3,0.5) {\tiny Source: Insurance Australia Group};
+		\node [anchor=north west,align=left, fill=white] at (13.2,0.5) {\tiny Source: City of Bendigo};
+		
+		\node [anchor=north west,align=left, fill=white] at (5.2,8.8) {\tiny Roads (n collisions) \\[-0.2cm] \tiny '0': 597038 \\[-0.2cm] \tiny '1+': 3794};
+		\node [anchor=north west,align=left, fill=white] at (13.8,8.8) {\tiny Roads (n collisions) \\[-0.2cm] \tiny '0': 58988 \\[-0.2cm] \tiny '1+': 802};
+		\node [anchor=north west,align=left, fill=white] at (5.2,4.2) {\tiny Towns (n collisions) \\[-0.2cm] \tiny '0': 1524 \\[-0.2cm] \tiny '1+': 1344};
+		\node [anchor=north west,align=left, fill=white] at (13.8,4.2) {\tiny Roads (n collisions) \\[-0.2cm] \tiny '0': 14691 \\[-0.2cm] \tiny '1+': 286};
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

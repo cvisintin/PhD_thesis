@@ -1,0 +1,96 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1>{
+		\node [anchor=north west,inner sep=0] at (0,9.0) {\includegraphics[height=1.5cm]{graphics/egk_list_sc}};
+	
+		\node [anchor=north west,inner sep=0] at (0,7.5) {\includegraphics[height=1.5cm]{graphics/btp_list_sc}};
+	
+		\node [anchor=north west,inner sep=0] at (0,6.0) {\includegraphics[height=1.5cm]{graphics/rtp_list_sc}};
+	
+		\node [anchor=north west,inner sep=0] at (0,4.5) {\includegraphics[height=1.5cm]{graphics/bsw_list_sc}};
+
+		\node [anchor=north west,inner sep=0] at (0,3.0) {\includegraphics[height=1.5cm]{graphics/wom_list_sc}};
+	
+		\node [anchor=north west,inner sep=0] at (0,1.5) {\includegraphics[height=1.5cm]{graphics/koa_list_sc2}};	
+
+		\node [anchor=north west,inner sep=0] at (1.9,8.7) {\includegraphics[height=.5cm]{graphics/egk_icon_c}};
+	
+		\node [anchor=north west,inner sep=0] at (1.9,7.3) {\includegraphics[height=.6cm]{graphics/btp_icon_c}};
+	
+		\node [anchor=north west,inner sep=0] at (1.9,5.8) {\includegraphics[height=.6cm]{graphics/rtp_icon_c}};	
+
+		\node [anchor=north west,inner sep=0] at (1.9,4.3) {\includegraphics[height=.6cm]{graphics/bsw_icon_c}};		
+	
+		\node [anchor=north west,inner sep=0] at (1.9,2.6) {\includegraphics[height=.4cm]{graphics/wom_icon_c}};
+	
+		\node [anchor=north west,inner sep=0] at (1.9,1.2) {\includegraphics[height=.6cm]{graphics/koa_icon_c}};	
+	
+		\node [anchor=north west,inner sep=0] at (3.6,8.0) {\includegraphics[height=8.0cm]{graphics/6sp_collisions}};
+
+		\node [anchor=west] at (1.8,7.9) {\tiny Eastern Grey Kangaroo};
+		\node [anchor=west] at (1.8,6.4) {\tiny Brushtail Possum};
+		\node [anchor=west] at (1.8,4.9) {\tiny Ringtail Possum};
+		\node [anchor=west] at (1.8,3.4) {\tiny Black Swamp Wallaby};
+		\node [anchor=west] at (1.8,1.9) {\tiny Wombat};
+		\node [anchor=west] at (1.8,0.4) {\tiny Koala};
+	
+		\node at (8.9,0.4) {\tiny Source: Wildlife Victoria};
+	}
+
+	\only<2>{
+		\node [anchor=north west,inner sep=0] at (0.3,8.3) {\includegraphics[height=3.5cm]{graphics/EGK_preds_brt}};
+
+		\node [anchor=north west,inner sep=0] at (2.0,8.0) {\includegraphics[height=.5cm]{graphics/egk_icon_c}};
+
+		\node [anchor=north west,inner sep=0] at (5.6,8.3) {\includegraphics[height=3.5cm]{graphics/BTP_preds_brt}};
+	
+		\node [anchor=north west,inner sep=0] at (7.6,8.0) {\includegraphics[height=.6cm]{graphics/btp_icon_c}};
+
+		\node [anchor=north west,inner sep=0] at (10.9,8.3) {\includegraphics[height=3.5cm]{graphics/RTP_preds_brt}};
+	
+		\node [anchor=north west,inner sep=0] at (12.9,8.0) {\includegraphics[height=.6cm]{graphics/rtp_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (0.3,4.0) {\includegraphics[height=3.5cm]{graphics/BSW_preds_brt}};
+
+		\node [anchor=north west,inner sep=0] at (2.3,3.7) {\includegraphics[height=.6cm]{graphics/bsw_icon_c}};
+
+		\node [anchor=north west,inner sep=0] at (5.6,4.0) {\includegraphics[height=3.5cm]{graphics/WOM_preds_brt}};		
+	
+		\node [anchor=north west,inner sep=0] at (7.6,3.7) {\includegraphics[height=.5cm]{graphics/wom_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (10.9,4.0) {\includegraphics[height=3.5cm]{graphics/KOA_preds_brt}};
+	
+		\node [anchor=north west,inner sep=0] at (12.9,3.7) {\includegraphics[height=.6cm]{graphics/koa_icon_c}};	
+
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,109 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1-6>{
+		\node [anchor=north west,inner sep=0] at (6.7,5.0) {\includegraphics[height=4.5cm]{graphics/rail_grid.png}};
+	}
+
+	\only<2>{
+		\draw [radius=0.2cm, line width=.05cm] (7.25,3.8) circle;
+	}
+
+	\only<4-6>{
+		\node [anchor=north west,inner sep=0] at (0.5,5.0) {\includegraphics[height=5cm]{graphics/egk_brt.png}};
+		\only<4>{
+			\draw [color=black, line width=.08cm] (6.8,3.65) rectangle (7.45,4.3);
+			\draw [color=lightgray, -latex, line width=.2cm] (5.2,2.8) -- (6.6,3.8);
+		}
+		\only<5>{
+			\draw [fill=gray, line width=0cm, opacity=0.4] (8.075,3.05) rectangle (8.675,3.65);
+		}
+	}
+
+	\only<3-6>{
+		\node [anchor=north west,inner sep=0] at (0.1,8.0) {\includegraphics[height=3.8cm]{/home/casey/Research/Github/coll_model_trains/output/train_plots/train_plot_952.png}};
+		\draw [color=white, fill=white] (4.4,4.4) rectangle (5.1,4.8);
+		\only<3>{
+			\draw [color=black,line width=.1cm] (7.45,3.65) -- (6.9,4.3);
+			\draw [color=lightgray, -latex,line width=.2cm] (4.8,5.0) -- (6.8,4.1);
+		}
+	}
+				
+	\only<2-5>{
+		\node [anchor=north west,inner sep=0] at (2.8, 7.9) {
+			\tiny{						
+			\begin{tabular}{llllllll}
+                	& Collisions ($y$) & Hour ($t$) & Month ($m$) & Trains ($v$) & Segment Length ($d$) & Speed ($s$) & Kangaroo ($k$) \\
+               \hline \\[-.1cm]
+               \only<2-5>{
+                {\only<2>{\textbf}{Grid$_{itm}$}} & 
+                {\only<2>{\textbf}{1}} & 
+                {\only<2>{\textbf}{8}} & 
+                {\only<2>{\textbf}{3}} & 
+               }
+               \only<3-5>{
+                {\only<3>{\textbf}{4}} & 
+                {\only<3>{\textbf}{1.2}} & 
+                {\only<3>{\textbf}{120}} & 
+               }
+               \only<4-5>{
+                {\only<4>{\textbf}{0.6}}
+               } \\ 
+               \only<5>{
+                \textbf{Grid$_{itm...n}$} & 
+                \textbf{0} & 
+                \textbf{9} & 
+                \textbf{3} & 
+                \textbf{6} & 
+                \textbf{1.1} & 
+                \textbf{118} & 
+                \textbf{0.5}
+               } \\
+            \end{tabular}
+            }
+           };
+	}
+				
+	\only<6>{
+		\node [anchor=north west,inner sep=0] at (6.0, 7.8) {
+			\scriptsize{
+			\begin{tabular}{c}
+			$y_i \sim$ Binomial$(1,p_i)$\\[.15cm]
+			$ln(-ln(1-p_i)) = \beta_0 + \beta_1 log(k) + \beta_2 log(v) + \beta_3 log(s) + c_i + log(d_i)$\\[.15cm]
+			$c_i = \gamma_1l_i + \gamma_2(l_i^2) + \gamma_3f(h_i,m_i,g)$\\[.15cm]
+			$l_i = sin(\frac{\pi(h_i-3)}{12})$\\[.15cm]
+			$f(h_i,m_i,g) =$ Astronomical algorithm at place $g$
+			\end{tabular}
+			}
+		};
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

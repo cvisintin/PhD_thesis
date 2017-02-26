@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1>{
+	\node [anchor=north west,inner sep=0] at (0,6.0) {\includegraphics[height=6.0cm]{graphics/study_vic2}};
+	\node [anchor=north west,inner sep=0] at (7.0,9.1) {\includegraphics[height=6.3cm]{graphics/study_cal2}};
+	\draw [anchor=north west,inner sep=0, fill=white, draw=none] (3.8,6.0) rectangle (6.5,4.0);
+	}
+
+	\only<2>{
+
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

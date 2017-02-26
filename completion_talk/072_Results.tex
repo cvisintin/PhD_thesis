@@ -1,0 +1,48 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1>{
+	\node [anchor=north west,inner sep=0] at (.8,9.0) {\includegraphics[height=4.3cm]{graphics/vic_occ}};
+	\node [anchor=north west,inner sep=0] at (1.7,8.5) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+	\node [anchor=north west,inner sep=0] at (5.8,9.0) {\includegraphics[height=4.3cm]{graphics/vic_tvol}};
+	\node [anchor=north west,inner sep=0] at (10.8,9.0) {\includegraphics[height=4.3cm]{graphics/vic_tspd}};
+	\node [anchor=north west,inner sep=0] at (.8,4.5) {\includegraphics[height=4.3cm]{graphics/cal_occ}};
+	\node [anchor=north west,inner sep=0] at (1.8,4.0) {\includegraphics[height=.6cm]{graphics/deer_icon_c}};
+	\node [anchor=north west,inner sep=0] at (5.8,4.5) {\includegraphics[height=4.3cm]{graphics/cal_tvol}};
+	\node [anchor=north west,inner sep=0] at (10.8,4.5) {\includegraphics[height=4.3cm]{graphics/cal_tspd}};
+	}
+
+	\only<2>{
+	\node [anchor=north west,inner sep=0] at (6.0,10.0) {\includegraphics[height=8.0cm]{graphics/deer_collrisk_cal2}};
+	\node [anchor=north west,inner sep=0] at (0.2,7.0) {\includegraphics[height=7.5cm]{graphics/egk_collrisk_vic2}};
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

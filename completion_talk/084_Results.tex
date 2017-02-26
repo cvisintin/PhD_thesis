@@ -1,0 +1,42 @@
+\documentclass[aspectratio=169]{beamer}
+%\documentclass[draft]{beamer}
+
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{media9}
+
+\usetheme{CambridgeUS}
+\usecolortheme{dove}
+
+\setbeamersize{text margin left=0cm,text margin right=0cm}
+\setbeamerfont{frametitle}{size=\small}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\definecolor{grayed}{gray}{0.85}
+\definecolor{lightred}{rgb}{0.8,0.2,0.1}
+
+\begin{document}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
+
+	\only<1>{
+		\node [anchor=north west,inner sep=0] at (0.2,7.4) {\includegraphics[height=5.0cm]{graphics/egk.png}};
+		\node [anchor=north west,inner sep=0] at (5.6,7.4) {\includegraphics[height=5.0cm,trim={0.5cm 0 0 0},clip]{graphics/speed.png}};
+		\node [anchor=north west,inner sep=0] at (10.7,7.4) {\includegraphics[height=5.0cm,trim={0.5cm 0 0 0},clip]{graphics/hour.png}};
+	}
+
+	\only<2>{
+		\node [anchor=north west,inner sep=0] at (0.7,8.8) {\includegraphics[height=8.2cm,trim=0cm 0cm 0cm 1cm,clip]{graphics/trains_preds.png}};
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document}
