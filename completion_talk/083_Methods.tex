@@ -26,7 +26,9 @@
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
 
-	\only<1-6>{
+	\tikzstyle{arrow}=[line width=1mm,draw=grayed,-triangle 45,fill=grayed,shorten >=.25cm,postaction={draw, line width=2mm, shorten >=.5cm, -}]
+
+	\only<1-5>{
 		\node [anchor=north west,inner sep=0] at (6.7,5.0) {\includegraphics[height=4.5cm]{graphics/rail_grid.png}};
 	}
 
@@ -34,23 +36,23 @@
 		\draw [radius=0.2cm, line width=.05cm] (7.25,3.8) circle;
 	}
 
-	\only<4-6>{
+	\only<4-5>{
 		\node [anchor=north west,inner sep=0] at (0.5,5.0) {\includegraphics[height=5cm]{graphics/egk_brt.png}};
 		\only<4>{
 			\draw [color=black, line width=.08cm] (6.8,3.65) rectangle (7.45,4.3);
-			\draw [color=lightgray, -latex, line width=.2cm] (5.2,2.8) -- (6.6,3.8);
+			\draw [arrow] (5.2,2.8) -- (6.6,3.8);
 		}
 		\only<5>{
 			\draw [fill=gray, line width=0cm, opacity=0.4] (8.075,3.05) rectangle (8.675,3.65);
 		}
 	}
 
-	\only<3-6>{
+	\only<3-5>{
 		\node [anchor=north west,inner sep=0] at (0.1,8.0) {\includegraphics[height=3.8cm]{/home/casey/Research/Github/coll_model_trains/output/train_plots/train_plot_952.png}};
 		\draw [color=white, fill=white] (4.4,4.4) rectangle (5.1,4.8);
 		\only<3>{
 			\draw [color=black,line width=.1cm] (7.45,3.65) -- (6.9,4.3);
-			\draw [color=lightgray, -latex,line width=.2cm] (4.8,5.0) -- (6.8,4.1);
+			\draw [arrow] (4.8,5.0) -- (6.8,4.1);
 		}
 	}
 				
@@ -88,21 +90,18 @@
             }
            };
 	}
-				
-	\only<6>{
-		\node [anchor=north west,inner sep=0] at (6.0, 7.8) {
-			\scriptsize{
-			\begin{tabular}{c}
-			$y_i \sim$ Binomial$(1,p_i)$\\[.15cm]
-			$ln(-ln(1-p_i)) = \beta_0 + \beta_1 log(k) + \beta_2 log(v) + \beta_3 log(s) + c_i + log(d_i)$\\[.15cm]
-			$c_i = \gamma_1l_i + \gamma_2(l_i^2) + \gamma_3f(h_i,m_i,g)$\\[.15cm]
-			$l_i = sin(\frac{\pi(h_i-3)}{12})$\\[.15cm]
-			$f(h_i,m_i,g) =$ Astronomical algorithm at place $g$
-			\end{tabular}
-			}
-		};
+
+\only<6>{
+	\node [anchor=north west,inner sep=0] at (6.7,8.8) {\includegraphics[height=4.0cm]{graphics/crep01x.png}};
+	\node [anchor=north west,inner sep=0] at (11.3,8.8) {\includegraphics[height=4.0cm]{graphics/crep29x.png}};
+	\node [anchor=north west,inner sep=0] at (6.7,4.3) {\includegraphics[height=4.0cm]{graphics/crep24x.png}};
+	\node [anchor=north west,inner sep=0] at (11.3,4.3) {\includegraphics[height=4.0cm]{graphics/crep26x.png}};	
+
+	\node [anchor=north west,inner sep=0] at (7.0,4.8) {\tiny 0};
+	\node [anchor=north west,inner sep=0] at (8.5,4.8) {\tiny HOUR};
+	\node [anchor=north west,inner sep=0] at (10.5,4.8) {\tiny 24};
 	}
-	
+
 \end{tikzpicture}
 \end{frame}
 

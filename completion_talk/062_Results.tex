@@ -26,21 +26,21 @@
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)}]
 
-	\only<1-3>{
-		\only<1-3>{		
-			\node [anchor=north west,inner sep=0] at (0.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_occ_k}};
-			\node [anchor=north west,align=center,rotate=90,scale=.8] at (.4,5.0) {\tiny LIKELIHOOD OF COLLISION};
-			\node [anchor=north west,align=center,scale=.8] at (1.4,4.0) {\tiny LIKELIHOOD OF SPECIES OCCURRENCE};
-		}
-		\only<2-3>{
-			\node [anchor=north west,inner sep=0] at (5.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tvol_k}};
-		\node [anchor=north west,align=center,scale=.8] at (6.4,4.0) {\tiny TRAFFIC VOLUME (1000 VEHICLES/DAY)};
-		}
-		\only<3>{
-			\node [anchor=north west,inner sep=0] at (10.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tspd_k}};
-		\node [anchor=north west,align=center,scale=.8] at (11.4,4.0) {\tiny TRAFFIC SPEED (KILOMETRES/HOUR)};
-		}
-	}
+%	\only<1-3>{
+%		\only<1-3>{		
+%			\node [anchor=north west,inner sep=0] at (0.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_occ_k}};
+%			\node [anchor=north west,align=center,rotate=90,scale=.8] at (.4,5.0) {\tiny LIKELIHOOD OF COLLISION};
+%			\node [anchor=north west,align=center,scale=.8] at (1.4,4.0) {\tiny LIKELIHOOD OF SPECIES OCCURRENCE};
+%		}
+%		\only<2-3>{
+%			\node [anchor=north west,inner sep=0] at (5.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tvol_k}};
+%		\node [anchor=north west,align=center,scale=.8] at (6.4,4.0) {\tiny TRAFFIC VOLUME (1000 VEHICLES/DAY)};
+%		}
+%		\only<3>{
+%			\node [anchor=north west,inner sep=0] at (10.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tspd_k}};
+%		\node [anchor=north west,align=center,scale=.8] at (11.4,4.0) {\tiny TRAFFIC SPEED (KILOMETRES/HOUR)};
+%		}
+%	}
 
 %	\only<4-5>{
 %		\node [anchor=north west,align=center] at (1.8,3.4) {
@@ -59,20 +59,109 @@
 %		};
 		
 %		\node [anchor=north west,inner sep=0] at (1.4,2.8) {\includegraphics[height=2.7cm]{graphics/icons_col2a.png}};	
+
+	\only<1>{
+		\node [anchor=north west,inner sep=0] at (0.2,7.0) {\includegraphics[height=4.8cm]{graphics/6sp_occ_k.png}};
+		\node [anchor=north west,inner sep=0] at (5.4,7.0) {\includegraphics[height=4.8cm]{graphics/6sp_tvol_k.png}};
+		\node [anchor=north west,inner sep=0] at (10.6,7.0) {\includegraphics[height=4.8cm]{graphics/6sp_tspd_k.png}};
+		}
+
 		
-	\only<4>{
-		\node [anchor=north west,inner sep=0] at (0.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_occ}};
-		\node [anchor=north west,inner sep=0] at (5.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tvol}};
-		\node [anchor=north west,inner sep=0] at (10.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tspd}};
+	\only<2>{
+		\node [anchor=north west,inner sep=0] at (0.2,8.5) {\includegraphics[height=7.5cm]{graphics/6sp_occ.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_occ_egk.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_occ_bsw.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_occ_wom.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_occ_koa.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_occ_btp.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_occ_rtp.png}};
+
+		\node [anchor=north west,inner sep=0] at (8.2,7.9) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.5,6.5) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
 	
-		\node [anchor=north west,align=center,rotate=90,scale=.8] at (.4,5.0) {\tiny LIKELIHOOD OF COLLISION};
-		\node [anchor=north west,align=center,scale=.8] at (1.4,4.0) {\tiny LIKELIHOOD OF SPECIES OCCURRENCE};
-		\node [anchor=north west,align=center,scale=.8] at (6.4,4.0) {\tiny TRAFFIC VOLUME (1000 VEHICLES/DAY)};
-		\node [anchor=north west,align=center,scale=.8] at (11.4,4.0) {\tiny TRAFFIC SPEED (KILOMETRES/HOUR)};
+		\node [anchor=north west,inner sep=0] at (8.2,4.3) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.55,3.7) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (7.4,3.7) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.6,1.1) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (8.2,3.7) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,1.1) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+				
+		\node [anchor=north west,inner sep=0] at (8.2,3.1) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,6.6) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+	
+		\node [anchor=north west,inner sep=0] at (8.2,2.5) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.75,3.85) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};
+		}	
+	
+	\only<3>{
+		\node [anchor=north west,inner sep=0] at (0.2,8.5) {\includegraphics[height=7.5cm]{graphics/6sp_tvol.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_egk.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_bsw.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_wom.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_koa.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_btp.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_tvol_rtp.png}};
+
+		\node [anchor=north west,inner sep=0] at (3.0,7.5) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.5,8.3) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+	
+		\node [anchor=north west,inner sep=0] at (2.9,3.15) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.55,5.4) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (4.4,3.9) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.6,2.8) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (4.3,3.2) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,2.8) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+				
+		\node [anchor=north west,inner sep=0] at (8.2,2.95) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,8.3) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+	
+		\node [anchor=north west,inner sep=0] at (8.2,2.4) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.75,5.55) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};		
+
+%		\node [anchor=north west,inner sep=0] at (0.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_occ.png}};
+%		\node [anchor=north west,inner sep=0] at (5.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tvol.png}};
+%		\node [anchor=north west,inner sep=0] at (10.7,9.0) {\includegraphics[height=5.0cm,trim={0.5cm 0.5cm 0 0},clip]{graphics/6sp_tspd.png}};
+	
+		%\node [anchor=north west,align=center,rotate=90,scale=.8] at (.4,5.0) {\tiny LIKELIHOOD OF COLLISION};
+		%\node [anchor=north west,align=center,scale=.8] at (1.4,4.0) {\tiny LIKELIHOOD OF SPECIES OCCURRENCE};
+		%\node [anchor=north west,align=center,scale=.8] at (6.4,4.0) {\tiny TRAFFIC VOLUME (1000 VEHICLES/DAY)};
+		%\node [anchor=north west,align=center,scale=.8] at (11.4,4.0) {\tiny TRAFFIC SPEED (KILOMETRES/HOUR)};
 		
 %		\node [anchor=north west,inner sep=0] at (1.4,2.8) {\includegraphics[height=2.7cm]{graphics/icons_col2b.png}};		
 		}
 %	}
+
+	\only<4>{
+		\node [anchor=north west,inner sep=0] at (0.2,8.5) {\includegraphics[height=7.5cm]{graphics/6sp_tspd.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_egk.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,8.5) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_bsw.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_wom.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,5.75) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_koa.png}};
+		\node [anchor=north west,inner sep=0] at (9.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_btp.png}};
+		\node [anchor=north west,inner sep=0] at (12.5,3.0) {\includegraphics[height=2.5cm]{graphics/6sp_tspd_rtp.png}};
+
+		\node [anchor=north west,inner sep=0] at (8.2,7.9) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.5,6.5) {\includegraphics[height=.4cm]{graphics/egk_icon_c}};
+	
+		\node [anchor=north west,inner sep=0] at (8.2,3.5) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.55,3.7) {\includegraphics[height=.35cm]{graphics/wom_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (4.4,3.0) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		\node [anchor=north west,inner sep=0] at (11.6,1.1) {\includegraphics[height=.5cm]{graphics/btp_icon_c}};
+		
+		\node [anchor=north west,inner sep=0] at (3.9,3.0) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,1.1) {\includegraphics[height=.5cm]{graphics/rtp_icon_c}};	
+				
+		\node [anchor=north west,inner sep=0] at (8.2,3.1) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.7,6.6) {\includegraphics[height=.5cm]{graphics/bsw_icon_c}};	
+	
+		\node [anchor=north west,inner sep=0] at (8.2,2.5) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};	
+		\node [anchor=north west,inner sep=0] at (14.75,3.85) {\includegraphics[height=.5cm]{graphics/koa_icon_c}};
+		}
 
 	\only<5>{
 		\node [anchor=north west,inner sep=0] at (1.5,9.0) {\includegraphics[height=9.0cm]{graphics/6sp_coll_risk.png}};

@@ -47,6 +47,10 @@
 }
 
 \only<3-4>{
+
+	\node [anchor=north west,inner sep=0] at (6.0,5.2) {\includegraphics[height=2.7cm]{graphics/egk_brt.png}};
+	\node [anchor=north west,inner sep=0] at (9.2,4.9) {\includegraphics[height=2cm]{graphics/traffic_vol2.png}};
+	\node [anchor=north west,inner sep=0] at (12.2,4.9) {\includegraphics[height=2cm]{graphics/traffic_spd2.png}};
 	
 	\coordinate (A1) at (7.3,5.5); 
 	\coordinate (B1) at (7.3,4.9);
@@ -59,12 +63,6 @@
 	\coordinate (C2) at (13.2,5.5); 		
 	\coordinate (D2) at (13.7,4.9);
 	\draw[arrow] (C2) -- (D2);
-
-	\node [anchor=north west,inner sep=0] at (6.0,5.2) {\includegraphics[height=2.7cm]{graphics/egk_brt.png}};
-	\node [anchor=north west,inner sep=0] at (9.2,4.9) {\includegraphics[height=2cm]{graphics/traffic_vol2.png}};
-	\node [anchor=north west,inner sep=0] at (12.2,4.9) {\includegraphics[height=2cm]{graphics/traffic_spd2.png}};
-
-
 }
 
 \only<4>{
@@ -81,16 +79,15 @@
 	\coordinate (B5) at (13.3,1.9);
 	\draw[arrow] (A5) -- (B5);
 	
-	\node[anchor=north west,fill=grayed,rounded corners=2pt,text width=6.8cm,align=center] at (6.8,1.8) {\scriptsize STATISTICAL MODELLING};
+	\node[anchor=north west,fill=grayed,rounded corners=2pt,text width=6.8cm, text height=0.5cm, text depth=0.25cm, text centered, font=\scriptsize] at (6.9,1.8) {STATISTICAL MODELLING};
 
-	\coordinate (A6) at (5.7,1.58); 
-	\coordinate (B6) at (6.2,1.58);
+	\node [anchor=north west,inner sep=0] at (.2,4.5) {\includegraphics[height=4.0cm]{graphics/victoria_val_data_wv.png}};
+
+	\coordinate (A6) at (6.8,1.58); 
+	\coordinate (B6) at (6.3,1.58);
 	\draw[arrow] (B6) -- (A6);
 
-	\node[anchor=north west,align=center] at (0.5,0.6){\scriptsize Visintin et al. (2016) \textit{Ecology \& Evolution}};
-
-	\node [anchor=north west,inner sep=0] at (.2,4.5) {\includegraphics[height=4.0cm]{graphics/egk_collrisk_vic.png}};
-
+%	\node[anchor=north west,align=center] at (0.5,0.6){\scriptsize Visintin et al. (2016) \textit{Ecology \& Evolution}};
 }
 
 \end{tikzpicture}
