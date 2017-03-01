@@ -28,11 +28,24 @@
 
 	\only<1>{
 		\node [anchor=north west,inner sep=0] at (0.2,7.4) {\includegraphics[height=4.8cm]{graphics/train_occ_k.png}};
-		\node [anchor=north west,inner sep=0] at (5.5,7.4) {\includegraphics[height=4.8cm]{graphics/train_spd_k.png}};
-		\node [anchor=north west,inner sep=0] at (10.7,7.4) {\includegraphics[height=4.8cm]{graphics/train_hour_k.png}};
+		\node [anchor=north west,inner sep=0] at (5.5,7.4) {\includegraphics[height=4.8cm]{graphics/train_vol_k.png}};
+		\node [anchor=north west,inner sep=0] at (10.7,7.4) {\includegraphics[height=4.8cm]{graphics/train_spd_k.png}};
 	}
 
-	\only<2>{
+\only<2>{
+	\node [anchor=north west,inner sep=0] at (0.2,7.4) {\includegraphics[height=6.0cm]{graphics/train_hour_k.png}};	
+	
+	\node [anchor=north west,inner sep=0] at (6.8,8.8) {\includegraphics[height=4.0cm]{graphics/crep01x.png}};
+	\node [anchor=north west,inner sep=0] at (11.4,8.8) {\includegraphics[height=4.0cm]{graphics/crep29x.png}};
+	\node [anchor=north west,inner sep=0] at (6.8,4.3) {\includegraphics[height=4.0cm]{graphics/crep24x.png}};
+	\node [anchor=north west,inner sep=0] at (11.4,4.3) {\includegraphics[height=4.0cm]{graphics/crep26x.png}};	
+
+	\node [anchor=north west,inner sep=0] at (7.1,4.8) {\tiny 0};
+	\node [anchor=north west,inner sep=0] at (8.6,4.8) {\tiny HOUR};
+	\node [anchor=north west,inner sep=0] at (10.6,4.8) {\tiny 24};
+	}
+
+	\only<3>{
 		\node [anchor=north west,inner sep=0] at (0.7,8.8) {\includegraphics[height=8.2cm,trim=0cm 0cm 0cm 1cm,clip]{graphics/trains_preds.png}};
 	}
 	
