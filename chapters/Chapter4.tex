@@ -111,7 +111,7 @@ Traffic speed and species occurrence were highly significant variables for kanga
 
 \begin{table}[htp]
 \caption[Summary of collision models for kangaroos and deer]{Summary of collision models fits.  Highly significant variables (p$<$.001) are marked with asterisks.}
-\begin{tabularx}{\textwidth}{llllll} \toprule
+\begin{tabularx}{0.9\textwidth}{llllll} \toprule
 Species					&Variable		&Coefficient	&Std. Error		&Z-value	&Pr(Z) \\ \midrule
 Eastern Grey Kangaroo	&Intercept		&-42.30			&1.07			&-39.66		&$<$1.0x10$^{-14}$* \\
 						&EGK			&0.70			&0.02			&47.77		&$<$1.0x10$^{-14}$* \\
@@ -148,7 +148,7 @@ For each species, the models had similarly high calibration statistics when inde
 
 \begin{table}[htp]
 \caption[Statistical model performance for kangaroos and deer]{Statistical model performance metrics shown as percent reduction of deviance on the null model and receiver operating characteristic (ROC) scores using all training data. Regression coefficients indicate model calibration when using the independent validation data; a coefficient of 'one' suggests a perfectly calibrated model.  All regression coefficients were highly significant (p$<$.001).}
-\begin{tabularx}{\textwidth}{lll} \toprule
+\begin{tabularx}{0.9\textwidth}{lll} \toprule
                         	&Eastern Grey Kangaroo			&Mule Deer \\ \midrule 
 \% Reduction in Deviance 	& 11.8							& 18.6  \\ 
 ROC Score 					& 0.79							& 0.88	\\ 
@@ -169,7 +169,7 @@ Our results suggest that the proposed conceptual framework may have utility irre
 
 \begin{table}[htp]
 \caption[Performance of traffic models]{Performance of traffic models. We used Random Forest regression with 500 trees and two variables tried at each split. The traffic volume models used the variables Distance to Development, Distance to Highway, Population Density, Road Class and Road Density; the traffic speed models used Road Class and Road Density. Percent deviance is the unexplained variation in the training data explained by the model. Training observations are the total data points used to train each model.}
-\begin{tabularx}{\textwidth}{lllll} \toprule
+\begin{tabularx}{0.9\textwidth}{lllll} \toprule
 Study Area         	&Predicted Variable	&\% Deviance 	& Training observations ($n$)	& Most influential variable \\ \midrule 
 Victoria		 	& Traffic Volume	& 54.4 			& 3,174 						& Road Class \\ 
 					& Traffic Speed		& 58.7			& 42,438 						& Road Class \\

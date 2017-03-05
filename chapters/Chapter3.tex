@@ -60,7 +60,7 @@ Using the open-source software package `R' version 3.3.0 \citep{rdct16} to perfo
 
 \begin{table}[htp]
 \caption[Six mammal species most frequently reported in wildlife-vehicle collisions]{Top six species most frequently reported in wildlife-vehicle collisions in the Wildlife Victoria database (WVD) between 2010 and 2014, inclusive. Species observations from the Victorian Biodiversity Atlas are used for the species occurrence models and recorded collisions from the WVD for the collision risk models. The datasets used in the models are comprised of both presence (P) and randomly-generated background (B) observations.}
-\begin{tabularx}{\textwidth}{llll} \toprule
+\begin{tabularx}{0.9\textwidth}{llll} \toprule
 Species Name                     &Species Code     &Species Observations     &Recorded Collisions \\ \midrule 
 Eastern Grey Kangaroo 	& EGK	& 10619 : 858P / 9761B 	& 3977 : 1344P / 2633B \\ 
 Common Brushtail Possum & BTP	& 11060 : 1299P / 9761B	& 794 : 257P / 537B \\ 
@@ -81,7 +81,7 @@ For each species, we fit SDM to the data using tools and methods by \cite{elit09
 
 \begin{table}[htp]
 \caption[Predictor variables used in species occurrence models and collision risk models]{Predictor variables used in species occurrence (SO) models and collision risk (CR) models. Spatial coordinates for species presences and psuedo-absences were used to sample from predictor variable grids at one square kilometre resolution for occurrence models. The centroids of road segment with reported collisions were used to sample from one square kilometre occurrence model predictions. Note, reported means and ranges are for entire study area.}
-\begin{tabularx}{\textwidth}{lYll} \toprule
+\begin{tabularx}{0.9\textwidth}{lYll} \toprule
 Variable       &Description                                               &Units          &Range : Mean\\
 \midrule 
 ELEV (SO)       &Elevation of Terrain Above Sea Level                     &$m$			  &-0.39-1890.66 : 252.83\\
@@ -120,7 +120,7 @@ We selected predictor variables which influenced the biology, behaviour, and cha
 
 \begin{table}[htp]
 \caption[Predictors selected for six mammal species occurrence models]{Final predictors selected for each species in species occurrence models and relative importance in model expressed as percentage contribution to reduction in unexplained variation in the data. “---” indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}
-\begin{tabularx}{\textwidth}{llllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{llllllll} \toprule
 Predictor & EGK & BTP & RTP & BSW & WOM & KOA \\ 
 \midrule
 ELEV & 10.34 & 7.71 & 5.66 & 7.1 & 6.59 & 7.11 \\ 
@@ -224,7 +224,7 @@ The species occurrence models produced ecologically-plausible predictions about 
 
 \begin{table}[htp]
 \caption[Statistical model performance for six mammal species]{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species. Note, due to the nature of gradient boosting, errors on both deviance and ROC scores are reported as $\pm$ values for SO models.}
-\begin{tabularx}{\textwidth}{lllll} \toprule
+\begin{tabularx}{0.9\textwidth}{lllll} \toprule
 Species Name			&\% Deviance (SO)	&ROC (SO)			&\% Deviance (CR)	&ROC (CR)\\
 \midrule 
 Eastern Grey Kangaroo	& 36.0$\pm$1.1 		& 0.90$\pm$0.005	& 24.0 				& 0.83 \\ 
@@ -263,7 +263,7 @@ All of the collision models fit the data as expected.  Reduction on the null dev
 
 \begin{table}[htp]
 \caption[Summary of collision models for six mammal species]{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables (p$<$.001) are marked with asterisks.}
-\begin{tabularx}{\textwidth}{lllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{lllllll} \toprule
 Species & Variable & Coefficient & Std. Error & $Z\text{-value}$ & $\PRZ$ & ANOVA \\ 
 \midrule
 Eastern Grey Kangaroo & Intercept & -1.31 & 0.02752 & -47.6 & 0 & -- \\ 

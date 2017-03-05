@@ -117,7 +117,7 @@ To estimate occurrence of grey kangaroos, we used Boosted Regression Trees (BRT)
 
 \begin{table}[htp]
 \caption[Variables used in statistical models]{Variables used in statistical models.}
-\begin{tabularx}{\textwidth}{llY} \toprule
+\begin{tabularx}{0.9\textwidth}{llY} \toprule
 Model &Variable    &Definition\\ \midrule 
 \multirow{8}{*}{\rotatebox[origin=c]{90}{Species Occurrence}}   &KANG        &presences and psuedo-absences of Eastern Grey Kangaroos\\
            		 &ELEV        &elevation of terrain in meters above sea level\\
@@ -205,7 +205,7 @@ The species occurrence model predicted the relative likelihood of kangaroo prese
 
 \begin{table}[htp]
 \caption[Statistical models used in conceptual framework]{Statistical models used in conceptual framework.}
-\begin{tabularx}{\textwidth}{lYll} \toprule
+\begin{tabularx}{0.9\textwidth}{lYll} \toprule
 Model Type		    &Model &Reduction in Error	&ROC\\ \midrule 
 Species Occurrence  &\scriptsize{$\Pr(\text{KANG}=1) \approx \mathrm{logit}^{-1}(\beta_0 + \beta_1\text{ELEV} + \beta_2\text{GREEN} + \beta_3\text{LIGHT} + \beta_4\text{MNTEMPWQ} + \beta_5\text{PRECDM} + \beta_6\text{SLOPE} + \beta_7\text{TREEDENS})$}        &30.4\%		&0.88\\
            &                                                                                &&\\
@@ -241,7 +241,7 @@ The traffic model volume explained 54.4\% of the variation in the AADT data and 
 
 \begin{table}[htp]
 \caption[Summary of collision and alternative collision models]{Summary of collision model fit. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Anova contribution of variables are expressed as decimal percent reduction in deviance.}
-\begin{tabularx}{\textwidth}{lllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{lllllll} \toprule
 Model Type &Variable         &Coefficient &Std. Error			&Wald-{\large$\chi$}$^2$ &{\normalsize$P$} &ANOVA\\ \midrule 
 Collision  				&\emph{Intercept}	& -12.82			& 0.6635   	& -19.33	&\TL 2e-16*	& -- \\
            				& EGK				& 0.6583			& 0.0206   	& 32.01		&\TL 2e-16*	& 0.7268 \\
