@@ -143,34 +143,12 @@ We refit the models using the best combination of predictors and predicted relat
 
 \begin{figure*}[htp]
   \centering
-  \scriptsize
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_EGK_preds_brt.png}}
-  \put(90,180){Eastern Grey Kangaroo}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_BTP_preds_brt.png}}
-  \put(90,180){Common Brushtail Possum}  
-  \end{picture}
-  \\[1cm]
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_RTP_preds_brt.png}}
-  \put(90,180){Common Ringtail Possum}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_BSW_preds_brt.png}}
-  \put(90,180){Black Swamp Wallaby}  
-  \end{picture}
-  \\[1cm]
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_WOM_preds_brt.png}}
-  \put(90,180){Common Wombat}  
-  \end{picture}
-  \begin{picture}(230,130)
-  \put(0,50){\includegraphics[width=7.5cm]{6sp_KOA_preds_brt.png}}
-  \put(90,180){Koala}  
-  \end{picture}
-  %\vspace*{-1.5cm}
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_occ_preds:a}\includegraphics[width=0.45\textwidth]{6sp_EGK_preds_brt.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_occ_preds:b}\includegraphics[width=0.45\textwidth]{6sp_BTP_preds_brt.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_occ_preds:c}\includegraphics[width=0.45\textwidth]{6sp_RTP_preds_brt.png}}
+  \subfloat[Black Swamp Wallaby]{\label{6sp_occ_preds:d}\includegraphics[width=0.45\textwidth]{6sp_BSW_preds_brt.png}}\\  
+  \subfloat[Common Wombat]{\label{6sp_occ_preds:e}\includegraphics[width=0.45\textwidth]{6sp_WOM_preds_brt.png}}
+  \subfloat[Koala]{\label{6sp_occ_preds:f}\includegraphics[width=0.45\textwidth]{6sp_KOA_preds_brt.png}}  
   \caption[Predicted relative likelihood of six mammal species occurrence in Victoria]{Predicted relative likelihood of occurrence of each species across the State of Victoria. Darker shading indicates higher relative likelihood of occurrence.}
   \label{6sp_occ_preds}
 \end{figure*}
@@ -234,12 +212,12 @@ Spatial autocorrelation patterning was evident in the species occurrence model r
 
 \begin{figure*}[htp]
   \centering
-  \subfloat[]{\label{6sp_sac:a}\includegraphics[width=0.4\textwidth]{6sp_sac_a.png}}
-  \subfloat[]{\label{6sp_sac:b}\includegraphics[width=0.4\textwidth]{6sp_sac_b.png}}\\
-  \subfloat[]{\label{6sp_sac:c}\includegraphics[width=0.4\textwidth]{6sp_sac_c.png}}
-  \subfloat[]{\label{6sp_sac:d}\includegraphics[width=0.4\textwidth]{6sp_sac_d.png}}\\
-  \subfloat[]{\label{6sp_sac:e}\includegraphics[width=0.4\textwidth]{6sp_sac_e.png}}
-  \subfloat[]{\label{6sp_sac:f}\includegraphics[width=0.4\textwidth]{6sp_sac_f.png}}
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_sac:a}\includegraphics[width=0.45\textwidth]{6sp_sac_a.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_sac:b}\includegraphics[width=0.45\textwidth]{6sp_sac_b.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_sac:c}\includegraphics[width=0.45\textwidth]{6sp_sac_c.png}}
+  \subfloat[Black Swamp Wallaby]{\label{6sp_sac:d}\includegraphics[width=0.45\textwidth]{6sp_sac_d.png}}\\
+  \subfloat[Common Wombat]{\label{6sp_sac:e}\includegraphics[width=0.45\textwidth]{6sp_sac_e.png}}
+  \subfloat[Koala]{\label{6sp_sac:f}\includegraphics[width=0.45\textwidth]{6sp_sac_f.png}}
   \caption[Spatial autocorrelation in occupancy models residuals for six mammal species]{Spatial autocorrelation in occupancy models residuals for each species grouped by distance between observations. Trend lines use numbers to indicate species (see legend).}
   \label{6sp_sac}
 \end{figure*}
@@ -296,9 +274,30 @@ All of the predictor variables demonstrated plausible relationships to collision
 
 \begin{figure*}[htp]
   \centering
-  \subfloat[]{\label{6sp_effects:a}\includegraphics[width=0.3\textwidth]{6sp_occ.png}
-  \subfloat[]{\label{6sp_effects:b}\includegraphics[width=0.3\textwidth]{6sp_tvol.png}}
-  \subfloat[]{\label{6sp_effects:c}\includegraphics[width=0.3\textwidth]{6sp_tspd.png}}
+  \subfloat[]{\label{6sp_effects:a}
+  	\setlength\tabcolsep{2pt}
+  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_occ_a.png}}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_btp.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_bsw.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_koa.png}
+   	\end{tabularx}
+  }\\
+  \subfloat[]{\label{6sp_effects:b}
+  	\setlength\tabcolsep{2pt}
+  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tvol_b.png}}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_btp.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_bsw.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_koa.png}
+   	\end{tabularx}
+  }\\
+  \subfloat[]{\label{6sp_effects:c}
+  	\setlength\tabcolsep{2pt}
+  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tspd_c.png}}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_btp.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_bsw.png}\\
+  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_koa.png}
+   	\end{tabularx}
+  }
   \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species]{Marginal effects of predictor variables on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (minimum to maximum) for each species.}
   \label{6sp_effects}
 \end{figure*}
@@ -307,36 +306,36 @@ Among species, the response of collision risk to occurrence likelihood demonstra
 
 \begin{figure*}[htp]
   \centering
-  \subfloat[]{\label{6sp_occ_seas:a}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_a.png}}
-  \subfloat[]{\label{6sp_occ_seas:b}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_b.png}}\\
-  \subfloat[]{\label{6sp_occ_seas:c}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_c.png}}
-  \subfloat[]{\label{6sp_occ_seas:d}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_d.png}}\\
-  \subfloat[]{\label{6sp_occ_seas:e}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_e.png}}
-  \subfloat[]{\label{6sp_occ_seas:f}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_f.png}}
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_occ_seas:a}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_a.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_occ_seas:b}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_b.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_occ_seas:c}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_c.png}}
+  \subfloat[Black Swamp Wallaby]{\label{6sp_occ_seas:d}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_d.png}}\\
+  \subfloat[Common Wombat]{\label{6sp_occ_seas:e}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_e.png}}
+  \subfloat[Koala]{\label{6sp_occ_seas:f}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_f.png}}
   \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of species occurrence on relative likelihood of collision per species.}
   \label{6sp_occ_seas}
 \end{figure*}
 
 \begin{figure*}[htp]
   \centering
-  \subfloat[]{\label{6sp_tvol_seas:a}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_a.png}}
-  \subfloat[]{\label{6sp_tvol_seas:b}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_b.png}}\\
-  \subfloat[]{\label{6sp_tvol_seas:c}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_c.png}}
-  \subfloat[]{\label{6sp_tvol_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_d.png}}\\
-  \subfloat[]{\label{6sp_tvol_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_e.png}}
-  \subfloat[]{\label{6sp_tvol_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_f.png}}
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_tvol_seas:a}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_a.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_tvol_seas:b}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_b.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_tvol_seas:c}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_c.png}}
+  \subfloat[Black Swamp Wallaby]{\label{6sp_tvol_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_d.png}}\\
+  \subfloat[Common Wombat]{\label{6sp_tvol_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_e.png}}
+  \subfloat[Koala]{\label{6sp_tvol_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_f.png}}
   \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic volume on relative likelihood of collision per species.}
   \label{6sp_tvol_seas}
 \end{figure*}
 
 \begin{figure*}[htp]
   \centering
-  \subfloat[]{\label{6sp_tspd_seas:a}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_a.png}}
-  \subfloat[]{\label{6sp_tspd_seas:b}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_b.png}}\\
-  \subfloat[]{\label{6sp_tspd_seas:c}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_c.png}}
-  \subfloat[]{\label{6sp_tspd_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_d.png}}\\
-  \subfloat[]{\label{6sp_tspd_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_e.png}}
-  \subfloat[]{\label{6sp_tspd_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_f.png}}
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_tspd_seas:a}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_a.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_tspd_seas:b}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_b.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_tspd_seas:c}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_c.png}}
+  \subfloat[Black Swamp Wallaby]{\label{6sp_tspd_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_d.png}}\\
+  \subfloat[Common Wombat]{\label{6sp_tspd_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_e.png}}
+  \subfloat[Koala]{\label{6sp_tspd_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_f.png}}
   \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic speed on relative likelihood of collision per species.}
   \label{6sp_tspd_seas}
 \end{figure*}
@@ -347,7 +346,7 @@ Collision risk had an exponential relationship to traffic speed for all species 
 
 \begin{figure*}[htp]
   \centering
-  \includegraphics[trim={2cm 0 0 0},clip,scale=.6]{6sp_coll_risk.png}
+  \includegraphics[width=\textwidth]{6sp_coll_risk.png}
   \caption[Road segments with predictions of high collision likelihood for six mammal species]{Road segments with summed collision rates for all six species. The entire road network is shown as faint gray lines for context.}
   \label{6sp_collrisk}
 \end{figure*}
