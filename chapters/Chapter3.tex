@@ -272,32 +272,72 @@ Koala & Intercept & -60.98 & 9.01 & -6.768 & $<$.001* & --- \\
 
 All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (\Cref{6sp_effects}) and the signs of the coefficients were as expected (\Cref{6sp_sum_coll}). Further, these response shapes were similar across all seasons for each species except the two possums (\Cref{6sp_occ_seas,6sp_tvol_seas,6sp_tspd_seas}). Based on analysis of variation (ANOVA), species occurrence had the largest contribution to reduction in deviance for all of the models.
 
+%\begin{figure*}[htp]
+%  \centering
+%  	\begin{minipage}[t][][b]{.13\textwidth}
+%    	\centering
+%    	\includegraphics[width=\textwidth]{MODELS_connectivity.png}\\
+%    	\includegraphics[width=\textwidth]{MODELS_population.png}   	
+%    \end{minipage}
+%    \hspace{.05\textwidth}
+%  	\begin{minipage}{.38\textwidth}
+%    	\centering
+%    	\includegraphics[width=\textwidth]{MODELS.png}
+%    \end{minipage}
+%    \hspace{.05\textwidth}
+%  	\begin{minipage}[t][][b]{.13\textwidth}
+%    	\centering
+%    	\includegraphics[width=\textwidth]{MODELS_predators.png}\\
+%    	\includegraphics[width=\textwidth]{MODELS_infrastructure.png}
+%    \end{minipage}    	   	   
+%  \caption[Conceptual risk model framework]{Conceptual risk model framework.}
+%  \label{gen_framework}
+%\end{figure*}
+
 \begin{figure*}[htp]
   \centering
   \subfloat[]{\label{6sp_effects:a}
-  	\setlength\tabcolsep{2pt}
-  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
-  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_occ_a.png}}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_btp.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_bsw.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_koa.png}
-   	\end{tabularx}
-  }\\
-  \subfloat[]{\label{6sp_effects:b}
-  	\setlength\tabcolsep{2pt}
-  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
-  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tvol_b.png}}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_btp.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_bsw.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_koa.png}
-   	\end{tabularx}
-  }\\
-  \subfloat[]{\label{6sp_effects:c}
-  	\setlength\tabcolsep{2pt}
-  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
-  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tspd_c.png}}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_btp.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_bsw.png}\\
-  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_koa.png}
-   	\end{tabularx}
-  }
+%  	\setlength\tabcolsep{2pt}
+%  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+%  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_occ_a.png}}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_btp.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_bsw.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_occ_a_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_occ_a_koa.png}
+%   	\end{tabularx}
+  	\begin{minipage}[t][][]{.45\textwidth}
+    	\centering
+    	\includegraphics[width=\textwidth]{6sp_tvol_b.png}   	
+    \end{minipage}
+    %\hspace{.05\textwidth}
+  	\begin{minipage}[t][][]{.25\textwidth}
+    	\centering
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_egk.png}
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_btp.png}
+    	
+    	\vfill
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_rtp.png}
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_bsw.png}
+    	
+    	\vfill
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_wom.png}
+    	\includegraphics[width=.5\textwidth]{6sp_tvol_b_koa.png}
+    \end{minipage}
+  }%\\
+%  \subfloat[]{\label{6sp_effects:b}
+%  	\setlength\tabcolsep{2pt}
+%  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+%  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tvol_b.png}}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_btp.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_bsw.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_tvol_b_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tvol_b_koa.png}
+%   	\end{tabularx}
+%  }\\
+%  \subfloat[]{\label{6sp_effects:c}
+%  	\setlength\tabcolsep{2pt}
+%  	\begin{tabularx}{0.9\textwidth}{*{3}{c}}
+%  		\multirow{3}{*}[2cm]{\includegraphics[width=0.4\textwidth]{6sp_tspd_c.png}}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_egk.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_btp.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_rtp.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_bsw.png}\\
+%  		& \includegraphics[width=.12\textwidth]{6sp_tspd_c_wom.png}	& \includegraphics[width=.12\textwidth]{6sp_tspd_c_koa.png}
+%   	\end{tabularx}
+%  }
   \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species]{Marginal effects of predictor variables on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (minimum to maximum) for each species.}
   \label{6sp_effects}
 \end{figure*}
