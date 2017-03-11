@@ -3,6 +3,7 @@
 % Copyright (C) 2004 Paul Cochrane
 % Copyright (C) 2008-2013 Alexei Gilchrist
 % Copyright (C) 2015 Chris Baker
+% Copyright (C) 2017 Casey Visintin
 % 
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
