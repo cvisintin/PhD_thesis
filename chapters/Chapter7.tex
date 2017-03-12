@@ -1,12 +1,74 @@
 \chapter{General Discussion}\label{sec:conc}
 \newpage
 
-The work featured in this thesis presents a modelling framework for determining wildlife-vehicle collision risk that may be used without taxonomic or geographic restriction by wildlife and road managers.
+\section{Synthesis}
 
-Three main results can be drawn from the chapters.
-First, speed is a considerable hazard for wildlife.
-Second, temporal variation is important to incorporate into models that predict risk.
-Third, models and predictions improve data quantity and quality increases. 
+In this thesis, I present a modelling framework for determining wildlife-vehicle collision risk that may be used without taxonomic or geographic restriction by wildlife, road, and environmental managers. Drawing on well-established concepts of road ecology and risk theory, this conceptual framework is the first of its kind to address the disparate factors that contribute to wildlife mortality on roads. \cite{clev15} has recently identified this critical need in the discipline of road ecology. In many respects, my work is quite similar to predictive modelling studies that have come before it. I use regression modelling to relate collisions to environmental and anthropogenic variables and make predictions of risk to segments on linear transportation networks. However, I extend this previous work in several notable ways. Perhaps the most useful deviation from other studies is the grouping of predictors that influence wildlife-collision risk into two categories that more directly relate to management activities. Among the suite of mitigation used by transport managers, most of it corresponds to controlling either animal presence on a transportation network (e.g. fencing) or the operation of vehicles (e.g. speed) \citep{}.  Using species occurrence to represent exposure and traffic volume/speed to represent hazard creates a more direct interpretation by managers. Further, all of the other predictors used in past wildlife-vehicle collision modelling may be incorporated into the sub-models in each respective group thereby reducing uncertainty about potentially confounding effects. From this simplified conceptual framework, managers are able to compare the relative influences between exposure and hazard, as well as the uncertainties of each one. If costs of mitigation are known for each category, the conceptual framework is useful for performing cost-benefit analyses - this is explored in \Cref{sec:train}.
+
+Another useful departure from previous work that uses generalised linear regression to model wildlife-vehicle collisions is the choice of link function. This thesis is the first study to employ the use of a complementary log-log (cloglog) link function for modelling wildlife-vehicle collision events. This is important because the choice of a link function has theoretical underpinnings which are normally based on assumptions about how events arise in a system. I use the cloglog link as it assumes that collisions arise from a Poisson process which is reasonable for collision events occurring over a domain bound by time. Another attractive feature of the cloglog is that it is not influenced by the choice of sampling area. This makes it possible to compare parameter estimates for models using different spatial scales.  In contrast to several other studies that use a logit link (i.e. logistic regression) which imply strong assumptions about spatial scale and data generating processes (e.g. \cite{}), this thesis demonstrates a robust and flexible modelling method that will enhance new and existing road ecology work.
+
+Beyond demonstrating the broad utility of the conceptual framework, my thesis also highlights three key results. First, the speed of moving vehicles is a considerable hazard for wildlife when they have access to transportation networks. \Cref{sec:6sp,sec:cal} demonstrated similar patterns of collision risk with respect to traffic speed for seven mammals. Nearly all species had exponential increases in risk with increasing speed. Collision risk also increased exponentially with increasing train speed (\Cref{sec:train}), suggesting this phenomenon is not isolated to road networks. These results are consistent with the broader literature on wildlife-vehicle collision analysis, but also other types of collision analysis such as pedestrian-vehicle \citep{} and vehicle-vehicle \citep{}. As mitigation to reduce animal proximity to, or exclude entirely from, transportation networks is costly \citep{}, these results suggest that speed reductions may be a more viable option for reducing collision risk. The conceptual framework I have developed in this thesis is able to assist managers to target specific areas for speed reductions and also simulate the effects from these proposed mitigations. Further, the predictions of risk from the conceptual framework may also be used to influence motorist behaviour (i.e. speed) in areas (or times) of high risk. Both of these potential uses are discussed further in subsequent sections.
+
+Second, temporal variation is important to incorporate into models that predict collision risk. Both animal and human activities have distinct patterns that correspond to time. In \Cref{sec:trains}, I introduced a function into the model framework that accounted for cyclical patterns of animal activity at the hour scale. This was a significant variable and useful for extending predictions from the spatial domain to the spatio-temporal domain. Temporal variation is rarely accounted for in predictive modelling of wildlife-vehicle collisions (but see \cite{}). Extending collision modelling work that use cyclical functions to characterise expected patterns of activity for a single species, the function used in \Cref{sec:train} generalises to any species. Further, the function also uses sunrise and sunset times (relative to geographic location) to consider time of day with respect to ambient light - a factor known to influence animal activity. Both of these are useful contributions to improve future collision analysis. One reason that collision modellers may be reluctant to utilise fine resolution temporal data (e.g. hourly scale) is uncertainty. Indeed, all of the collision data used in \Cref{sec:egk,sec:6sp,sec:cal,sec:val} had temporal information at an hourly scale, however, differences in actual collision times and reporting or carcass collection times were difficult to determine. Thus, I excluded the use of this data for modelling and prediction on the road networks. Patterns are evident from the histograms of reported collisions for all six species (\Cref{temporal_all}) and suggests temporal components may be useful for modelling and prediction collisions if the uncertainty can be reduced or accounted for. In contrast, the data used in \Cref{sec:train} had a high degree of certainty around the collision times reported by the train drivers. This was likely due to the systematic and procedural nature of train operations. Road collision events are not subject to the same stringencies thereby making it more necessary to document uncertainty in the data and represent it in the modelling. Uncertainty is elaborated upon in subsequent discussion. 
+
+\begin{figure*}[htp]
+  \centering
+	\begin{minipage}[t]{.9\textwidth}
+    	\centering
+    	\includegraphics[width=.45\textwidth]{egk_coll_hour.png}\hspace{.05\textwidth}
+    	\includegraphics[width=.45\textwidth]{btp_coll_hour.png}\\ 
+    	\includegraphics[width=.45\textwidth]{rtp_coll_hour.png}\hspace{.05\textwidth}
+    	\includegraphics[width=.45\textwidth]{bsw_coll_hour.png}\\
+    	\includegraphics[width=.45\textwidth]{wom_coll_hour.png}\hspace{.05\textwidth}
+    	\includegraphics[width=.45\textwidth]{koa_coll_hour.png}
+    \end{minipage}
+  \caption[Total collisions by hour for six mammal species]{Histograms showing the distributions of total collisions by hour for six mammal species. Note, Records indicate the time that wildlife-vehicle collision events were reported and may not accurately reflect actual times due to reporting lags.}
+  \label{temporal_all}
+\end{figure*}
+
+Lastly, collision models and predictions benefit from higher data quantity and quality increases. \Cref{sec:val} introduced the first known study in road ecology to compare the effects of combining data from different data sources on collision risk modelling and predictions. This extends the work of...
+
+\section{Benefits of spatial modelling}
+
+Most, if not all, problems resulting from the distribution of humans across the landscape have inherent spatial properties. 
+
+\subsection{Access to spatial data}
+
+As technology advances, the amount and quality of publicly-accessible spatial will inevitable increase.
+
+\subsection{Management decision support}
+
+The use of geographic information systems to catalogue and view spatial features is widespread in management. Contemporary versions of these software applications incorporate functionality to internally or externally perform spatial analyses, including modelling.
+
+\subsection{Communication and public outreach}
+
+Conveying information via spatial methods is an effective communication tool. Most of the general public is familiar with geographic information.
+
+\section{Limitations of models and caveats}
+
+Models are subject to uncertainty.
+Bayesian versus frequentist.
+
+Predictions in models are relative as opposed to absolute.
+The data used are presence-only.
+
+\section{Novel future research required}
+
+-Traits of species that can explain collisions? Investigate effects of body size on collisions - may have impact on reporting rate. Temporal implications?
+
+-Address population effects to species.  Does this matter for common species and can it be applied to more rare species?
+
+-Size of vehicle is more informative than speed as momentum and stopping times may influence collisions. Investigate literature regarding this. Create new predictions for vehicles.
+
+-Seasonality and mobility should be incorporated into the model - perhaps as weightings to exposure?
+
+-Investigate literature regarding modelling pedestrian-vehicle collisions and integrate with work or fill gaps in literature.
+
+-Spatio-temporal effects will impact model inference; drop out chunks of spatial and temporal data and cross-validate models.
+
+-Results are influenced by choice of background road segments - address this using sensitivity analysis.
+
+-Incorporation of detectability in model framework.
 
 \section{Generalising the methods to other wildlife threats}
 
@@ -34,58 +96,13 @@ The conceptual framework developed in this thesis may be used to analyse risk fo
   \label{gen_framework}
 \end{figure*}
 
-
-\section{Benefits of spatial modelling}
-
-Most, if not all, problems resulting from the distribution of humans across the landscape have inherent spatial properties. 
-
-\subsection{Access to spatial data}
-
-As technology advances, the amount and quality of publicly-accessible spatial will inevitable increase.
-
-\subsection{Management decision support}
-
-The use of geographic information systems to catalogue and view spatial features is widespread in management. Contemporary versions of these software applications incorporate functionality to internally or externally perform spatial analyses, including modelling.
-
-\subsection{Communication and public outreach}
-
-Conveying information via spatial methods is an effective communication tool. Most of the general public is familiar with geographic information.
-
-\section{Limitations of models and caveats}
-
-Models are subject to uncertainty.
-Bayesian versus frequentist.
-
-Predictions in models are relative as opposed to absolute.
-The data used are presence-only.
-
-Temporal effects were not easily integrated into collision risk modelling on roads.
-
-\section{Novel future research required}
-
--Traits of species that can explain collisions? Investigate effects of body size on collisions - may have impact on reporting rate. Temporal implications?
-
--Address population effects to species.  Does this matter for common species and can it be applied to more rare species?
-
--Size of vehicle is more informative than speed as momentum and stopping times may influence collisions. Investigate literature regarding this. Create new predictions for vehicles.
-
--Seasonality and mobility should be incorporated into the model - perhaps as weightings to exposure?
-
--Investigate literature regarding modelling pedestrian-vehicle collisions and integrate with work or fill gaps in literature.
-
--Spatio-temporal effects will impact model inference; drop out chunks of spatial and temporal data and cross-validate models.
-
--Results are influenced by choice of background road segments - address this using sensitivity analysis.
-
--Incorporation of detectability in model framework.
-
-\section{Potential applications and extensions of research}
+\section{Potential applications of research}
 
 In an effort to maximise applicability of this work to reducing wildlife-vehicle collisions, I have utilised publicly-accessible data and open-source software tools, and developed reproducible computer code \Cref{apx:A}. This allows the methods to be used for developing additional resources to supplement management and engage the public. Given these qualities, there are several foreseeable extensions of this work. 
 
 \subsection{Development of centralised data collection and reporting systems}
 
-\Cref{sec:val} demonstrated improvements in modelling wildlife-vehicle collision risk when combining disparate sources of data. Worldwide, data is collected by governments, private-sector corporations, non-profit organisations, community groups, and individual citizen scientists. This information is stored in several different formats (e.g. electronic or hard-copy) and rarely made publicly-accessible. Data viewable through world-wide web portals usually does not allow access to detailed spatial information. 
+\Cref{sec:val} demonstrated improvements in modelling wildlife-vehicle collision risk when combining disparate sources of data. In the discipline of road ecology, this work is the first to undertake such an analysis. Worldwide, collision data is collected by governments, private-sector corporations, non-profit organisations, community groups, and individual citizen scientists. This information is stored in several different formats (e.g. electronic or hard-copy) and rarely made publicly-accessible. Data that is made available through world-wide web portals is often read-only and does not provide access to detailed spatial information.
 
 \begin{figure*}[htp]
   \centering
