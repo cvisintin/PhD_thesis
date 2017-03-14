@@ -31,49 +31,41 @@ Crashstats is a web-accessible, online repository of statistics on road crashes 
 
 Insurance Australia Group is a large insurance underwriter that operates throughout Australia, New Zealand and Asia. They provide services for several motor-vehicle insurance agencies and therefore receive access to vast amounts of claim data resulting from collisions. One significant component of this data are records on collisions with wildlife, albeit spatial uncertainty is quite high and therefore aggregated to the town level. Although this information is obtainable from IAG, it remains their sole intellectual property and all uses of the data are subject to approval (approvals were obtained for this thesis). More information on IAG can be found at \textit{https://www.iag.com.au}.
 
-\section{Worldclim}
+\section{Victorian Biodiversity Atlas}
 
-WorldClim
+The Victorian Biodiversity Atlas (VBA) contains high-quality records of flora and fauna occurrences throughout the state and is maintained by the Arthur Rylah Institute, a scientific research branch of the Victorian State Government. More information is available at \textit{http://www.depi.vic.gov.au/environment-and-wildlife/biodiversity/victorian-biodiversity-atlas}.
 
-http://www.worldclim.org
+\section{Global Biodiversity Information Facility}
 
-\section{MODIS}
+The Global Biodiversity Information Facility (GBIF) is an international collaboration and government-funded open data infrastructure containing information about all types of life on Earth. It is the world's largest online repository of information, detailing 1.6 million species collected over three centuries. The system provides spatial and temporal records of species occurrence based on observations from citizen scientists, researchers and automated monitoring programmes, and museum specimen archives. More information and data are available at \textit{http://www.gbif.org}.
 
-https://modis.gsfc.nasa.gov
+\section{WorldClim}
 
-\section{LandSat}
+WorldClim is a collection of global climatic data. The data are represented as 1km$^2$ raster grids and include information on bioclimatic conditions for the past, present, and future. Interpolated temperature and rainfall data are also included in the collection. \cite{hijm05} details methods used to construct the data. These data are made available at \textit{http://www.worldclim.org}. This thesis uses WorldClim data on isothermality, mean temperature of the wettest quarter, precipitation of the driest month ,seasonality of precipitation, and annual temperature range.
 
-https://landsat.gsfc.nasa.gov
+\section{Moderate Resolution Imaging Spectroradiometer}
 
-\section{NASA OLS DMSP}
+The Moderate Resolution Imaging Spectroradiometer (MODIS) is a remote-sensing instrument carried on-board the two satellites, Terra and Aqua. These two satellites view the entire Earth's surface every 1 to 2 days and improve our understanding of global dynamics and processes. The work in this thesis uses one of the MODIS vegetation indices, the normalized difference vegetation index (NDVI), to represent relative quality of vegetation. More information and data are available at \textit{https://modis.gsfc.nasa.gov}. These data are provided in 16-day intervals and at multiple spatial resolutions, however, 1km$^2$ resolution (MOD13A2) is used in this thesis. To represent the seasonal change in quality of vegetation (greenness variable), I averaged the differences between January and July measures of NDVI over a ten-year period (2000-2010) that spanned drought and non-drought conditions in Australia.
 
-https://ngdc.noaa.gov/eog/dmsp.html
+\section{Defense Meteorological Satellite Program}
 
-\section{Aussie Grass}
+The Defense Meteorological Satellite Program (DMSP), operated by the National Aeronautics and Space Administration (NASA) and National Oceanic and Atmospheric Administration (NOAA) records global nighttime artificial lighting. The data for all available DMSP-OLS smooth resolution imagery are used to produce cloud-free composites. Sunlit and glare data are excluded based on solar elevation angles. More information and data are available at \textit{https://ngdc.noaa.gov/eog/dmsp.html}. In this thesis, I used data for the year 2013.
 
-https://www.longpaddock.qld.gov.au/about/researchprojects/aussiegrass
+\section{Australian Grassland and Rangeland Assessment by Spatial Simulation}
+
+The Australian Grassland and Rangeland Assessment by Spatial Simulation (Aussie GRASS) is used to monitor, at regional scales, pasture degradation and recovery using modelling that accounts for daily rainfall, evaporation, temperature, vapour pressure and solar radiation. It also accounts for soil and pasture types, tree and shrub cover, and abundance of domestic livestock and other key herbivores. Although this information is obtainable from the Queensland Government, it remains their sole intellectual property and all uses of the data are subject to approval (approvals were obtained for this thesis). More information on Aussie GRASS can be found at \textit{https://www.longpaddock.qld.gov.au/about/researchprojects/aussiegrass}.
 
 \section{Geoscience Australia}
 
-http://www.ga.gov.au/data-pubs
+Geoscience Australia provides information and scientific data on the geology and geography of Australia. Data can be downloaded from \textit{http://www.ga.gov.au/data-pubs}. I used a 9-second digital elevation model (DEM) to represent elevation for Australia in this thesis. Slope aspect values were derived from the DEM by using a geographic information system (GIS).
 
-\section{Victorian Biodiversity Atlas (VBA)}
+\section{United States Geologic Survey}
 
-http://www.depi.vic.gov.au/environment-and-wildlife/biodiversity/victorian-biodiversity-atlas
+The United States Geologic Survey (USGS) provides information and scientific data on the geology and geography of the United States with select extended datasets describing global features. More information and data are available at \textit{https://www.usgs.gov}. I used data from the USGS to represent two variables in the thesis. Hydrological flow accumulation was obtained from HydroSHEDS (\textit{https://hydrosheds.cr.usgs.gov}), a mapping product that provides hydrographic information at regional and global scales. This data was available at 15 arc-second resolution and was projected and re-scaled to a 1km$^2$ resolution. I used SRTM (Shuttle Radar Topography Mission) 3 arc-second, void-filled elevation data (\textit{https://lta.cr.usgs.gov/SRTM1Arc}) to generate elevation variables for both California and Australia in this thesis.
 
-\section{Global Biodiversity Information Facility (GBIF)}
+\section{Global Land Cover Facility}
 
-http://www.gbif.org
-
-\section{United States Geologic Survey (USGS)}
-
-https://www.usgs.gov
-
-HydroSHEDS
-
-SRTM
-
-\section{Global Land Cover Facility (GLCF)}
+The Global Land Cover Facility (GLCF)
 
 http://glcf.umd.edu/data/
 
@@ -81,10 +73,14 @@ http://glcf.umd.edu/data/
 
 http://www.depi.vic.gov.au/forestry-and-land-use/spatial-data-and-resources/vicmap
 
+\section{SoilGrids}
+
+http://www.isric.org/content/soilgrids
+
 \section{Australian Bureau of Statistics}
 
 http://www.abs.gov.au
 
-\section{SoilGrids}
+\section{United States Census Bureau}
 
-http://www.isric.org/content/soilgrids
+http://www.abs.gov.au
