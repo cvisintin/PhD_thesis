@@ -41,7 +41,7 @@ The Global Biodiversity Information Facility (GBIF) is an international collabor
 
 \section{WorldClim}
 
-WorldClim is a collection of global climatic data. The data are represented as 1km$^2$ raster grids and include information on bioclimatic conditions for the past, present, and future. Interpolated temperature and rainfall data are also included in the collection. \cite{hijm05} details methods used to construct the data. These data are made available at \textit{http://www.worldclim.org}. This thesis uses WorldClim data on isothermality, mean temperature of the wettest quarter, precipitation of the driest month ,seasonality of precipitation, and annual temperature range.
+WorldClim is a collection of global climatic data. The data are represented as 1km$^2$ raster grids and include information on bioclimatic conditions for the past, present, and future. Interpolated temperature and rainfall data are also included in the collection. \cite{hijm05} details the methods used to construct the data. These data are made available at \textit{http://www.worldclim.org}. This thesis uses WorldClim data on isothermality, mean temperature of the wettest quarter, precipitation of the driest month ,seasonality of precipitation, and annual temperature range.
 
 \section{Moderate Resolution Imaging Spectroradiometer}
 
@@ -53,11 +53,11 @@ The Defense Meteorological Satellite Program (DMSP), operated by the National Ae
 
 \section{Australian Grassland and Rangeland Assessment by Spatial Simulation}
 
-The Australian Grassland and Rangeland Assessment by Spatial Simulation (Aussie GRASS) is used to monitor, at regional scales, pasture degradation and recovery using modelling that accounts for daily rainfall, evaporation, temperature, vapour pressure and solar radiation. It also accounts for soil and pasture types, tree and shrub cover, and abundance of domestic livestock and other key herbivores. Although this information is obtainable from the Queensland Government, it remains their sole intellectual property and all uses of the data are subject to approval (approvals were obtained for this thesis). More information on Aussie GRASS can be found at \textit{https://www.longpaddock.qld.gov.au/about/researchprojects/aussiegrass}.
+The Australian Grassland and Rangeland Assessment by Spatial Simulation (Aussie GRASS) is used to monitor, at regional scales, pasture degradation and recovery using modelling that accounts for daily rainfall, evaporation, temperature, vapour pressure and solar radiation. It also accounts for soil and pasture types, tree and shrub cover, and abundance of domestic livestock and other key herbivores. The methods are detailed in \cite{cart03}. Although this information is obtainable from the Queensland Government, it remains their sole intellectual property and all uses of the data are subject to approval (approvals were obtained for this thesis). More information on Aussie GRASS can be found at \textit{https://www.longpaddock.qld.gov.au/about/researchprojects/aussiegrass}.
 
 \section{Geoscience Australia}
 
-Geoscience Australia provides information and scientific data on the geology and geography of Australia. Data can be downloaded from \textit{http://www.ga.gov.au/data-pubs}. I used a 9-second digital elevation model (DEM) to represent elevation for Australia in this thesis. Slope aspect values were derived from the DEM by using a geographic information system (GIS).
+Geoscience Australia provides information and scientific data on the geology and geography of Australia. Data can be downloaded from \textit{http://www.ga.gov.au/data-pubs}. I used a 9-second digital elevation model (DEM) to represent elevation for Australia in this thesis; methods are detailed in \cite{hutc91,hutc11}. Slope aspect values were derived from the DEM by using a geographic information system (GIS).
 
 \section{United States Geologic Survey}
 
@@ -65,22 +65,20 @@ The United States Geologic Survey (USGS) provides information and scientific dat
 
 \section{Global Land Cover Facility}
 
-The Global Land Cover Facility (GLCF)
-
-http://glcf.umd.edu/data/
+The Global Land Cover Facility (GLCF) provides data and products to describe global environmental systems and is based on remotely-sensed satellite data with a focus on land cover at different scales. More information and data are available at \textit{http://glcf.umd.edu}. I obtained a 30-metre resolution tree cover layer containing estimated percentage of horizontal ground in each pixel covered by woody vegetation greater than 5 meters in height; originally derived from Landsat Vegetation Continuous Fields (VCF) - details in \cite{sext13}. For the tree cover variable used in this thesis, I spatially aggregated the data to a 1km$^2$ resolution.
 
 \section{VicMap}
 
-http://www.depi.vic.gov.au/forestry-and-land-use/spatial-data-and-resources/vicmap
+The VicMap collection of electronic spatial information is maintained by the Victorian Government and contains GIS data on many geographic features used in urban and regional planning and research. Information one these offerings is provided at \textit{http://www.depi.vic.gov.au/forestry-and-land-use/spatial-data-and-resources/vicmap}. In this thesis, I obtained VicMap spatial data for roads, water features, and administrative boundaries such as towns. Using these features, I calculated distances to towns, roads, and linear waterways with geoprocessing tools and represented the outputs as 1km$^2$ resolution spatial grids.
 
 \section{SoilGrids}
 
-http://www.isric.org/content/soilgrids
+SoilGrids is a system for global soil mapping based on predictions from machine learning and statistics, maintained by the International Soil Reference and Information Centre (ISRIC). The methods are described in \cite{heng14}, and data can be obtained at \textit{http://www.isric.org/content/soilgrids}. Soil predictions are made at a 1km$^2$ resolution scale which I use to represent variables pertaining to soil density, conductivity, and content (e.g. sand or clay) in this thesis.
 
 \section{Australian Bureau of Statistics}
 
-http://www.abs.gov.au
+The Australian Bureau of Statistics (ABS) is a government agency that provides data and reports on economic, social, population and environmental topics. More information and data are available at \textit{http://www.abs.gov.au}. Data obtained from the ABS were joined to spatial data in this thesis to create variables of on population density and income distribution. I used pycnophylactic interpolation \citep{tobl79} to obtain pixel-based population and income estimates whilst accounting for irregular administrative boundaries (e.g. towns).
 
 \section{United States Census Bureau}
 
-http://www.abs.gov.au
+The United States Census Bureau is the leading source for demographic and economic data about the United States which guides a significant portion of government spending ($\approx$ 400 billion USD). More information and data are available at \textit{https://www.census.gov}. For the California-based work this thesis, data obtained from the Census Bureau were joined to spatial data to create variables of on population density and income distribution. I used pycnophylactic interpolation to obtain pixel-based population and income estimates at 1km$^2$ resolution (see previous section on data from the Australian Bureau of Statistics).
