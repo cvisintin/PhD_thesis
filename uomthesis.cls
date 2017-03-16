@@ -1,10 +1,9 @@
 % uomthesis.cls - The University of Melbourne PhD Thesis LaTeX Class File.
 
-% Copyright (C) 2004 Paul Cochrane
-% Copyright (C) 2008-2013 Alexei Gilchrist
-% Copyright (C) 2015 Chris Baker
-% Copyright (C) 2017 Casey Visintin
-% 
+% Original work by Paul Cochrane, 2004
+
+% Updated by Casey Visintin, 2017
+
 % This program is free software; you can redistribute it and/or
 % modify it under the terms of the GNU General Public License
 % as published by the Free Software Foundation; either version 2
@@ -53,7 +52,8 @@
 % finished processing options
 \ProcessOptions\relax
 
-% load the book class using a4paper
+% load the book class using 12pt font, a4paper, and start chapters on
+% any page (as opposed to righthand)
 \LoadClass[12pt,a4paper,openany]{book}
 
 % set up margins (these are worked out from info from Printery)
@@ -86,7 +86,7 @@
 % fancyhdr for nice, fancy headings
 \RequirePackage{fancyhdr}
 % ccaption for good caption handling
-\RequirePackage{ccaption}
+%\RequirePackage{ccaption}
 % xspace so that spaces after commands are handled correctly
 \RequirePackage{xspace}
 
@@ -165,48 +165,6 @@ has not been submitted in whole or part for a degree in any university.
         }{}
 }
 
-% improved version of caption handling
-%\usepackage{ccaption}
-%\captionnamefont{\scshape}
-%\captionstyle{}
-%\makeatletter
-%\renewcommand{\fnum@figure}[1]{\quad\small\textsc{\figurename~\thefigure}:}
-%\renewcommand{\fnum@table}[1]{\quad\small\textsc{\tablename~\thetable}:}
-%\renewcommand{\@makecaption}[2]{%
-%\vskip\abovecaptionskip
-%\sbox\@tempboxa{#1: #2}%
-%\ifdim \wd\@tempboxa >\hsize
-%  \def\baselinestretch{1}\@normalsize
-%  #1: #2\par
-%  \def\baselinestretch{1.5}\@normalsize
-%\else
-%  \global \@minipagefalse
-%  \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-%\fi
-%\vskip\belowcaptionskip}
-%\makeatother
-
-% caption handling
-\usepackage{setspace}
-\usepackage{caption}
-\captionsetup[figure]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
-\captionsetup[table]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
-%\makeatletter
-%\long\def\@makecaption#1#2{%
-%\vskip\abovecaptionskip
-%\sbox\@tempboxa{#1: #2}%
-%\ifdim \wd\@tempboxa >\hsize
-%  \def\baselinestretch{1}\@normalsize
-%  #1: #2\par
-%  \def\baselinestretch{1.5}\@normalsize
-%\else
-%  \global \@minipagefalse
-%  \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
-%\fi
-%\vskip\belowcaptionskip}
-%\makeatother
-
-
 % set the pagestyle to look good
 \pagestyle{fancy}
 
@@ -230,9 +188,32 @@ has not been submitted in whole or part for a degree in any university.
 
 %%% other settings required for a thesis
 % It's a references section, not a bibliography, hence redefine
-% \bibname i.e. change ``Bibliography'' to ``References''
-%\renewcommand*{\bibname}{References}
-\renewcommand*{\bibname}{} % Suppress References section naming
+% \bibname (i.e. change ``Bibliography'' to ``References'')
+%\renewcommand*{\bibname}{References} % <--Redefine name here
+\renewcommand*{\bibname}{} % <-- or suppress references section naming altogether
+
+%remove title and space above bibliography
+%\makeatletter
+%\renewenvironment{thebibliography}[1]
+%     {\list{\@biblabel{\@arabic\c@enumiv}}
+%           {\settowidth\labelwidth{\@biblabel{#1}}
+%            \leftmargin\labelwidth
+%            \setlength{\topsep}{0pt} 
+%            \setlength{\partopsep}{0pt}
+%            \advance\leftmargin\labelsep
+%            \@openbib@code
+%            \usecounter{enumiv}%
+%            \let\p@enumiv\@empty
+%            \renewcommand\theenumiv{\@arabic\c@enumiv}}
+%      \sloppy
+%      \clubpenalty4000
+%      \@clubpenalty \clubpenalty
+%      \widowpenalty4000
+%      \sfcode`\.\@m}
+%     {\def\@noitemerr
+%       {\@latex@warning{Empty `thebibliography' environment}}
+%      \endlist}
+%\makeatother
 
 % use 1.5 line spacing for the examiners copy
 % single line spacing for the final copy
@@ -244,39 +225,9 @@ has not been submitted in whole or part for a degree in any university.
 \newenvironment{centre}{\begin{center}}{\end{center}}
 \newenvironment{itemise}{\begin{itemize}}{\end{itemize}}
 
-%\usepackage{play}
-\usepackage[grey,times]{quotchap}
-\usepackage{makeidx}
-
-%%%%% optional packages
-\usepackage[authoryear]{natbib}
-		% this is the natural sciences bibliography citation
-		% style package.
-
-%%%%% set up the bibliography style
-\bibliographystyle{thesis_ref_style}
-
-\usepackage[nottoc]{tocbibind}
-				% allows the table of contents, bibliography
-				% and index to be added to the table of
-				% contents if desired, the option used
-				% here specifies that the table of
-				% contents is not to be added.
-				% tocbibind needs to be after natbib
-				% otherwise bits of it get trampled.
-
-\usepackage{graphicx} % standard graphics package for inclusion of images and eps files into LaTeX document
-\graphicspath{{./graphics/}{../graphics/}} %define a graphics directory
-
-\usepackage{amsmath,amsfonts,amssymb} % this is handy for mathematicians and physicists
-			      % see http://www.ams.org/tex/amslatex.html
-
-%\usepackage{subfiles} % this handles multiple files for chapters, etc...
-
-%for all the computer code...
+%make the computer code look presentable
 \usepackage{listings}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
-
 \lstset{ %
   language=R,                % the language of the code
   basicstyle=\scriptsize,           % the size of the fonts that are used for the code
@@ -302,6 +253,119 @@ has not been submitted in whole or part for a degree in any university.
   stringstyle=\color{Maroon},         % string literal style
   escapeinside={\%*}{*)},            % if you want to add a comment within your code
   morekeywords={*,...},              % if you want to add more keywords to the set
-  otherkeywords={!,!=,~,$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-},
+  otherkeywords={!,!=,~,$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-},%$
   keywords={}
 }
+
+%make spiffy chapter title pages
+\usepackage[grey,times]{quotchap}
+
+%\usepackage{makeidx} % <-- not sure this is required...
+
+%%%%% optional packages
+\usepackage[authoryear]{natbib}
+		% this is the natural sciences bibliography citation
+		% style package.
+
+%%%%% set up the bibliography style
+\bibliographystyle{thesis_ref_style}
+
+% allows the table of contents, bibliography and index to be added to the table of
+% contents if desired, the option used here specifies that the table of
+% contents is not to be added. tocbibind needs to be after natbib
+% otherwise bits of it get trampled.
+\usepackage[nottoc]{tocbibind}
+
+% load standard graphics package for inclusion of images and eps files into LaTeX document
+\usepackage{graphicx}
+\graphicspath{{./graphics/}{../graphics/}} %define a graphics directory
+
+% this is handy for mathematicians and physicists (and quantitative ecologists :)
+% see http://www.ams.org/tex/amslatex.html
+\usepackage{amsmath,amsfonts,amssymb}
+
+%%%additional formatting and functionality stuff
+%set the nesting and numbering patterns for the TOC and sections
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% caption handling with some changes to defaults
+\usepackage{setspace}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
+\captionsetup[table]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
+
+%%% create tables that look good and play well with others
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% redefine tabular environment
+\let\oldtabular\tabularx
+\renewcommand{\tabularx}{\scriptsize\oldtabular}
+\newcolumntype{P}[1]{>{\linespread{.9}\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\linespread{.7}\raggedright\arraybackslash}X}
+
+% enable more control over internal referencing of figures and tables
+\usepackage{cleveref}
+
+% add functionality for subfigures
+\usepackage[caption=false]{subfig}
+
+% tikZ is stellar for manually creating and controlling drawing content
+%\useackage{tikz} % <-- enable functionality
+
+% this allows a clean insertion of external PDFs such as journal articles
+%\usepackage{pdfpages} % <-- enable functionality
+
+% wrap text nicely around figures and images
+\usepackage{wrapfig}
+
+% \usepackage{lipsum} % <-- enable for tsting typography
+
+%%% define new commands and some aliases
+\newcommand{\B}{\textbf}
+\newcommand{\TL}{\textless}
+\newcommand{\PRZ}{\text{Pr}\bigl( >\mid Z \mid \bigr)}
+
+%define an abstract environment for the beginning of the chapters
+\newenvironment{localsize}[1]
+{%
+  \clearpage
+  \let\orignewcommand\newcommand
+  \let\newcommand\renewcommand
+  \makeatletter
+  \input{bk#1.clo}%
+  \leftskip2em
+  \rightskip\leftskip
+  \par
+  \makeatother
+  \let\newcommand\orignewcommand
+}
+
+%define an abstract environment for the main document
+\newenvironment{localsize-main}[1]
+{%
+  \let\orignewcommand\newcommand
+  \let\newcommand\renewcommand
+  \makeatletter
+  \input{bk#1.clo}%
+  \leftskip2em
+  \rightskip\leftskip
+  \par
+  \makeatother
+  \let\newcommand\orignewcommand
+}
+
+%add prefix 'Appendix' to TOC and headings
+\makeatletter
+\newcommand\appendix@chapter[1]{%
+  \refstepcounter{chapter}%
+  \orig@chapter*{Appendix \@Alph\c@chapter: #1}%
+  \addcontentsline{toc}{chapter}{Appendix \@Alph\c@chapter: #1}%
+}
+\let\orig@chapter\chapter
+\g@addto@macro\appendix{\let\chapter\appendix@chapter}
+\makeatother
+
