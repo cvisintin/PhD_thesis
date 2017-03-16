@@ -369,3 +369,5 @@ has not been submitted in whole or part for a degree in any university.
 \g@addto@macro\appendix{\let\chapter\appendix@chapter}
 \makeatother
 
+% make sure floats appear AFTER first mention in text
+\usepackage{flafter}
