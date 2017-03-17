@@ -251,9 +251,9 @@ has not been submitted in whole or part for a degree in any university.
   keywordstyle=\ttfamily,          % keyword style
   commentstyle=\color{DarkGreen},       % comment style
   stringstyle=\color{Maroon},         % string literal style
-  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  %escapeinside={\%*}{*)},            % if you want to add a comment within your code
   morekeywords={*,...},              % if you want to add more keywords to the set
-  otherkeywords={!,!=,~,$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-},%$
+  otherkeywords={!,!=,~,$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-},  %$
   keywords={}
 }
 
