@@ -60,7 +60,7 @@
 %\newpage
 
 \vspace{1.5cm}
-Roads pose several ecological threats including destruction of habitat through fragmentation and light, chemical, and acoustic pollution. Perhaps the most directly visible effect of roads is wildlife mortality from collisions with moving vehicles; often referred to as 'roadkill' in the common vernacular. From an anthropocentric perspective, animal-vehicle collisions with larger species cause injuries, property damage, and occasional loss of human life which compels managers to find solutions. Worldwide, many studies have been undertaken to understand and prevent wildlife-vehicle collisions; some studies related collisions to animal biology, behaviour and characteristics, whilst others assessed the effectiveness of on-road mitigation strategies. Road ecology currently lacks a generalised conceptual framework to organise all of the disparate factors relating to wildlife-vehicle collisions and support managers to make better decisions. The broad aim of this thesis is to model and predict where and when wildlife will be at high risk from collisions with moving vehicles across large transportation networks, and is intended to support decision-making by managers working in the wildlife and transportation fields. I address this broad aim in six chapters by developing and testing a conceptual risk modelling framework and highlighting its potential extension as a management and public outreach tool. \Cref{sec:intro} provides the general context for the work.
+As humans modify and distribute across landscapes, they decrease their proximity, and increase exposure, to other biotic organisms. The global extent of roads pose several ecological threats, including destruction of habitat through fragmentation, to wildlife. Perhaps the most directly visible effect of roads is wildlife mortality from collisions with moving vehicles; often referred to as 'roadkill' in the common vernacular. From an anthropocentric perspective, animal-vehicle collisions with larger species cause injuries, property damage, and occasional loss of human life which compels managers to find solutions. Worldwide, many studies have been undertaken to understand and prevent wildlife-vehicle collisions; some studies related collisions to animal biology, behaviour and characteristics, whilst others assessed the effectiveness of on-road mitigation strategies. Road ecology currently lacks a generalised conceptual framework to organise all of the disparate factors relating to wildlife-vehicle collisions and support managers to make better decisions. The broad aim of this thesis is to model and predict where and when wildlife will be at high risk from collisions with moving vehicles across large transportation networks, and is intended to support decision-making by managers working in the wildlife and transportation fields. I address this broad aim in six chapters by developing and testing a conceptual risk modelling framework and highlighting its potential extension as a management and public outreach tool. \Cref{sec:intro} provides the general context for the work.
 
 In \Cref{sec:egk}, I introduce a novel method to predict collision risk by modelling hazard (presence and movement of vehicles) and exposure (animal presence) across a large transportation network. To estimate the hazard, I predict relative traffic volume and speed along road segments in a case study area (Victoria, south-east Australia) using regression models based on human demographic variables. I model exposure by predicting suitable habitat for a case study species (Eastern Grey kangaroo) based on existing fauna survey records and geographic and climatic variables. The collision model is trained with records of reported kangaroo-vehicle collisions to investigate how these factors collectively contribute to collision risk. This framework is useful because it disentangles natural and anthropogenic effects on the likelihood of wildlife-vehicle collisions by representing hazard and exposure with separate, tunable sub-models.
 
@@ -94,7 +94,7 @@ March, 2017
 \end{flushright}
 
 \chapter{Preface}
-This thesis has been supported through collaborations with: my two primary supervisors, Michael A. McCarthy (MMC) and Rodney van der Ree (RvdR); a University of Melbourne collaborator, Graeme Coulson (GC); an overseas collaborator in California, Fraser Shilling (FS); and my PhD mentor, Nick Golding (NG). To facilitate journal publications throughout and subsequent to my PhD candidature, I have written the chapters using the collective first-person plural ``we'', consistent with current academic publishing practice. Collaborator contributions were made to:
+This thesis has been supported through collaborations with: my two primary supervisors, Michael A. McCarthy (MMC) and Rodney van der Ree (RvdR); a University of Melbourne collaborator, Graeme Coulson (GC); an overseas collaborator in California, Fraser Shilling (FS); and my PhD mentor, Nick Golding (NG). To facilitate journal publications throughout and subsequent to my PhD candidature, \Cref{sec:egk,sec:6sp,sec:cal,sec:train,sec:val} are written as independent studies and, therefore, include detailed introductions and discussions to adequately frame each body of work. As such, there will be some unavoidable repetition in the chapters. I have written these chapters using the collective first-person plural ``we'', consistent with current academic publishing practice; collaborator contributions were:
 
 \B{\Cref{sec:egk}}. This chapter is reproduced, in its entirety, from the published paper \textit{A simple framework for a complex problem?  Predicting wildlife-vehicle collisions}. MMC and I conceived the modelling ideas. I developed the methods, completed all of the analysis, and wrote the first draft of the manuscript. MMC and RvdR provided editorial comments on the chapter.
 
@@ -138,16 +138,16 @@ My supervisors have been instrumental in both my academic and professional devel
 
 
 %\input{chapters/Chapter3}
-\chapter{Predicting road collision risk for six native Australian mammals in Victoria}\label{sec:6sp}
+\chapter{Consistent patterns of vehicle collision risk for six mammal species}\label{sec:6sp}
 
 %\input{chapters/Chapter4}
-\chapter{Application of wildlife-vehicle collision model framework on different continents: Victoria and California}\label{sec:cal}
+\chapter{A generalised predictive model for wildlife-vehicle collision risk with large mammals}\label{sec:cal}
 
 %\input{chapters/Chapter5}
-\chapter{Spatial methods for modelling collision risk by other linear transport: kangaroo-train collisions in Victoria}\label{sec:train}
+\chapter{Predicting wildlife-train collisions across space and time to inform railway operations}\label{sec:train}
 
 %\input{chapters/Chapter6}
-\chapter{Validating collision model predictions with citizen-science, private-sector and government collected datasets: a case for a unified data system}\label{sec:val}
+\chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
 
 %\input{chapters/Chapter7}
 \chapter{General Discussion}\label{sec:conc}
@@ -175,8 +175,8 @@ My supervisors have been instrumental in both my academic and professional devel
 %\input{chapters/AppendixB}
 \chapter{Species used in research}\label{apx:B}
 
-\input{chapters/AppendixC}
-%\chapter{Data sources used for research}\label{apx:C}
+%\input{chapters/AppendixC}
+\chapter{Data sources used for research}\label{apx:C}
 
 %\input{chapters/AppendixD}
 
