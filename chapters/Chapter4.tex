@@ -111,6 +111,7 @@ Traffic speed and species occurrence were highly significant variables for kanga
 
 \begin{table}[htp]
 \caption[Summary of collision models for kangaroos and deer]{Summary of collision models fits.  Highly significant variables (p$<$.001) are marked with asterisks.}
+\centering
 \begin{tabularx}{0.9\textwidth}{llllll} \toprule
 Species					&Variable		&Coefficient	&Std. Error		&Z-value	&Pr(Z) \\ \midrule
 Eastern Grey Kangaroo	&Intercept		&$-$42.30			&1.07		&$-$39.66	&$<$1.0x10$^{-14}$* \\
@@ -148,6 +149,7 @@ For each species, the models had similarly high calibration statistics when inde
 
 \begin{table}[htp]
 \caption[Statistical model performance for kangaroos and deer]{Statistical model performance metrics shown as percent reduction of deviance on the null model and receiver operating characteristic (ROC) scores using all training data. Regression coefficients indicate model calibration when using the independent validation data; a coefficient of 'one' suggests a perfectly calibrated model.  All regression coefficients were highly significant (p$<$.001).}
+\centering
 \begin{tabularx}{0.9\textwidth}{lll} \toprule
                         	&Eastern Grey Kangaroo			&Mule Deer \\ \midrule 
 \% Reduction in Deviance 	& 11.8							& 18.6  \\ 
@@ -169,6 +171,7 @@ Our results suggest that the proposed conceptual framework may have utility irre
 
 \begin{table}[htp]
 \caption[Performance of traffic models]{Performance of traffic models. We used Random Forest regression with 500 trees and two variables tried at each split. The traffic volume models used the variables Distance to Development, Distance to Highway, Population Density, Road Class and Road Density; the traffic speed models used Road Class and Road Density. Percent deviance is the unexplained variation in the training data explained by the model. Training observations are the total data points used to train each model.}
+\centering
 \begin{tabularx}{0.9\textwidth}{lllll} \toprule
 Study Area         	&Predicted Variable	&\% Deviance 	& Training observations ($n$)	& Most influential variable \\ \midrule 
 Victoria		 	& Traffic Volume	& 54.4 			& 3,174 						& Road Class \\ 
@@ -207,7 +210,26 @@ We developed species distribution models using tools and methods by \cite{elit09
   \label{cal_occ_preds}
 \end{figure*}
 
-We selected predictor variables that influenced the biology, behaviour, and characteristics of each species based on existing literature and ecological principles \citep[e.g.][]{coul10,ferg05}. Although each species is unique in its respective biology, we considered similar behaviours (sheltering and movements) and traits (foraging requirements) as the basis for choosing broad environmental variables that covered both species (Table S1).  As bioclimatic variables exhibit spatial gradients, we also included the spatial coordinates of grid cell centroids -- X (Easting) and Y (Northing) -- as predictor variables in the models.  This reduces biases in the influence of variables with high spatial correlation.  It should be noted that our framework allows any combinations of data deemed appropriate for species modelling, however, using the same environmental variables for both kangaroos and deer demonstrates the generality of our framework and allows a more direct comparison in the analysis.
+We selected predictor variables that influenced the biology, behaviour, and characteristics of each species based on existing literature and ecological principles \citep[e.g.][]{coul10,ferg05}. Although each species is unique in its respective biology, we considered similar behaviours (sheltering and movements) and traits (foraging requirements) as the basis for choosing broad environmental variables that covered both species (\Cref{cal_vic_vars}).  As bioclimatic variables exhibit spatial gradients, we also included the spatial coordinates of grid cell centroids -- X (Easting) and Y (Northing) -- as predictor variables in the models.  This reduces biases in the influence of variables with high spatial correlation.  It should be noted that our framework allows any combinations of data deemed appropriate for species modelling, however, using the same environmental variables for both kangaroos and deer demonstrates the generality of our framework and allows a more direct comparison in the analysis.
+
+\begin{table}[htp]
+\caption[Predictor variables used in species occurrence models for kangaroos and deer]{Predictor variables used in species occurrence models for kangaroos in Victoria and deer in California.}
+\centering
+\begin{tabularx}{0.9\textwidth}{lll} \toprule
+Variable 	&Description 												&Units \\ \midrule 
+ELEV 		&Elevation of terrain above sea level 						&$m$\\
+GREEN 		&Mean seasonal change in vegetation greenness (relative) 	&---\\
+LIGHT 		&Remote-sensed artificial light intensity (relative) 		&---\\ 
+MNTEMPWQ 	&Mean temperature of wettest quarter 						&$^{\circ}C*10$\\
+PRECDM 		&Precipitation of driest month 								&$mm$\\
+SLOPE 		&Slope of terrain 											&decimal \%\\ 
+TREEDENS 	&Tree cover 												&decimal \%\\ 
+X 			&X spatial coordinate of intersecting 1km$^2$ grid centroid &$m$\\
+Y 			&Y spatial coordinate of intersecting 1km$^2$ grid centroid &$m$\\
+\bottomrule
+\end{tabularx}
+\label{cal_vic_vars}
+\end{table}
 
 Although the mechanism of gradient boosting (BRT in this case) does not assume independence in the dependent variable, we reviewed spatial trends in the model fit for each species by calculating Moran’s I from model residuals and spatial coordinates and plotting against distance in one kilometre bins (\Cref{cal_sac_occ}).
 
