@@ -50,6 +50,7 @@
 \department{BioSciences}
 
 \titlepage
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \chapter{Abstract}
 \begin{localsize-main}{11}
@@ -60,7 +61,7 @@
 %\newpage
 
 \vspace{1.5cm}
-As humans modify and distribute across landscapes, they decrease their proximity, and increase exposure, to other biotic organisms. The global extent of roads pose several ecological threats, including destruction of habitat through fragmentation, to wildlife. Perhaps the most directly visible effect of roads is wildlife mortality from collisions with moving vehicles; often referred to as 'roadkill' in the common vernacular. From an anthropocentric perspective, animal-vehicle collisions with larger species cause injuries, property damage, and occasional loss of human life which compels managers to find solutions. Worldwide, many studies have been undertaken to understand and prevent wildlife-vehicle collisions; some studies related collisions to animal biology, behaviour and characteristics, whilst others assessed the effectiveness of on-road mitigation strategies. Road ecology currently lacks a generalised conceptual framework to organise all of the disparate factors relating to wildlife-vehicle collisions and support managers to make better decisions. The broad aim of this thesis is to model and predict where and when wildlife will be at high risk from collisions with moving vehicles across large transportation networks, and is intended to support decision-making by managers working in the wildlife and transportation fields. I address this broad aim in six chapters by developing and testing a conceptual risk modelling framework and highlighting its potential extension as a management and public outreach tool. \Cref{sec:intro} provides the general context for the work.
+As humans modify and distribute across landscapes, they decrease their proximity, and increase exposure, to other biotic organisms. The global extent of roads pose several ecological threats, including destruction of habitat through fragmentation, to wildlife. Perhaps the most directly visible effect of roads is wildlife mortality from collisions with moving vehicles. From an anthropocentric perspective, animal-vehicle collisions with larger species cause injuries, property damage, and occasional loss of human life which compels managers to find solutions. Worldwide, many studies have been undertaken to understand and prevent wildlife-vehicle collisions; some studies related collisions to animal biology, behaviour and characteristics, whilst others assessed the effectiveness of on-road mitigation strategies. Road ecology currently lacks a generalised conceptual framework to organise all of the disparate factors relating to wildlife-vehicle collisions and support managers to make better decisions. The broad aim of this thesis is to model and predict where and when wildlife will be at high risk from collisions with moving vehicles across large transportation networks, and is intended to support decision-making by managers working in the wildlife and transportation fields. I address this broad aim in six chapters by developing and testing a conceptual risk modelling framework and highlighting its potential extension as a management and public outreach tool. \Cref{sec:intro} provides the general context for the work.
 
 In \Cref{sec:egk}, I introduce a novel method to predict collision risk by modelling hazard (presence and movement of vehicles) and exposure (animal presence) across a large transportation network. To estimate the hazard, I predict relative traffic volume and speed along road segments in a case study area (Victoria, south-east Australia) using regression models based on human demographic variables. I model exposure by predicting suitable habitat for a case study species (Eastern Grey kangaroo) based on existing fauna survey records and geographic and climatic variables. The collision model is trained with records of reported kangaroo-vehicle collisions to investigate how these factors collectively contribute to collision risk. This framework is useful because it disentangles natural and anthropogenic effects on the likelihood of wildlife-vehicle collisions by representing hazard and exposure with separate, tunable sub-models.
 
@@ -73,6 +74,7 @@ In \Cref{sec:cal}, I apply the risk framework to a different species (Mule deer)
 To further examine the performance of the work in \Cref{sec:egk}, I compare the collision model framework and predictions using several independent datasets in \Cref{sec:val}. The results demonstrate that whilst the model framework is sensitive to the choice of training data, combining otherwise disparate sources of information can improve modelling performance and subsequent predictions of collision risk. This result supports the need for a global, publicly-accessible, unified system for storing and disseminating data on wildlife-vehicle collisions.
 
 Lastly, in \Cref{sec:conc} I discuss the main findings of my thesis, caveats and limitations of the work, and future research opportunities. Further, I highlight key applications of the work to support management as a decision-making tool and educate the public as a mobile device-based information system.
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \chapter{Declaration}
 This is to certify that:
@@ -92,6 +94,7 @@ Casey Visintin
 
 March, 2017
 \end{flushright}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \chapter{Preface}
 This thesis has been supported through collaborations with: my two primary supervisors, Michael A. McCarthy (MMC) and Rodney van der Ree (RvdR); a University of Melbourne collaborator, Graeme Coulson (GC); an overseas collaborator in California, Fraser Shilling (FS); and my PhD mentor, Nick Golding (NG). To facilitate journal publications throughout and subsequent to my PhD candidature, \Cref{sec:egk,sec:6sp,sec:cal,sec:train,sec:val} are written as independent studies and, therefore, include detailed introductions and discussions to adequately frame each body of work. As such, there will be some unavoidable repetition in the chapters. I have written these chapters using the collective first-person plural ``we'', consistent with academic publishing practice; collaborator contributions were:
@@ -106,20 +109,22 @@ This thesis has been supported through collaborations with: my two primary super
 
 \B{\Cref{sec:val}}. I conceived the original idea through conversations with RvdR. I developed the methods, completed all of the analyses, and wrote the chapter. MMC and RvdR provided editorial comments on the chapter.
 
-This thesis also trains and tests statistical models with datasets on species occurrence and collision events. All of these data were originally collected by several different organisations (whom also currently maintain these data). More information on these organisations is available in \Cref{apx:C}.
+In this thesis, I also train and test statistical models with existing data on species occurrence and collision events. All of these data were originally collected by several different organisations (whom also currently maintain these data). More information on these organisations is available in \Cref{apx:C}.
+
+My PhD candidature and associated work was supported by a University of Melbourne International Research Scholarship and the Australian Research Council Centre of Excellence for Environmental Decisions.
 
 \newpage
 \textbf{First authored publications}
 \begin{enumerate}
 \item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (2016) A simple framework for a complex problem?  Predicting wildlife-vehicle collisions. \textit{Ecology and Evolution}, 6, 6409-6421
 
-\item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (in press) Consistent patterns of vehicle collision risk for six mammal species. \textit{Journal of Environmental Management}
+\item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (in press, subject to minor revisions) Consistent patterns of vehicle collision risk for six mammal species. \textit{Journal of Environmental Management}
 
 \item Casey Visintin, Rodney van der Ree, Michael A. McCarthy (in review) Predicting wildlife-train collisions across space and time to inform railway operations. \textit{Journal of Applied Ecology}
 
 \item Casey Visintin, Fraser Shilling, Rodney van der Ree, Michael A. McCarthy (submitted) A generalised predictive model for wildlife-vehicle collision risk with large mammals. \textit{Journal of Wildlife Management}
-
 \end{enumerate}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \chapter{Acknowledgements}
 
@@ -133,39 +138,51 @@ Amy Hidge, Karen Masson, and James Johnson at Wildlife Victoria deserve special 
 
 To my two wonderful mentors, Nick Golding and Kylie Soanes, thanks for all the support. Nick Golding has an immense brain yet a surprisingly humble personality and Kylie Soanes is an all-around inspiration. Both of them have generously counselled me on the ins and outs of academia. I look forward to possible collaborations with them in the future.
 
-QAECO is a large group and several members have really made my tenure a special experience. Els van Burm, my long-lost Belgian twin and academic comrade, put in the long library hours with me. Michaela Plein read my drafts and taught me other important life lessons like making granola and growing vegetables. Darren Southwell was kind enough to share his long list of potential interview questions and look over some my architect-turned-ecologist job applications. Hugh Davies and Matt West provided me some excellent field experience catching small mammals and frogs, respectively. I shared an office with an amazing crew -- a big thanks to Esti, Michelle, Saras and Holly for the delightful afternoon walks and morning coffee runs. To Freya, Clair, Hannah, Liz, Natasha, Gerry and Chris, thanks for being just plain awesome. I am humbled by the talents of Jian, Jos\'e, Guru, Heini, Reid, Pia, Cindy, and Nat -- all of whom I give thanks to for helping me along in this PhD journey. It has been a pleasure to sit next to Pauline Byron and Dolla Boutros who have always been super friendly and helpful. Thanks to everyone else for the great laughs and conversation during sunny lunches in the systems garden.
+QAECO is a large group and several members have really made my tenure a special experience. Els van Burm, my long-lost Belgian twin and academic comrade, put in the long library hours with me. Michaela Plein read my drafts and taught me other important life lessons like making granola and growing vegetables. Darren Southwell was kind enough to share his long list of potential interview questions and look over some my architect-turned-ecologist job applications. It was pleasure to catch small mammals and frogs with Hugh Davies and Matt West, respectively. I shared an office with an amazing crew -- a big thanks to Esti, Michelle, Saras and Holly for the delightful afternoon walks and morning coffee runs. To Freya, Clair, Hannah, Liz, Natasha, Gerry and Chris, thanks for being just plain awesome. I am humbled by the talents of Jian, Jos\'e, Guru, Heini, Reid, Pia, Cindy, and Nat -- all of whom I give thanks to for helping me along in this PhD journey. It has been a pleasure to sit next to Pauline Byron and Dolla Boutros who have always been super friendly and helpful. Thanks to everyone else for the great laughs and conversation during sunny lunches in the systems garden.
 
-Thanks to Dave Duncan and Belinda Ashe for hosting me in their lovely home whilst I finished the thesis. Dave lived through a thesis and provided great advice -- not to mention prepared Melbourne's finest tacos. To my family, of course, I give thanks for the support and understanding that a thesis makes one antisocial at times. And especially to my sister, Faren, thanks for coming to hear my completion talk.
+Thanks to Dave Duncan and Belinda Ashe for hosting me in their lovely home whilst I finished the thesis. Dave provided great advice, having completed his own PhD -- not to mention prepared Melbourne's finest tacos. Belinda also provided some great proofreading of my drafts. To my family, of course, I give thanks for the support and understanding that a thesis makes one antisocial at times. And special thanks to my sister, Faren, for coming along to hear my completion talk.
 
 Finally, thank you Australian government. My PhD candidature was generously supported by a University of Melbourne International Research Scholarship and by the Australian Research Council Centre of Excellence for Environmental Decisions. I hope to give back to Australia in the near future; what an amazing land.
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \tableofcontents
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \listoffigures
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
 \listoftables
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 \mainmatter
 
-%\input{chapters/Chapter1}
-\chapter{General Introduction}\label{sec:intro}
+\input{chapters/Chapter1}
+%\chapter{General Introduction}\label{sec:intro}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter2}
 \chapter{A conceptual risk framework for modelling and predicting wildlife-vehicle collisions}\label{sec:egk}
-
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter3}
 \chapter{Consistent patterns of vehicle collision risk for six mammal species}\label{sec:6sp}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter4}
 \chapter{A generalised predictive model for wildlife-vehicle collision risk with large mammals}\label{sec:cal}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter5}
 \chapter{Predicting wildlife-train collisions across space and time to inform railway operations}\label{sec:train}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
-\input{chapters/Chapter6}
-%\chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
+%\input{chapters/Chapter6}
+\chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter7}
 \chapter{General Discussion}\label{sec:conc}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/References}
 
@@ -174,6 +191,7 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 \chapter{References}
 %\newpage
 \bibliography{/home/casey/Research/Know_Repo/Literature/Bib_Master}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 }
 
 %---------------------------------------------------------- 
@@ -183,18 +201,23 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 \clearpage
 \appendix
 \fancyhead[R]{\sc Appendix \thechapter}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/AppendixA}
 \chapter{Computer code}\label{apx:A}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/AppendixB}
 \chapter{Species used in research}\label{apx:B}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/AppendixC}
 \chapter{Data sources used for research}\label{apx:C}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/AppendixD}
-
+\input{chapters/AppendixD}
+%\chapter{List of studies used for comparing modelling variables}\label{apx:D}
+\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %---------------------------------------------------------- 
 % BACK

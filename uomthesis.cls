@@ -53,21 +53,25 @@
 \ProcessOptions\relax
 
 % load the book class using 12pt font, a4paper, and start chapters on
-% any page (as opposed to righthand)
-\LoadClass[12pt,a4paper,openany]{book}
+% righthand/odd pages (note openany may also be used)
+\LoadClass[12pt,a4paper]{book}
 
 % set up margins (these are worked out from info from Printery)
-\setlength{\oddsidemargin}{-1in}   \setlength{\evensidemargin}{-1in}
-\addtolength{\oddsidemargin}{25mm} \addtolength{\evensidemargin}{20mm}
-\setlength{\marginparwidth}{40pt}  \setlength{\marginparsep}{10pt}
+%\setlength{\oddsidemargin}{-1in}   \setlength{\evensidemargin}{-1in}
+%\addtolength{\oddsidemargin}{25mm} \addtolength{\evensidemargin}{20mm}
+%\setlength{\marginparwidth}{40pt}  \setlength{\marginparsep}{10pt}
 \setlength{\topmargin}{-5mm}       \setlength{\headsep}{0.5in}
 \setlength{\textheight}{227mm}     \setlength{\textwidth}{165mm}
+
+% new margins based on UoM requirements
+\usepackage[outer=2.6cm,bindingoffset=6mm,bottom=3.5cm]{geometry}
+
 
 \brokenpenalty=10000   % dunno what this does, maybe handy
 
 % this stops one figure taking up a whole page and lets more text onto
 % the one page when a figure exists
-\renewcommand\floatpagefraction{0.5} %   Default = 0.5
+\renewcommand\floatpagefraction{0.3} %   Default = 0.5
 
 % macros for defining the department, various dates and the title and
 % author of the thesis.
@@ -105,7 +109,7 @@
         \vskip.5in
         \textrm{\@author}\\
     \end{center}
-    \vskip1in
+    \vskip.8in
     \begin{center}
         \textsc{Submitted in total fulfilment \\of the requirements of the degree of\\ 
         \degreetext{}\\ \vspace{.5cm}
