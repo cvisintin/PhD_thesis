@@ -304,6 +304,8 @@ has not been submitted in whole or part for a degree in any university.
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{array}
+%\usepackage{ltablex}
+\usepackage{longtable}
 
 % redefine tabular environment
 \let\oldtabular\tabularx
@@ -316,6 +318,7 @@ has not been submitted in whole or part for a degree in any university.
 
 % add functionality for subfigures
 \usepackage[caption=false]{subfig}
+\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright} %place labels on top left
 
 % tikZ is stellar for manually creating and controlling drawing content
 %\useackage{tikz} % <-- enable functionality
@@ -326,7 +329,7 @@ has not been submitted in whole or part for a degree in any university.
 % wrap text nicely around figures and images
 \usepackage{wrapfig}
 
-% \usepackage{lipsum} % <-- enable for tsting typography
+% \usepackage{lipsum} % <-- enable for testing typography
 
 %%% define new commands and some aliases
 \newcommand{\B}{\textbf}
