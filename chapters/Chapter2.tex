@@ -182,14 +182,16 @@ Our collision model fitted predicted values from the sub-models to collision or 
   \label{egk_collmap}
 \end{figure*}
 
-To determine the effectiveness of partitioning the variables into logical sub-models, we also modelled collision risk with a combined set of all variables (\Cref{egk_models}). That is, we analysed a logistic regression model that related collisions directly to the original variables used to model kangaroo occurrence, traffic volume and traffic speed. This emulated past work for purposes of comparison. We also compiled a list of variables used in 74 collision modelling papers and verified that nearly all of our predictors were used in at least five or more published studies. The remaining highly-used variables were either irrelevant to our scope or difficult to obtain.
+To determine the effectiveness of partitioning the variables into logical sub-models, we also modelled collision risk with a combined set of all variables (\Cref{egk_models}). That is, we analysed a logistic regression model that related collisions directly to the original variables used to model kangaroo occurrence, traffic volume and traffic speed. This emulated past work for purposes of comparison. We also compiled a list of variables used in seventy-one collision modelling papers (see \Cref{apx:D}) and verified that nearly all of our predictors were used in at least five or more published studies. The remaining highly-used variables were either irrelevant to our scope or difficult to obtain.
 
 \section{Results}
 
 \begin{figure*}[htp]
   \centering
-  \includegraphics[scale=.4]{egk_SDM_VARS.png}
-  \caption[Effects of predictors on relative likelihood of grey kangaroo occurrence]{Effects of predictors on relative likelihood of grey kangaroo occurrence. Grey kangaroo occurrence  is expressed on the probability scale. Artificial Light (LIGHT) is a surrogate for urban development where higher positive values represent intensely urbanised and populated areas. Elevation (ELEV) is measured in metres above sea level. Precipitation of the driest month (PRECDM) is the mean amount of rainfall in the summer expressed in millimetres.}
+  \subfloat[]{\label{egk_sdm_vars:a}\includegraphics[width=0.3\textwidth]{egk_light.png}}
+  \subfloat[]{\label{egk_sdm_vars:b}\includegraphics[width=0.3\textwidth]{egk_elev.png}}
+  \subfloat[]{\label{egk_sdm_vars:c}\includegraphics[width=0.3\textwidth]{egk_precdm.png}}
+  \caption[Effects of predictors on relative likelihood of grey kangaroo occurrence]{Effects of three most influential predictors on relative likelihood of grey kangaroo occurrence. Grey kangaroo occurrence  is expressed on the probability scale. Artificial Light (LIGHT) is a surrogate for urban development where higher positive values represent intensely urbanised and populated areas. Elevation (ELEV) is measured in metres above sea level. Precipitation of the driest month (PRECDM) is the mean amount of rainfall in the summer expressed in millimetres.}
   \label{egk_sdm_vars}
 \end{figure*}
 
@@ -226,15 +228,20 @@ The traffic model volume explained 54.4\% of the variation in the AADT data and 
 \begin{figure*}[htp]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \begin{tabular}{ccc}
-  \subfloat[]{\label{egk_trans_vars:a}\includegraphics[width=0.23\textwidth]{egk_POPDENS.png}} &
-  \subfloat[]{\label{egk_trans_vars:b}\includegraphics[width=0.23\textwidth]{egk_INCOMEPP.png}} &
-  \multirow{-3}[-3]{*}{\subfloat[]{\label{egk_trans_vars:g}\includegraphics[width=0.46\textwidth]{egk_RDCLASS.png}}}\\
-  \subfloat[]{\label{egk_trans_vars:c}\includegraphics[width=0.23\textwidth]{egk_KMTOCZ.png}} &
-  \subfloat[]{\label{egk_trans_vars:d}\includegraphics[width=0.23\textwidth]{egk_KMTORZ.png}} &\\
-  \subfloat[]{\label{egk_trans_vars:e}\includegraphics[width=0.23\textwidth]{egk_KMTOHWY.png}} &
-  \subfloat[]{\label{egk_trans_vars:f}\includegraphics[width=0.23\textwidth]{egk_RDDENS.png}} &
-  \end{tabular}  
+  \begin{minipage}[t]{.25\textwidth}
+  	\centering
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_POPDENS.png}\label{egk_trans_vars:a}}
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_INCOMEPP.png}\label{egk_trans_vars:b}}\\
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_KMTOCZ.png}\label{egk_trans_vars:c}}
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_KMTORZ.png}\label{egk_trans_vars:d}}\\
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_KMTOHWY.png}\label{egk_trans_vars:e}}
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_RDDENS.png}\label{egk_trans_vars:f}}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{.5\textwidth}
+  	\centering
+  	\subfloat[]{\includegraphics[width=\textwidth]{egk_RDCLASS.png}\label{egk_trans_vars:g}}  
+  \end{minipage}  
   \caption[Effects of predictor variables on traffic volume and speed]{Effects of predictor variables on traffic volume and speed. AADT is the predicted mean average annual daily traffic in vehicles day$^{-1}$. SPEED is the predicted traffic speed in km hour$^{-1}$. POPDENS is population density per suburb in persons square kilometre$^{-1}$. RDDENS is road density per road segment in kilometres square kilometre$^{-1}$. KMTODEV is road segment distance to urban land use in kilometres. KMTOHWY is road segment distance to freeway/highway in kilometres.  RDCLASS is designated road segment functional classification.}
   \label{egk_trans_vars}
 \end{figure*}
