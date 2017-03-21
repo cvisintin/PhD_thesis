@@ -71,11 +71,12 @@
 
 % this stops one figure taking up a whole page and lets more text onto
 % the one page when a figure exists
-\renewcommand\floatpagefraction{0.3} %   Default = 0.5
+\renewcommand\floatpagefraction{0.9} %   Default = 0.5
 
-% macros for defining the department, various dates and the title and
+% macros for defining the department, OrcID, various dates and the title and
 % author of the thesis.
 \def\department#1{\gdef\@department{#1}}
+\def\orcid#1{\gdef\@orcid{#1}}
 \def\submitdate#1{\gdef\@submitdate{#1}}
 \def\copyrightyear#1{\gdef\@copyrightyear{#1}} % \author, \title in report
 \def\@title{}
@@ -97,7 +98,7 @@
 % This constructs the UOM title page
 \def\titlep{%
     \thispagestyle{empty}%
-    \null\vskip.5in%
+    \null\vskip.4in%
     \begin{center}
         \ifthenelse{\boolean{titlesmallcaps}}
             {\huge\sc\expandafter{\@title}} % put in small caps
@@ -106,10 +107,11 @@
     \vfill
     \begin{center}
         \textrm{By}\\
-        \vskip.5in
+        \vskip.4in
         \textrm{\@author}\\
+        \textrm{\scriptsize\@orcid}\\
     \end{center}
-    \vskip.8in
+    \vskip.7in
     \begin{center}
         \textsc{Submitted in total fulfilment \\of the requirements of the degree of\\ 
         \degreetext{}\\ \vspace{.5cm}
