@@ -33,7 +33,7 @@ Extensive railway networks with considerable train movements exist on every inha
 
 \subsection{Study Area}
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{05_study_area.png}
   \caption[Regional passenger train network in Victoria]{Regional passenger train network in the state of Victoria. Inset shows location of Victoria in Australia. The railway network is shown as thin lines through major towns (stars). Wildlife-train collisions (reported between 2009--2014) are shown as crosses.}
@@ -46,7 +46,7 @@ We used a 1712-kilometre passenger railway network from regional Victoria, Austr
 
 To organise our data and modelling, we overlaid a 1-km$^2$ cell grid on the railway network (\Cref{trains_grid}).  In each grid cell we modelled species occurrences and quantified train movements and speeds.
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{05_gridwork.png}
   \caption[Grid framework used to organise modelling data]{One km$^2$ grid framework used to organise modelling data: 2,015 total cells; extent coordinates 104000E,5741000N x 556000E,6084000N; GDA94 MGA zone 55 projection. The railway network is shown as a heavy dashed line and wildlife-train collisions are shown as crosses.}
@@ -96,7 +96,7 @@ Dawn $U$ and dusk $D$ times for civil twilight (six degrees below horizon) were 
 
 The coefficients $\gamma_1$, $\gamma_2$, $\gamma_3$ are estimated from the data and measure the relative influence of the three components (Equation 2) on the shape of the curve. One advantage of our parameterisation of the crepuscular term is that it is cyclical over a twenty-four hour period (\Cref{train_crep}) regardless of the parameter estimates of $\gamma_1$, $\gamma_2$, $\gamma_3$.
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
   \subfloat[]{\label{train_crep:a}\includegraphics[width=0.4\textwidth]{05_crep01.png}}
@@ -109,7 +109,7 @@ The coefficients $\gamma_1$, $\gamma_2$, $\gamma_3$ are estimated from the data 
 
 Prior to modelling, we centred all explanatory variables by subtracting their means (after log-transforming the variables indicated in Equation 1). Using pairwise analysis, all predictors exhibited Pearson's product moment correlation coefficients of less than 0.4 indicating low potential effects of multi-collinearity.  \Cref{train_predictors} further describes the variables used in the model.
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Predictor variables used in kangaroo-train collision model]{Predictor variables used in collision model; means and ranges are expressed on untransformed scale.  C1, C2 and C3 determine a curve shape representing relative species activity (see \Cref{eq:52} and \Cref{train_crep}).}
 \centering
 \begin{tabularx}{0.9\textwidth}{llll} \toprule
@@ -140,7 +140,7 @@ Scenario B involved capping train speeds at 80 km h$^{-1}$ in grid cells with ka
 
 Our model fitted the data and the signs of model coefficients (positive or negative) indicated plausible relationships between collision likelihood and each predictor variable.  All variables except train frequency demonstrated high statistical significance in the model fit (\Cref{train_coefs}). The model residuals demonstrated no strong patterns with respect to predicted collision probabilities and model predictors (\Cref{train_brq}).
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Summary of kangaroo-train collision model fit]{Summary of model fit using all data ($n$=291,120 grid cells).  Highly significant variables are marked with an asterisk.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllll} \toprule
@@ -159,7 +159,7 @@ C3 ($\gamma_3$)		&0.25						&0.07	&3.77		&1.7x10$^{-5}$* \\
 
 The relative risk of collisions increased with higher average train speeds, kangaroo occurrence, train frequency and during hours of high kangaroo activity in grid cells. The strongest and most significant predictor was train speed; collision risk increased exponentially with considerable increases at speeds above 85 km hr$^{-1}$.  Increasing train speed from 110 to 130 km hr$^{-1}$ doubled collision risk, however, the effect of speed also demonstrated large uncertainty, with wide confidence intervals (\Cref{train_effects:a}). Kangaroo occurrence was the second most influential predictor of risk of collision.  Collision risk increased rapidly at low values of occurrence and more slowly at higher values.  Collision risk increased approximately 10-fold across the range of values for kangaroo occurrence (\Cref{train_effects:b}). Train frequency had very little influence on collisions, compared to the other predictors (\Cref{train_coefs}; \Cref{train_effects:c}).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
   \subfloat[]{\label{train_effects:a}\includegraphics[width=0.4\textwidth]{05_speed.png}}
@@ -172,7 +172,7 @@ The relative risk of collisions increased with higher average train speeds, kang
 
 The bi-modal functional form for the effect of kangaroo activity on collision risk demonstrated a plausible shape (\Cref{train_effects:d}).  Collision risk peaked at approximately 5:45 a.m. and 6:15 p.m. with a higher risk occurring in the morning.  The response of collision risk over time was most uncertain in the evening peak.  Both peaks showed similar shape -- the density and spread of collision risk around the maxima -- and the lowest collision risk occurred around noon.
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
   \subfloat[]{\label{train_calib:a}\includegraphics[width=0.5\textwidth]{05_calib.png}}\\
@@ -184,7 +184,7 @@ The bi-modal functional form for the effect of kangaroo activity on collision ri
 
 The models fitted on all data and fitted on the subsets of the data during cross-validation performed similarly.  The ROC value was 0.82 for both the full data model (\Cref{train_calib:b}) and mean of the cross-validated models (\Cref{train_calib:c}).  Likewise, the calibration statistics (intercept and slope of regression line between observations and predictions) were similar for both the full data model (\Cref{train_calib:a}) and mean of the cross-validated models (\Cref{train_calib:c}).  The uncertainty in the calibration metrics was higher than that of the ROC values as shown by the 95\% confidence intervals.  The overall calibration of the full data model was good for low collision rates where the uncertainty around the observed rates was also low. Observed rates with higher uncertainty were evident at higher predicted values (\Cref{train_calib:a}).
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Predicted collisions based on different management scenarios]{Summary of predicted collisions based on different management scenarios. Expected collisions are a total across the entire regional network for a period of one year.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lll} \toprule
@@ -199,7 +199,7 @@ C			&controlled kangaroo occurrence in areas with highest average speed of train
 
 Both of the simulated management scenarios reduced the predicted number of collisions from the baseline estimated with no management (Scenario A).  Scenario C reduced expected collisions by approximately 3.0\% whilst scenario B reduced collisions by 1.0\% (\Cref{train_manage}).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
   \subfloat[]{\label{train_brq:a}\includegraphics[width=0.45\textwidth]{05_brq_prob.png}}\\

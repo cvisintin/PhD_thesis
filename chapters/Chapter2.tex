@@ -19,7 +19,7 @@ The research demonstrates that collision risks can be modelled across geographic
 
 Roads have well-documented negative ecological impacts \citep{form98,spel98,rvdr15} including effects on terrestrial fauna. Road construction and use fragments and destroys habitat, causes pollution (e.g. noise, light and chemical run-off), and kills and injures animals. Perhaps the most visible impact is direct mortality through wildlife-vehicle collisions (WVC) -- billions of fauna are killed annually around the world \citep{seil06}. Such an issue has prompted many road management authorities to routinely collect animal carcasses struck and killed by moving vehicles to reduce visual impacts for road travellers \citep{huij07b} and avoid secondary collisions with scavenging wildlife species. In addition, many governments around the world incur significant costs installing wildlife-proof fencing and under- and over-passes to reduce the rate of wildlife-vehicle collisions and improve landscape connectivity \citep{rvdr15}.
 
-Worldwide, the frequency, magnitude and distribution of WVC have been widely studied. Many such studies relate rate of collisions to environmental conditions, anthropogenic variables, and animal biology, behaviour and characteristics. While many studies have used statistical modelling to determine hotspots for WVC, most are limited to a single stretch of road or small collections of roads \citep{gund98,clev01,clev03,ramp05,ramp06b,gome08,lang09,hurl09,roge09,hoth12,mark12,sant13,seo15}. These models perform relatively well at local scales, and some have been employed to communicate areas of high-risk to road managers, but many cannot extrapolate to other sections of road or entire networks. We extend this work by developing and testing a framework that may be applied at much larger scales; consistent with the boundaries of road authority jurisdictions (i.e. state/provincial). \cite{clev15} asserts that the variability of significant predictors among regions and geographic scales highlights a critical need for a useful broad-scale conceptual framework to analyse/predict WVC.
+Worldwide, the frequency, magnitude and distribution of WVC have been widely studied. Many such studies relate rate of collisions to environmental conditions, anthropogenic variables, and animal biology, behaviour and characteristics. While many studies have used statistical modelling to determine hotspots for WVC, most are limited to a single stretch of road or small collections of roads \citep{gund98,clev02,clev03,ramp05,ramp06b,gome08,lang09,hurl09,roge09,hoth12,mark12,sant13,seo15}. These models perform relatively well at local scales, and some have been employed to communicate areas of high-risk to road managers, but many cannot extrapolate to other sections of road or entire networks. We extend this work by developing and testing a framework that may be applied at much larger scales; consistent with the boundaries of road authority jurisdictions (i.e. state/provincial). \cite{clev15} asserts that the variability of significant predictors among regions and geographic scales highlights a critical need for a useful broad-scale conceptual framework to analyse/predict WVC.
 
 Managers often have limited time and budgets to survey WVC across large areas or road networks. Many existing studies utilise data collected at fine spatial scales to model WVC, which is only feasible for limited areas because it is prohibitively expensive to collect data at the required regional scale. Methods to incorporate publicly-accessible, existing sources of data or model data-deficient parameters are useful to reduce costs. For example, remotely-sensed data is useful to determine environmental influences, while GIS-based census data may be used to characterise road conditions. Our framework is a desktop-based exercise for managers to determine risk across a large network with the ability to fine-tune based on available data. Moreover, it can be adapted with additional or modified data without changing the underlying methodology.
 
@@ -87,7 +87,7 @@ Information on species occurrence, traffic volume and traffic speed are unlikely
 
 We apply our framework to study vehicle collisions with kangaroos in Australia using species distribution modelling to estimate kangaroo occurrence and linear regression to estimate traffic volume and speed (\Cref{egk_framework}).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{egk_fig01.png}
   \caption[Diagram of modelling framework]{Diagram of modelling framework. Three sub-models are used to generate covariates used in the collision model per the ``risk equals exposure multiplied by hazard" analytical framework.}
@@ -104,16 +104,9 @@ We used the native species Eastern Grey Kangaroo (Macropus giganteus, Shaw, here
 
 We downloaded survey records of grey kangaroos from the Victorian Biodiversity Atlas (VBA) occurring in the period 2000--2014, and spatial accuracy within 500 metres \citep{depi16}. The presences were both systematic targeted surveys and incidental sightings from data maintained by the Arthur Rylah Institute, a division of the Victorian Department of Environment, Land, Water and Planning.  Kangaroos are generalists and widely distributed; it was therefore assumed that although abundance may fluctuate based on drought conditions, distribution would not change significantly from the year 2000.  We used data from this period because it improved the sample size for occurrence modelling.  We derived background data by randomly sampling 10,000 points across the entire study area.  After sampling values from the covariate rasters and eliminating null values, the final dataset included 901 species presence and 9957 background observations.
 
-\begin{figure*}[htp]
-  \centering
-  \includegraphics[scale=1]{egk_fig02.png}
-  \caption[Predicted relative likelihood of grey kangaroo occurrence in Victoria]{Predicted relative likelihood of grey kangaroo presence in study area. Darker shades indicate higher relative probabilities of occurrence (mean: 0.057; range: 0.002--0.986).}
-  \label{egk_occmap}
-\end{figure*}
-
 To estimate occurrence of grey kangaroos, we used Boosted Regression Trees (BRT) \citep{frie02}. BRT modelling offers advantages of handling different types of predictor variables, accommodating missing data and outliers, fitting complex non-linear relationships, and incorporating interaction effects between predictors \citep{elit08}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to include potential interactions) and a learning rate of .005 (contribution of each tree to the model). Classification methods have an established use in studies of species distributions \citep{walk90,skid96}, however, our framework is not limited to any particular modelling method. We selected seven predictors (\Cref{egk_variables}) based on the biology and behaviour of grey kangaroos. All of the species occurrence sub-model predictor variables were below a pairwise correlation threshold of 0.75 to reduce potential effects of multicollinearity. We predicted relative likelihood of grey kangaroo occurrence from the model fit at a one square kilometre resolution across Victoria (\Cref{egk_occmap}).
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Variables used in statistical models]{Variables used in statistical models.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llY} \toprule
@@ -149,25 +142,32 @@ Model &Variable    &Definition\\ \midrule
 \label{egk_variables}
 \end{table}
 
+\begin{figure*}[!t]
+  \centering
+  \includegraphics[scale=1]{egk_fig02.png}
+  \caption[Predicted relative likelihood of grey kangaroo occurrence in Victoria]{Predicted relative likelihood of grey kangaroo presence in study area. Darker shades indicate higher relative probabilities of occurrence (mean: 0.057; range: 0.002--0.986).}
+  \label{egk_occmap}
+\end{figure*}
+
 \subsection{Traffic Volume \& Speed Sub-Models}
 
-\begin{figure*}[htp]
+Average Annual Daily Traffic (AADT) represents the sum of traffic travelling in both directions which pass a roadside observation point during a full year divided by 365 days for a given road segment. AADT volume is usually only available for major road segments and we did not have data for most local, collector and sub-arterial roads under municipal district control. We predicted volume estimates for all road segments in the study area with Random Forest (RF) regression \citep{brei01}. The dependent variable was 2013 AADT recorded by VicRoads on 3174 road segments. We included seven predictor variables (\Cref{egk_variables}) that related to processes in traditional four-step traffic demand modelling (trip generation, trip distribution, mode choice and route assignment). All of the traffic model predictor variables were below a pairwise correlation threshold of 0.7 to reduce potential effects of multicollinearity. The traffic volume sub-model used the log-link function on the dependent variable (\Cref{egk_models}) due to the approximate log-normal distribution of AADT. We predicted AADT to all road segments using the model fit (\Cref{egk_tvolmap}).
+
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{egk_fig03.png}
   \caption[Predicted relative traffic volume in Victoria]{Predicted relative traffic volume in number of vehicles day$^{-1}$ per road segment in study area. Darker shades indicate higher predicted traffic volumes (mean: 4481; range: 274--60850).}
   \label{egk_tvolmap}
 \end{figure*}
 
-Average Annual Daily Traffic (AADT) represents the sum of traffic travelling in both directions which pass a roadside observation point during a full year divided by 365 days for a given road segment. AADT volume is usually only available for major road segments and we did not have data for most local, collector and sub-arterial roads under municipal district control. We predicted volume estimates for all road segments in the study area with Random Forest (RF) regression \citep{brei01}. The dependent variable was 2013 AADT recorded by VicRoads on 3174 road segments. We included seven predictor variables (\Cref{egk_variables}) that related to processes in traditional four-step traffic demand modelling (trip generation, trip distribution, mode choice and route assignment). All of the traffic model predictor variables were below a pairwise correlation threshold of 0.7 to reduce potential effects of multicollinearity. The traffic volume sub-model used the log-link function on the dependent variable (\Cref{egk_models}) due to the approximate log-normal distribution of AADT. We predicted AADT to all road segments using the model fit (\Cref{egk_tvolmap}).
+Traffic speed was modelled and predicted using a similar methodology to the traffic volume model. As with the traffic volume data, we did not have access to municipal records, however, we required speed values for all road segments across Victoria. We obtained 2014 posted speed limit data for all major road segments (n=42,439) and used road density and road class predictors (\Cref{egk_variables}) in a linear regression model (\Cref{egk_models}) to predict speed for all road segments (\Cref{egk_tspdmap}). 
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{egk_fig04.png}
   \caption[Predicted relative traffic speed in Victoria]{Predicted relative traffic speed in kilometres hour$^{-1}$ per road segment in study area. Darker shades indicate higher predicted traffic speeds (mean: 62; range: 42--106).}
   \label{egk_tspdmap}
 \end{figure*}
-
-Traffic speed was modelled and predicted using a similar methodology to the traffic volume model. As with the traffic volume data, we did not have access to municipal records, however, we required speed values for all road segments across Victoria. We obtained 2014 posted speed limit data for all major road segments (n=42,439) and used road density and road class predictors (\Cref{egk_variables}) in a linear regression model (\Cref{egk_models}) to predict speed for all road segments (\Cref{egk_tspdmap}). 
 
 \subsection{Collision Modelling}
 
@@ -175,7 +175,7 @@ To produce a kangaroo-vehicle collision dataset, we obtained records from the Wi
 
 Our collision model fitted predicted values from the sub-models to collision or background occurrences at each road segment (\Cref{egk_models}). We used the fitted collision model to predict relative probabilities of collision on all road segments in the study area and, by using symbol classification (colour and line thickness) in Quantum GIS \citep{qgis09}, produced a map (\Cref{egk_collmap}).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{egk_fig05.png}
   \caption[Map of collision risk per road segment in Victoria]{Map of collision risk per road segment. Darker shades indicate higher relative risk of collisions with kangaroos (mean: 0.24; range: 0.01--0.99).}
@@ -186,7 +186,9 @@ To determine the effectiveness of partitioning the variables into logical sub-mo
 
 \section{Results}
 
-\begin{figure*}[htp]
+The species occurrence model predicted the relative likelihood of kangaroo presence to vary (.002 to .986) across the study area using 5400 regression trees. The deviance explained by the model was approximately 30.4\% (null deviance = 0.572, estimated cross-validation (CV) deviance = 0.398 $\pm$0.008, CV AUC = 0.878 $\pm$0.006; see \Cref{egk_models}). The three most influential variables were artificial light (19.6\% contribution to model), elevation (18.4\%), and precipitation of the driest month (14.8\%). Partial dependence plots demonstrated plausible relationships between the predictors and grey kangaroo presence (\Cref{egk_sdm_vars}). We extended our model predictions to continental Australia (including areas well beyond Victoria) which aligned well with known grey kangaroo range (\Cref{egk_map_aus}). Approximately fifty percent of the grey kangaroo collision records were within areas where the predicted probability of grey kangaroo occurrence was above 0.2. Collision records in areas of lower predicted occurrence areas may be due to misclassification errors (i.e. mis-identification of the species of kangaroo), reporting bias/spatial error in the collision data, or sampling bias in the data used to train the kangaroo occurrence model.
+
+\begin{figure*}[!t]
   \centering
   \subfloat[]{\label{egk_sdm_vars:a}\includegraphics[width=0.3\textwidth]{egk_light.png}}
   \subfloat[]{\label{egk_sdm_vars:b}\includegraphics[width=0.3\textwidth]{egk_elev.png}}
@@ -195,16 +197,16 @@ To determine the effectiveness of partitioning the variables into logical sub-mo
   \label{egk_sdm_vars}
 \end{figure*}
 
-The species occurrence model predicted the relative likelihood of kangaroo presence to vary (.002 to .986) across the study area using 5400 regression trees. The deviance explained by the model was approximately 30.4\% (null deviance = 0.572, estimated cross-validation (CV) deviance = 0.398 $\pm$0.008, CV AUC = 0.878 $\pm$0.006; see \Cref{egk_models}). The three most influential variables were artificial light (19.6\% contribution to model), elevation (18.4\%), and precipitation of the driest month (14.8\%). Partial dependence plots demonstrated plausible relationships between the predictors and grey kangaroo presence (\Cref{egk_sdm_vars}). We extended our model predictions to continental Australia (including areas well beyond Victoria) which aligned well with known grey kangaroo range (\Cref{egk_map_aus}). Approximately fifty percent of the grey kangaroo collision records were within areas where the predicted probability of grey kangaroo occurrence was above 0.2. Collision records in areas of lower predicted occurrence areas may be due to misclassification errors (i.e. mis-identification of the species of kangaroo), reporting bias/spatial error in the collision data, or sampling bias in the data used to train the kangaroo occurrence model.
-
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{egk_MAP_AUS.png}
   \caption[Predicted relative likelihood of grey kangaroo presence across Australia]{Predicted relative likelihood of grey kangaroo presence across Australia. Darker shades indicate higher relative probabilities of occurrence (mean: 0.023; range: 0.001--0.986). The dashed line represents the existing known range of grey kangaroos as reported by the International Union for the Conservation of Nature. Victoria is located in the south-east corner of the mainland.}
   \label{egk_map_aus}
 \end{figure*}
 
-\begin{table}[htp]
+The traffic model volume explained 54.4\% of the variation in the AADT data and the traffic speed model explained 58.7\% of the variation in the posted speed limit data (\Cref{egk_models}).  Each model used the default value of 500 trees to fit the data.  All predictor variables used in the traffic models demonstrated plausible relationships to both AADT and speed (\Cref{egk_trans_vars}); traffic volume decreased with distance to activity centres and major thoroughfares and increased with affluence. Signs of the coefficients, indicating direction of relationships between the dependent variable and predictors, were as expected (\Cref{egk_sum_coll}). The most influential variable for traffic volume was road class (33.8\% relative contribution to reduction of variance), followed by distance to urban development (19.7\%) and distance to freeways and highways (16.4\%). Both traffic speed variables were significant.
+
+\begin{table}[!t]
 \caption[Statistical models used in conceptual framework]{Statistical models used in conceptual framework.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lYll} \toprule
@@ -223,9 +225,7 @@ Alternative Collision  &\scriptsize{$\mathrm{cloglog}(\Pr(\text{COLL}=1)) \appro
 \label{egk_models}
 \end{table}
 
-The traffic model volume explained 54.4\% of the variation in the AADT data and the traffic speed model explained 58.7\% of the variation in the posted speed limit data (\Cref{egk_models}).  Each model used the default value of 500 trees to fit the data.  All predictor variables used in the traffic models demonstrated plausible relationships to both AADT and speed (\Cref{egk_trans_vars}); traffic volume decreased with distance to activity centres and major thoroughfares and increased with affluence. Signs of the coefficients, indicating direction of relationships between the dependent variable and predictors, were as expected (\Cref{egk_sum_coll}). The most influential variable for traffic volume was road class (33.8\% relative contribution to reduction of variance), followed by distance to urban development (19.7\%) and distance to freeways and highways (16.4\%). Both traffic speed variables were significant.
-
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
   \begin{minipage}[t]{.25\textwidth}
@@ -246,7 +246,7 @@ The traffic model volume explained 54.4\% of the variation in the AADT data and 
   \label{egk_trans_vars}
 \end{figure*}
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Summary of collision and alternative collision models]{Summary of collision model fit. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Anova contribution of variables are expressed as decimal percent reduction in deviance.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllllll} \toprule
@@ -276,7 +276,7 @@ Alternative Collision	& \emph{Intercept} 	& $-$2.567 			& 0.2642	& $-$9.716 	&\T
 
 The collision model explained 23.7\% of the deviance (\Cref{egk_models}). Using the independent dataset to verify the predictive accuracy of the model resulted in an ROC score of 0.81.  All three variables were highly significant (p \textless 2e$^{-16}$) with traffic speed and grey kangaroo occurrence contributing the most to overall reduction in deviance; 27.3\% and 72.7\%, respectively.  The Akaike Information Criterion (AIC) score -- measuring the quality of the model given the data and the parameters -- was 6579.  All predictor variables demonstrated logical relationships to collision likelihood in the partial dependency plots (\Cref{egk_effects}). The rapid ascent and gradual levelling off of collision risk to increasing traffic volume suggests a threshold of around 2000 vehicles day$^{-1}$.
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \subfloat[]{\label{egk_effects:a}\includegraphics[width=0.3\textwidth]{egk_fig06a.png}}
   \subfloat[]{\label{egk_effects:b}\includegraphics[width=0.3\textwidth]{egk_fig06b.png}}
@@ -289,7 +289,7 @@ Our alternative collision model (all sub-model predictor variables combined in a
 
 \section{Discussion}
 
-This research introduces a new conceptual framework for predicting risk of wildlife-vehicle collisions. It is distinct from other collision models in its treatment of the analytical modelling framework. Where other research has related multiple environmental and anthropogenic variables to collision occurrence in a single statistical model \citep[e.g.][]{lee04,ramp05,kloc06,litv08,guns09,roge09} and predicted risk from model fits \citep[e.g.][]{malo04,sudh09,guns12}, we separate and develop the predictors in sub-models that would most suitably inform management. Each sub-model may be independently scrutinised for bias, uncertainty, and spatial autocorrelation and tuned accordingly. In this case study, our approach identifies relationships between, and effects of, species presence and traffic volume/speed on collision risk to grey kangaroos. In a similar manner, \cite{baud13} developed an index of co-occurrence to assess collision risk between manatees and recreational watercraft, however, the management implications were not extensively discussed. Particular to our study, road managers and environmental managers may be interested in whether to reduce collisions by focusing on the road environment \citep[e.g.][]{clev01,jaeg04,bond08,bond13}, traffic conditions, or species \citep[e.g.][]{huij03,huij06}. Both the collision and alternative collision models had similar fits and made similar predictions. However, we argue that cause and effect is easier to interpret when using our proposed framework. For example, the variable of population density (human) is shown to contribute to collisions, however, it is unclear to what degree it is correlated with grey kangaroo occurrence, traffic conditions, or both, in the alternative collision model.
+This research introduces a new conceptual framework for predicting risk of wildlife-vehicle collisions. It is distinct from other collision models in its treatment of the analytical modelling framework. Where other research has related multiple environmental and anthropogenic variables to collision occurrence in a single statistical model \citep[e.g.][]{lee04,ramp05,kloc06,litv08,guns09,roge09} and predicted risk from model fits \citep[e.g.][]{malo04,sudh09,guns12}, we separate and develop the predictors in sub-models that would most suitably inform management. Each sub-model may be independently scrutinised for bias, uncertainty, and spatial autocorrelation and tuned accordingly. In this case study, our approach identifies relationships between, and effects of, species presence and traffic volume/speed on collision risk to grey kangaroos. In a similar manner, \cite{baud13} developed an index of co-occurrence to assess collision risk between manatees and recreational watercraft, however, the management implications were not extensively discussed. Particular to our study, road managers and environmental managers may be interested in whether to reduce collisions by focusing on the road environment \citep[e.g.][]{clev02,jaeg04,bond08,bond13}, traffic conditions, or species \citep[e.g.][]{huij03,huij06}. Both the collision and alternative collision models had similar fits and made similar predictions. However, we argue that cause and effect is easier to interpret when using our proposed framework. For example, the variable of population density (human) is shown to contribute to collisions, however, it is unclear to what degree it is correlated with grey kangaroo occurrence, traffic conditions, or both, in the alternative collision model.
 
 The models used in the study were all correlative and assumed static equilibrium in the environment. Temporal patterns of wildlife-vehicle collisions exist and would be useful to incorporate into the collision model, but the variable of time was not easily integrated into this study. The original collision dataset indicated that the lowest number of incidents occurred in summer (December--February) and the highest were reported in August. The times of highest density of reports were consistent with the crepuscular (active between dusk and dawn) nature of kangaroo movements \citep{mccu00} and peaked at approximately 7:00 and 17:00 hours. Comparing the model performance on data accounting for time of day and of year is an area for future research. Other modelling methods that explicitly address interactions between space and time exist, such as multi-dimensional Poisson process models, and would be useful to incorporate into the framework.
 

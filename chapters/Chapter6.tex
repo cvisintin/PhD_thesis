@@ -59,7 +59,7 @@ In our study, we analyse the predictions of a wildlife-vehicle collision risk mo
 
 Our study analyses risk of WVC over approximately 150,000 kilometres of sealed roadway (i.e. only bitumen surfaces) in the State of Victoria in south-east Australia (\Cref{val_study_area}). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway and seventy-nine municipal districts manage the remaining roads. We split the sealed road network into 644,715 road segments by intersecting the roads with a 1km$^2$ spatial grid. We predicted traffic volume and speed to each road segment using linear regression and predicted species occurrence to the spatial grid using species distribution models. Species occurrence was sampled using the midpoints of the road segments resulting in each having predicted values of kangaroo occurrence, traffic speed and traffic volume in the final dataset -- more details are provided in \Cref{sec:egk}. 
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{06_study_area.png}
   \caption[Study area for model validation]{Study area (state of Victoria, south-east Australia) showing all sealed road segments as light gray lines. The inset shows the geographic location of Victoria in Australia. The darker shaded region is the City of Bendigo and the lighter shaded region is the VicRoads Western District. Major towns ($>$100,000 residents) are starred and labelled accordingly.}
@@ -79,7 +79,7 @@ Eastern Grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second larges
 	\item Wildlife Victoria + City of Bendigo + Western District + Crashstats (obwc)
 \end{enumerate}
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Datasets used to fit collision models and validate predictions]{Datasets used to fit models and validate predictions.}
 \centering
 \begin{tabularx}{0.9\textwidth}{YYYYYYYY} \toprule
@@ -130,7 +130,7 @@ To further investigate how each independent dataset contributed to the models ut
 
 \section{Results}
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.0001) are marked with asterisks.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllllll} \toprule
@@ -163,7 +163,7 @@ Wildlife Victoria & Intercept & $-$42.30 & 1.07 & $-$39.66 & $<$.0001* & 11.83 \
 
 All three models fitted to independent road segment-based datasets (City of Bendigo, Western District, and Crashstats) had mixed results when compared to the model fitted to the original dataset (\Cref{val_glm_perf}). Both of the models using statewide data (Wildlife Victoria and Crashstats) performed better than the two using localised data (City of Bendigo and Western District). The worst performing model was fit to data from the Western District of Victoria -- only traffic speed was a significant predictor. In contrast, the only non-significant predictor was traffic speed in the model fit to data from the City of Bendigo. All other predictors in every model were significant. The reduction of unexplained variation in the data were remarkably similar for the two statewide data models ($\approx$11.8\%) and the localised data models ($\approx$5.2\%).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=.7]{06_occ.png}
   \includegraphics[scale=.7]{06_tvol.png}
@@ -174,7 +174,7 @@ All three models fitted to independent road segment-based datasets (City of Bend
 
 Most of the marginal effects of the predictors on collision risk had similar shapes for all of the model fits. Collision risk rose with increasing species occurrence for all models, however, the Western District data model reached nearly 75\% of the maximum collision likelihood at low values of species occurrence ($\approx$0.2). Collision risk had a quadratic relationship to traffic volume, and peaked between 2,000 and 7,000 vehicles day$^{-1}$ for all models except the Western District data model. The Western District data model showed a monotonically decreasing collision risk with rising traffic volume beginning at a value of $\approx$0.95 at zero vehicles day$^{-1}$. Collision risk increased with traffic speed for all models. Collision risk increased nearly linearly between 40 and 110 km hr$^{-1}$ in the model fit to the City of Bendigo data whilst collision risk rose slowly with the maximum increase of risk per unit speed occurring above 95 km hr$^{-1}$ in the model fit to the Crashstats data.
 
-\begin{table}[htp]
+\begin{table}[!t]
 \caption[Discrimination ability of models using all combinations of independent data]{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
 \centering
 \begin{tabularx}{0.9\textwidth}{YYYYYYYY} \toprule
@@ -191,7 +191,7 @@ Crashstats & 0.8 & 0.8 & 0.83 & --- & 0.82 & --- & --- \\
 
 The ability of models to discriminate between false-positive and true-positive rates of collisions were stable using different training data and validation data (\Cref{val_glm_roc}); discrimination ability did not increase as data were added to models. Among the different validation datasets, variation in the receiver operator characteristic (ROC) scores were less than 4\% between different combinations of data used to fit models. All of the models discriminated best when validated with the City of Bendigo dataset (ROC scores of 0.85--0.87) and worst with the Western District dataset (ROC scores of 0.75--0.78). 
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{06_calib.png}
   \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
@@ -200,7 +200,7 @@ The ability of models to discriminate between false-positive and true-positive r
 
 There was no observable trend in calibration when validating model predictions made with increasing amounts of data (\Cref{val_calib}). The lowest calibration scores were for models validated with the Western District (w) collision data. The model fit on the Wildlife Victoria data (o) and validated with data from Crashstats (c) had the highest calibration score which was close to one. Moreover, there was no apparent improvement in the relationship between observed and predicted values when increasing the amounts of data used for modelling. All of the models demonstrated similar trajectories for observed-versus-predicted rates at low values and then diverged at high values (\Cref{val_calib2}).
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{06_calib2.png}
   \caption[Comparisons of observations versus model predictions for all combinations of original and independent data]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation.}
@@ -209,14 +209,14 @@ There was no observable trend in calibration when validating model predictions m
 
 Using the aggregated independent data (iag) to validate models resulted in a slight increase in model calibration as more combinations of training data were used (\Cref{val_calib_iag}).  The lowest calibration coefficient (0.943) occurred using only the original (o) data to fit the model and the highest (0.945) occurred using a combination of the original and all independent (obwc) data. Higher reductions of unexplained variation in the data also occurred with more combinations of training data (\Cref{val_calib_dev}). Deviance explained by the model fit on the original (o) data was 33.2\% whilst the model fit on a combination of the original and all independent (obwc) data explained 33.3\% of the deviance.
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{06_calib_iag.png}
   \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
-\begin{figure*}[htp]
+\begin{figure*}[!t]
   \centering
   \includegraphics[scale=1]{06_dev_iag.png}
   \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
