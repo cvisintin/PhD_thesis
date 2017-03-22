@@ -100,7 +100,7 @@ March, 2017
 \chapter{Preface}
 This thesis has been supported through collaborations with: my two primary supervisors, Michael A. McCarthy (MMC) and Rodney van der Ree (RvdR); a University of Melbourne collaborator, Graeme Coulson (GC); an overseas collaborator in California, Fraser Shilling (FS); and my PhD mentor, Nick Golding (NG). To facilitate journal publications throughout and subsequent to my PhD candidature, \Cref{sec:egk,sec:6sp,sec:cal,sec:train,sec:val} are written as independent studies and, therefore, include detailed introductions and discussions to adequately frame each body of work. As such, there will be some unavoidable repetition in the chapters. I have written these chapters using the collective first-person plural ``we'', consistent with academic publishing practice; collaborator contributions were:
 
-\B{\Cref{sec:egk}}. This chapter is reproduced, in its entirety, from the published paper \textit{A simple framework for a complex problem?  Predicting wildlife-vehicle collisions}. MMC and I conceived the modelling ideas. I developed the methods, completed all of the analyses, and wrote the first draft of the manuscript. MMC and RvdR provided editorial comments on the chapter.
+\B{\Cref{sec:egk}}. This chapter is reproduced, in its entirety, from the paper \textit{A simple framework for a complex problem?  Predicting wildlife-vehicle collisions}, published during my PhD candidature. The content in the chapter is nearly identical to the journal article with the following exceptions: (a) supporting information listed in the publication has been included within the thesis chapter for completeness (resulting in shifting figure numbers) and (b) some minor edits to text and figures have been made. MMC and I conceived the modelling ideas. I developed the methods, completed all of the analyses, and wrote the first draft of the manuscript. MMC and RvdR provided editorial comments on the chapter.
 
 \B{\Cref{sec:6sp}}. This chapter is reproduced, in its entirety, from the accepted paper \textit{Consistent patterns of vehicle collision risk for six mammal species}. I conceived the original ideas, developed the methods, completed all of the analyses, and wrote the first draft of the manuscript. MMC and RvdR provided editorial comments on the chapter.
 
@@ -129,9 +129,9 @@ My PhD candidature and associated work was supported by a University of Melbourn
 
 \chapter{Acknowledgements}
 
-Changing careers is not for the faint-hearted. Industry to academic transitions can be even more daunting. But for those who persevere, the journey can be quite rewarding. I have made that journey and there are many people I have to thank for such a memorable experience.
+Changing careers is not for the faint-hearted. Industry to academia transitions can be even more daunting. But for those who persevere, the journey can be quite rewarding. With the generous support along the way, I have made that journey and there are many people I have to thank for such a memorable experience.
 
-I would like to begin by thanking my two PhD supervisors, Michael A. McCarthy and Rodney van der Ree. Thanks for everything. Mick McCarthy taught me a huge amount about ecological modelling and environmental decision-making. He also improved my skills as an academic researcher. The Quantitative and Applied Ecology (QAECO) Lab is absolutely stellar and I owe Mick some serious gratitude for getting me in the door.  Rodney has not only taught me a great deal about road and urban ecology, but also enriched my PhD experience. Thanks for bridging all the government collaborations and looking after me. And thanks for the extra-curricular opportunities; teaching the public about microbats in the Royal Botanic Gardens was a highlight. I truly envy Mick and Rod's enthusiasm and optimism and could not have asked for better supervisors.
+I would like to begin by thanking my two PhD supervisors, Michael A. McCarthy and Rodney van der Ree. Thanks for everything. Mick McCarthy taught me a huge amount about ecological modelling and environmental decision-making. He also improved my skills as an academic researcher. The Quantitative and Applied Ecology (QAECO) Lab is absolutely stellar and I owe Mick some serious gratitude for getting me in the door.  Rod has not only taught me a great deal about road and urban ecology, but also enriched my PhD experience. Thanks for bridging all the government collaborations and looking after me. And thanks for the extra-curricular opportunities; teaching the public about microbats in the Royal Botanic Gardens was a highlight. I truly envy Mick and Rod's enthusiasm, optimism, and wisdom and could not have asked for better supervisors.
 
 Peter Vesk, my PhD committee chair, and Yung en Chee, PhD committee member, provided really useful feedback throughout my candidature. I would also like to thank everyone who attended my pre-completion talk -- Graeme Coulson, Kath Handasyde, Andrew Robinson, Mark Burgman, Jane Elith, and Sam Parsons -- the feedback was invaluable. And thanks for humouring my idea of a `mock defence' session.
 
@@ -165,8 +165,8 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 \chapter{A conceptual risk framework for modelling and predicting wildlife-vehicle collisions}\label{sec:egk}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter3}
-\chapter{Consistent patterns of vehicle collision risk for six mammal species}\label{sec:6sp}
+\input{chapters/Chapter3}
+%\chapter{Consistent patterns of vehicle collision risk for six terrestrial mammal species}\label{sec:6sp}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/Chapter4}
@@ -181,8 +181,8 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 \chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter7}
-\chapter{General Discussion}\label{sec:conc}
+\input{chapters/Chapter7}
+%\chapter{General Discussion}\label{sec:conc}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/References}
@@ -199,6 +199,11 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 % APPENDICES
 % include chapters as needed (will be numbered differently)
 %---------------------------------------------------------- 
+\let\svaddcontentsline\addcontentsline %supress tables and figures in index from showing
+\renewcommand\addcontentsline[3]{%     % up in lists in frontmatter
+  \ifthenelse{\equal{#1}{lof}}{}%
+  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
+
 \clearpage
 \appendix
 \fancyhead[R]{\sc Appendix \thechapter}

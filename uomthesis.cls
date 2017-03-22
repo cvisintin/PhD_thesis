@@ -299,7 +299,7 @@ has not been submitted in whole or part for a degree in any university.
 \usepackage{setspace}
 \usepackage{caption}
 \captionsetup[figure]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
-\captionsetup[table]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth}}
+\captionsetup[table]{labelfont={small,sc},labelsep=colon,font={small,singlespacing},width={.9\textwidth},singlelinecheck=false}
 
 %%% create tables that look good and play well with others
 \usepackage{tabularx}
@@ -320,7 +320,9 @@ has not been submitted in whole or part for a degree in any university.
 
 % add functionality for subfigures
 \usepackage[caption=false]{subfig}
-\captionsetup[subfigure]{position=top, labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright} %place labels on top left
+%\captionsetup[subfigure]{position=top,labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright} %place labels on top left
+\captionsetup[subfigure]{labelfont=rm}
+\captionsetup[subfloat]{farskip=0pt}
 
 % tikZ is stellar for manually creating and controlling drawing content
 %\useackage{tikz} % <-- enable functionality
