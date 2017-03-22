@@ -66,7 +66,7 @@ Our study analyses risk of WVC over approximately 150,000 kilometres of sealed r
   \label{val_study_area}
 \end{figure*}
 
-Eastern Grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest native mammal (up to 85 kilograms for males) in Australia \citep{coul10}, and the most commonly reported species struck by motor vehicles in Victoria \citep{rowd08}, prompting several organisations to record carcass collection and collision locations. We obtained four datasets of spatially-explicit collisions with Eastern Grey kangaroos in the state of Victoria in south-east Australia for our study (\Cref{val_data}). The data were sourced from: the City of Bendigo, a large regional center located in north-east Victoria, the Western District, a large VicRoads administrative boundary located in the center of the western portion of Victoria, Crashstats, an online repository of police-reported WVC, and Insurance Australia Group, an insurance company that records WVC reported by their members. Data from the City of Bendigo was based on carcasses reported to the 3,001 km$^2$ municipality by members of the public. The Western District data was comprised of reported carcasses, along 1,417 km of major roads within an area of 24,373 km$^2$, made by a VicRoads-authorised, litter-abatement contractor. Crashstats data covered the entire state and was based on reports made by the state police regarding injuries from WVC. Similarly, the Insurance Australia Group data was also based on statewide reports of WVC, however, originating from insurance claims made by motorists. Each of the road segment-based datasets (City of Bendigo, Western District, and Crashstats) were used to augment a dataset obtained from Wildlife Victoria for modelling and to validate predictions resulting from these models. To develop each modelling dataset for our study, we selected road segments that intersected with reported kangaroo collision records to represent presences. All other road segments without collisions represented background data. When combining datasets, multiple collisions on the same road segments were reduced to single presences. Thus, each modelling dataset was comprised of 644,715 road segments having either a collision or no collision. Eight permutations were developed by combining independent data with Wildlife Victoria (baseline) data (codes shown in brackets):
+Eastern Grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest native mammal (up to 85 kilograms for males) in Australia \citep{coul10}, and the most commonly reported species struck by motor vehicles in Victoria \citep{rowd08}, prompting several organisations to record carcass collection and collision locations. We obtained four datasets of spatially-explicit collisions with Eastern Grey kangaroos in the state of Victoria in south-east Australia for our study (\Cref{val_data}). The data were sourced from: the City of Bendigo, a large regional center located in north-east Victoria, the Western District, a large VicRoads administrative boundary located in the center of the western portion of Victoria, Crashstats, an online repository of police-reported WVC, and Insurance Australia Group, an insurance company that records WVC reported by their members. See \Cref{apx:C} for more information on data sources. Data from the City of Bendigo were based on carcasses reported to the 3,001 km$^2$ municipality by members of the public. The Western District data were comprised of reported carcasses, along 1,417 km of major roads within an area of 24,373 km$^2$, made by a VicRoads-authorised, litter-abatement contractor. Crashstats data covered the entire state and was based on reports made by the state police regarding injuries from WVC. Similarly, the Insurance Australia Group data were also based on statewide reports of WVC, however, originating from insurance claims made by motorists. Each of the road segment-based datasets (City of Bendigo, Western District, and Crashstats) were used to augment a dataset obtained from Wildlife Victoria for modelling and to validate predictions resulting from these models. To develop each modelling dataset for our study, we selected road segments that intersected with reported kangaroo collision records to represent presences. All other road segments without collisions represented background data. When combining datasets, multiple collisions on the same road segments were reduced to single presences. Thus, each modelling dataset was comprised of 644,715 road segments having either a collision or no collision. Eight permutations were developed by combining independent data with Wildlife Victoria (baseline) data (codes shown in brackets):
 
 \begin{enumerate}
 	\item Wildlife Victoria (o)
@@ -79,37 +79,7 @@ Eastern Grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second larges
 	\item Wildlife Victoria + City of Bendigo + Western District + Crashstats (obwc)
 \end{enumerate}
 
-\begin{table}[!t]
-\caption[Datasets used to fit collision models and validate predictions]{Datasets used to fit models and validate predictions.}
-\centering
-\begin{tabularx}{0.9\textwidth}{YYYYYYYY} \toprule
-Source						&Data Code	&Type	&Records	&Reporting Method	&Spatial Unit	&Spatial Coverage	&Temporal Coverage \\ \midrule
-
-City of Bendigo		&b		&Public municipality			&395		&Public reported carcasses			&Road segment		&City (3,001 km$^2$)	&8 years : 2007--2014 \\
-
-&&&&&&\\
-
-VicRoads Western District	&w		&State government organisation	&815		&Independent contractor recorded  carcasses			&Road segment		&District (24,373 km$^2$)	&2 years : 2014--2015 \\
-
-&&&&&&\\
-
-Crashstats		&c			&State government organisation	&487		&Police reported wildlife strikes			&Road segment		&State of Victoria (227,819 km$^2$)	&7 years : 2010--2016 \\
-
-&&&&&&\\
-
-Wildlife Victoria	&o		&Non-government organisation	&4245		&Public reported observations of wildlife strikes			&Road segment		&State of Victoria (227,819 km$^2$)	&6 years : 2010--2015 \\
-
-&&&&&&\\
-
-Insurance Australia Group	&iag	&Private corporation			&1344		&Public reported claims of wildlife strikes			&Town		&State of Victoria (227,819 km$^2$)	&3 years : 2011--2013 \\
-
-\bottomrule
-\end{tabularx}
-\label{val_data}
-\end{table}
-
 To test the effects of combining independent datasets, we fitted a collision model (\Cref{eq:28}) to all permutations of data.  We predicted collision risk from a model that regressed reported collisions on species occurrence, traffic volume and traffic speed:
-
 \begin{equation} \label{eq:61}
 cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \beta_3*\text{log}(S_i)
 \end{equation}
@@ -118,8 +88,37 @@ cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \be
 
 To test model sensitivity to different combinations of data, we validated the predictions from our models using held-out datasets. For each combination of training datasets, we fitted a model, made predictions, and validated the predictions with an independent dataset not used to train the model. To assess model calibration, we regressed the observed collisions in each independent dataset on values predicted from models using the independent data \citep[see][]{mill91}. A perfectly calibrated model would report an intercept coefficient of zero and a slope coefficient of one. To measure the ability of each model to discriminate between false positive and false negative values, we also calculated receiver operator characteristic scores \citep[see][]{metz78}. A score of one indicates perfect discrimination while 0.5 indicates no better than random selection; 0.75 or above is often considered acceptable performance.
 
-In addition to the four datasets with data on individual collisions, we also had access to dataset in which the number of collisions that involved insurance claims was recorded for towns. The Insurance Australia Group (``iag" hereafter) collision data detailed counts of collisions within each town boundary in Victoria (2917 total). From the predictions made to all road segments by the models using different combinations of data, we calculated the mean collision risk within each town boundary. Using each town as a datapoint, we regressed the mean collision risk prediction (log-transformed) on the total collisions reported. Due to the response data being positive integers, we used the Poisson link:
+\begin{table}[!t]
+\caption[Datasets used to fit collision models and validate predictions]{Datasets used to fit models and validate predictions.}
+\centering
+\begin{tabularx}{0.9\textwidth}{YYYlYYYY} \toprule
+Source						&Data Code	&Type	&Records	&Reporting Method	&Spatial Unit	&Spatial Coverage	&Temporal Coverage \\ \midrule
 
+City of Bendigo		&b		&Public municipality			&395		&Public reported carcasses			&Road segment		&City (3,001 km$^2$)	&8 years: 2007--2014 \\
+
+&&&&&&\\
+
+VicRoads Western District	&w		&State government organisation	&815		&Independent contractor recorded  carcasses			&Road segment		&District (24,373 km$^2$)	&2 years: 2014--2015 \\
+
+&&&&&&\\
+
+Crashstats		&c			&State government organisation	&487		&Police reported wildlife strikes			&Road segment		&State of Victoria (227,819 km$^2$)	&7 years: 2010--2016 \\
+
+&&&&&&\\
+
+Wildlife Victoria	&o		&Non-government organisation	&4245		&Public reported observations of wildlife strikes			&Road segment		&State of Victoria (227,819 km$^2$)	&6 years: 2010--2015 \\
+
+&&&&&&\\
+
+Insurance Australia Group	&iag	&Private corporation			&1344		&Public reported claims of wildlife strikes			&Town		&State of Victoria (227,819 km$^2$)	&3 years: 2011--2013 \\
+
+\bottomrule
+\end{tabularx}
+\label{val_data}
+\end{table}
+
+
+In addition to the four datasets with data on individual collisions, we also had access to dataset in which the number of collisions that involved insurance claims was recorded for towns. The Insurance Australia Group (``iag" hereafter) collision data detailed counts of collisions within each town boundary in Victoria (2917 total). From the predictions made to all road segments by the models using different combinations of data, we calculated the mean collision risk within each town boundary. Using each town as a datapoint, we regressed the mean collision risk prediction (log-transformed) on the total collisions reported. Due to the response data being positive integers, we used the Poisson link:
 \begin{equation} \label{eq:62}
 \text{log}(C_j) = \beta_0 + \beta_1\text{log}(P_j)
 \end{equation}
@@ -131,9 +130,9 @@ To further investigate how each independent dataset contributed to the models ut
 \section{Results}
 
 \begin{table}[!t]
-\caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Highly significant variables (p$<$.0001) are marked with asterisks.}
+\caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Deviance explained is the percentage of unexplained variation in the data reduced by the model. Highly significant variables (p$<$.0001) are marked with asterisks.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{lllYllY} \toprule
 Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
   \midrule
 Wildlife Victoria & Intercept & $-$42.30 & 1.07 & $-$39.66 & $<$.0001* & 11.83 \\ 
@@ -165,10 +164,10 @@ All three models fitted to independent road segment-based datasets (City of Bend
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=.7]{06_occ.png}
-  \includegraphics[scale=.7]{06_tvol.png}
-  \includegraphics[scale=.7]{06_tspd.png}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Note likelihoods of collision have been rescaled for comparison as all datasets have different numbers of data points and thus variations in the range of predicted values.}
+  \subfloat[]{\label{val_effects:a}\includegraphics[width=0.35\textwidth]{06_occ.png}}
+  \subfloat[]{\label{val_effects:b}\includegraphics[width=0.35\textwidth]{06_tvol.png}}
+  \subfloat[]{\label{val_effects:c}\includegraphics[width=0.35\textwidth]{06_tspd.png}}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Note likelihoods of collision have been rescaled for comparison as all datasets have different numbers of data points and thus variations in the range of predicted values.}
   \label{val_effects}
 \end{figure*}
 
@@ -193,8 +192,8 @@ The ability of models to discriminate between false-positive and true-positive r
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=1]{06_calib.png}
-  \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \includegraphics[width=0.9\textwidth]{06_calib.png}
+  \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib}
 \end{figure*}
 
@@ -202,8 +201,8 @@ There was no observable trend in calibration when validating model predictions m
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=1]{06_calib2.png}
-  \caption[Comparisons of observations versus model predictions for all combinations of original and independent data]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation.}
+  \includegraphics[width=0.6\textwidth]{06_calib2.png}
+  \caption[Comparisons of observations versus model predictions for all combinations of original and independent data]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation.}
   \label{val_calib2}
 \end{figure*}
 
@@ -211,15 +210,15 @@ Using the aggregated independent data (iag) to validate models resulted in a sli
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=1]{06_calib_iag.png}
-  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \includegraphics[width=0.9\textwidth]{06_calib_iag.png}
+  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=1]{06_dev_iag.png}
-  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: 'o'--Original (Wildlife Victoria); 'b'--City of Bendigo; 'w'--Western District; 'c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \includegraphics[width=0.9\textwidth]{06_dev_iag.png}
+  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
   \label{val_calib_dev}
 \end{figure*}
 

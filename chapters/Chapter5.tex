@@ -40,7 +40,7 @@ Extensive railway networks with considerable train movements exist on every inha
   \label{trains_study_area}
 \end{figure*}
 
-We used a 1712-kilometre passenger railway network from regional Victoria, Australia (operated by V/line, a government-owned corporation) in south-east Australia to conduct our study (\Cref{trains_study_area}).  Trains operate on all sections of the network between 4 a.m. and 2 a.m. (the following day), with the largest volume occurring Monday through Friday between 7 a.m. and 9 a.m., and 4 p.m. and 6 p.m. Most trains operate at speeds of 100 km h$^{-1}$ or less, however, on some sections of track commuter trains operate at maximum speeds of 160 km h$^{-1}$. Due to limited data available, we did not include freight operations in our study.
+We used a 1712-kilometre passenger railway network from regional Victoria, Australia (operated by V/line, a government-owned corporation, see \Cref{apx:C}) in south-east Australia to conduct our study (\Cref{trains_study_area}).  Trains operate on all sections of the network between 4 a.m. and 2 a.m. (the following day), with the largest volume occurring Monday through Friday between 7 a.m. and 9 a.m., and 4 p.m. and 6 p.m. Most trains operate at speeds of 100 km h$^{-1}$ or less, however, on some sections of track commuter trains operate at maximum speeds of 160 km h$^{-1}$. Due to limited data available, we did not include freight operations in our study.
 
 \subsection{Data Preparation}
 
@@ -57,7 +57,7 @@ Eastern grey kangaroos (\textit{Macropus giganteus}, Shaw, 1790; "kangaroos" her
 
 \subsection{Species Occurrence}
 
-Kangaroos are widespread \citep{daws12} and abundant in many parts of Victoria, yet comprehensive distribution records are lacking in many areas. To represent risk of collision by exposure to threat, we required distributional data across the entire study area and used species distribution modelling to predict relative likelihood of kangaroo occurrence.  We emulated methods by \cite{elit08} to model and predict occurrence in each grid cell for the whole State of Victoria. The model was trained on data from the online Victorian Biodiversity Atlas \citep{depi16} and included several environmental variables relating to the biology and behaviour of kangaroos (see \Cref{sec:egk}).  To reduce the effects of sampling bias, we also included four additional predictors:  1) distance to urban areas, 2) distance to roads, and the 3) easting and 4) northing spatial coordinate of the grid cell centroid.
+Kangaroos are widespread \citep{daws12} and abundant in many parts of Victoria, yet comprehensive distribution records are lacking in many areas. To represent risk of collision by exposure to threat, we required distributional data across the entire study area and used species distribution modelling to predict relative likelihood of kangaroo occurrence.  We emulated methods by \cite{elit08} to model and predict occurrence in each grid cell for the whole State of Victoria. The model was trained on data from the online Victorian Biodiversity Atlas (see \Cref{apx:C} for more information) and included several environmental variables relating to the biology and behaviour of kangaroos (see \Cref{sec:egk}).  To reduce the effects of sampling bias, we also included four additional predictors:  1) distance to urban areas, 2) distance to roads, and the 3) easting and 4) northing spatial coordinate of the grid cell centroid.
 
 \subsection{Characteristics of Railway Network}
 
@@ -83,11 +83,11 @@ The first two terms are the linear and quadratic terms of a sine function that v
 A_{ijk}=
  \begin{cases}
  
-e^{ - \left( \frac{j-U_{ik}}{\frac{(24-D_{ik})+U_{ik}}{2}}\right)^2} - e^{ - \left( \frac{j-(D_{ik}-24)}{ \frac{(24-D_{ik})+U_{ik}}{2} } \right)^2} & , \text{if}\ j < U_{ik}\\[.2cm]
+e^{ - \left( \frac{2(j-U_{ik})}{(24-D_{ik})+U_{ik}}\right)^2} - e^{ - \left( \frac{2(j-(D_{ik}-24))}{(24-D_{ik})+U_{ik}} \right)^2} & , \text{if}\ j < U_{ik}\\[.2cm]
 
-e^{ - \left( \frac{j-U_{ik}}{\frac{D_{ik}-U_{ik}}{2}}\right)^2} - e^{ - \left( \frac{j-D_{ik}}{ \frac{D_{ik}-U_{ik}}{2} } \right)^2} & , \text{if}\ U_{ik} \leq j < D_{ik}\\[.2cm]
+e^{ - \left( \frac{2(j-U_{ik})}{D_{ik}-U_{ik}}\right)^2} - e^{ - \left( \frac{2(j-D_{ik})}{D_{ik}-U_{ik}} \right)^2} & , \text{if}\ U_{ik} \leq j < D_{ik}\\[.2cm]
 
-e^{ - \left( \frac{j-(U_{ik}+24)}{\frac{(24-D_{ik})+U_{ik}}{2}}\right)^2} - e^{ - \left( \frac{j-D_{ik}}{ \frac{(24-D_{ik})+U_{ik}}{2} } \right)^2} & , \text{if}\ j \geq D_{ik}
+e^{ - \left( \frac{2(j-(U_{ik}+24))}{(24-D_{ik})+U_{ik}}\right)^2} - e^{ - \left( \frac{2(j-D_{ik})}{(24-D_{ik})+U_{ik}} \right)^2} & , \text{if}\ j \geq D_{ik}
 
  \end{cases}
 \end{equation}
@@ -134,7 +134,7 @@ A) no change to operations,
 B) moderated train speeds in high kangaroo occurrence areas, and 
 C) reduced kangaroo occurrence in areas with highest average speed of trains.
 
-Scenario B involved capping train speeds at 80 km h$^{-1}$ in grid cells with kangaroo relative occurrence likelihoods of 0.5 or above during the hours of 5 a.m. to 9 a.m. and 4 p.m. to 8 p.m.  This change affected 42 cells and 275 out of 3,024 unique weekly routes.  In scenario C, relative kangaroo occurrence was reduced by approximately half in all grid cells with average train speeds of more than 120 km h$^{-}1$ (n = 154 cells, total track length = 121 km). This simulates reducing access of kangaroos to the railway network (e.g., by fencing).  The values for reducing kangaroo abundance were used for all hours of the day as this management strategy would most likely involve exclusion or reduction in animal populations which operate irrespective of temporal variation.
+Scenario B involved capping train speeds at 80 km h$^{-1}$ in grid cells with kangaroo relative occurrence likelihoods of 0.5 or above during the hours of 5 a.m. to 9 a.m. and 4 p.m. to 8 p.m.  This change affected 42 cells and 275 out of 3,024 unique weekly routes.  In scenario C, relative kangaroo occurrence was reduced by approximately half in all grid cells with average train speeds of more than 120 km h$^{-1}$ (n = 154 cells, total track length = 121 km). This simulates reducing access of kangaroos to the railway network (e.g., by fencing).  The values for reducing kangaroo abundance were used for all hours of the day as this management strategy would most likely involve exclusion or reduction in animal populations which operate irrespective of temporal variation.
 
 \section{Results}
 
@@ -143,7 +143,7 @@ Our model fitted the data and the signs of model coefficients (positive or negat
 \begin{table}[!t]
 \caption[Summary of kangaroo-train collision model fit]{Summary of model fit using all data ($n$=291,120 grid cells).  Highly significant variables are marked with an asterisk.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllll} \toprule
+\begin{tabularx}{0.9\textwidth}{llYll} \toprule
 Variable			&Beta Coefficient Estimate	&Standard Error of Coefficient Estimate	&Z-value &$\PRZ$ \\ \midrule 
 Intercept			&$-$7,2						&0.09	&$-$79.03 	&$<$1.0x10$^{-14}$* \\ 
 EGK	($\beta_1$)		&0.61						&0.06	&10.46		&$<$1.0x10$^{-14}$* \\ 
@@ -175,9 +175,9 @@ The bi-modal functional form for the effect of kangaroo activity on collision ri
 \begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[]{\label{train_calib:a}\includegraphics[width=0.5\textwidth]{05_calib.png}}\\
-  \subfloat[]{\label{train_calib:b}\includegraphics[width=0.4\textwidth]{05_roc.png}}
-  \subfloat[]{\label{train_calib:c}\includegraphics[width=0.4\textwidth]{05_validate.png}}
+  \subfloat[]{\label{train_calib:a}\includegraphics[width=0.48\textwidth]{05_calib.png}}\\
+  \subfloat[]{\label{train_calib:b}\includegraphics[width=0.48\textwidth]{05_roc.png}}\hfill
+  \subfloat[]{\label{train_calib:c}\includegraphics[width=0.48\textwidth]{05_validate.png}}
   \caption[Calibration and ROC plots for kangaroo-train collision model]{a) Calibration plot showing rate of observed collisions against predicted rate of collisions.  Dots represent the observed rate with 95\% confidence intervals at the medians of each bin of predictions (10 total). Labels indicate the total observations in each bin. A regression line is shown between the dependent variable and the predicted values (response-scale) of the model; perfect calibration has an intercept of 0 and slope of 1; b) ROC (receiver operating characteristic) curve measuring discrimination ability of model at all threshold values. Values shown are averages of all cross-validations; c) Comparison between the collision model fit on full data and on cross-validated subsets. "Intercept" and "Slope" result from regressing the dependent variable on the predicted values and measure calibration (see plot a); ROC measures discrimination between collisions and no-collisions (see plot b). For each metric, open circles represent the full data model and solid dots represent mean values (95\% confidence intervals shown as bars) for the 1000 cross-validated subsets.  Dashed lines indicate the expected values for a perfectly calibrated and discriminatory mode}
   \label{train_calib}
 \end{figure*}
@@ -187,7 +187,8 @@ The models fitted on all data and fitted on the subsets of the data during cross
 \begin{table}[!t]
 \caption[Predicted collisions based on different management scenarios]{Summary of predicted collisions based on different management scenarios. Expected collisions are a total across the entire regional network for a period of one year.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lll} \toprule
+\setlength{\extrarowheight}{.2em}
+\begin{tabularx}{0.9\textwidth}{lYl} \toprule
 Scenario	&Description	&Expected Total Collisions \\ \midrule 
 A			&no change to current operations or infrastructure			&404 \\ 
 B			&moderated train speeds in high kangaroo occurrence areas during peak travel times			&400 \\ 
@@ -202,11 +203,11 @@ Both of the simulated management scenarios reduced the predicted number of colli
 \begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[]{\label{train_brq:a}\includegraphics[width=0.45\textwidth]{05_brq_prob.png}}\\
-  \subfloat[]{\label{train_brq:b}\includegraphics[width=0.35\textwidth]{05_brq_egk.png}}
-  \subfloat[]{\label{train_brq:c}\includegraphics[width=0.35\textwidth]{05_brq_trains.png}}\\
-  \subfloat[]{\label{train_brq:d}\includegraphics[width=0.35\textwidth]{05_brq_speed.png}}
-  \subfloat[]{\label{train_brq:e}\includegraphics[width=0.35\textwidth]{05_brq_hour.png}}
+  \subfloat[]{\label{train_brq:a}\includegraphics[width=0.49\textwidth]{05_brq_prob.png}}\\
+  \subfloat[]{\label{train_brq:b}\includegraphics[width=0.4\textwidth]{05_brq_egk.png}}
+  \subfloat[]{\label{train_brq:c}\includegraphics[width=0.4\textwidth]{05_brq_trains.png}}\\
+  \subfloat[]{\label{train_brq:d}\includegraphics[width=0.4\textwidth]{05_brq_speed.png}}
+  \subfloat[]{\label{train_brq:e}\includegraphics[width=0.4\textwidth]{05_brq_hour.png}}
   \caption[Binned randomised quantile (RQ) residuals plots for kangaroo-train collision model]{Binned randomised quantile (RQ) residuals plots -- average residual versus the average predictor value for each bin. For all continuous predictors, bins are equally spaced and determined by taking the square root of the total number of unique values for each predictor; for the discrete predictor of hour, there are 23 total bins. The gray lines indicate ±2 standard-error bounds which should contain 95\% of the residuals if the model were actually true. Note some variables are log-transformed to assist with visual inspection of the residuals.}
   \label{train_brq}
 \end{figure*}
