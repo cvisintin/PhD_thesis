@@ -164,7 +164,6 @@ For each target species, we selected the road segments that intersected with the
 We regressed collisions on the predictor variables using a complementary log-log (cloglog) link.  This link considers the collision data as resulting from a truncated count process which agrees with both our underlying theory about how collisions occur (as a rate following a Poisson distribution) and our data construction methodology. Further, this link can be used to specify a model that is invariant to the spatial scale of the observations allowing greater flexibility as a modelling tool. The cloglog link contrasts with the popular logit link, commonly used for binomial data, which does not have the same interpretation. In this study, we included two variations on the original model presented in \Cref{sec:egk}. First, we added an offset term to account for variation in road lengths and the temporal span of the data. We intend our model outputs to be suitable for management and the offset allows us to represent risk across the network using annual collisions per kilometre. Second, we included a quadratic term for traffic volume to allow a unimodal response shape. Former studies indicate that some species are repelled by roads when traffic volume increases beyond a threshold value \citep{seil05,gagn07}. Other possible determinants of this response shape include changes in local wildlife abundance resulting from previous wildlife-vehicle collisions, absence of wildlife in highly urbanised areas (i.e., heavy traffic areas), and reporting bias due to stopping difficulty on roads with high traffic volumes. We tested quadratic terms for the other predictors, however, they were not informative in this work.
 
 Our final model is expressed as: 
-
 \begin{equation}
 \text{cloglog}(p_i) = \beta_0 + \beta_1 \text{ln}(O_i) + \beta_2 \text{ln}(V_i) + \beta_3 (\text{ln}(V_i))^2 + \beta_4 \text{ln}(S_i) + \text{ln}(L_i \times T)
 \end{equation}
@@ -272,57 +271,73 @@ Koala & Intercept & $-$60.98 & 9.01 & $-$6.768 & $<$.001* & --- \\
 \label{6sp_sum_coll}
 \end{table}
 
-All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (\Cref{6sp_effects}) and the signs of the coefficients were as expected (\Cref{6sp_sum_coll}). Further, these response shapes were similar across all seasons for each species except the two possums (\Cref{6sp_occ_seas,6sp_tvol_seas,6sp_tspd_seas}). Based on analysis of variation (ANOVA), species occurrence had the largest contribution to reduction in deviance for all of the models.
+All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (\Cref{6sp_effects_occ,6sp_effects_tvol,6sp_effects_tspd}) and the signs of the coefficients were as expected (\Cref{6sp_sum_coll}). Further, these response shapes were similar across all seasons for each species except the two possums (\Cref{6sp_occ_seas,6sp_tvol_seas,6sp_tspd_seas}). Based on analysis of variation (ANOVA), species occurrence had the largest contribution to reduction in deviance for all of the models.
+
+%  \subfloat[]{\label{6sp_effects:a}
+%  	\begin{minipage}[t]{.4\textwidth}
+%    	\centering
+%    	\vspace{0cm}
+%    	\includegraphics[width=\textwidth]{6sp_occ_a2.png}   	
+%    \end{minipage}
+%  	\begin{minipage}[t]{.23\textwidth}
+%    	\centering
+%    	\vspace{.465cm}
+%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_egk.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_btp.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_rtp.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_bsw.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_wom.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_koa.png}
+%    \end{minipage}
+%  }\\
+%  \subfloat[]{\label{6sp_effects:b}
+%    \begin{minipage}[t]{.4\textwidth}
+%    	\centering
+%    	\vspace{0cm}
+%    	\includegraphics[width=\textwidth]{6sp_tvol_b.png}   	
+%    \end{minipage}
+%  	\begin{minipage}[t]{.23\textwidth}
+%    	\centering
+%    	\vspace{.465cm}
+%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_egk.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_btp.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_bsw.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_wom.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_koa.png}
+%    \end{minipage}
+%  }\\
+%  \subfloat[]{\label{6sp_effects:c}
+%  	\begin{minipage}[t]{.4\textwidth}
+%    	\centering
+%    	\vspace{0cm}
+%    	\includegraphics[width=\textwidth]{6sp_tspd_c.png}   	
+%    \end{minipage}
+%  	\begin{minipage}[t]{.23\textwidth}
+%    	\centering
+%    	\vspace{.465cm}
+%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_egk.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_btp.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_bsw.png}\\
+%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_wom.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_koa.png}
+%    \end{minipage}
+%  }
 
 \begin{figure*}[!t]
   \centering
-  \subfloat[]{\label{6sp_effects:a}
-  	\begin{minipage}[t]{.4\textwidth}
-    	\centering
-    	\vspace{0cm}
-    	\includegraphics[width=\textwidth]{6sp_occ_a2.png}   	
-    \end{minipage}
-  	\begin{minipage}[t]{.23\textwidth}
-    	\centering
-    	\vspace{.465cm}
-    	\includegraphics[width=.45\textwidth]{6sp_occ_a_egk.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_btp.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_occ_a_rtp.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_bsw.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_occ_a_wom.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_koa.png}
-    \end{minipage}
-  }\\
-  \subfloat[]{\label{6sp_effects:b}
-    \begin{minipage}[t]{.4\textwidth}
-    	\centering
-    	\vspace{0cm}
-    	\includegraphics[width=\textwidth]{6sp_tvol_b.png}   	
-    \end{minipage}
-  	\begin{minipage}[t]{.23\textwidth}
-    	\centering
-    	\vspace{.465cm}
-    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_egk.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_btp.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_bsw.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_wom.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_koa.png}
-    \end{minipage}
-  }\\
-  \subfloat[]{\label{6sp_effects:c}
-  	\begin{minipage}[t]{.4\textwidth}
-    	\centering
-    	\vspace{0cm}
-    	\includegraphics[width=\textwidth]{6sp_tspd_c.png}   	
-    \end{minipage}
-  	\begin{minipage}[t]{.23\textwidth}
-    	\centering
-    	\vspace{.465cm}
-    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_egk.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_btp.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_bsw.png}\\
-    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_wom.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_koa.png}
-    \end{minipage}
-  }
-  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species]{Marginal effects of predictor variables on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Codes used for species are: EGK--`Eastern Grey Kangaroo'; BTP--`Common Brushtail Possum'; RTP--`Common Ringtail Possum'; BSW--`Swamp Wallaby'; WOM--`Wombat'; KOA--`Koala'.}
-  \label{6sp_effects}
+  \includegraphics[width=\textwidth]{6sp_occ.png}
+  \caption[Marginal effect of species occurrence on relative likelihood of collision for six mammal species]{Marginal effect of species occurrence on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \label{6sp_effects_occ}
 \end{figure*}
 
-Among species, the response of collision risk to occurrence likelihood demonstrated the least amount of variation in shape (\Cref{6sp_effects:a}) compared to traffic volume (\Cref{6sp_effects:b}) and traffic speed (\Cref{6sp_effects:c}). Koalas had the highest increases in collision risk at lower values of occurrence likelihood and gradually reduced risk at higher values. This response was consistent for all species except ringtail possums which had an exponential relationship, albeit minor (coefficient of 1.08), between risk and occurrence.
+\begin{figure*}[!t]
+  \centering
+  \includegraphics[width=\textwidth]{6sp_tvol.png}
+  \caption[Marginal effect of traffic volume on relative likelihood of collision for six mammal species]{Marginal effect of traffic volume on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \label{6sp_effects_tvol}
+\end{figure*}
+
+\begin{figure*}[!t]
+  \centering
+  \includegraphics[width=\textwidth]{6sp_tspd.png}
+  \caption[Marginal effect of traffic speed on relative likelihood of collision for six mammal species]{Marginal effect of traffic speed on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \label{6sp_effects_tspd}
+\end{figure*}
+
+Among species, the response of collision risk to occurrence likelihood demonstrated the least amount of variation in shape (\Cref{6sp_effects_occ}) compared to traffic volume (\Cref{6sp_effects_tvol}) and traffic speed (\Cref{6sp_effects_tspd}). Koalas had the highest increases in collision risk at lower values of occurrence likelihood and gradually reduced risk at higher values. This response was consistent for all species except ringtail possums which had an exponential relationship, albeit minor (coefficient of 1.08), between risk and occurrence.
 
 \begin{figure*}[!t]
   \centering
@@ -383,7 +398,7 @@ Collision risks for ringtail possums increased more slowly with occurrence likel
 
 Collision likelihoods also increased with higher traffic speeds for all species.  With the exception of the brushtail and ringtail possums, the magnitudes of increase were significant, suggesting high vehicle speed is a hazard for wildlife.  One plausible explanation is that higher traffic speeds reduce reaction times for both wildlife and drivers. Previous work has used simulation analysis to model the relationship of speed and collisions by using species traits to determine crossing success \citep{jaar06}. Several other studies have shown similar results on the effects of traffic speed on road mortality of wildlife \citep[e.g.][]{farm12,gkri13,lao11,ramp06a,seil05,seil06,sudh09,vanl09}.
 
-The consistent quadratic shape observed in the responses to traffic volume for all species (\Cref{6sp_effects}) indicates a possible threshold effect.  Varying levels of traffic have been shown to affect animal presence on or near roads \citep{jaeg05,rhod14}. Aside from species behavioural responses, traffic volumes above a certain level may affect species abundance due to mortality caused by wildlife-vehicle collisions. Lower abundances result in less animals on the road and, therefore, less collisions. Under this hypothesis, traffic volume is especially problematic for species that are attracted to roads \citep{form03}. Nonetheless, identifying traffic volumes that have high relative collision risks for multiple species may help reduce roadkill.  For example, high likelihood of collisions at particular traffic speed and volume levels may warrant further examination to determine potential mitigation such as redistribution or re-routing of vehicles and traffic-calming infrastructure.
+The consistent quadratic shape observed in the responses to traffic volume for all species (\Cref{6sp_effects_tvol}) indicates a possible threshold effect.  Varying levels of traffic have been shown to affect animal presence on or near roads \citep{jaeg05,rhod14}. Aside from species behavioural responses, traffic volumes above a certain level may affect species abundance due to mortality caused by wildlife-vehicle collisions. Lower abundances result in less animals on the road and, therefore, less collisions. Under this hypothesis, traffic volume is especially problematic for species that are attracted to roads \citep{form03}. Nonetheless, identifying traffic volumes that have high relative collision risks for multiple species may help reduce roadkill.  For example, high likelihood of collisions at particular traffic speed and volume levels may warrant further examination to determine potential mitigation such as redistribution or re-routing of vehicles and traffic-calming infrastructure.
 
 As mentioned previously, our model framework is correlative and disregards temporal patterns of collisions.  A qualitative comparison of the effects plots revealed similar trends between seasons for all species except ringtail and brushtail possums, however, the small sample sizes used in modelling warrant a cautionary interpretation. None of our species demonstrate migratory patterns and have relatively stable patterns of activity throughout the year. For species that exhibit seasonal patterns of movement, it would be useful to incorporate this information into the collision model \citep[see][]{neum12}. Partitioning the temporal component at the hourly scale may be more useful as systematic patterns of collisions exist throughout the day \citep[e.g.][]{litv08,rhod14}. This was beyond the scope of this work as a robust temporal analysis would require the expansion of all explanatory variables to a complementary temporal scale, significantly increasing the computational requirements.  Temporal differences in species movements and lags in collision reporting must also be considered.
 
