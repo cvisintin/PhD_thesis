@@ -198,29 +198,6 @@ has not been submitted in whole or part for a degree in any university.
 %\renewcommand*{\bibname}{References} % <--Redefine name here
 \renewcommand*{\bibname}{} % <-- or suppress references section naming altogether
 
-%remove title and space above bibliography
-%\makeatletter
-%\renewenvironment{thebibliography}[1]
-%     {\list{\@biblabel{\@arabic\c@enumiv}}
-%           {\settowidth\labelwidth{\@biblabel{#1}}
-%            \leftmargin\labelwidth
-%            \setlength{\topsep}{0pt} 
-%            \setlength{\partopsep}{0pt}
-%            \advance\leftmargin\labelsep
-%            \@openbib@code
-%            \usecounter{enumiv}%
-%            \let\p@enumiv\@empty
-%            \renewcommand\theenumiv{\@arabic\c@enumiv}}
-%      \sloppy
-%      \clubpenalty4000
-%      \@clubpenalty \clubpenalty
-%      \widowpenalty4000
-%      \sfcode`\.\@m}
-%     {\def\@noitemerr
-%       {\@latex@warning{Empty `thebibliography' environment}}
-%      \endlist}
-%\makeatother
-
 % use 1.5 line spacing for the examiners copy
 % single line spacing for the final copy
 \ifthenelse{\boolean{examinerscopy}}{%
@@ -321,8 +298,7 @@ has not been submitted in whole or part for a degree in any university.
 % add functionality for subfigures
 \usepackage[caption=false]{subfig}
 %\captionsetup[subfigure]{position=top,labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=raggedright} %place labels on top left
-\captionsetup[subfigure]{labelfont=rm}
-\captionsetup[subfloat]{farskip=0pt}
+\captionsetup[subfigure]{labelfont=rm,margin=0pt}
 
 % tikZ is stellar for manually creating and controlling drawing content
 %\useackage{tikz} % <-- enable functionality
