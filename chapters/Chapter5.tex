@@ -49,7 +49,7 @@ To organise our data and modelling, we overlaid a 1-km$^2$ cell grid on the rail
 \begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{05_gridwork.png}
-  \caption[Grid framework used to organise modelling data]{One km$^2$ grid framework used to organise modelling data: 2,015 total cells; extent coordinates 104000E,5741000N x 556000E,6084000N; GDA94 MGA zone 55 projection. The railway network is shown as a heavy dashed line and wildlife-train collisions are shown as crosses.}
+  \caption[Spatial grid used to organise modelling data]{One km$^2$ spatial grid used to organise modelling data: 2,015 total cells; extent coordinates 104000E,5741000N x 556000E,6084000N; GDA94 MGA zone 55 projection. The railway network is shown as a heavy dashed line and wildlife-train collisions are shown as crosses.}
   \label{trains_grid}
 \end{figure*}
 
@@ -208,7 +208,7 @@ Both of the simulated management scenarios reduced the predicted number of colli
   \subfloat[]{\label{train_brq:c}\includegraphics[width=0.4\textwidth]{05_brq_trains.png}}\\
   \subfloat[]{\label{train_brq:d}\includegraphics[width=0.4\textwidth]{05_brq_speed.png}}
   \subfloat[]{\label{train_brq:e}\includegraphics[width=0.4\textwidth]{05_brq_hour.png}}
-  \caption[Binned randomised quantile (RQ) residuals plots for kangaroo-train collision model]{Binned randomised quantile (RQ) residuals plots -- average residual versus the average predictor value for each bin. For all continuous predictors, bins are equally spaced and determined by taking the square root of the total number of unique values for each predictor; for the discrete predictor of hour, there are 23 total bins. The gray lines indicate ±2 standard-error bounds which should contain 95\% of the residuals if the model were actually true. Note some variables are log-transformed to assist with visual inspection of the residuals.}
+  \caption[Binned randomised quantile residuals plots for kangaroo-train collision model]{Binned randomised quantile (RQ) residuals plots -- average residual versus the average predictor value for each bin. For all continuous predictors, bins are equally spaced and determined by taking the square root of the total number of unique values for each predictor; for the discrete predictor of hour, there are 23 total bins. The gray lines indicate ±2 standard-error bounds which should contain 95\% of the residuals if the model were actually true. Note some variables are log-transformed to assist with visual inspection of the residuals.}
   \label{train_brq}
 \end{figure*}
 

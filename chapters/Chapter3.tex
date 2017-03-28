@@ -226,7 +226,7 @@ Spatial autocorrelation patterning was evident in the species occurrence model r
 All of the collision models fit the data as expected.  Reduction on the null deviance was between 7.4\% and 19.4\% and all of the collision models attained high ROC scores when predictions were compared to the independent validation data (\Cref{6sp_models}).  The swamp wallaby model had the lowest ability to discriminate between false positives and false negatives (0.80) and the koala model had the highest (0.89). All of the predictors were highly significant (p$<$.001) in all of the models except traffic speed which was not a highly significant variable for the three arboreal mammal species
 
 \begin{table}[!t]
-\caption[Summary of collision models for six mammal species]{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables (p$<$.001) are marked with asterisks.}
+\caption[Summary of collision models for six mammal species]{Summary of collision models fits. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species.  Highly significant variables ($p<$.001) are marked with asterisks.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllllll} \toprule
 Species & Variable & Coefficient & Std. Error & $Z\text{-value}$ & $\PRZ$ & ANOVA \\ 
@@ -273,67 +273,24 @@ Koala & Intercept & $-$60.98 & 9.01 & $-$6.768 & $<$.001* & --- \\
 
 All of the predictor variables demonstrated plausible relationships to collision likelihood in the partial dependency plots (\Cref{6sp_effects_occ,6sp_effects_tvol,6sp_effects_tspd}) and the signs of the coefficients were as expected (\Cref{6sp_sum_coll}). Further, these response shapes were similar across all seasons for each species except the two possums (\Cref{6sp_occ_seas,6sp_tvol_seas,6sp_tspd_seas}). Based on analysis of variation (ANOVA), species occurrence had the largest contribution to reduction in deviance for all of the models.
 
-%  \subfloat[]{\label{6sp_effects:a}
-%  	\begin{minipage}[t]{.4\textwidth}
-%    	\centering
-%    	\vspace{0cm}
-%    	\includegraphics[width=\textwidth]{6sp_occ_a2.png}   	
-%    \end{minipage}
-%  	\begin{minipage}[t]{.23\textwidth}
-%    	\centering
-%    	\vspace{.465cm}
-%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_egk.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_btp.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_rtp.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_bsw.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_occ_a_wom.png} \includegraphics[width=.45\textwidth]{6sp_occ_a_koa.png}
-%    \end{minipage}
-%  }\\
-%  \subfloat[]{\label{6sp_effects:b}
-%    \begin{minipage}[t]{.4\textwidth}
-%    	\centering
-%    	\vspace{0cm}
-%    	\includegraphics[width=\textwidth]{6sp_tvol_b.png}   	
-%    \end{minipage}
-%  	\begin{minipage}[t]{.23\textwidth}
-%    	\centering
-%    	\vspace{.465cm}
-%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_egk.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_btp.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_bsw.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_tvol_b_wom.png} \includegraphics[width=.45\textwidth]{6sp_tvol_b_koa.png}
-%    \end{minipage}
-%  }\\
-%  \subfloat[]{\label{6sp_effects:c}
-%  	\begin{minipage}[t]{.4\textwidth}
-%    	\centering
-%    	\vspace{0cm}
-%    	\includegraphics[width=\textwidth]{6sp_tspd_c.png}   	
-%    \end{minipage}
-%  	\begin{minipage}[t]{.23\textwidth}
-%    	\centering
-%    	\vspace{.465cm}
-%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_egk.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_btp.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_rtp.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_bsw.png}\\
-%    	\includegraphics[width=.45\textwidth]{6sp_tspd_c_wom.png} \includegraphics[width=.45\textwidth]{6sp_tspd_c_koa.png}
-%    \end{minipage}
-%  }
-
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{6sp_occ.png}
-  \caption[Marginal effect of species occurrence on relative likelihood of collision for six mammal species]{Marginal effect of species occurrence on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \caption[Marginal effect of species occurrence on relative likelihood of collision for six mammal species]{Marginal effect of species occurrence on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_occ}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{6sp_tvol.png}
-  \caption[Marginal effect of traffic volume on relative likelihood of collision for six mammal species]{Marginal effect of traffic volume on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \caption[Marginal effect of traffic volume on relative likelihood of collision for six mammal species]{Marginal effect of traffic volume on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_tvol}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=\textwidth]{6sp_tspd.png}
-  \caption[Marginal effect of traffic speed on relative likelihood of collision for six mammal species]{Marginal effect of traffic speed on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.5cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.5cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.4cm]{koa_icon_c.png} --`Koala'.}
+  \caption[Marginal effect of traffic speed on relative likelihood of collision for six mammal species]{Marginal effect of traffic speed on relative likelihood of collision per species. Each predictor is represented by an 1) overall plot showing relative collision rates for all species and 2) six sub-panels depicting response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_tspd}
 \end{figure*}
 
@@ -347,7 +304,7 @@ Among species, the response of collision risk to occurrence likelihood demonstra
   \subfloat[Swamp Wallaby]{\label{6sp_occ_seas:d}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_d.png}}\\
   \subfloat[Common Wombat]{\label{6sp_occ_seas:e}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_e.png}}\hspace{0.1\textwidth}
   \subfloat[Koala]{\label{6sp_occ_seas:f}\includegraphics[width=0.4\textwidth]{6sp_occ_seasons_f.png}}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of species occurrence on relative likelihood of collision per species.}
+  \caption[Marginal effects of species occurrence on relative likelihood of collision for six mammal species by season]{Marginal effects of species occurrence on relative likelihood of collision per species.}
   \label{6sp_occ_seas}
 \end{figure*}
 
@@ -359,7 +316,7 @@ Among species, the response of collision risk to occurrence likelihood demonstra
   \subfloat[Swamp Wallaby]{\label{6sp_tvol_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_d.png}}\\
   \subfloat[Common Wombat]{\label{6sp_tvol_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_e.png}}\hspace{0.1\textwidth}
   \subfloat[Koala]{\label{6sp_tvol_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tvol_seasons_f.png}}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic volume on relative likelihood of collision per species.}
+  \caption[Marginal effects of traffic volume on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic volume on relative likelihood of collision per species.}
   \label{6sp_tvol_seas}
 \end{figure*}
 
@@ -371,7 +328,7 @@ Among species, the response of collision risk to occurrence likelihood demonstra
   \subfloat[Swamp Wallaby]{\label{6sp_tspd_seas:d}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_d.png}}\\
   \subfloat[Common Wombat]{\label{6sp_tspd_seas:e}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_e.png}}\hspace{0.1\textwidth}
   \subfloat[Koala]{\label{6sp_tspd_seas:f}\includegraphics[width=0.4\textwidth]{6sp_tspd_seasons_f.png}}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic speed on relative likelihood of collision per species.}
+  \caption[Marginal effects of traffic speed on relative likelihood of collision for six mammal species by season]{Marginal effects of traffic speed on relative likelihood of collision per species.}
   \label{6sp_tspd_seas}
 \end{figure*}
 

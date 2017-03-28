@@ -193,7 +193,7 @@ The ability of models to discriminate between false-positive and true-positive r
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_calib.png}
-  \caption[Collision model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib}
 \end{figure*}
 
@@ -211,14 +211,14 @@ Using the aggregated independent data (iag) to validate models resulted in a sli
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_calib_iag.png}
-  \caption[Model calibration for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_dev_iag.png}
-  \caption[Model discrimination ability for all combinations of training data using the aggregated independent data for validation]{Model performance for all combinations of data using the aggregated independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \caption[Model discrimination ability for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
   \label{val_calib_dev}
 \end{figure*}
 
