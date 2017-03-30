@@ -54,7 +54,7 @@ Each of these steps is explained in more detail in the following sections.
   \label{cal_study_area}
 \end{figure*}
 
-We use two unique geographic locations to test our framework; the 227,819 km$^2$ State of Victoria in south-east Australia and a 146,478 km$^2$ section of central California in North America (\Cref{cal_study_area}). The case study regions were chosen because of availability of data on animal occurrence, collision records, and the road networks. Each locale has a single agency responsible for the major roads (e.g. high-speed, high-capacity, or both) while all other roads are managed by municipal districts. We predict collision risk for all sealed roads within the study areas. To organise our spatial data and modelling, we overlay spatial grids of 1km$^2$ resolution on the study area. Each grid cell is used as the modelling unit for species occurrence. All roads in the study area are bisected by the grid resulting in road segments that are approximately one kilometre or less in length. We use 655,348 road segments for Victoria and 646,705 road segments for California as our modelling units for each respective collision model.
+We use two unique geographic locations to test our framework; the 227,819 km$^2$ State of Victoria in south-east Australia and a 146,478 km$^2$ section of central California in North America (\Cref{cal_study_area}). The case study regions were chosen because of availability of data on animal occurrence, collision records, and the road networks. Each locale has a single agency responsible for the major roads (e.g. high-speed, high-capacity, or both) while all other roads are managed by municipal districts. We predict collision risk for all sealed roads within the study areas. To organise our spatial data and modelling, we overlay spatial grids of 1-km$^2$ resolution on the study area. Each grid cell is used as the modelling unit for species occurrence. All roads in the study area are bisected by the grid resulting in road segments that are approximately one kilometre or less in length. We use 655,348 road segments for Victoria and 646,705 road segments for California as our modelling units for each respective collision model.
 
 \subsection{Data}
 
@@ -224,8 +224,8 @@ MNTEMPWQ 	&Mean temperature of wettest quarter 						&$^{\circ}C*10$\\
 PRECDM 		&Precipitation of driest month 								&$mm$\\
 SLOPE 		&Slope of terrain 											&decimal \%\\ 
 TREEDENS 	&Tree cover 												&decimal \%\\ 
-X 			&X spatial coordinate of intersecting 1km$^2$ grid centroid &$m$\\
-Y 			&Y spatial coordinate of intersecting 1km$^2$ grid centroid &$m$\\
+X 			&X spatial coordinate of intersecting 1-km$^2$ grid centroid &$m$\\
+Y 			&Y spatial coordinate of intersecting 1-km$^2$ grid centroid &$m$\\
 \bottomrule
 \end{tabularx}
 \label{cal_vic_vars}
