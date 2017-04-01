@@ -27,7 +27,7 @@ Information about the spatial and temporal distribution and magnitude of wildlif
 
 The majority of wildlife-vehicle collision modelling deals with roads and traffic \citep{rvdr15}, yet, the problem extends to other forms of vehicular transportation such as air \citep[e.g.][]{vanb07}, railway \citep[e.g.][]{well99} and shipping \citep[e.g.][]{lais01} operations. Regardless of the mode of transport, the modelling of collisions share some common attributes \citep[see][]{form03}. The movements or presence of animals are often considered in the models and may include behavioural traits \citep{roge09}, and vehicle presence or movements can also be considered and may be grouped into a larger category of human behaviour as humans ultimately control speeds and trajectories of vehicles \citep{ramp08}.
 
-Extensive railway networks with considerable train movements exist on every inhabited continent in the world, and although broader ecological effects have been discussed \citep[e.g.][]{desa93,givo06} and analysed \citep[e.g.][]{wall05}, very few studies analyse wildlife-train collisions \citep[but see][]{bela95,onoy98}. Many anecdotal records/observations illustrate the severity of wildlife-train collisions such as group fatalities (e.g. herds of ungulates or flocks of birds) due to browsing on railways or train derailments from very large species \citep{dors15}. These serious events suggest a growing need for more research into predicting wildlife-train collisions; however, we are only aware of one published study \citep[see][]{gund98}. Here, we develop a modelling framework to predict the rate of kangaroo collisions on the regional passenger railway network in southeast Australia. In addition to informing railway operators in south-east Australia of potential kangaroo collision risks, our approach can be generalised to other species (e.g. deer) and railway operations (e.g. freight transport) elsewhere in the world.
+Extensive railway networks with considerable train movements exist on every inhabited continent in the world, and although broader ecological effects have been discussed \citep[e.g.][]{desa93,givo06} and analysed \citep[e.g.][]{wall05}, very few studies analyse wildlife-train collisions \citep[but see][]{bela95,onoy98}. Many anecdotal records/observations illustrate the severity of wildlife-train collisions such as group fatalities (e.g. herds of ungulates or flocks of birds) due to browsing on railways or train derailments from very large species \citep{dors15}. These serious events suggest a growing need for more research into predicting wildlife-train collisions; however, we are only aware of one published study \citep[see][]{gund98}. Here, we develop a modelling framework to predict the rate of kangaroo collisions on the regional passenger railway network in south-east Australia. In addition to informing railway operators in south-east Australia of potential kangaroo collision risks, our approach can be generalised to other species (e.g. deer) and railway operations (e.g. freight transport) elsewhere in the world.
 
 \section{Materials \& Methods}
 
@@ -102,14 +102,14 @@ The coefficients $\gamma_1$, $\gamma_2$, $\gamma_3$ are estimated from the data 
   \subfloat[]{\label{train_crep:b}\includegraphics[width=0.4\textwidth]{05_crep29.png}}\\
   \subfloat[]{\label{train_crep:c}\includegraphics[width=0.4\textwidth]{05_crep24.png}}
   \subfloat[]{\label{train_crep:d}\includegraphics[width=0.4\textwidth]{05_crep26.png}}
-  \caption[Components used to build crepuscular term for kangaroo-train collision model]{a) Components used to build crepuscular term in \Cref{eq:52}; the solid curve controls activity relative to day or night, the dashed line controls uni-modal (e.g. diurnal) or bi-modal (e.g. crepuscular) activity, the dotted line controls activity closer to dawn or dusk. The model estimates a coefficient ($\gamma$ in \Cref{eq:52}) for each component that controls the final curve shape. The resulting curves may reflect b) crepuscular, c) nocturnal, or d) diurnal activity patterns. Example coefficient values (g1, g2, g3) used to produce curves are shown above each respective graph.}
+  \caption[Components used to build crepuscular term for kangaroo-train collision model]{a) Components used to build crepuscular term in \Cref{eq:52}; the solid curve controls activity relative to day or night, the dashed line controls uni-modal (e.g. diurnal) or bi-modal (e.g. crepuscular) activity, the dotted line controls activity closer to dawn or dusk. The model estimates a coefficient ($\gamma$ in \Cref{eq:52}) for each component that controls the final curve shape. The resulting curves may reflect b) crepuscular, c) nocturnal, or d) diurnal activity patterns. Example \textit{gamma} coefficient values (g1, g2, g3) used to produce curves are shown above each respective graph.}
   \label{train_crep}
 \end{figure*}
 
 Prior to modelling, we centred all explanatory variables by subtracting their means (after log-transforming the variables indicated in \Cref{eq:51}). Using pairwise analysis, all predictors exhibited Pearson's product moment correlation coefficients of less than 0.4 indicating low potential effects of multi-collinearity.  \Cref{train_predictors} further describes the variables used in the model.
 
 \begin{table}[!t]
-\caption[Predictor variables used in kangaroo-train collision model]{Predictor variables used in collision model; means and ranges are expressed on untransformed scale.  C1, C2 and C3 determine a curve shape representing relative species activity (see \Cref{eq:52} and \Cref{train_crep}).}
+\caption[Predictor variables used in kangaroo-train collision model]{Predictor variables used in collision model. Means and ranges are expressed on untransformed scale.  C1, C2 and C3 determine a curve shape representing relative species activity -- see \Cref{eq:52} and \Cref{train_crep}.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llll} \toprule
 Variable	&Description												&Units				&Mean; Range \\ \midrule 
@@ -137,7 +137,7 @@ Scenario B involved capping train speeds at 80 km h$^{-1}$ in grid cells with ka
 Our model fitted the data and the signs of model coefficients (positive or negative) indicated plausible relationships between collision likelihood and each predictor variable.  All variables except train frequency demonstrated high statistical significance in the model fit (\Cref{train_coefs}). The model residuals demonstrated no strong patterns with respect to predicted collision probabilities and model predictors (\Cref{train_brq}).
 
 \begin{table}[!t]
-\caption[Summary of kangaroo-train collision model fit]{Summary of model fit using all data ($n$=291,120 grid cells).  Highly significant variables are marked with an asterisk.}
+\caption[Summary of kangaroo-train collision model]{Summary of model fit using all data ($n$=291,120 grid cells).  Highly significant variables are marked with an asterisk.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llYll} \toprule
 Variable			&Beta Coefficient Estimate	&Standard Error of Coefficient Estimate	&Z-value &$\PRZ$ \\ \midrule 
@@ -153,6 +153,18 @@ C3 ($\gamma_3$)		&0.25						&0.07	&3.77		&1.7x10$^{-5}$* \\
 \label{train_coefs}
 \end{table}
 
+\begin{figure*}[!t]
+  \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
+  \centering
+  \subfloat[]{\label{train_brq:a}\includegraphics[width=0.49\textwidth]{05_brq_prob.png}}\\
+  \subfloat[]{\label{train_brq:b}\includegraphics[width=0.4\textwidth]{05_brq_egk.png}}
+  \subfloat[]{\label{train_brq:c}\includegraphics[width=0.4\textwidth]{05_brq_trains.png}}\\
+  \subfloat[]{\label{train_brq:d}\includegraphics[width=0.4\textwidth]{05_brq_speed.png}}
+  \subfloat[]{\label{train_brq:e}\includegraphics[width=0.4\textwidth]{05_brq_hour.png}}
+  \caption[Binned randomised quantile residuals plots for kangaroo-train collision model]{Binned randomised quantile residuals plots -- average residual versus the average predictor value for each bin. For all continuous predictors, bins are equally spaced and determined by taking the square root of the total number of unique values for each predictor; for the discrete predictor of hour, there are 23 total bins. The gray lines indicate $\pm$2 standard-error bounds which should contain 95\% of the residuals if the model were actually true. Note, some variables are log-transformed to assist with visual inspection of the residuals.}
+  \label{train_brq}
+\end{figure*}
+
 The relative risk of collisions increased with higher average train speeds, kangaroo occurrence, train frequency and during hours of high kangaroo activity in grid cells. The strongest and most significant predictor was train speed; collision risk increased exponentially with considerable increases at speeds above 85 km hr$^{-1}$.  Increasing train speed from 110 to 130 km hr$^{-1}$ doubled collision risk, however, the effect of speed also demonstrated large uncertainty, with wide confidence intervals (\Cref{train_effects:a}). Kangaroo occurrence was the second most influential predictor; collision risk increased rapidly at low values of occurrence and more slowly at higher values. The increase was approximately 10-fold across the range of values for kangaroo occurrence (\Cref{train_effects:b}). Train frequency had very little influence on collisions, compared to the other predictors (\Cref{train_coefs}; \Cref{train_effects:c}).
 
 \begin{figure*}[!t]
@@ -162,7 +174,7 @@ The relative risk of collisions increased with higher average train speeds, kang
   \subfloat[]{\label{train_effects:b}\includegraphics[width=0.4\textwidth]{05_egk.png}}\\
   \subfloat[]{\label{train_effects:c}\includegraphics[width=0.4\textwidth]{05_trains.png}}
   \subfloat[]{\label{train_effects:d}\includegraphics[width=0.4\textwidth]{05_hour.png}}
-  \caption[Effects of predictor variables on relative likelihood of train-kangaroo collisions]{Marginal effects of model predictors on collision risk.  For the effects of species occurrence, number of trains, and train speed on collision risk, non-target variables were held constant at mean values.  For the effect of hour on collision risk, species occurrence, number of trains, and train speed were held at mean values. Shading indicates 95\% confidence intervals around coefficient estimates.}
+  \caption[Effects of predictor variables on relative likelihood of kangaroo-train collisions]{Marginal effects of model predictors on collision risk.  For the effects of species occurrence, number of trains, and train speed on collision risk, non-target variables were held constant at mean values.  For the effect of hour on collision risk, species occurrence, number of trains, and train speed were held at mean values. Shading indicates 95\% confidence intervals around coefficient estimates.}
   \label{train_effects}
 \end{figure*}
 
@@ -174,14 +186,16 @@ The bi-modal functional form for the effect of kangaroo activity on collision ri
   \subfloat[]{\label{train_calib:a}\includegraphics[width=0.48\textwidth]{05_calib.png}}\\
   \subfloat[]{\label{train_calib:b}\includegraphics[width=0.48\textwidth]{05_roc.png}}\hfill
   \subfloat[]{\label{train_calib:c}\includegraphics[width=0.48\textwidth]{05_validate.png}}
-  \caption[Calibration and ROC plots for kangaroo-train collision model]{a) Calibration plot showing rate of observed collisions against predicted rate of collisions.  Dots represent the observed rate with 95\% confidence intervals at the medians of each bin of predictions (10 total). Labels indicate the total observations in each bin. A regression line is shown between the dependent variable and the predicted values (response-scale) of the model; perfect calibration has an intercept of 0 and slope of 1; b) ROC (receiver operating characteristic) curve measuring discrimination ability of model at all threshold values. Values shown are averages of all cross-validations; c) Comparison between the collision model fit on full data and on cross-validated subsets. "Intercept" and "Slope" result from regressing the dependent variable on the predicted values and measure calibration (see plot a); ROC measures discrimination between collisions and no-collisions (see plot b). For each metric, open circles represent the full data model and solid dots represent mean values (95\% confidence intervals shown as bars) for the 1000 cross-validated subsets.  Dashed lines indicate the expected values for a perfectly calibrated and discriminatory mode}
+  \caption[Calibration and ROC plots for kangaroo-train collision model]{a) Calibration plot showing rate of observed collisions against predicted rate of collisions.  Dots represent the observed rate with 95\% confidence intervals at the medians of each bin of predictions (10 total). Labels indicate the total observations in each bin. A regression line is shown between the dependent variable and the predicted values (response-scale) of the model; perfect calibration has an intercept of 0 and slope of 1; b) ROC (receiver operating characteristic) curve measuring discrimination ability of model at all threshold values. Values shown are averages of all cross-validations; c) Comparison between the collision model fit on full data and on cross-validated subsets. "Intercept" and "Slope" result from regressing the dependent variable on the predicted values and measure calibration (see plot a); ROC measures discrimination between collisions and no-collisions (see plot b). For each metric, open circles represent the full data model and solid dots represent mean values (95\% confidence intervals shown as bars) for the 1,000 cross-validated subsets.  Dashed lines indicate the expected values for a perfectly calibrated and discriminatory model.}
   \label{train_calib}
 \end{figure*}
 
 The models fitted on all data and fitted on the subsets of the data during cross-validation performed similarly.  The ROC value was 0.82 for both the full data model (\Cref{train_calib:b}) and mean of the cross-validated models (\Cref{train_calib:c}).  Likewise, the calibration statistics (intercept and slope of regression line between observations and predictions) were similar for both the full data model (\Cref{train_calib:a}) and mean of the cross-validated models (\Cref{train_calib:c}).  The uncertainty in the calibration metrics was higher than that of the ROC values as shown by the 95\% confidence intervals.  The overall calibration of the full data model was good for low collision rates where the uncertainty around the observed rates was also low. Observed rates with higher uncertainty were evident at higher predicted values (\Cref{train_calib:a}).
 
-\begin{table}[!t]
-\caption[Predicted collisions based on different management scenarios]{Summary of predicted collisions based on different management scenarios. Expected collisions are a total across the entire regional network for a period of one year.}
+Both of the simulated management scenarios reduced the predicted number of collisions from the baseline estimated with no management (Scenario A).  Scenario C reduced expected collisions by approximately 3.0\% whilst scenario B reduced collisions by 1.0\% (\Cref{train_manage}).
+
+\begin{table}[!h]
+\caption[Predicted kangaroo-train collisions based on different management scenarios]{Summary of predicted collisions based on different management scenarios. Expected collisions are expressed as a total across the entire regional train network for a period of one year.}
 \centering
 \setlength{\extrarowheight}{.2em}
 \begin{tabularx}{0.9\textwidth}{lYl} \toprule
@@ -193,20 +207,6 @@ C			&controlled kangaroo occurrence in areas with highest average speed of train
 \end{tabularx}
 \label{train_manage}
 \end{table}
-
-Both of the simulated management scenarios reduced the predicted number of collisions from the baseline estimated with no management (Scenario A).  Scenario C reduced expected collisions by approximately 3.0\% whilst scenario B reduced collisions by 1.0\% (\Cref{train_manage}).
-
-\begin{figure*}[!t]
-  \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
-  \centering
-  \subfloat[]{\label{train_brq:a}\includegraphics[width=0.49\textwidth]{05_brq_prob.png}}\\
-  \subfloat[]{\label{train_brq:b}\includegraphics[width=0.4\textwidth]{05_brq_egk.png}}
-  \subfloat[]{\label{train_brq:c}\includegraphics[width=0.4\textwidth]{05_brq_trains.png}}\\
-  \subfloat[]{\label{train_brq:d}\includegraphics[width=0.4\textwidth]{05_brq_speed.png}}
-  \subfloat[]{\label{train_brq:e}\includegraphics[width=0.4\textwidth]{05_brq_hour.png}}
-  \caption[Binned randomised quantile residuals plots for kangaroo-train collision model]{Binned randomised quantile (RQ) residuals plots -- average residual versus the average predictor value for each bin. For all continuous predictors, bins are equally spaced and determined by taking the square root of the total number of unique values for each predictor; for the discrete predictor of hour, there are 23 total bins. The gray lines indicate ±2 standard-error bounds which should contain 95\% of the residuals if the model were actually true. Note some variables are log-transformed to assist with visual inspection of the residuals.}
-  \label{train_brq}
-\end{figure*}
 
 \section{Discussion}
 

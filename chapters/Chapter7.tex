@@ -24,7 +24,7 @@ Uncertainty is one reason that modellers who analyse collisions may be reluctant
     	\subfloat[Wombat]{\label{temporal_all:e}\includegraphics[width=.45\textwidth]{wom_coll_hour.png}}\hspace{.05\textwidth}
     	\subfloat[Koala]{\label{temporal_all:f}\includegraphics[width=.45\textwidth]{koa_coll_hour.png}}
     \end{minipage}
-  \caption[Total collisions by hour for six mammal species]{Histograms showing the distributions of total collisions by hour for six mammal species. Note, Records indicate the time that wildlife-vehicle collision events were reported and may not accurately reflect actual times due to reporting lags.}
+  \caption[Total collisions by hour for six mammal species]{Histograms showing total collisions (reported between the years 2010 and 2015) by hour for six Australian mammal species. Note, records indicate the time that wildlife-vehicle collision events were reported and may not accurately reflect actual times due to reporting lags.}
   \label{temporal_all}
 \end{figure*}
 
@@ -48,7 +48,7 @@ Conveying spatial information is an effective communication tool \citep{king00};
 
 \section{Limitations of models and caveats}
 
-Models are simplified abstractions of reality and therefore subject to uncertainty \citep{burg05}. Models are also useful as conceptual tools for organising complex problems and supplementing decision-making. However, care must taken when using models; although they may be internally logical, models are only as good as the assumptions, data, and specifications they are based on. Management decisions based on inferences from a mis-specified model or a model trained on poor data can have negative consequences (e.g. ineffective outcomes or costs). \cite{levi66} asserts that models can only be built to maximise two of three characteristics, namely generality, realism, and/or precision. The primary intent of the conceptual model framework introduced in this thesis was to maximise generality, or applicability to any ecological issue involving threats to wildlife (from humans and related hazards, e.g. use of vehicles). The model also exhibits realism in its theoretical treatment of collisions resulting from the coincidence of animals and moving vehicles in space and time. Much of the literature in road ecology that focuses on collision modelling operatee on this assumption \citep{form03,guns11}, but does not make this explicit in the modelling methods. Therefore, it is difficult to draw inferences from the models to directly support management. High collision risk may be predicted with variables that are not logically related to collisions, such as tree cover. Further, by characterising risk as the combination of distinct components, uncertainty is easier to incorporate and analyse in models. 
+Models are simplified abstractions of reality and therefore subject to uncertainty \citep{burg05}. Models are also useful as conceptual tools for organising complex problems and supplementing decision-making. However, care must taken when using models; although they may be internally logical, models are only as good as the assumptions, data, and specifications they are based on. Management decisions based on inferences from a mis-specified model or a model trained on poor data can have negative consequences (e.g. ineffective outcomes or costs). \cite{levi66} asserts that models can only be built to maximise two of three characteristics, namely generality, realism, and/or precision. The primary intent of the conceptual model framework introduced in this thesis was to maximise generality, or applicability to any ecological issue involving threats to wildlife (from humans and related hazards, e.g. use of vehicles). The model also exhibits realism in its theoretical treatment of collisions resulting from the coincidence of animals and moving vehicles in space and time. Much of the literature in road ecology that focuses on collision modelling operates on this assumption \citep{form03,guns11}, but does not make this explicit in the modelling methods. Therefore, it is difficult to draw inferences from the models to directly support management. High collision risk may be predicted with variables that are not logically related to collisions, such as tree cover. Further, by characterising risk as the combination of distinct components, uncertainty is easier to incorporate and analyse in models. 
 
 One strategy to explore model uncertainty is to perform collision modelling analyses using Bayesian inference, which allows prior information to be incorporated into a model \citep{mcca07}. Prior information (or prior probabilities) weight the influence of data in a model (likelihood) to produce posterior probabilities. With respect to the work presented in the thesis, this may involve using expert opinion to provide judgement on the reliability of the predictions from the sub-models. For example, I had experts in macropod ecology examine the distribution of kangaroos predicted by the species occurrence model. Although there were some minor discrepancies, the overall patterns were realistic. However, since managers may base decisions about mitigation on the relative strength of exposure (animal presence) or hazard (vehicle movement), it is important to represent the relative confidence about each predictor in the model. Bayesian analysis also estimates all model parameters (coefficients and predicted values) as probability distributions thereby allowing further scrutiny of uncertainty. Credible intervals around predictions allow managers to make decisions from either a `risk averse' or `risk inclined' standpoint by using higher or lower values, respectively. 
 
@@ -88,7 +88,7 @@ The conceptual framework developed in this thesis may be used to analyse risk fo
     	\includegraphics[width=\textwidth]{MODELS_predators.png}\\
     	\includegraphics[width=\textwidth]{MODELS_infrastructure.png}
     \end{minipage}    	   	   
-  \caption[Conceptual risk model framework for other threats]{Conceptual risk model framework with other sub-models or data sources.}
+  \caption[Conceptual risk model framework for other threats]{Conceptual risk model framework with other sub-models or data sources. The modular framework allows analyses of other risks to wildlife by replacing the \textit{hazard} or \textit{exposure} components with alternative processes (or data) of interest.}
   \label{gen_framework}
 \end{figure*}
 
@@ -113,7 +113,7 @@ Boat strikes to marine mammals			&Marine mammal mortality	&Spatial movements of 
 &&& \\
 Domesticated dog attacks on possums 	&Possum mortality	&Spatial distribution of possums	&Spatial distribution and activity patterns of domesticated dogs \\
 &&& \\
-Electrocutions of flying foxes			&Flying fox mortality	&Spatial movements of flying foxes (based on flyout trajectories and feeding trees)	&Distribution of active high-voltage powerlines \\
+Electrocutions of flying foxes			&Flying fox mortality	&Spatial movements of flying foxes (based on fly-out trajectories and feeding trees)	&Distribution of active high-voltage power lines \\
 &&& \\
 Bear incursions into homes				&Property damage	&Unsecured homes	&Spatial distribution of bears \\
 \bottomrule
@@ -148,7 +148,7 @@ Decision support tools are used by managers in a wide range of fields \citep{shi
 \begin{figure*}[!t]
   \centering
   \fbox{\includegraphics[width=0.95\textwidth]{shinyapp.png}}
-  \caption[Decision support tool for wildlife-vehicle collisions]{Screen capture of web-based interface for a wildlife-vehicle collision risk modelling tool. The tool was originally developed for Bendigo, a medium-sized town in south-east Australia that experiences high numbers of kangaroo-vehicle collisions.}
+  \caption[Decision support tool for wildlife-vehicle collisions]{Screen capture of web-based interface for a wildlife-vehicle collision risk modelling tool. The tool was originally developed for Bendigo, a medium-sized town in south-east Australia that experiences high numbers of kangaroo-vehicle collisions. Users can select different species and make adjustments to traffic speed or volume to influence predicted collision risk on the road network. The predictions are downloadable as geographic information system (GIS) or raw tabular data for use in other software.}
   \label{wvc_tool}
 \end{figure*}
 

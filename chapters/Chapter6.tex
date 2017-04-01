@@ -64,7 +64,7 @@ Our study analyses risk of WVC over approximately 150,000 kilometres of sealed r
 \begin{figure*}[!t]
   \centering
   \includegraphics[scale=.5]{06_study_area.png}
-  \caption[Study area for model validation]{Study area (state of Victoria, south-east Australia) showing all sealed road segments as light gray lines. The inset shows the geographic location of Victoria in Australia. The darker shaded region is the City of Bendigo and the lighter shaded region is the VicRoads Western District. Major towns ($>$100,000 residents) are starred and labelled accordingly.}
+  \caption[Study area for model validation]{Study area (state of Victoria in south-east Australia) showing all sealed road segments as light gray lines. The inset shows the geographic location of Victoria in Australia. The darker shaded region is the City of Bendigo and the lighter shaded region is the VicRoads Western District. Major towns ($>$100,000 residents) are starred and labelled accordingly.}
   \label{val_study_area}
 \end{figure*}
 
@@ -85,9 +85,9 @@ To develop each modelling dataset for our study, we selected road segments that 
 	\item Wildlife Victoria + City of Bendigo + Western District + Crashstats (obwc)
 \end{enumerate}
 
-To test the effects of combining independent datasets, we fitted a collision model based on \Cref{eq:28} in \Cref{sec:egk} to all permutations of data.  We predicted collision risk from a model that regressed reported collisions on species occurrence, traffic volume and traffic speed:
+To test the effects of combining independent datasets, we fitted a collision model based on \Cref{eq:28} in \Cref{sec:egk} to all permutations of data.  We predicted collision risk from a model that regressed reported collisions on species occurrence, traffic volume (linear and quadratic terms) and traffic speed:
 \begin{equation} \label{eq:61}
-cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \beta_3*\text{log}(S_i)
+cloglog(p_i) = \beta_0 + \beta_1*\text{log}(O_i) + \beta_2*\text{log}(V_i) + \beta_3*\text({log}(V_i))^2 + \beta_4*\text{log}(S_i)
 \end{equation}
 
 \noindent where $p_i=\text{Pr}(Y_i=1)$ is the relative likelihood of a collision occurring on a road segment $i$, $O_i$ is species occurrence, $V_i$ is traffic volume, $S_i$ is traffic speed.
@@ -173,7 +173,7 @@ All three models fitted to independent road segment-based datasets (City of Bend
   \subfloat[]{\label{val_effects:a}\includegraphics[width=0.35\textwidth]{06_occ.png}}
   \subfloat[]{\label{val_effects:b}\includegraphics[width=0.35\textwidth]{06_tvol.png}}
   \subfloat[]{\label{val_effects:c}\includegraphics[width=0.35\textwidth]{06_tspd.png}}
-  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Note likelihoods of collision have been rescaled for comparison as all datasets have different numbers of data points and thus variations in the range of predicted values.}
+  \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Note, collision likelihoods have been rescaled for comparison as all datasets have different numbers of data points and, thus, vary in their respective ranges of predicted values.}
   \label{val_effects}
 \end{figure*}
 
@@ -217,7 +217,7 @@ Using the town-level independent data (iag) to validate models resulted in a sli
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_calib_iag.png}
-  \caption[Model calibration for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same data aggregated data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same town-level data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
@@ -230,7 +230,7 @@ Using the town-level independent data (iag) to validate models resulted in a sli
 
 \section{Discussion}
 
-This study demonstrated that increasing the amount of collision data used for modelling, by combining disparate datasets, improved model performance and predictive strength. The improvements were marginal, most likely due to the limited amount and significant variation of the data used in this study. However, even small, incremental improvements can be quite valuable when comparing to the costs of WVC. For example, if the model trained on more data can predict and prevent a single additional WVC from occurring, it has tremendous value when considering the high costs of building roads, a human life, or other unquantifiable effects such as species extinctions. From this perspective, the results of this study suggest that the development of a unified data system has high utility given its relatively inexpensive costs to implement. Further, such a system would be able systematically catalogue disparate sources of data and enable more robust analyses of wildlife-vehicle collisions, however, there are several important factors to consider. Large quantities of data may help to overcome issues of underreporting \citep[see][]{snow15}, and limited temporal/spatial coverage that affect generality \citep[see][]{clev15}, but equally important is the quality of the data.
+This study demonstrated that increasing the amount of collision data used for modelling, by combining disparate datasets, improved model performance and predictive strength. The improvements were marginal, most likely due to the limited amount and significant variation of the data used in this study. However, even small, incremental improvements can be quite valuable when comparing to the costs of WVC. For example, if the model trained on more data can predict and prevent a single additional WVC from occurring, it has tremendous value when considering the high costs of building roads, a human life, or other unquantifiable effects such as species extinctions. From this perspective, the results of this study suggest that the development of a unified data system has high utility given its relatively inexpensive costs to implement. Further, such a system would be able systematically catalogue disparate sources of data and enable more robust analyses of wildlife-vehicle collisions, however, there are several important factors to consider. Large quantities of data may help to overcome issues of under-reporting \citep[see][]{snow15}, and limited temporal/spatial coverage that affect generality \citep[see][]{clev15}, but equally important is the quality of the data.
 
 It is important to identify and address spatial biases when developing predictive models using presence-only data \citep{kram13}. Models trained on observations that are spatially biased (e.g. collected at particular places/times or dependent on characteristics of reporting individuals) may cause model predictions to reflect patterns of collection rather than distributions of collision risk. Each of our datasets had varying levels of spatial bias but these were difficult to identify. For example, the original Wildlife Victoria dataset appears to have a reporting bias that is spatially correlated with proximity to the urban centre of Melbourne. Other datasets can be expected to exhibit less spatial bias due to the nature of reporting. Crashstats, for instance, is comprised of state-wide police records of kangaroo-vehicle collisions that is more likely to be free of spatial reporting biases. However, Crashstats data is subject to under-reporting because it only includes records involving human injuries or deaths resulting from WVC.  Regardless of differences, implicit biases in data may be considered in modelling efforts if they are adequately described in metadata \citep[see][]{wart13} but generally, collision data does not include this information.
 
