@@ -27,26 +27,26 @@ Information about the spatial and temporal distribution and magnitude of wildlif
 
 The majority of wildlife-vehicle collision modelling deals with roads and traffic \citep{rvdr15}, yet, the problem extends to other forms of vehicular transportation such as air \citep[e.g.][]{vanb07}, railway \citep[e.g.][]{well99} and shipping \citep[e.g.][]{lais01} operations. Regardless of the mode of transport, the modelling of collisions share some common attributes \citep[see][]{form03}. The movements or presence of animals are often considered in the models and may include behavioural traits \citep{roge09}, and vehicle presence or movements can also be considered and may be grouped into a larger category of human behaviour as humans ultimately control speeds and trajectories of vehicles \citep{ramp08}.
 
-Extensive railway networks with considerable train movements exist on every inhabited continent in the world, and although broader ecological effects have been discussed \citep[e.g.][]{desa93,givo06} and analysed \citep[e.g.][]{wall05}, very few studies analyse wildlife-train collisions \citep[but see][]{bela95,onoy98}. Many anecdotal records/observations illustrate the severity of wildlife-train collisions such as group fatalities (e.g. herds of ungulates or flocks of birds) due to browsing on railways or train derailments from very large species \citep{dors15}. These serious events suggest a growing need for more research into predicting wildlife-train collisions; however, we are only aware of one published study \citep[see][]{gund98}. Here, we develop a modelling framework to predict the rate of kangaroo collisions on the regional passenger railway network in south-east Australia. In addition to informing railway operators in south-east Australia of potential kangaroo collision risks, our approach can be generalised to other species (e.g. deer) and railway operations (e.g. freight transport) elsewhere in the world.
+Extensive railway networks with considerable train movements exist on every inhabited continent in the world, and although broader ecological effects have been discussed \citep[e.g.][]{desa93,givo06} and analysed \citep[e.g.][]{wall05}, very few studies analyse wildlife-train collisions \citep[but see][]{bela95,onoy98}. Many anecdotal records/observations illustrate the severity of wildlife-train collisions such as group fatalities (e.g. herds of ungulates or flocks of birds) due to browsing on railways or train derailments from very large species \citep{dors15}. These serious events suggest a growing need for more research into predicting wildlife-train collisions; however, we are only aware of one published study \citep[see][]{gund98}. Here, we develop a modelling framework to predict the rate of kangaroo collisions on the regional passenger railway network in south-east Australia. In addition to informing railway operators in south-east Australia of potential kangaroo collision risks, our approach can be generalised to other species (e.g. deer) and railway operations (e.g. freight transport) elsewhere in the world.\vfill
 
 \section{Materials \& Methods}
 
 \subsection{Study Area}
 
-\begin{figure*}[!t]
+We used a 1,712-kilometre passenger railway network from regional Victoria, Australia (operated by V/line, a government-owned corporation, see \Cref{apx:C}) in south-east Australia to conduct our study (\Cref{trains_study_area}).  Trains operate on all sections of the network between 4 a.m. and 2 a.m. (the following day), with the largest volume occurring Monday through Friday between 7 a.m. and 9 a.m., and 4 p.m. and 6 p.m. Most trains operate at speeds of 100 km h$^{-1}$ or less, however, on some sections of track commuter trains operate at maximum speeds of 160 km h$^{-1}$. Due to limited data available, we did not include freight operations in our study.
+
+\begin{figure*}[!h]
   \centering
   \includegraphics[scale=.5]{05_study_area.png}
   \caption[Regional passenger train network in Victoria]{Regional passenger train network in the state of Victoria. Inset shows location of Victoria in Australia. The railway network is shown as thin lines through major towns (stars). Wildlife-train collisions (reported between 2009--2014) are shown as crosses.}
   \label{trains_study_area}
 \end{figure*}
 
-We used a 1,712-kilometre passenger railway network from regional Victoria, Australia (operated by V/line, a government-owned corporation, see \Cref{apx:C}) in south-east Australia to conduct our study (\Cref{trains_study_area}).  Trains operate on all sections of the network between 4 a.m. and 2 a.m. (the following day), with the largest volume occurring Monday through Friday between 7 a.m. and 9 a.m., and 4 p.m. and 6 p.m. Most trains operate at speeds of 100 km h$^{-1}$ or less, however, on some sections of track commuter trains operate at maximum speeds of 160 km h$^{-1}$. Due to limited data available, we did not include freight operations in our study.
-
 \subsection{Data Preparation}
 
 To organise our data and modelling, we overlaid a 1-km$^2$ cell grid on the railway network (\Cref{trains_grid}).  In each grid cell we modelled species occurrences and quantified train movements and speeds.
 
-\begin{figure*}[!t]
+\begin{figure*}[!h]
   \centering
   \includegraphics[scale=.5]{05_gridwork.png}
   \caption[Spatial grid used to organise modelling data]{One-km$^2$ spatial grid used to organise modelling data: 2,015 total cells; extent coordinates 104000E,5741000N x 556000E,6084000N; GDA94 MGA zone 55 projection. The railway network is shown as a heavy dashed line and wildlife-train collisions are shown as crosses.}
@@ -95,20 +95,20 @@ Dawn $U_{ik}$ and dusk $D_{ik}$ times for civil twilight (six degrees below hori
 
 The coefficients $\gamma_1$, $\gamma_2$, $\gamma_3$ are estimated from the data and measure the relative influence of the three components (\Cref{eq:52}) on the shape of the curve. One advantage of our parameterisation of the crepuscular term is that it is cyclical over a twenty-four hour period (\Cref{train_crep}) regardless of the parameter estimates of $\gamma_1$, $\gamma_2$, $\gamma_3$.
 
-\begin{figure*}[!t]
+\begin{figure*}[!h]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[]{\label{train_crep:a}\includegraphics[width=0.4\textwidth]{05_crep01.png}}
-  \subfloat[]{\label{train_crep:b}\includegraphics[width=0.4\textwidth]{05_crep29.png}}\\
-  \subfloat[]{\label{train_crep:c}\includegraphics[width=0.4\textwidth]{05_crep24.png}}
-  \subfloat[]{\label{train_crep:d}\includegraphics[width=0.4\textwidth]{05_crep26.png}}
-  \caption[Components used to build crepuscular term for kangaroo-train collision model]{a) Components used to build crepuscular term in \Cref{eq:52}; the solid curve controls activity relative to day or night, the dashed line controls uni-modal (e.g. diurnal) or bi-modal (e.g. crepuscular) activity, the dotted line controls activity closer to dawn or dusk. The model estimates a coefficient ($\gamma$ in \Cref{eq:52}) for each component that controls the final curve shape. The resulting curves may reflect b) crepuscular, c) nocturnal, or d) diurnal activity patterns. Example \textit{gamma} coefficient values (g1, g2, g3) used to produce curves are shown above each respective graph.}
+  \subfloat[]{\label{train_crep:a}\includegraphics[width=0.35\textwidth]{05_crep01.png}}
+  \subfloat[]{\label{train_crep:b}\includegraphics[width=0.35\textwidth]{05_crep29.png}}\\
+  \subfloat[]{\label{train_crep:c}\includegraphics[width=0.35\textwidth]{05_crep24.png}}
+  \subfloat[]{\label{train_crep:d}\includegraphics[width=0.35\textwidth]{05_crep26.png}}
+  \caption[Components used to build crepuscular term for kangaroo-train collision model]{a) Components used to build crepuscular term in \Cref{eq:52}; the solid curve controls activity relative to day or night, the dashed line controls uni-modal (e.g. diurnal) or bi-modal (e.g. crepuscular) activity, the dotted line controls activity closer to dawn or dusk. The model estimates a coefficient -- $\gamma$ in \Cref{eq:52} -- for each component that controls the final curve shape. The resulting curves may reflect b) crepuscular, c) nocturnal, or d) diurnal activity patterns. Example \textit{gamma} coefficient values (g1, g2, g3) used to produce curves are shown above each respective graph.}
   \label{train_crep}
 \end{figure*}
 
 Prior to modelling, we centred all explanatory variables by subtracting their means (after log-transforming the variables indicated in \Cref{eq:51}). Using pairwise analysis, all predictors exhibited Pearson's product moment correlation coefficients of less than 0.4 indicating low potential effects of multi-collinearity.  \Cref{train_predictors} further describes the variables used in the model.
 
-\begin{table}[!t]
+\begin{table}[!h]
 \caption[Predictor variables used in kangaroo-train collision model]{Predictor variables used in collision model. Means and ranges are expressed on untransformed scale.  C1, C2 and C3 determine a curve shape representing relative species activity -- see \Cref{eq:52} and \Cref{train_crep}.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llll} \toprule
@@ -136,7 +136,7 @@ Scenario B involved capping train speeds at 80 km h$^{-1}$ in grid cells with ka
 
 Our model fitted the data and the signs of model coefficients (positive or negative) indicated plausible relationships between collision likelihood and each predictor variable.  All variables except train frequency demonstrated high statistical significance in the model fit (\Cref{train_coefs}). The model residuals demonstrated no strong patterns with respect to predicted collision probabilities and model predictors (\Cref{train_brq}).
 
-\begin{table}[!t]
+\begin{table}[!h]
 \caption[Summary of kangaroo-train collision model]{Summary of model fit using all data ($n$=291,120 grid cells).  Highly significant variables are marked with an asterisk.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llYll} \toprule
