@@ -19,7 +19,7 @@
 % from other files. Comment out and add lines as appropriate.
 %---------------------------------------------------------- 
 
-%remove title and space above bibliography - has to live here...
+%remove title and space above bibliography - code has to live here...
 \makeatletter
 \renewenvironment{thebibliography}[1]
      {\list{\@biblabel{\@arabic\c@enumiv}}
@@ -68,11 +68,11 @@ In \Cref{sec:egk}, I introduce a novel method to predict collision risk by model
 
 I extend the conceptual risk framework to five additional native mammal species, using the same spatial extent, in \Cref{sec:6sp}. For each species, I construct independent statistical models that use wildlife atlas data to predict occurrence across geographic space. Traffic volume and speed on road segments, predicted from the work in \Cref{sec:egk}, characterise the magnitude of threatening processes. I model collision risk for each species using the conceptual framework, compare results, and combine predictions to represent aggregated risk across the Victorian road network. The results indicate that the model framework generalises well to multiple species and provides useful outputs for supporting road management. 
 
-In \Cref{sec:cal}, I apply the risk framework to a different species (Mule deer) and geographical location (central California, USA). This represents the first work to apply a generalised model framework to analyse and predict WVC in two continents. I use Eastern Grey kangaroos in Victoria (\Cref{sec:egk}) as a comparative study. Despite being different species occurring in different geographic areas, I examine whether collision risk correlates similarly with animal behaviour (occurrence of the species) and human behaviour (traffic volume and speed). I assess the performance of the collision models, I use different sets of data, police records of road accidents, to evaluate each model's predictions. The results demonstrate that the conceptual risk framework generalises well to different species and different geographical areas. My analysis also suggests appropriate mitigation for both species may include reduced speeds or fencing on road segments where species occurrence is predicted to be high.
+In \Cref{sec:cal}, I apply the risk framework to a different species (Mule deer) and geographical location (central California, USA). This represents the first work to apply a generalised model framework to analyse and predict WVC in two continents. I use Eastern Grey kangaroos in Victoria (\Cref{sec:egk}) as a comparative study. Despite being different species occurring in different geographic areas, I examine whether collision risk correlates similarly with animal behaviour (occurrence of the species) and human behaviour (traffic volume and speed). To assess the performance of the collision models, I use different sets of data, police records of road accidents, to evaluate each model's predictions. The results demonstrate that the conceptual risk framework generalises well to different species and different geographical areas. My analysis also suggests appropriate mitigation for both species may include reduced speeds or fencing on road segments where species occurrence is predicted to be high.
 
-\Cref{sec:train} demonstrates an application of the conceptual risk framework to a different mode of transport (trains). Further, I add an additional feature to the collision model to account for temporal variation. To assess the risk of wildlife-train collisions, I quantify regional train movements in space and time, and determined the likelihood of occurrence of Eastern Grey kangaroos in Victoria, Australia. I model collisions between trains and kangaroos, accounting for time of day, train occurrence and speed, and kangaroo occurrence, and predict collision rates on a passenger railway network based on three management scenarios that influence train speed and occurrence of kangaroos near the railway lines. The results indicate that train speed is the most influential variable followed by presence of kangaroos.  Reducing speeds in areas of high predicted kangaroo occurrence, during periods of peak animal activity within a twenty-four hour cycle, reduces collision rate the most. This work further supports the generality of the conceptual risk framework, and more specifically, that predictions from the model can help managers decide where, when and how best to mitigate collisions between animals and trains.
+\Cref{sec:train} demonstrates an application of the conceptual risk framework to a different mode of transport (trains). Further, I add an additional feature to the collision model to account for temporal variation. To assess the risk of wildlife-train collisions, I quantify regional train movements in space and time, and determine the likelihood of occurrence of Eastern Grey kangaroos in Victoria, Australia. I model collisions between trains and kangaroos, accounting for time of day, train occurrence and speed, and kangaroo occurrence, and predict collision rates on a passenger railway network based on three management scenarios that influence train speed and occurrence of kangaroos near the railway lines. The results indicate that train speed is the most influential variable followed by presence of kangaroos.  Reducing speeds in areas of high predicted kangaroo occurrence, during periods of peak animal activity within a twenty-four hour cycle, reduces collision rate the most. This work further supports the generality of the conceptual risk framework, and more specifically, that predictions from the model can help managers decide where, when and how best to mitigate collisions between animals and trains.
 
-To further examine the performance of the work in \Cref{sec:egk}, I compare the collision model framework and predictions using several independent datasets in \Cref{sec:val}. The results demonstrate that whilst the model framework is sensitive to the choice of training data, combining otherwise disparate sources of information can improve modelling performance and subsequent predictions of collision risk. This result supports the need for a global, publicly-accessible, unified system for storing and disseminating data on wildlife-vehicle collisions.
+To further examine the performance of the work in \Cref{sec:egk}, I compare the collision model framework predictions using several independent datasets in \Cref{sec:val}. The results demonstrate that whilst the model framework is sensitive to the choice of training data, combining otherwise disparate sources of information can improve modelling performance and subsequent predictions of collision risk. This result supports the need for a global, publicly-accessible, unified system for storing and disseminating data on wildlife-vehicle collisions.
 
 Lastly, in \Cref{sec:conc} I discuss the main findings of my thesis, caveats and limitations of the work, and future research opportunities. Further, I highlight key applications of the work to support management as a decision-making tool and educate the public as a mobile device-based information system.
 \clearpage{\pagestyle{empty}\cleardoublepage}
@@ -93,7 +93,7 @@ This is to certify that:
 
 Casey Visintin
 
-March, 2017
+May, 2017
 \end{flushright}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
@@ -157,32 +157,32 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 
 \mainmatter
 
-%\input{chapters/Chapter1}
-\chapter{General Introduction}\label{sec:intro}
+\input{chapters/Chapter1}
+%\chapter{General Introduction}\label{sec:intro}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter2}
-\chapter{A conceptual risk framework for modelling and predicting wildlife-vehicle collisions}\label{sec:egk}
+\input{chapters/Chapter2}
+%\chapter{A conceptual risk framework for modelling and predicting wildlife-vehicle collisions}\label{sec:egk}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter3}
-\chapter{Consistent patterns of vehicle collision risk for six terrestrial mammal species}\label{sec:6sp}
+\input{chapters/Chapter3}
+%\chapter{Consistent patterns of vehicle collision risk for six terrestrial mammal species}\label{sec:6sp}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter4}
-\chapter{A generalised predictive model for wildlife-vehicle collision risk with large mammals}\label{sec:cal}
+\input{chapters/Chapter4}
+%\chapter{A generalised predictive model for wildlife-vehicle collision risk with large mammals}\label{sec:cal}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 \input{chapters/Chapter5}
 %\chapter{Predicting wildlife-train collisions across space and time to inform railway operations}\label{sec:train}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter6}
-\chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
+\input{chapters/Chapter6}
+%\chapter{Validating collision model predictions with disparate datasets: a case for a unified system}\label{sec:val}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/Chapter7}
-\chapter{General Discussion}\label{sec:conc}
+\input{chapters/Chapter7}
+%\chapter{General Discussion}\label{sec:conc}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 %\input{chapters/References}
@@ -209,20 +209,20 @@ Finally, thank you Australian government. My PhD candidature was generously supp
 \fancyhead[R]{\sc Appendix \thechapter}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/AppendixA}
-\chapter{Computer code}\label{apx:A}
+\input{chapters/AppendixA}
+%\chapter{Computer code}\label{apx:A}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/AppendixB}
-\chapter{Species used in research}\label{apx:B}
+\input{chapters/AppendixB}
+%\chapter{Species used in research}\label{apx:B}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/AppendixC}
-\chapter{Data sources used for research}\label{apx:C}
+\input{chapters/AppendixC}
+%\chapter{Data sources used for research}\label{apx:C}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
-%\input{chapters/AppendixD}
-\chapter{List of studies used for comparing modelling variables}\label{apx:D}
+\input{chapters/AppendixD}
+%\chapter{List of studies used for comparing modelling variables}\label{apx:D}
 \clearpage{\pagestyle{empty}\cleardoublepage}
 
 %---------------------------------------------------------- 

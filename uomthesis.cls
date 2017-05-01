@@ -60,7 +60,7 @@
 %\setlength{\oddsidemargin}{-1in}   \setlength{\evensidemargin}{-1in}
 %\addtolength{\oddsidemargin}{25mm} \addtolength{\evensidemargin}{20mm}
 %\setlength{\marginparwidth}{40pt}  \setlength{\marginparsep}{10pt}
-\setlength{\topmargin}{-5mm}       \setlength{\headsep}{0.5in}
+\setlength{\topmargin}{-5mm}       \setlength{\headsep}{0.4in}
 \setlength{\textheight}{227mm}     \setlength{\textwidth}{165mm}
 
 % new margins based on UoM requirements
