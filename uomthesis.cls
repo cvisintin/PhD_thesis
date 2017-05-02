@@ -368,3 +368,10 @@ has not been submitted in whole or part for a degree in any university.
 
 \let\Oldsubsubsection\subsubsection
 \renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection}
+
+%tighten up all spacing in document
+%\usepackage[subtle]{savetrees}
+
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 4.0pt}
+
+\usepackage{stackengine}
