@@ -80,7 +80,7 @@ We apply our framework to study vehicle collisions with kangaroos in Australia u
 
 \begin{figure*}[!h]
   \centering
-  \includegraphics[scale=.9]{egk_fig01.png}
+  \includegraphics[scale=.95]{egk_fig01.png}
   \caption[Diagram of the modelling framework]{Diagram of the modelling framework. Three sub-models are used to generate covariates used in the collision model per the ``risk equals exposure multiplied by hazard" analytical framework.}
   \label{egk_framework}
 \end{figure*}
@@ -146,7 +146,7 @@ Average Annual Daily Traffic (AADT) represents the sum of traffic travelling in 
 
 \begin{figure*}[!h]
   \centering
-  \includegraphics[scale=0.9]{egk_fig03b.png}
+  \includegraphics[scale=1]{egk_fig03b.png}
   \caption[Predicted relative traffic volume in Victoria]{Predicted relative traffic volume in number of vehicles day$^{-1}$ per road segment in study area. Darker shades indicate higher predicted traffic volumes (mean: 4481; range: 274--60850).}
   \label{egk_tvolmap}
 \end{figure*}
@@ -155,7 +155,7 @@ Traffic speed was modelled and predicted using a similar methodology to the traf
 
 \begin{figure*}[!h]
   \centering
-  \includegraphics[scale=0.9]{egk_fig04b.png}
+  \includegraphics[scale=1]{egk_fig04b.png}
   \caption[Predicted relative traffic speed in Victoria]{Predicted relative traffic speed in kilometres hour$^{-1}$ per road segment in study area. Darker shades indicate higher predicted traffic speeds (mean: 62; range: 42--106).}
   \label{egk_tspdmap}
 \end{figure*}
@@ -200,14 +200,14 @@ Alternative Collision  &\scriptsize{$\mathrm{cloglog}(\Pr(\text{COLL}=1)) \appro
 
 \begin{figure*}[!h]%
   \centering%
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_light.png}}%
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_elev.png}}%
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_precdm.png}}%
+  \subfloat[]{\includegraphics[height=5.5cm]{egk_light.png}}%
+  \subfloat[]{\includegraphics[height=5.5cm]{egk_elev2.png}}%
+  \subfloat[]{\includegraphics[height=5.5cm]{egk_precdm2.png}}%
   \caption[Effects of predictor variables on relative likelihood of grey kangaroo occurrence]{Effects of three most influential predictors on relative likelihood of grey kangaroo occurrence. Grey kangaroo occurrence is expressed on a relative probability scale. Artificial Light (LIGHT) is a surrogate for urban development where higher positive values represent intensely urbanised and populated areas. Elevation (ELEV) is measured in metres above sea level. Precipitation of the driest month (PRECDM) is the mean amount of rainfall in the summer expressed in millimetres.}%
   \label{egk_sdm_vars}
 \end{figure*}
 
-\begin{figure*}[!t]
+\begin{figure*}[!b]
   \centering
   \includegraphics[scale=.5]{egk_MAP_AUS.png}
   \caption[Predicted relative likelihood of grey kangaroo occurrence across Australia]{Predicted relative likelihood of grey kangaroo occurrence across Australia. Darker shades indicate higher relative likelihood of occurrence (mean: 0.023; range: 0.001--0.986). The dashed line represents the existing known range of grey kangaroos as reported by the International Union for the Conservation of Nature. Victoria is located in the south-east corner of the mainland.}
@@ -216,20 +216,22 @@ Alternative Collision  &\scriptsize{$\mathrm{cloglog}(\Pr(\text{COLL}=1)) \appro
 
 The traffic model volume explained 54.4\% of the variation in the AADT data and the traffic speed model explained 58.7\% of the variation in the posted speed limit data (\Cref{egk_models}).  Each model used the default value of 500 trees to fit the data.  All predictor variables used in the traffic models demonstrated plausible relationships to both AADT and speed (\Cref{egk_trans_vars}). Traffic volume showed a generally decreasing trend with increasing distance to development and major thoroughfares and a generally increasing trend with increasing population and road density. Traffic speed showed a generally decreasing trend with increasing road density. Both traffic speed and volume decreased as road class changed from `freeway' to `local'. The most influential variable for traffic volume was road class (33.8\% relative contribution to reduction of variance), followed by distance to urban development (19.7\%) and distance to freeways and highways (16.4\%). For traffic speed, the most influential variable was road class, however, road density was nearly as influential.
 
-\begin{figure*}[!t]
+\begin{figure*}[!h]
   \centering
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_popdens_volume.png}\label{egk_trans_vars:a}}
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_rddens_volume.png}\label{egk_trans_vars:b}}
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_rdclass_volume.png}\label{egk_trans_vars:c}}\\
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_kmtodev_volume.png}\label{egk_trans_vars:d}}
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_kmtohwy_volume.png}\label{egk_trans_vars:e}}\\
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_rddens_speed.png}\label{egk_trans_vars:f}}
-  \subfloat[]{\includegraphics[width=0.3\textwidth]{egk_rdclass_speed.png}\label{egk_trans_vars:g}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_popdens_volume.png}\label{egk_trans_vars:a}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_rddens_volume.png}\label{egk_trans_vars:b}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_rdclass_volume.png}\label{egk_trans_vars:c}}\\
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_kmtodev_volume.png}\label{egk_trans_vars:d}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_kmtohwy_volume.png}\label{egk_trans_vars:e}}\\
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_rddens_speed.png}\label{egk_trans_vars:f}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{egk_rdclass_speed.png}\label{egk_trans_vars:g}}
   \caption[Effects of predictor variables on traffic volume and speed]{Effects of predictor variables on traffic volume and speed. AADT is the predicted mean average annual daily traffic in vehicles day$^{-1}$. SPEED is the predicted traffic speed in km hour$^{-1}$. POPDENS is population density in persons square kilometre$^{-1}$. RDDENS is road density per road segment in kilometres square kilometre$^{-1}$. KMTODEV is road segment distance to urban land use in kilometres. KMTOHWY is road segment distance to freeway/highway in kilometres.  RDCLASS is designated road segment functional classification.}
   \label{egk_trans_vars}
 \end{figure*}
 
-\begin{table}[!t]
+The collision model explained 23.7\% of the deviance (\Cref{egk_models}). Using the independent dataset to verify the predictive accuracy of the model resulted in an ROC score of 0.81.  All three variables were highly significant ($p<$.0001) with traffic speed and grey kangaroo occurrence contributing the most to overall reduction in deviance; 27.3\% and 72.7\%, respectively (\Cref{egk_sum_coll}).  The Akaike Information Criterion (AIC) score -- measuring the quality of the model given the data and the parameters -- was 6,579.  All predictor variables demonstrated logical relationships to collision likelihood in the partial dependency plots (\Cref{egk_effects}). The rapid ascent and gradual levelling off of collision risk to increasing traffic volume suggests a threshold of around 2,000 vehicles day$^{-1}$.
+
+\begin{table}[!h]
 \caption[Summary of collision and alternative collision models]{Summary of collision and alternative collision model fits. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Contribution of variables to reduction in deviance (via analysis of variance) are expressed as decimal percentages (ANOVA).}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllllll} \toprule
@@ -257,18 +259,16 @@ Alternative Collision	& \emph{Intercept} 	& $-$2.567 			& 0.2642	& $-$9.716 	&\T
 \label{egk_sum_coll}
 \end{table}
 
-The collision model explained 23.7\% of the deviance (\Cref{egk_models}). Using the independent dataset to verify the predictive accuracy of the model resulted in an ROC score of 0.81.  All three variables were highly significant ($p<$.0001) with traffic speed and grey kangaroo occurrence contributing the most to overall reduction in deviance; 27.3\% and 72.7\%, respectively.  The Akaike Information Criterion (AIC) score -- measuring the quality of the model given the data and the parameters -- was 6,579.  All predictor variables demonstrated logical relationships to collision likelihood in the partial dependency plots (\Cref{egk_effects}). The rapid ascent and gradual levelling off of collision risk to increasing traffic volume suggests a threshold of around 2,000 vehicles day$^{-1}$.
+Our alternative collision model (all sub-model predictor variables combined in a single model) explained 24.9\% of the deviance; less than 2\% more than the four-model framework.  The model AIC was 6,496.2. The most influential variables were road class (42.1\% relative contribution to reduction of deviance), distance to urban development (20.8\%), elevation (17.3\%) and population density (9.2\%). We used the same independent dataset to verify the predictive accuracy of the model, resulting in an ROC score of 0.84.
 
-\begin{figure*}[!t]
+\begin{figure*}[!h]
   \centering
-  \subfloat[]{\label{egk_effects:a}\includegraphics[width=0.3\textwidth]{egk_fig06a.png}}
-  \subfloat[]{\label{egk_effects:b}\includegraphics[width=0.3\textwidth]{egk_fig06b.png}}
-  \subfloat[]{\label{egk_effects:c}\includegraphics[width=0.3\textwidth]{egk_fig06c.png}}
+  \subfloat[]{\label{egk_effects:a}\includegraphics[height=5.2cm]{egk_fig06a.png}}
+  \subfloat[]{\label{egk_effects:b}\includegraphics[height=5.2cm]{egk_fig06b2.png}}
+  \subfloat[]{\label{egk_effects:c}\includegraphics[height=5.2cm]{egk_fig06c2.png}}
   \caption[Effects of predictor variables on relative likelihood of collision]{Effects of predictor variables on relative likelihood of collision. EGK is the relative likelihood of kangaroo occurrence. TVOL is the predicted daily traffic volume in vehicles day$^{-1}$. TSPD is the predicted traffic speed in kilometres hour$^{-1}$.}
   \label{egk_effects}
 \end{figure*}
-
-Our alternative collision model (all sub-model predictor variables combined in a single model) explained 24.9\% of the deviance; less than 2\% more than the four-model framework.  The model AIC was 6,496.2. The most influential variables were road class (42.1\% relative contribution to reduction of deviance), distance to urban development (20.8\%), elevation (17.3\%) and population density (9.2\%). We used the same independent dataset to verify the predictive accuracy of the model, resulting in an ROC score of 0.84.
 
 \section{Discussion}
 

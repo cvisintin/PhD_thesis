@@ -33,26 +33,28 @@ In this study we have two objectives: testing a conceptual risk model framework 
 
 We used the 227,819 square kilometres state of Victoria in south-east Australia as a study area (\Cref{6sp_study_area}). The Victorian road authority (VicRoads) manages 25,256 kilometres of major roadway within the state. The remaining sealed roads ($\approx$ 125,000 kilometres) are controlled by seventy-nine municipal districts. Our study analysed collision risk across 147,970 kilometres of sealed roads. To organise our spatial data and modelling, we overlaid a spatial grid of 1-km$^2$ resolution (extents: $-$58000,5661000 x 764000,6224000, projection: GDA94 MGA zone 55, number of cells: 462,786) on the study area. Each grid cell was the modelling unit for species occurrence. All roads in the study area were bisected by the grid resulting in road segments that were approximately one kilometre or less in length. We used these 612,791 segments as our modelling units for the collision model.
 
-\begin{figure*}[!t]
+\subsection{Study Species}
+
+Wildlife Victoria is a not-for-profit organisation that maintains a professional database of state-wide reported wildlife injuries and includes spatial and temporal data for more than 80,000 records (see \Cref{apx:C} for more information). We selected the species of mammal most frequently recorded as `hit by vehicle' in the Wildlife Victoria database (\Cref{6sp_species_data}). Only mammals with at least 80 reported collision events were selected for use in the study, resulting in six study species.
+
+\begin{figure*}[!h]
   \centering
-  \includegraphics[scale=.5]{6sp_study_area.png}
+  \includegraphics[width=.9\textwidth]{6sp_study_area2.png}
   \caption[Wildlife-vehicle collisions in Victoria]{Study area (state of Victoria, in south-east Australia) showing location of wildlife-vehicle collisions. Light gray lines are the sealed road network and black crosses are locations of reported wildlife-vehicle collisions. Major urban centres are starred.}
   \label{6sp_study_area}
 \end{figure*}
 
-\subsection{Study Species}
-
-Wildlife Victoria is a not-for-profit organisation that maintains a professional database of state-wide reported wildlife injuries and includes spatial and temporal data for more than 80,000 records (see \Cref{apx:C} for more information). We selected the species of mammal most frequently recorded as `hit by vehicle' in the Wildlife Victoria database (\Cref{6sp_species_data}). Only mammals with at least 80 reported collision events were selected for use in the study, resulting in six study species.  Eastern grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia and share many management issues (e.g. over-abundance) with ungulates found in North America and Europe \citep{crof04,coul10}. They occur in groups and have home range sizes between 25 and 125 hectares \citep{daws12}.  Swamp wallabies (\textit{Wallabia bicolor}, Desmarest) are medium-sized (13 to 17 kilograms), solitary mammals more often found at higher elevations and in areas of denser foliage \citep{vand08}. Common wombats (\textit{Vombatus ursinus}, Shaw) are medium-sized (22 to 39 kilograms), burrowing mammals and one of three wombat species in Australia \citep{vand08}. Although wombats occasionally share burrows, they are typically solitary animals and occupy home range sizes of about 20 hectares. Common possums, brushtail (\textit{Trichosurus vulpecula}, Kerr) and ringtail (\textit{Pseudocheirus peregrinus}, Boddaert), are small arboreal mammals (one to four kilograms) that are often more abundant throughout Victorian urban and suburban environments than other arboreal mammals.  Koalas (\textit{Phascolarctos cinereus}, Goldfuss) are medium-sized (eight to 15 kilograms) arboreal mammals.  They are mainly sedentary due to their exclusive diet of Eucalyptus leaves which have low caloric content and nutritional value and are toxic to many other species \citep{vand08}. More information on these species can be found in \Cref{apx:B}.
+Eastern grey kangaroos (\textit{Macropus giganteus}, Shaw) are the second largest mammal (up to 85 kilograms for males) in Australia and share many management issues (e.g. over-abundance) with ungulates found in North America and Europe \citep{crof04,coul10}. They occur in groups and have home range sizes between 25 and 125 hectares \citep{daws12}.  Swamp wallabies (\textit{Wallabia bicolor}, Desmarest) are medium-sized (13 to 17 kilograms), solitary mammals more often found at higher elevations and in areas of denser foliage \citep{vand08}. Common wombats (\textit{Vombatus ursinus}, Shaw) are medium-sized (22 to 39 kilograms), burrowing mammals and one of three wombat species in Australia \citep{vand08}. Although wombats occasionally share burrows, they are typically solitary animals and occupy home range sizes of about 20 hectares. Common possums, brushtail (\textit{Trichosurus vulpecula}, Kerr) and ringtail (\textit{Pseudocheirus peregrinus}, Boddaert), are small arboreal mammals (one to four kilograms) that are often more abundant throughout Victorian urban and suburban environments than other arboreal mammals.  Koalas (\textit{Phascolarctos cinereus}, Goldfuss) are medium-sized (eight to 15 kilograms) arboreal mammals.  They are mainly sedentary due to their exclusive diet of Eucalyptus leaves which have low caloric content and nutritional value and are toxic to many other species \citep{vand08}. More information on these species can be found in \Cref{apx:B}.
 
 \subsection{Conceptual Model Framework}
 
 We employed the quantitative risk framework in \Cref{sec:egk} to examine how collision risk of each species relates to occurrence of the species, traffic volume, and traffic speed on all road segments. Using the open-source software package `R' version 3.3.0 \citep{rdct16} to perform all statistical analyses, we developed species distribution models (SDM) to predict occurrence across the study area for each of the six species, and linear regression models to predict traffic volume and speed. Predicted traffic volume and speed values for all road segments were modelled by regressing annual average daily traffic (AADT) counts and posted speed limit data on anthropogenic variables using random forests; detailed methods are provided in \Cref{sec:egk}. 
 
-\begin{table}[!t]
+\begin{table}[!b]
 \caption[Six mammal species most frequently reported in wildlife-vehicle collisions]{Top six species most frequently reported in wildlife-vehicle collisions in the Wildlife Victoria database (WVD) between the years of 2010 and 2014. Species observations from the Victorian Biodiversity Atlas were used to train the species occurrence models and recorded collisions from the WVD for training the collision risk models. The datasets used in the models are comprised of both presence (P) and background (B) observations. Note, some species occurrence modelling datasets incorporate less than 10,000 background observations due to elimination of spatial duplicates (i.e., presence and background grid cells sharing the same coordinates were reduced to single presence observations).}
 \centering
-\setlength{\extrarowheight}{.5em}
-\begin{tabularx}{0.9\textwidth}{Ylll} \toprule
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.9\textwidth}{@{}Ylll@{}} \toprule
 Species Name                     &Species Code     &Species Occurrence Model Data     &Collision Model Data \\ \midrule 
 Eastern Grey Kangaroo 	& EGK	& 10508 : 703(P) / 9805(B) 	& 612791 : 1344(P) / 611447(B) \\ 
 Common Brushtail Possum & BTP	& 10808 : 1021(P) / 9787(B)	& 612791 : 257(P) / 612534(B) \\ 
@@ -72,8 +74,8 @@ We obtained observation records of the six study species from the Victorian Biod
 \begin{table}[!t]
 \caption[Predictor variables used in species occurrence models and collision risk models]{Predictor variables used in species occurrence (SO) models and collision risk (CR) models. The spatial coordinates of centroids for grids with species presences and 10,000 randomly selected background grids were used to sample from 1-km$^2$ resolution predictor variable grids for occurrence models. The mid-points of road segments were used to sample from 1-km$^2$ resolution occurrence model predictions. Note, reported means and ranges are for entire study area. More information on the sources of these data can be found in \Cref{apx:C}.}
 \centering
-\setlength{\extrarowheight}{.2em}
-\begin{tabularx}{0.9\textwidth}{lYll} \toprule
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.9\textwidth}{@{}lYll@{}} \toprule
 Variable       &Description                                               &Units          &Range : Mean\\
 \midrule 
 ELEV (SO)       &Elevation of Terrain Above Sea Level                     &$m$			  &$-$0.39--1890.66 : 252.83\\
@@ -112,10 +114,12 @@ We selected predictor variables that influenced the biology, behaviour, and char
 
 For each species, we fit Boosted Regression Trees \citep[BRT, see][]{frie02} models to the occurrence data using tools and methods by \cite{elit08}. These methods included the use of internal cross-validation to reduce over-fitting. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors \citep{elit09}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of .005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions). For each model, we employed a selection mechanism -- based on \cite{elit08} -- to determine the most useful and parsimonious combination of predictors (\Cref{6sp_final_var}) from a full set of 18 variables (\Cref{6sp_variables}).
 
-\begin{table}[!t]
+We refit the models using the best combination of predictors and predicted relative likelihood of occurrence to 1-km$^2$ spatial grids for six species (\Cref{6sp_occ_preds}). We examined the rasters for unrealistic predictions of distributions by plotting atlas records of occurrences on prediction grids and also cross-referencing with expert-derived species range maps. Spatial autocorrelation was also assessed for each species by calculating \textit{Moran's I} from model residuals and spatial coordinates and plotting against distance in one kilometre bins.
+
+\begin{table}[!h]
 \caption[Predictors selected in occurrence models for six mammal species]{Final predictors selected for each species in species occurrence models. The relative importance of each variable in the models is expressed as percentage contribution to reduction in unexplained variation in the data. `---' indicates variable was not selected for use in the model and bold text signifies most influential variable per species.}
 \centering
-\begin{tabularx}{0.9\textwidth}{llllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllllll@{}} \toprule
 Predictor & EGK & BTP & RTP & BSW & WOM & KOA \\ 
 \midrule
   ELEV & 9.73 & 7.67 & 4.72 & 7.52 & 7.25 & 6.86 \\ 
@@ -141,16 +145,14 @@ Predictor & EGK & BTP & RTP & BSW & WOM & KOA \\
 \label{6sp_final_var}
 \end{table}
 
-We refit the models using the best combination of predictors and predicted relative likelihood of occurrence to 1-km$^2$ spatial grids for six species (\Cref{6sp_occ_preds}). We examined the rasters for unrealistic predictions of distributions by plotting atlas records of occurrences on prediction grids and also cross-referencing with expert-derived species range maps. Spatial autocorrelation was also assessed for each species by calculating \textit{Moran's I} from model residuals and spatial coordinates and plotting against distance in one kilometre bins.
-
-\begin{figure*}[!t]
+\begin{figure*}[!htb]
   \centering
-  \subfloat[Eastern Grey Kangaroo]{\label{6sp_occ_preds:a}\includegraphics[width=0.45\textwidth]{6sp_EGK_preds_brt.png}}
-  \subfloat[Common Brushtail Possum]{\label{6sp_occ_preds:b}\includegraphics[width=0.45\textwidth]{6sp_BTP_preds_brt.png}}\\
-  \subfloat[Common Ringtail Possum]{\label{6sp_occ_preds:c}\includegraphics[width=0.45\textwidth]{6sp_RTP_preds_brt.png}}
-  \subfloat[Swamp Wallaby]{\label{6sp_occ_preds:d}\includegraphics[width=0.45\textwidth]{6sp_BSW_preds_brt.png}}\\  
-  \subfloat[Common Wombat]{\label{6sp_occ_preds:e}\includegraphics[width=0.45\textwidth]{6sp_WOM_preds_brt.png}}
-  \subfloat[Koala]{\label{6sp_occ_preds:f}\includegraphics[width=0.45\textwidth]{6sp_KOA_preds_brt.png}}  
+  \subfloat[Eastern Grey Kangaroo]{\label{6sp_occ_preds:a}\includegraphics[width=0.5\textwidth]{6sp_EGK_preds_brt.png}}
+  \subfloat[Common Brushtail Possum]{\label{6sp_occ_preds:b}\includegraphics[width=0.5\textwidth]{6sp_BTP_preds_brt.png}}\\
+  \subfloat[Common Ringtail Possum]{\label{6sp_occ_preds:c}\includegraphics[width=0.5\textwidth]{6sp_RTP_preds_brt.png}}
+  \subfloat[Swamp Wallaby]{\label{6sp_occ_preds:d}\includegraphics[width=0.5\textwidth]{6sp_BSW_preds_brt.png}}\\  
+  \subfloat[Common Wombat]{\label{6sp_occ_preds:e}\includegraphics[width=0.5\textwidth]{6sp_WOM_preds_brt.png}}
+  \subfloat[Koala]{\label{6sp_occ_preds:f}\includegraphics[width=0.5\textwidth]{6sp_KOA_preds_brt.png}}  
   \caption[Predicted relative likelihood of six mammal species occurrence in Victoria]{Predicted relative likelihood of occurrence of each species across the State of Victoria. Darker shading indicates higher relative likelihood of occurrence.}
   \label{6sp_occ_preds}
 \end{figure*}
@@ -181,7 +183,7 @@ The species occurrence models produced ecologically-plausible predictions about 
 \begin{table}[!t]
 \caption[Statistical model performance for six mammal species]{Statistical model performance as percent reduction of deviance on the null model and receiver operator characteristic (ROC) scores for species occurrence (SO) and collision risk (CR) models by species. Note, due to the nature of gradient boosting and internal cross-validation, errors on both deviance and ROC scores are reported as $\pm$ values for species occurrence models.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllll@{}} \toprule
 Species Name			&\% Deviance (SO)	&ROC (SO)			&\% Deviance (CR)	&ROC (CR)\\
 \midrule 
 Eastern Grey Kangaroo	& 30.7$\pm$0.7 		& 0.89$\pm$0.004	& 11.8 				& 0.80 \\ 
@@ -226,7 +228,7 @@ All of the collision models fitted the data as expected.  Reduction on the null 
 \begin{table}[!t]
 \caption[Summary of collision models for six mammal species]{Summary of collision model fit for each species. Coefficients and significance of variables are shown with relative percent contribution (ANOVA) to model fits for each species. Highly significant variables ($p<$.001) are marked with asterisks.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllllll@{}} \toprule
 Species & Variable & Coefficient & Std. Error & $Z\text{-value}$ & $\PRZ$ & ANOVA \\ 
 \midrule
 Eastern Grey Kangaroo & Intercept & $-$46.55 & 1.961 & $-$23.74 & $<$.001* & --- \\ 
@@ -273,22 +275,43 @@ All of the predictor variables demonstrated plausible relationships to collision
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{6sp_occ.png}
-  \caption[Marginal effect of species occurrence on relative likelihood of collision for six mammal species]{Marginal effect of species occurrence on relative likelihood of collision per species. An overall plot shows relative collision rates for all species and six sub-panels depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
+  %\includegraphics[width=\textwidth]{6sp_occ.png}
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=1cm]{egk_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_egk.png}}
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=0.6cm]{bsw_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_bsw.png}}
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=0.8cm]{wom_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_wom.png}}\\
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=0.6cm]{koa_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_koa.png}}
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=0.8cm]{btp_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_btp.png}}
+  \stackinset{r}{0.2cm}{b}{0.2cm}{\includegraphics[width=0.7cm]{rtp_icon_c.png}}{\includegraphics[width=0.25\textwidth]{6sp_occ_a_rtp.png}}\\
+  \includegraphics[width=0.75\textwidth]{6sp_occ_a.png}
+  \caption[Marginal effect of species occurrence on relative likelihood of collision for six mammal species]{Marginal effect of species occurrence on relative likelihood of collision per species. An overall plot (below) shows relative collision rates for all species and six sub-panels (above) depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_occ}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{6sp_tvol.png}
-  \caption[Marginal effect of traffic volume on relative likelihood of collision for six mammal species]{Marginal effect of traffic volume on relative likelihood of collision per species. An overall plot shows relative collision rates for all species and six sub-panels depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
+  %\includegraphics[width=\textwidth]{6sp_tvol.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_egk.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_bsw.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_wom.png}\\
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_koa.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_btp.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tvol_b_rtp.png}\\
+  \includegraphics[width=0.75\textwidth]{6sp_tvol_b.png}
+  \caption[Marginal effect of traffic volume on relative likelihood of collision for six mammal species]{Marginal effect of traffic volume on relative likelihood of collision per species. An overall plot (below) shows relative collision rates for all species and six sub-panels (above) depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_tvol}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[width=\textwidth]{6sp_tspd.png}
-  \caption[Marginal effect of traffic speed on relative likelihood of collision for six mammal species]{Marginal effect of traffic speed on relative likelihood of collision per species. An overall plot shows relative collision rates for all species and six sub-panels depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
+  %\includegraphics[width=\textwidth]{6sp_tspd.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_egk.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_bsw.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_wom.png}\\
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_koa.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_btp.png}
+  \includegraphics[width=0.25\textwidth]{6sp_tspd_c_rtp.png}\\
+  \includegraphics[width=0.75\textwidth]{6sp_tspd_c.png}
+  \caption[Marginal effect of traffic speed on relative likelihood of collision for six mammal species]{Marginal effect of traffic speed on relative likelihood of collision per species. An overall plot (below) shows relative collision rates for all species and six sub-panels (above) depict response shapes with rescaled collision risk (relative minimum to maximum) for each species. Species symbols are: \includegraphics[height=.45cm]{egk_icon_c.png} --`Eastern Grey Kangaroo'; \includegraphics[height=.5cm]{btp_icon_c.png} --`Common Brushtail Possum'; \includegraphics[height=.5cm]{rtp_icon_c.png} --`Common Ringtail Possum'; \includegraphics[height=.5cm]{bsw_icon_c.png} --`Swamp Wallaby'; \includegraphics[height=.35cm]{wom_icon_c.png} --`Wombat'; \includegraphics[height=.5cm]{koa_icon_c.png} --`Koala'.}
   \label{6sp_effects_tspd}
 \end{figure*}
 
