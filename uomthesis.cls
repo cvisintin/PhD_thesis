@@ -375,3 +375,5 @@ has not been submitted in whole or part for a degree in any university.
 \setlength{\textfloatsep}{10pt plus 1.0pt minus 4.0pt}
 
 \usepackage{stackengine}
+
+\usepackage{float}
