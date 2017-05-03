@@ -66,7 +66,22 @@ To train our collision models, we obtained spatially unique collision/carcass re
 
 For each target species, we selected road segments that intersected with reported species' collision records and coded them with ones. We coded all other road segments in each study area with zeros, to represent background data, and combined them with the collision record segments.  After removing spatial duplicates, there were 4,245 presence and 640,470 background points in the kangaroo collision modelling dataset and 933 presence and 644,296 background points in the deer collision modelling dataset.
 
-Traffic volume and speed values for all road segments in both Victoria and California were predicted following the methods of \Cref{sec:egk}.  We regressed annual average daily traffic (AADT) and speed on explanatory variables of distance to anthropogenic development (derived from remotely-sensed land use), distance to highway/freeway, road class, road density within a one kilometre radius of each road segment mid-point, and population density (from the Australian Bureau of Statistics and the United States Census Bureau, respectively) in random forest models \citep[see][]{brei01}. We developed species distribution models to predict occurrence for each species across their respective geographic areas (\Cref{isec:occ}) and used the mid-points of the road segments to sample each species occurrence prediction grids. This resulted in two modelling datasets, each with a binary dependent variable of collision (1) or background (0) and three continuous predictors of species occurrence, traffic volume, and traffic speed.  
+Traffic volume and speed values for all road segments in both Victoria and California were predicted following the methods of \Cref{sec:egk}.  We regressed annual average daily traffic (AADT) and speed on explanatory variables of distance to anthropogenic development (derived from remotely-sensed land use), distance to highway/freeway, road class, road density within a one kilometre radius of each road segment mid-point, and population density (from the Australian Bureau of Statistics and the United States Census Bureau, respectively) in random forest models \citep[see][]{brei01} (see \Cref{cal_tmodel_perf}). We developed species distribution models to predict occurrence for each species across their respective geographic areas (\Cref{isec:occ}) and used the mid-points of the road segments to sample each species occurrence prediction grids. This resulted in two modelling datasets, each with a binary dependent variable of collision (1) or background (0) and three continuous predictors of species occurrence, traffic volume, and traffic speed.  
+
+\begin{table}[!h]
+\caption[Performance of traffic models]{Performance of traffic models. We used Random Forest regression with 500 trees and two variables tried at each split. The traffic volume models used the variables Distance to Development, Distance to Highway, Population Density, Road Class and Road Density; the traffic speed models used Road Class and Road Density. $R^2$ reports the variation in the training data explained by the model. Training observations are the total data points used to train each model.}
+\centering
+\begin{tabularx}{0.9\textwidth}{lllll} \toprule
+Study Area         	&Predicted Variable	& $R^2$	& Training observations		& Most influential variable \\ \midrule 
+Victoria		 	& Traffic Volume	& 0.54 	& 3,174 					& Road Class \\ 
+					& Traffic Speed		& 0.59	& 42,438 					& Road Class \\
+&& \\ 
+Central California	& Traffic Volume	& 0.43	& 68,474 					& Distance to Highway \\
+			 		& Traffic Speed		& 0.60	& 7,292 					& Road Class \\
+\bottomrule
+\end{tabularx}
+\label{cal_tmodel_perf}
+\end{table}
 
 We used police records of road accidents to evaluate our model fits.  For each species, we extracted spatially-unique records where the incidents were collisions with our target species.  For kangaroos, we used data reported between 1 January, 2010 and 1 October, 2016. For deer, the reporting period was 1 February 2015 to 1 December 2016.  Again, we used all road segments as background and coded the segments with collisions as ones and the remainder with zeros. The final datasets had 481 presence and 644,234 background points for kangaroo collision model validation and 1,795 presence and 643,434 background points for deer. As with the training data, each road segment had values for species occurrence, traffic volume and traffic speed.
 
@@ -84,10 +99,10 @@ To test for spatial autocorrelation, we calculated normally-distributed, randomi
 \begin{figure*}[!h]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_sac:a}\includegraphics[width=0.4\textwidth]{04_vic_coll_cor_1000.png}}
-  \subfloat[Mule Deer]{\label{cal_sac:b}\includegraphics[width=0.4\textwidth]{04_cal_coll_cor_1000.png}}\\
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_sac:c}\includegraphics[width=0.4\textwidth]{04_vic_coll_cor_250.png}}
-  \subfloat[Mule Deer]{\label{cal_sac:d}\includegraphics[width=0.4\textwidth]{04_cal_coll_cor_250.png}}
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_sac:a}\includegraphics[height=7.5cm]{04_vic_coll_cor_1000.png}}
+  \subfloat[Mule Deer]{\label{cal_sac:b}\includegraphics[height=7.5cm]{04_cal_coll_cor_1000_2.png}}\\[1cm]
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_sac:c}\includegraphics[height=7.5cm]{04_vic_coll_cor_250.png}}
+  \subfloat[Mule Deer]{\label{cal_sac:d}\includegraphics[height=7.5cm]{04_cal_coll_cor_250_2.png}}
   \caption[Spatial autocorrelation in randomised quantile model residuals for kangaroos and deer]{Spatial autocorrelation in randomised quantile model residuals for each species at two spatial lags (1-km and 250-m).  In each plot, trend lines (20 total) are for randomly selected subsets of the data (5,000 observations per subset).}
   \label{cal_sac}
 \end{figure*}
@@ -98,8 +113,8 @@ We tested the calibration strength and discrimination ability of our models with
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=.5]{04_egk_collrisk_vic2.png}\\
-  \includegraphics[scale=.5]{04_deer_collrisk_cal2.png}
+  \includegraphics[scale=.47]{04_egk_collrisk_vic2.png}\\
+  \includegraphics[scale=.47]{04_deer_collrisk_cal2.png}
   \caption[Predicted relative collision risk for all sealed roads in Victoria and central California]{Predicted relative collision risk expressed as expected annual collisions per kilometre for all sealed roads in Victoria (above) and central California (below).  Enlarged sections from each map show the predicted risk on road segments in the selected areas. Darker, heavier lines indicate higher predicted values (up to 0.14 annual collisions per kilometre in Victoria and 0.05 in California) whilst light gray lines indicate low values (less than .02 annual collisions per kilometre in Victoria and .01 in California).}
   \label{cal_coll_preds}
 \end{figure*}
@@ -111,19 +126,19 @@ All of the predictor variables demonstrated plausible relationships to collision
 \begin{figure*}[!t]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:a}\includegraphics[width=0.35\textwidth]{04_vic_occ.png}}
-  \subfloat[Mule Deer]{\label{cal_coll_effects:b}\includegraphics[width=0.35\textwidth]{04_cal_occ.png}}\\
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:c}\includegraphics[width=0.35\textwidth]{04_vic_tvol.png}}
-  \subfloat[Mule Deer]{\label{cal_coll_effects:d}\includegraphics[width=0.35\textwidth]{04_cal_tspd.png}}\\
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:e}\includegraphics[width=0.35\textwidth]{04_vic_tvol.png}}
-  \subfloat[Mule Deer]{\label{cal_coll_effects:f}\includegraphics[width=0.35\textwidth]{04_cal_tspd.png}}
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:a}\includegraphics[width=0.4\textwidth]{04_vic_occ.png}}
+  \subfloat[Mule Deer]{\label{cal_coll_effects:b}\includegraphics[width=0.4\textwidth]{04_cal_occ.png}}\\
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:c}\includegraphics[width=0.4\textwidth]{04_vic_tvol.png}}
+  \subfloat[Mule Deer]{\label{cal_coll_effects:d}\includegraphics[width=0.4\textwidth]{04_cal_tspd.png}}\\
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_coll_effects:e}\includegraphics[width=0.4\textwidth]{04_vic_tvol.png}}
+  \subfloat[Mule Deer]{\label{cal_coll_effects:f}\includegraphics[width=0.4\textwidth]{04_cal_tspd.png}}
   \caption[Marginal effects of predictor variables on relative likelihood of collision for kangaroos and deer]{Effects of predictor variables on relative likelihood of collision per species.  Each variable is expressed with all other variables set at mean values.  Likelihood of collision is expressed as a rate across all road segments for the total period of the observation data.  To convert relative collision rate to expected annual number of collisions, multiply rate by total road segments divided by years of data.}
   \label{cal_coll_effects}
 \end{figure*}
 
 Traffic speed and species occurrence were highly significant variables for kangaroos and deer (\Cref{cal_model_fits}). Speed had the highest relative importance for both kangaroos and deer based on an analysis of variance for each predictor. Increasing speed from 80 to 100 km hr$^{-1}$ approximately doubled the relative collision risk for both species.  Collision risk with deer was less than kangaroos at lower speeds and increased at a faster rate at higher speeds. Species occurrence influenced collision risk the second most for both species.  The response shape of collision risk against likelihood of occurrence was similar for both species, however, deer had larger confidence intervals around the marginal response (\Cref{cal_coll_effects:a,cal_coll_effects:b}).
 
-\begin{table}[!t]
+\begin{table}[!h]
 \caption[Summary of collision models for kangaroos and deer]{Summary of collision models for kangaroos and deer.  Highly significant variables (p$<$.001) are marked with asterisks.}
 \centering
 \begin{tabularx}{0.9\textwidth}{llllll} \toprule
@@ -166,7 +181,7 @@ Regression Coefficient 		& 0.99 (0.04 standard error)	& 0.94 (0.01 standard erro
 
 The predictions for relative collision risk across all road segments were plausible in most regions of the two study areas (\Cref{cal_coll_preds}).  In Victoria, predicted collision risk was highest on segments along the Hume Highway to the north of Melbourne -- where collisions frequently occur -- and on segments along the Princes Highway to the east of Melbourne. In contrast, predictions in California were highest on road segments along Interstate 280 in the San Francisco Bay Area, where deer collisions are common, and along Highway 50 in the foothills of the Sierra Nevada mountain range. \Cref{rd_seg_risk} lists the road segments with the highest predicted risk in both study areas.
 
-\begin{table}[!t]
+\begin{table}[!h]
 \caption[Ten highest ranked road segments for predicted collision risk for kangaroos and deer]{Ten highest ranked road segments for predicted collision risk for kangaroos and deer. Road segments are listed by unique identification (UID), name, and northing and easting coordinates of the centroid (projected to GDA94 MGA zone 55 for Victoria and NAD83 UTM zone 10N for California). Collision risk is relative to all of the road segments in the respective study area and expressed as the expected annual number of collisions per kilometre on the segment.}
 \centering
 \begin{tabularx}{0.9\textwidth}{lllll} \toprule
@@ -205,21 +220,6 @@ Our results suggest that the proposed conceptual framework may have utility irre
 
 \cite{form03} identifies both animal and human behaviour as major drivers for WVC.  Our framework operates on this hypothesised relationship and indicates maximum relative risk where animal presence and vehicles moving at speed co-occur in space.  Road authorities mitigate collision risk by managing human activity (traffic volume and speed) or animal behaviour (occurrence on or movement across the road) and these have different costs.  Our results demonstrated that speed is an important predictor of collision risk for both kangaroos and deer and therefore mitigation that either addresses animal presence near high speed road segments (e.g. fencing and crossing structures) or traffic speeds (e.g. controls and enforcement) in collision hotspot areas should be considered.  This pattern is consistent with other studies on deer collisions \citep[e.g.][]{gkri13,meis14,sudh09}, kangaroo collisions \citep[e.g.][]{rowd08}, and other taxa \citep[e.g.][]{guns11}.  Moreover, the traffic models demonstrated plausible fits to the posted speed training data (\Cref{cal_tmodel_perf}) therefore suggesting greater reliability in their predictions.  However, when assessing where to place mitigation for speed, analysts or managers should also consider the uncertainty around predictions at each road segment for both speed and animal presence. If there is higher confidence around speed predictions, for example, more emphasis (and funds) may be placed on controlling vehicle speeds, rather than excluding animals.
 
-\begin{table}[!h]
-\caption[Performance of traffic models]{Performance of traffic models. We used Random Forest regression with 500 trees and two variables tried at each split. The traffic volume models used the variables Distance to Development, Distance to Highway, Population Density, Road Class and Road Density; the traffic speed models used Road Class and Road Density. $R^2$ reports the variation in the training data explained by the model. Training observations are the total data points used to train each model.}
-\centering
-\begin{tabularx}{0.9\textwidth}{lllll} \toprule
-Study Area         	&Predicted Variable	& $R^2$	& Training observations		& Most influential variable \\ \midrule 
-Victoria		 	& Traffic Volume	& 0.54 	& 3,174 					& Road Class \\ 
-					& Traffic Speed		& 0.59	& 42,438 					& Road Class \\
-&& \\ 
-Central California	& Traffic Volume	& 0.43	& 68,474 					& Distance to Highway \\
-			 		& Traffic Speed		& 0.60	& 7,292 					& Road Class \\
-\bottomrule
-\end{tabularx}
-\label{cal_tmodel_perf}
-\end{table}
-
 The conceptual framework with sub-models allows a more clear identification of bias and uncertainty in the analysis.  For example, the two occurrence models are produced using presence-only data that explicitly assumes perfect detection and includes potential sampling bias.  If these assumptions are deemed unsatisfactory, an analyst may choose to use alternative statistical methods that allow incorporation of uncertainty into the model \citep[see][]{dora14} or improve the training data (e.g. increase accuracy standards or collect additional records that include true absences).  The deer occurrence predictions may also be less reliable than the kangaroo predictions due to a smaller number of training observations.  Likewise, the lower statistical significance and wide confidence intervals in the marginal effects of traffic volume on collision likelihood for deer may warrant further analysis. The wide confidence intervals suggest that reducing vehicles on problematic road segments may not have the desired effect.  Moreover, reported or observed collision data are subject to the same limitations as species occurrence data (e.g. reporting biases or data deficiencies such as under-reporting of actual presences) and should be taken into account.
 
 As expected, collision risk for kangaroos and deer were similar in response to species occurrence, traffic volume and traffic speed.  Collision risk increased monotonically with increasing species occurrence for both kangaroos and deer, however, there was an order of magnitude greater change for kangaroos due to differences in ratios of collision to background observations.  Assuming species occurrence is of equal importance as the other collision model predictors, the smaller increase in collision risk for deer may be attributed to lower predictions of species occurrence arising from a mis-specified species distribution model \citep[see][]{guil15}.  Collision risk response to traffic volume was uni-modal for both species, however, the change in collision risk was an order of magnitude greater per unit of traffic volume for kangaroos.  This response shape can arise from different mechanisms.  First, there may be a potential observer bias meaning people are less likely to stop or report collisions on high-volume roads out of concern for their own safety or simply not seeing the dead animal.  Second, there may be road avoidance effects as some species are repelled by roads when traffic volume increases beyond a threshold value due to high noise loads or small crossing intervals \citep[see][]{vanl04,seil05,gagn07}.  Our results are consistent with other studies on behavioural responses to roads that include kangaroos and deer \citep[see][]{jaco16}.  At higher values of traffic speed, collision risk increased monotonically with increasing speed with a similar magnitude for both species (\Cref{cal_coll_effects:e,cal_coll_effects:f}).  Kangaroos were exposed to higher collision risk at lower traffic speeds than deer.  This may be due to Melbourne's suburbs expanding into natural kangaroo habitat, thereby increasing wildlife-vehicle collisions.
@@ -238,9 +238,9 @@ Our analysis suggests appropriate mitigation to reduce wildlife-vehicle collisio
 
 To establish occurrence probabilities for Eastern Grey kangaroos and Mule deer in their respective native geographic areas, we sourced presence records from two on-line, publicly-available databases; the Victorian Biodiversity Atlas and the Global Biodiversity Information Facility (see \Cref{apx:C} for more information). We obtained presence records that satisfied the following criteria: survey date between 1 January 2000 and 1 December 2015 and spatial coordinate certainty of 500 metres or less. As our occurrence models are correlative, we grouped the records based on identical spatial coordinates regardless of observation dates; thus, multiple observations were aggregated to single presence observations in space. For each of the two study species, we selected all spatially unique records of occurrence.  To reduce potential effects of spatial dependency, we thinned each species occurrence points to maintain a minimum separation distance of 1,000 metres between observations.  As we did not have access to recorded absence data, we generated 10,000 randomly sampled points across each study area to represent background data.  After omitting null values from sampling predictor variable grids, there were 700 presence and 9957 background points in the kangaroo occurrence modelling dataset and 366 presence and 9,986 background points in the deer occurrence modelling dataset.
 
-We developed species distribution models using tools and methods by \cite{elit08}. We chose Boosted Regression Trees \citep[BRT, see][]{frie02} as the statistical method. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors \citep{elit09}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of 0.005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions). Using the model fits, we predicted relative likelihood of occurrence to all grid cells for each species (\Cref{cal_occ_preds}).
+We developed species distribution models using tools and methods by \cite{elit08}. We chose Boosted Regression Trees \citep[BRT, see][]{frie02} as the statistical method. BRT fit complex non-linear relationships and automatically incorporate interaction effects between predictors \citep{elit09}. We selected a tree complexity of five (limit on number of terminal nodes per tree used to regulate interactions), a learning rate of 0.005 (contribution of each tree to the model), and bag fraction of 0.5 (decimal percent of data values used to cross validate the model predictions). Using the model fits, we predicted relative likelihood of occurrence to all grid cells for each species.
 
-We selected predictor variables that influenced the biology, behaviour, and characteristics of each species based on existing literature and ecological principles \citep[e.g.][]{coul10,ferg05}. Although each species is unique in its respective biology, we considered similar behaviours (sheltering and movements) and traits (foraging requirements) as the basis for choosing broad environmental variables that covered both species (\Cref{cal_vic_vars}).  As bioclimatic variables exhibit spatial gradients, we also included the spatial coordinates of grid cell centroids -- X (Easting) and Y (Northing) -- as predictor variables in the models.  This reduces biases in the influence of variables with high spatial correlation.  It should be noted that our framework allows any combinations of data deemed appropriate for species modelling, however, using the same environmental variables for both kangaroos and deer demonstrates the generality of our framework and allows a more direct comparison in the analysis.
+We selected predictor variables that influenced the biology, behaviour, and characteristics of each species based on existing literature and ecological principles \citep[e.g.][]{coul10,ferg05}. Although each species is unique in its respective biology, we considered similar behaviours (sheltering and movements) and traits (foraging requirements) as the basis for choosing broad environmental variables that covered both species (\Cref{cal_vic_vars}).
 
 \begin{table}[!h]
 \caption[Predictor variables used in species occurrence models for kangaroos and deer]{Predictor variables used in species occurrence models for kangaroos in Victoria and deer in California.}
@@ -261,7 +261,11 @@ Y 			&Y spatial coordinate of intersecting 1-km$^2$ grid centroid &$m$\\
 \label{cal_vic_vars}
 \end{table}
 
-Although the mechanism of gradient boosting (BRT in this case) does not assume independence in the dependent variable, we reviewed spatial trends in the model fit for each species by calculating \textit{Moran's I} from model residuals and spatial coordinates and plotting against distance in one kilometre bins (\Cref{cal_sac_occ}).
+As bioclimatic variables exhibit spatial gradients, we also included the spatial coordinates of grid cell centroids -- X (Easting) and Y (Northing) -- as predictor variables in the models.  This reduces biases in the influence of variables with high spatial correlation.  It should be noted that our framework allows any combinations of data deemed appropriate for species modelling, however, using the same environmental variables for both kangaroos and deer demonstrates the generality of our framework and allows a more direct comparison in the analysis.
+
+The models explained 26.7\% of the uncertainty in the recorded occurrences of kangaroos and 30.8\% of the uncertainty in the recorded occurrences of deer (deviance). Both models had good discriminative ability; the internal cross-validated ROC scores were 0.88 for kangaroos and 0.91 for deer.
+
+Although the mechanism of gradient boosting (BRT in this case) does not assume independence in the dependent variable, we reviewed spatial trends in the model fit for each species by calculating \textit{Moran's I} from model residuals and spatial coordinates and plotting against distance in one kilometre bins. Spatial patterning was evident in the species occurrence model residuals between one and nine kilometres for both deer and kangaroos (\Cref{cal_sac_occ}) and both species showed similar trends.  Kangaroos demonstrated higher values of spatial autocorrelation than deer at closer spatial distances.  The spatial covariates consistently ranked high among the most influential variables in both occurrence models (ranked 2nd and 3rd for kangaroos and 1st and 4th for deer).  The \textit{X} and \textit{Y} variables accounted for 27.8\% of the influence in the kangaroo model and 33.3\% in the deer model.
 
 \begin{figure*}[!h]
   \centering
@@ -270,31 +274,27 @@ Although the mechanism of gradient boosting (BRT in this case) does not assume i
   \label{cal_sac_occ}
 \end{figure*}
 
-The portions of the uncertainty in the distribution of the recorded occurrences of each species explained by the predictor variables (deviance) in the models were 26.7\% for kangaroos and 30.8\% for deer. Both models had good discriminative ability; the internal cross-validated ROC scores were 0.88 for kangaroos and 0.91 for deer.
-
 All of the environmental variables were influential for both species. The three most influential non-spatial predictors were slope (14.9\% relative influence), artificial light (13.5\%) and vegetation greenness (9.5\%) for deer and artificial light (16.5\%), elevation (12.5\%) and vegetation greenness (10.5\%) for kangaroos (\Cref{cal_occ_effects}).  Kangaroo occurrence showed a potential bi-modal response to artificial light with large peaks at both 25 and 55 units of relative light intensity -- the scale is unitless and relative to a range between 0 (no light) and 63 (brightest spot detected across all artificial light visible on earth).  Deer occurrence did not have the same response shape, rather, there was a general increasing trend in occurrence probability with increasing light intensity and a sharp peak between 45 and 50 units. Kangaroo occurrence was higher at low levels of elevations ($<$500m) with a peak at approximately 200m.  Deer occurrence increased with higher slope aspects.
 
-\begin{figure*}[!t]
+\begin{figure*}[!h]
   \captionsetup[subfloat]{farskip=-2pt,nearskip=-2pt}
   \centering
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:a}\includegraphics[width=0.4\textwidth]{04_vic_light.png}}
-  \subfloat[Mule Deer]{\label{cal_occ_effects:b}\includegraphics[width=0.4\textwidth]{04_cal_slope.png}}\\
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:c}\includegraphics[width=0.4\textwidth]{04_vic_elev.png}}
-  \subfloat[Mule Deer]{\label{cal_occ_effects:d}\includegraphics[width=0.4\textwidth]{04_cal_light.png}}\\
-  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:e}\includegraphics[width=0.4\textwidth]{04_vic_green.png}}
-  \subfloat[Mule Deer]{\label{cal_occ_effects:f}\includegraphics[width=0.4\textwidth]{04_cal_green.png}}
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:a}\includegraphics[width=0.45\textwidth]{04_vic_light.png}}
+  \subfloat[Mule Deer]{\label{cal_occ_effects:b}\includegraphics[width=0.45\textwidth]{04_cal_slope.png}}\\
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:c}\includegraphics[width=0.45\textwidth]{04_vic_elev.png}}
+  \subfloat[Mule Deer]{\label{cal_occ_effects:d}\includegraphics[width=0.45\textwidth]{04_cal_light.png}}\\
+  \subfloat[Eastern Grey Kangaroos]{\label{cal_occ_effects:e}\includegraphics[width=0.45\textwidth]{04_vic_green.png}}
+  \subfloat[Mule Deer]{\label{cal_occ_effects:f}\includegraphics[width=0.45\textwidth]{04_cal_green.png}}
   \caption[Most significant predictor variables on relative likelihood of occurrence for kangaroos and deer]{Marginal effects of the three most significant predictor variables on the relative likelihood of occurrence for kangaroos and deer.}
   \label{cal_occ_effects}
 \end{figure*}
-
-Spatial patterning was evident in the species occurrence model residuals between one and nine kilometres for both deer and kangaroos (\Cref{cal_sac_occ}) and both species showed similar trends.  Kangaroos demonstrated higher values of spatial autocorrelation than deer at closer spatial distances.  The spatial covariates consistently ranked high among the most influential variables in both occurrence models (ranked 2nd and 3rd for kangaroos and 1st and 4th for deer).  The \textit{X} and \textit{Y} variables accounted for 27.8\% of the influence in the kangaroo model and 33.3\% in the deer model.
 
 The species occurrence models produced ecologically-reasonable predictions about the relative likelihood of species presence across each study area (\Cref{cal_occ_preds}). Eastern Grey kangaroo occurrence was predicted to be lower in north-eastern Victoria which is consistent with historical knowledge.  Predictions of deer occurrence were higher in areas of topographically-varied natural space (parks and undeveloped) around the San Francisco Bay Area which is also consistent with recorded observations of deer.  However, lower relative occurrence was predicted in the eastern portion of California (Sierra Nevada foothills) where deer are also known to be present \citep{kuce88}.
 
 \begin{figure*}[!h]
   \centering
-  \includegraphics[scale=.45]{04_egk_preds_vic.png}\\
-  \includegraphics[scale=.45]{04_deer_preds_cal.png}
+  \includegraphics[scale=.47]{04_egk_preds_vic.png}\\
+  \includegraphics[scale=.47]{04_deer_preds_cal.png}
   \caption[Predicted relative likelihood of occurrence for kangaroos in Victoria and deer in central California]{Predicted relative likelihood of occurrence for kangaroos in Victoria (above) and deer in central California (below). Darker shading indicates higher relative likelihood of occurrence. Study boundaries are shown as dashed lines. Victoria: extent ($-$58000E, 5661000N) x (764000E, 6224000N); projected to GDA94 MGA zone 55; 462,786 cells. California: extent (445000E, 3962000N) x (1165000E, 4329000N); projected to NAD83 UTM zone 10N; 264,240 cells.}
   \label{cal_occ_preds}
 \end{figure*}
