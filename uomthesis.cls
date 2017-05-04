@@ -373,7 +373,16 @@ has not been submitted in whole or part for a degree in any university.
 %\usepackage[subtle]{savetrees}
 
 \setlength{\textfloatsep}{10pt plus 1.0pt minus 4.0pt}
+\setlength{\intextsep}{10pt plus 2.0pt minus 2.0pt}
 
+% enable images to be overlayed on top of one another
 \usepackage{stackengine}
 
+% improves float placements
 \usepackage{float}
+
+%\clubpenalty = 10000
+%\widowpenalty = 10000
+%\displaywidowpenalty = 10000
+
+%\raggedbottom
