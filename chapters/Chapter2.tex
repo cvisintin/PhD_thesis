@@ -100,7 +100,7 @@ To estimate occurrence of grey kangaroos, we used Boosted Regression Trees \cite
 \begin{table}[!t]
 \caption[Variables used in statistical models]{Variables used in statistical models.}
 \centering
-\begin{tabularx}{0.9\textwidth}{llY} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}clY@{}} \toprule
 Model &Variable    &Definition\\ \midrule 
 \multirow{8}{*}{\rotatebox[origin=c]{90}{Species Occurrence}}   &KANG        &presences and pseudo-absences of Eastern Grey Kangaroos\\
            		 &ELEV        &elevation of terrain in meters above sea level\\
@@ -133,7 +133,7 @@ Model &Variable    &Definition\\ \midrule
 \label{egk_variables}
 \end{table}
 
-\begin{figure*}[!t]
+\begin{figure*}[!b]
   \centering
   \includegraphics[scale=1]{egk_fig02b.png}
   \caption[Predicted relative likelihood of grey kangaroo occurrence in Victoria]{Predicted relative likelihood of grey kangaroo presence in study area. Darker shades indicate higher relative probabilities of occurrence (mean: 0.057; range: 0.002--0.986).}
@@ -182,7 +182,7 @@ The species occurrence model predicted the relative likelihood of kangaroo occur
 \begin{table}[!t]
 \caption[Statistical models used in the conceptual framework]{Statistical models used in the conceptual framework. Deviance explained is the percentage of variance in the data explained by the model. The receiver operator characteristic (ROC) is the ability of the model to correctly identify collisions in independent datasets (1 being perfect, and 0.5 no better than random).}
 \centering
-\begin{tabularx}{0.9\textwidth}{lYll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lYll@{}} \toprule
 Model Type		    &Model &Deviance Explained	&ROC\\ \midrule 
 Species Occurrence  &\scriptsize{$\Pr(\text{KANG}=1) \approx \mathrm{logit}^{-1}(\beta_0 + \beta_1\text{ELEV} + \beta_2\text{GREEN} + \beta_3\text{LIGHT} + \beta_4\text{MNTEMPWQ} + \beta_5\text{PRECDM} + \beta_6\text{SLOPE} + \beta_7\text{TREEDENS})$}        &30.4\%		&0.88\\
            &                                                                                &&\\
@@ -234,7 +234,7 @@ The collision model explained 23.7\% of the deviance (\Cref{egk_models}). Using 
 \begin{table}[!h]
 \caption[Summary of collision and alternative collision models]{Summary of collision and alternative collision model fits. Coefficients and significance of variables are shown with relative contribution to model fit. Highly significant variables are marked with an asterisk. Contribution of variables to reduction in deviance (via analysis of variance) are expressed as decimal percentages (ANOVA).}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllllll@{}} \toprule
 Model Type &Variable         &Coefficient &Std. Error			&Wald-$\chi^2$ &$\PRZ$ &ANOVA\\ \midrule 
 Collision  				&\emph{Intercept}	& $-$12.82			& 0.6635   	& $-$19.33	&\TL 2e$^{-16}$*	& --- \\
            				& EGK				& 0.6583			& 0.0206   	& 32.01		&\TL 2e$^{-16}$*	& 0.7268 \\
@@ -263,9 +263,9 @@ Our alternative collision model (all sub-model predictor variables combined in a
 
 \begin{figure*}[!h]
   \centering
-  \subfloat[]{\label{egk_effects:a}\includegraphics[height=5.2cm]{egk_fig06a.png}}
-  \subfloat[]{\label{egk_effects:b}\includegraphics[height=5.2cm]{egk_fig06b2.png}}
-  \subfloat[]{\label{egk_effects:c}\includegraphics[height=5.2cm]{egk_fig06c2.png}}
+  \subfloat[]{\label{egk_effects:a}\includegraphics[height=5.3cm]{egk_fig06a.png}}
+  \subfloat[]{\label{egk_effects:b}\includegraphics[height=5.3cm]{egk_fig06b2.png}}
+  \subfloat[]{\label{egk_effects:c}\includegraphics[height=5.3cm]{egk_fig06c2.png}}
   \caption[Effects of predictor variables on relative likelihood of collision]{Effects of predictor variables on relative likelihood of collision. EGK is the relative likelihood of kangaroo occurrence. TVOL is the predicted daily traffic volume in vehicles day$^{-1}$. TSPD is the predicted traffic speed in kilometres hour$^{-1}$.}
   \label{egk_effects}
 \end{figure*}

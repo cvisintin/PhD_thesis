@@ -63,7 +63,7 @@ Our study analyses risk of WVC over approximately 150,000 kilometres of sealed r
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[scale=.5]{06_study_area.png}
+  \includegraphics[scale=.5]{06_study_area2.png}
   \caption[Study area for model validation]{Study area (state of Victoria in south-east Australia) showing all sealed road segments as light gray lines. The inset shows the geographic location of Victoria in Australia. The darker shaded region is the City of Bendigo and the lighter shaded region is the VicRoads Western District. Major towns ($>$100,000 residents) are starred and labelled accordingly.}
   \label{val_study_area}
 \end{figure*}
@@ -97,7 +97,7 @@ To test model sensitivity to different combinations of data, we validated the pr
 \begin{table}[!t]
 \caption[Datasets used to fit collision models and validate predictions]{Datasets used to fit models and validate predictions.}
 \centering
-\begin{tabularx}{0.9\textwidth}{YYYlYYYY} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}YYYlYYYY@{}} \toprule
 Source						&Data Code	&Type	&Records	&Reporting Method	&Spatial Unit	&Spatial Coverage	&Temporal Coverage \\ \midrule
 
 City of Bendigo		&b		&Public municipality			&395		&Public reported carcasses			&Road segment		&City (3,001 km$^2$)	&8 years: 2007--2014 \\
@@ -140,7 +140,7 @@ All three models fitted to independent road segment-based datasets (City of Bend
 \begin{table}[!h]
 \caption[Summary of model fits using original and validation data]{Summary of model fits using original and validation data in solidarity (i.e. no combinations of data are used). Deviance explained is the percentage of unexplained variation in the data reduced by the model. Highly significant variables (p$<$.0001) are marked with asterisks.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllYllY} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllYllY@{}} \toprule
 Dataset & Variable & Coefficient & Standard Error & $Z\text{-value}$ & $\PRZ$ & Deviance Explained \\ 
   \midrule
 Wildlife Victoria & Intercept & $-$42.30 & 1.07 & $-$39.66 & $<$.0001* & 11.83 \\ 
@@ -170,9 +170,9 @@ Wildlife Victoria & Intercept & $-$42.30 & 1.07 & $-$39.66 & $<$.0001* & 11.83 \
 
 \begin{figure*}[!t]
   \centering
-  \subfloat[]{\label{val_effects:a}\includegraphics[height=5.5cm]{06_occ.png}}\hfill
-  \subfloat[]{\label{val_effects:b}\includegraphics[trim={0.5cm 0 0 0},clip,height=5.5cm]{06_tvol.png}}\hfill
-  \subfloat[]{\label{val_effects:c}\includegraphics[trim={0.5cm 0 0 0},clip,height=5.5cm]{06_tspd.png}}
+  \subfloat[]{\label{val_effects:a}\includegraphics[height=5.75cm]{06_occ.png}}\hfill
+  \subfloat[]{\label{val_effects:b}\includegraphics[trim={0.5cm 0 0 0},clip,height=5.75cm]{06_tvol.png}}\hfill
+  \subfloat[]{\label{val_effects:c}\includegraphics[trim={0.5cm 0 0 0},clip,height=5.75cm]{06_tspd.png}}
   \caption[Marginal effects of predictor variables on relative likelihood of collision using independent datasets to train models]{Marginal effects of each predictor on relative likelihood of collisions. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Note, collision likelihoods have been rescaled for comparison as all datasets have different numbers of data points and, thus, vary in their respective ranges of predicted values.}
   \label{val_effects}
 \end{figure*}
@@ -182,7 +182,7 @@ Most of the marginal effects of the predictors on collision risk had similar sha
 \begin{table}[!t]
 \caption[Discrimination ability of models using all combinations of independent data]{Discrimination ability of models expressed as receiver operator characteristic scores. Data combinations used to model and make predictions are shown as column headings. Data used to validate model predictions are shown as row headings.}
 \centering
-\begin{tabularx}{0.9\textwidth}{YYYYYYYY} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}YYYYYYYY@{}} \toprule
 	& Wildlife Victoria
 (original) & original + City of Bendigo & original + Western District & original + Crashstats & original + City of Bendigo + Western District & original + Western District + Crashstats & original + Crashstats + City of Bendigo \\ 
   \midrule
@@ -201,13 +201,13 @@ There was no observable trend in calibration when validating model predictions m
 \begin{figure*}[!h]
   \centering
   \includegraphics[width=0.9\textwidth]{06_calib.png}
-  \caption[Model calibration for all combinations of original and independent data]{Model performance for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of original and independent data]{Model calibration for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
-  \includegraphics[width=0.6\textwidth]{06_calib2.png}
+  \includegraphics[width=0.75\textwidth]{06_calib2.png}
   \caption[Comparisons of observations versus model predictions for all combinations of original and independent data]{Comparisons of observations versus model predictions for all combinations of data. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; characters after the hyphen indicate the data used for validation.}
   \label{val_calib2}
 \end{figure*}
@@ -217,14 +217,14 @@ Using the town-level independent data (iag) to validate models resulted in a sli
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_calib_iag.png}
-  \caption[Model calibration for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same town-level data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
+  \caption[Model calibration for all combinations of training data using the town-level independent data for validation]{Model calibration for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. Characters before the hyphen represent the datasets used for training the model and making predictions; the same town-level data (iag) were used for all validation. Estimated calibration coefficients are shown as dots with bars representing standard errors.}
   \label{val_calib_iag}
 \end{figure*}
 
 \begin{figure*}[!t]
   \centering
   \includegraphics[width=0.9\textwidth]{06_dev_iag.png}
-  \caption[Model discrimination ability for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
+  \caption[Model performance for all combinations of training data using the town-level independent data for validation]{Model performance for all combinations of data using the town-level independent data (iag) for validation. Codes for data combinations are: `o'--Original (Wildlife Victoria); `b'--City of Bendigo; `w'--Western District; `c'--Crashstats. The percent of variation in the training data explained by the model (deviance) are shown as dots.}
   \label{val_calib_dev}
 \end{figure*}
 

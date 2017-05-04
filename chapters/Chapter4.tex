@@ -71,7 +71,7 @@ Traffic volume and speed values for all road segments in both Victoria and Calif
 \begin{table}[!h]
 \caption[Performance of traffic models]{Performance of traffic models. We used Random Forest regression with 500 trees and two variables tried at each split. The traffic volume models used the variables Distance to Development, Distance to Highway, Population Density, Road Class and Road Density; the traffic speed models used Road Class and Road Density. $R^2$ reports the variation in the training data explained by the model. Training observations are the total data points used to train each model.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lllll@{}} \toprule
 Study Area         	&Predicted Variable	& $R^2$	& Training observations		& Most influential variable \\ \midrule 
 Victoria		 	& Traffic Volume	& 0.54 	& 3,174 					& Road Class \\ 
 					& Traffic Speed		& 0.59	& 42,438 					& Road Class \\
@@ -141,7 +141,7 @@ Traffic speed and species occurrence were highly significant variables for kanga
 \begin{table}[!h]
 \caption[Summary of collision models for kangaroos and deer]{Summary of collision models for kangaroos and deer.  Highly significant variables (p$<$.001) are marked with asterisks.}
 \centering
-\begin{tabularx}{0.9\textwidth}{llllll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lXXXXX@{}} \toprule
 Species					&Variable		&Coefficient	&Std. Error		&Z-value	&Pr(Z) \\ \midrule
 Eastern Grey Kangaroo	&Intercept		&$-$42.30			&1.07		&$-$39.66	&$<$1.0x10$^{-14}$* \\
 						&EGK			&0.70			&0.02			&47.77		&$<$1.0x10$^{-14}$* \\
@@ -168,7 +168,7 @@ For each species, the models had similarly high calibration statistics when inde
 \begin{table}[!h]
 \caption[Statistical model performance for kangaroos and deer]{Statistical model performance metrics shown as percent reduction of deviance on the null model using training data and receiver operating characteristic (ROC) scores using independent validation data. Regression coefficients indicate model calibration when using the independent validation data; a coefficient of `one' suggests a perfectly calibrated model.  All regression coefficients were highly significant (p$<$.001).}
 \centering
-\begin{tabularx}{0.9\textwidth}{lll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lXX@{}} \toprule
                         	&Eastern Grey Kangaroo			&Mule Deer \\ \midrule 
 \% Reduction in Deviance 	& 11.8							& 18.6  \\ 
 ROC Score 					& 0.79							& 0.88	\\ 
@@ -184,7 +184,8 @@ The predictions for relative collision risk across all road segments were plausi
 \begin{table}[!h]
 \caption[Ten highest ranked road segments for predicted collision risk for kangaroos and deer]{Ten highest ranked road segments for predicted collision risk for kangaroos and deer. Road segments are listed by unique identification (UID), name, and northing and easting coordinates of the centroid (projected to GDA94 MGA zone 55 for Victoria and NAD83 UTM zone 10N for California). Collision risk is relative to all of the road segments in the respective study area and expressed as the expected annual number of collisions per kilometre on the segment.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lllll} \toprule
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{0.9\textwidth}{@{}llllX@{}} \toprule
            & UID    & Name            & Collision Risk & X and Y Coordinates                \\ \midrule
 \multirow{10}{*}{\rotatebox[origin=c]{90}{Victoria (kangaroos)}}
 		   & 407754 & Hume Highway    & 0.1444         & 403963.159042543, 5951629.83565613 \\
@@ -245,7 +246,7 @@ We selected predictor variables that influenced the biology, behaviour, and char
 \begin{table}[!h]
 \caption[Predictor variables used in species occurrence models for kangaroos and deer]{Predictor variables used in species occurrence models for kangaroos in Victoria and deer in California.}
 \centering
-\begin{tabularx}{0.9\textwidth}{lll} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}lll@{}} \toprule
 Variable 	&Description 												&Units \\ \midrule 
 ELEV 		&Elevation of terrain above sea level 						&$m$\\
 GREEN 		&Mean seasonal change in vegetation greenness (relative) 	&---\\

@@ -5,7 +5,7 @@
 
 In this thesis, I presented a modelling framework for determining wildlife-vehicle collision risk that can be used across taxa and locations. Drawing on well-established concepts of road ecology and risk theory, this conceptual framework is the first of its kind to address the disparate factors that contribute to wildlife mortality on roads. \cite{clev15} has recently identified this critical need in the discipline of road ecology. Perhaps the most useful extension to previous collision modelling work is the grouping of predictors that influence wildlife-vehicle collision risk into two categories that more directly relate to management activities. Most mitigation measures used by transport managers control either animal presence on a transportation network (e.g. fencing) or the operation of vehicles (e.g. speed) \citep{glis09}.  Using species occurrence to represent exposure and traffic volume/speed to represent hazard creates variables that can be more readily interpreted (see \Cref{egk_framework}). Further, all other predictors used in past wildlife-vehicle collision modelling may be incorporated into the sub-models in each respective group, thereby reducing uncertainty about potentially confounding effects. From this simplified conceptual framework, managers can compare the relative influences of exposure and hazard, as well as the uncertainties of each one. If costs of mitigation are known for each category, the conceptual framework is useful for performing cost-benefit analyses -- this was explored in \Cref{sec:train}.
 
-Another useful development, applicable to previous work that uses generalised linear regression to model wildlife-vehicle collisions, is the choice of link function. This thesis is the first study to employ the use of a complementary log-log (cloglog) link function for modelling wildlife-vehicle collision events. This is important because the choice of a link function has theoretical underpinnings which are normally based on assumptions about how events arise in a system. I used the cloglog link as it assumes that collisions arise from a Poisson process which is reasonable for collision events occurring over a domain bounded by time. Another attractive feature of the cloglog is that it is not influenced by the choice of sampling area and model predictions can be re-scaled because the cloglog is based on predicting the rate of collision (per unit time, and per unit area). This made it possible to compare parameter estimates for models using different spatial scales. In contrast to several other studies that use a logit link \citep[i.e. logistic regression, see ][]{seo15,gund98} which imply strong spatial assumptions (e.g. the choice of sampling area does not influence estimates of model parameters and that model results can be compared between surveys with different spatial scales), this thesis demonstrated a robust and flexible modelling method that will enhance new and existing road ecology work. Moreover, these modelling methods are also applicable to other research involving ecological risk as discussed further in \Cref{other_threats}.
+Another useful development, applicable to previous work that uses generalised linear regression to model wildlife-vehicle collisions, is the choice of link function. Previous studies have used a logit link \citep[i.e. logistic regression, see ][]{seo15,gund98}, meaning their parameters and predictions cannot be applied to different spatial scales. This thesis is the first study to employ the use of a complementary log-log (cloglog) link function for modelling wildlife-vehicle collision events. This is important because the choice of a link function has theoretical underpinnings which are normally based on assumptions about how events arise in a system. I used the cloglog link as it assumes that collisions arise from a Poisson process which is reasonable for collision events occurring over a domain bounded by time. Another attractive feature of the cloglog is that it is not influenced by the spatial scale of the observations (e.g. road or track length) as it considers the rate of collision events per unit area or time. Model predictions can therefore be re-scaled to compare models fitted to different datasets. In this thesis, it was possible to compare parameter estimates for different models as they were invariant to the spatial scale of sampling (i.e., the slope parameters were unaffected by the sampling area, and the intercept parameters differed by the log of the ratio of the two areas). This demonstrates a robust and flexible modelling method that will enhance new and existing road ecology work. Moreover, these modelling methods are also applicable to other research involving ecological risk as discussed further in \Cref{other_threats}.
 
 Beyond demonstrating the broad utility of the conceptual framework, my thesis also highlighted three key results. First, higher speeds of moving vehicles was a considerable hazard for wildlife having access to roads or railways. \Cref{sec:6sp,sec:cal} demonstrated similar patterns of collision risk with respect to traffic speed for seven mammals. Nearly all species had rising marginal increases in risk with increasing speed. Collision risk also increased exponentially with increasing train speed (\Cref{sec:train}), suggesting this phenomenon is not isolated to road networks. These results were consistent with the broader literature on wildlife-vehicle collision analysis, and also other collision analyses involving pedestrians and vehicles \citep{rosen09} and only vehicles \citep{liu97}. As mitigation to reduce animal proximity to, or exclude entirely from, transportation networks is costly \citep{huij09}, these results suggest that enforced speed reductions may be a more viable option for reducing collision risk; albeit not necessarily ideal for motorists wanting quick travel times. The conceptual framework I have developed in this thesis is able to assist managers to target specific areas for speed reductions and also simulate the effects from these proposed mitigations. Further, the predictions of risk from the conceptual framework may be used by technology to influence motorist behaviour (e.g. voluntary speed reductions) in areas, or at times, of high risk.
 
@@ -17,12 +17,12 @@ Uncertainty is one reason that modellers who analyse collisions may be reluctant
   \centering
 	\begin{minipage}[t]{.9\textwidth}
     	\centering
-    	\subfloat[Eastern Grey Kangaroo]{\label{temporal_all:a}\includegraphics[width=.45\textwidth]{egk_coll_hour.png}}\hspace{.05\textwidth}
-    	\subfloat[Common Brushtail Possum]{\label{temporal_all:b}\includegraphics[width=.45\textwidth]{btp_coll_hour.png}}\\ 
-    	\subfloat[Common Ringtail Possum]{\label{temporal_all:c}\includegraphics[width=.45\textwidth]{rtp_coll_hour.png}}\hspace{.05\textwidth}
-    	\subfloat[Swamp Wallaby]{\label{temporal_all:d}\includegraphics[width=.45\textwidth]{bsw_coll_hour.png}}\\
-    	\subfloat[Wombat]{\label{temporal_all:e}\includegraphics[width=.45\textwidth]{wom_coll_hour.png}}\hspace{.05\textwidth}
-    	\subfloat[Koala]{\label{temporal_all:f}\includegraphics[width=.45\textwidth]{koa_coll_hour.png}}
+    	\subfloat[Eastern Grey Kangaroo]{\label{temporal_all:a}\includegraphics[height=6cm]{egk_coll_hour.png}}\hspace{.5cm}
+    	\subfloat[Common Brushtail Possum]{\label{temporal_all:b}\includegraphics[height=6cm]{btp_coll_hour2.png}}\\ 
+    	\subfloat[Common Ringtail Possum]{\label{temporal_all:c}\includegraphics[height=6cm]{rtp_coll_hour.png}}\hspace{.5cm}
+    	\subfloat[Swamp Wallaby]{\label{temporal_all:d}\includegraphics[height=6cm]{bsw_coll_hour2.png}}\\
+    	\subfloat[Wombat]{\label{temporal_all:e}\includegraphics[height=6cm]{wom_coll_hour.png}}\hspace{.5cm}
+    	\subfloat[Koala]{\label{temporal_all:f}\includegraphics[height=6cm]{koa_coll_hour2.png}}
     \end{minipage}
   \caption[Total collisions by hour for six mammal species]{Histograms showing total collisions (reported between the years 2010 and 2015) by hour for six Australian mammal species. Note, records indicate the time that wildlife-vehicle collision events were reported and may not accurately reflect actual times due to reporting lags.}
   \label{temporal_all}
@@ -48,13 +48,13 @@ Conveying spatial information is an effective communication tool \citep{king00};
 
 \section{Limitations of models and caveats}
 
-Models are simplified abstractions of reality and therefore subject to error \citep{burg05}. Models are also useful as conceptual tools for organising complex problems and supplementing decision-making. However, care must taken when using models; although they may be internally logical, models are only as good as the assumptions, data, and specifications they are based on. Management decisions based on inferences from a mis-specified model or a model trained on poor data can have negative consequences (e.g. ineffective outcomes or costs). \cite{levi66} asserts that models can only be built to maximise two of three characteristics, namely generality, realism, and/or precision. The primary intent of the conceptual model framework introduced in this thesis was to maximise generality, or applicability to any ecological issue involving threats to wildlife (from humans and related hazards, e.g. use of vehicles). The model also exhibits realism in its theoretical treatment of collisions resulting from the coincidence of animals and moving vehicles in space and time. Much of the literature in road ecology that focuses on collision modelling operates on this assumption \citep{form03,guns11}, but does not make this explicit in the modelling methods. Therefore, it is difficult to draw inferences from the models to directly support management. High collision risk may be predicted with variables that are not logically related to collisions, such as tree cover. Further, by characterising risk as the combination of distinct components, uncertainty is easier to incorporate and analyse in models. 
+Models are simplified abstractions of reality and therefore subject to error \citep{burg05}. Models are also useful as conceptual tools for organising complex problems and supplementing decision-making. However, care must taken when using models; although they may be internally logical, models are only as good as the assumptions, data, and specifications they are based on. Management decisions based on inferences from a mis-specified model or a model trained on poor data can have negative consequences (e.g. ineffective outcomes or costs). \cite{levi66} asserts that models can only be built to maximise two of three characteristics, namely generality, realism, and/or precision. The primary intent of the conceptual model framework introduced in this thesis was to maximise generality, or applicability to any ecological issue involving threats to wildlife (from humans and related hazards, such as use of vehicles). The model also exhibits realism in its theoretical treatment of collisions resulting from the coincidence of animals and moving vehicles in space and time. Much of the literature in road ecology that focuses on collision modelling operates on this assumption \citep{form03,guns11}, but does not make this explicit in the modelling methods. Therefore, it is difficult to draw inferences from the models to directly support management. For example, high collision risk may be predicted with variables that are not logically related to collisions, such as tree cover. 
 
-One strategy to explore model uncertainty is to perform collision modelling analyses using Bayesian inference, which allows prior information to be incorporated into a model \citep{mcca07}. Prior information (or prior probabilities) weight the influence of data in a model (likelihood) to produce posterior probabilities. With respect to the work presented in the thesis, this may involve using expert opinion to provide judgement on the reliability of the predictions from the sub-models. For example, I had experts in macropod ecology examine the distribution of kangaroos predicted by the species occurrence model. Although there were some minor discrepancies, the overall patterns were realistic. However, since managers may base decisions about mitigation on the relative strength of exposure (animal presence) or hazard (vehicle movement), it is important to represent the relative confidence about each predictor in the model. Bayesian analysis also estimates all model parameters (coefficients and predicted values) as probability distributions thereby allowing further scrutiny of uncertainty. Credible intervals around predictions allow managers to make decisions from either a `risk averse' or `risk inclined' standpoint by using higher or lower values, respectively. 
+One strategy to explore model uncertainty is to perform collision modelling analyses using Bayesian inference, which allows prior information to be incorporated into a model \citep{mcca07}. In Bayesian analyses, posterior probability distributions represent the uncertainty that remains after combining prior information with new data. With respect to the work presented in the thesis, this may involve using expert-derived species distribution data as priors in the species occurrence models \citep[see ][]{murr09} or expert judgements on the reliability of the predictions from the occurrence models as priors in the collision model. For example, I had experts in macropod ecology examine the distribution of kangaroos predicted by the species occurrence model. Although there were some minor discrepancies, the overall patterns were realistic; but this information was not included in the final modelling. Since managers may base decisions about mitigation on the relative strength of exposure (animal presence) or hazard (vehicle movement), it may be useful to incorporate relative confidence, based on both prior information and the data, into model predictions and decisions that can reflect different risk tolerances.
 
 The data used to train the collision model in this thesis are referred to as `presence-only' data which require special assumptions and treatments \citep{wart13}. True prevalence is not able to be inferred from presence-only data without a systematic and exhaustive search of the entire spatial domain with 100\% detectability -- if absences were recorded, this would become `presence-absence' data \citep[see][]{hast13}. Thus, the conceptual model in this thesis makes assumptions about prevalence based on the selection of background data (used to represent road segments where no collisions occurred). In this respect, predictions from the models are relative to reporting rates, as opposed to absolute.  In \Cref{sec:egk}, I randomly selected background data that was equivalent to twice that of reported collisions resulting in predictions that represented a higher relative rate of collisions on road segments. Although this is still informative for ranking road segments based on relative risk, the risk is not directly comparable to total reported collisions across the entire network. In contrast, \Cref{sec:6sp,sec:cal,sec:train,sec:val} all use the entire set of linear segments without reported collisions as background sets. In these cases, the models will predict reported collision rates, but actual collision rates will be higher, depending on the degree to which collisions remain unreported. A particular special case may be in \Cref{sec:train} where the reporting rates were assumed to be quite good and, therefore, the modelling dataset may better reflect of true collision rates.
 
-Another potential issue of presence-only data is sample selection bias which refers to the manner in which data are collected and reported \citep{phil09}. In a spatial context, this may bias model predictions by over-representing and under-representing collision risk due to patterns of reporting, such as proximity to urban areas. Recent work in species distribution modelling has suggested the utility of spatial and temporal cross-validation for improving model performance \citep{weng12,robe17}. These methods have important implications for reducing bias and ensuring the generality of model predictions. The work in this thesis does not incorporate these methods, however, doing so would improve the analysis and resulting outputs.\vfill
+Another potential issue of presence-only data is sample selection bias which refers to the manner in which data are collected and reported \citep{phil09}. In a spatial context, this may bias model predictions by over-representing and under-representing collision risk due to patterns of reporting, such as proximity to urban areas. Recent work in species distribution modelling has suggested the utility of spatial and temporal cross-validation for improving model performance \citep{weng12,robe17}. These methods have important implications for reducing bias and ensuring the generality of model predictions. The work in this thesis does not incorporate these methods, however, doing so would improve the analysis and resulting outputs.
 
 \section{Novel future research}
 
@@ -71,33 +71,35 @@ Several concepts in wildlife-vehicle collision modelling parallel those used in 
 The conceptual framework developed in this thesis may be used to analyse risk for other human-wildlife interactions, thereby increasing its potential contribution to other environmental research questions. Its modular nature allows analysis of other adverse risks to wildlife (\Cref{gen_framework}) by replacing the hazard component with an alternative threatening process of interest, such as attacks from introduced predators or human poaching. Further, the exposure of species to hazards may be represented by data generated by alternative models; for example, movement patterns from connectivity analyses \citep[e.g.][]{mcra08} or local abundances from population viability analyses \citep[e.g.][]{beis02}. \cite{baud13} used a similar approach to determine collision risk between seafaring vessels and manatees, although did not emphasise the generality in their approach.
 
 \begin{figure*}[!h]
+  \vspace{0.75cm}
   \centering
-  	\begin{minipage}[t][][b]{.13\textwidth}
+  	\begin{minipage}[t][][b]{.15\textwidth}
     	\centering
     	\includegraphics[width=\textwidth]{MODELS_connectivity.png}\\
     	\includegraphics[width=\textwidth]{MODELS_population.png}   	
     \end{minipage}
     \hspace{.05\textwidth}
-  	\begin{minipage}{.38\textwidth}
+  	\begin{minipage}{.45\textwidth}
     	\centering
     	\includegraphics[width=\textwidth]{MODELS.png}
     \end{minipage}
     \hspace{.05\textwidth}
-  	\begin{minipage}[t][][b]{.13\textwidth}
+  	\begin{minipage}[t][][b]{.15\textwidth}
     	\centering
     	\includegraphics[width=\textwidth]{MODELS_predators.png}\\
     	\includegraphics[width=\textwidth]{MODELS_infrastructure.png}
     \end{minipage}    	   	   
   \caption[Conceptual risk model framework for other threats]{Conceptual risk model framework with other sub-models or data sources. The modular framework allows analyses of other risks to wildlife by replacing the \textit{hazard} or \textit{exposure} components with alternative processes (or data) of interest.}
   \label{gen_framework}
+  \vspace{0.75cm}
 \end{figure*}
 
 The modularity of the conceptual framework in this thesis allows possibilities for future research projects. Any human-wildlife conflict can be conceptually framed to analyse risks to wildlife from humans, risks to humans from wildlife, or both. Examples from \Cref{hmi_diagram} in \Cref{sec:intro}, and others, are listed in \Cref{hmi_risk}.
 
-\begin{table}[h]
+\begin{table}[t]
 \caption[Examples of human-wildlife conflicts and conceptualised parameters]{Examples of human-wildlife conflicts and conceptualised parameters. Each situation has a description of risk, exposure, and hazard (corresponding to data) for use in the conceptual model introduced in \Cref{sec:egk}.}
 \centering
-\begin{tabularx}{0.9\textwidth}{YYYY} \toprule
+\begin{tabularx}{0.9\textwidth}{@{}YYYY@{}} \toprule
 Human-wildlife Conflict					&Risk			&Exposure		&Hazard \\ \midrule
 Elephants raiding agricultural crops	&Damaged crops	&Spatial extent of crops that elephants may target	&Spatial distribution and movements of elephants \\
 &&& \\
@@ -119,6 +121,7 @@ Bear incursions into homes				&Property damage	&Unsecured homes	&Spatial distrib
 \bottomrule
 \end{tabularx}
 \label{hmi_risk}
+\vspace{1.9cm}
 \end{table}
 
 \section{Potential applications of research}
@@ -133,7 +136,7 @@ I propose a centralised data system that not only catalogues collision records a
 
 \begin{figure*}[!h]
   \centering
-  \includegraphics[width=\textwidth]{interfacing.pdf}
+  \includegraphics[width=0.9\textwidth]{interfacing.pdf}
   \caption[Centralised data collection and reporting system]{Schematic diagram of centralised data collection and reporting system for wildlife-vehicle collisions. Arrows indicate directions of information flow. Additional collection of collisions data (in blue) is by both citizen scientists (top) and professionals (bottom).}
   \label{wvc_server}
 \end{figure*}
@@ -146,10 +149,12 @@ In developed nations, technology pervades nearly every aspect of human lives. Ev
 Decision support tools are used by managers in a wide range of fields \citep{shim02}. \Cref{wvc_tool} shows an unpublished web-based interface to the model framework presented in this thesis. Developed as a proof of concept, I wrapped the modelling methods with a graphical user interface (GUI) that allows managers to change values of species occurrence, traffic volume, and traffic speed on road segments and simulate expected collision risk across a network. Although this proof of concept is quite rudimentary, it illustrates the potential features that a decision support tool may provide to direct efforts on reducing wildlife-vehicle collisions.
 
 \begin{figure*}[!h]
+  \vspace{0.5cm}  
   \centering
   \fbox{\includegraphics[width=0.95\textwidth]{shinyapp.png}}
   \caption[Decision support tool for wildlife-vehicle collisions]{Screen capture of web-based interface for a wildlife-vehicle collision risk modelling tool. The tool was originally developed for Bendigo, a medium-sized town in south-east Australia that experiences high numbers of kangaroo-vehicle collisions. Users can select different species and make adjustments to traffic speed or volume to influence predicted collision risk on the road network. The predictions are downloadable as geographic information system (GIS) or raw tabular data for use in other software.}
   \label{wvc_tool}
+  \vspace{0.5cm} 
 \end{figure*}
 
 %\subsubsection{Real-time warning `app' for mobile devices}
